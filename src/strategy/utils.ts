@@ -91,9 +91,9 @@ export const hashCollection = (collection: Collection): string => {
   )
 }
 
-type ParsedStrategyRow = Array<Strategy | Collateral | Collection>
+export type ParsedStrategyRow = Array<Strategy | Collateral | Collection>
 
-interface StrategyObjectFactory<RowType> {
+export interface StrategyObjectFactory<RowType> {
   (rowData: string): RowType
 }
 
@@ -176,8 +176,6 @@ export const validate: ValidateStrategyCSV = (csv) => {
     RE_STRATEGY_ROOT.test(strategyRoot),
     'validate: invalid strategy root'
   )
-
-  console.log(createStrategy(strategyRoot))
 
   const parsed = [
     createStrategy(strategyRoot),

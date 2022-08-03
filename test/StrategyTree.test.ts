@@ -4,7 +4,7 @@ import { readFile } from 'fs/promises'
 import { StrategyTree } from '../src/strategy/StrategyTree'
 
 describe('StrategyTree', () => {
-  test('parses CSV into BinaryTreeß', async () => {
+  test('parses CSV into BinaryTree', async () => {
     const csv = await readFile(join(__dirname, '__mocks__/test.csv'), 'utf8')
 
     const strategyTree = new StrategyTree(csv)
