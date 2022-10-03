@@ -1,3 +1,5 @@
+export * from './contracts'
+
 declare var __DEV__: boolean
 
 /**
