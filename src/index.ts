@@ -1,1 +1,1 @@
-export * as StrategyTree from 'strategy/StrategyTree'
+export * from 'strategy/StrategyTree'
