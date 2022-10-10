@@ -1,12 +1,6 @@
 import { utils } from 'ethers'
 import invariant from 'tiny-invariant'
-import { Strategy, Collateral, Collection } from 'types'
-
-export enum StrategyLeafType {
-  Strategy = 0,
-  Collateral = 1,
-  Collection = 2,
-}
+import { Strategy, Collateral, Collection, StrategyLeafType } from '../types'
 
 export const hashStrategy = (strategy: Strategy): string => {
   invariant(strategy, 'hashStrategy: strategy must be defined')

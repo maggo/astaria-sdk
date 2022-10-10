@@ -33,10 +33,6 @@
     "noEmit": true,
 
     "target": "es6",
-    "baseUrl": "./src",
-    "paths": {
-      "strategy/*": ["strategy/*"],
-      "types/*": ["types/*"]
-    }
+    "baseUrl": "./src"
   }
 }

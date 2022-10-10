@@ -1,6 +1,10 @@
-export * from './contracts'
-
 declare var __DEV__: boolean
+
+export enum StrategyLeafType {
+  Strategy = 0,
+  Collateral = 1,
+  Collection = 2,
+}
 
 /**
  * Strategy
