@@ -13,7 +13,7 @@
   },
   "scripts": {
     "start": "tsdx watch",
-    "build": "tsdx build",
+    "build": "tsdx build --target node",
     "test": "tsdx test",
     "test:watch": "tsdx test --watchAll",
     "test:coverage": "tsdx test --coverage",

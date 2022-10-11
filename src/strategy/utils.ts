@@ -1,5 +1,6 @@
 import { utils } from 'ethers'
 import invariant from 'tiny-invariant'
+
 import { Strategy, Collateral, Collection, StrategyLeafType } from '../types'
 
 export const hashStrategy = (strategy: Strategy): string => {
