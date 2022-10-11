@@ -107,8 +107,8 @@ interface ValidateStrategyCSV {
   (csv: string): ParsedStrategyRow
 }
 
-export const validate: ValidateStrategyCSV = (csv) => {
-  let rows = trimAndSplitByLine(csv)
+export const validate: ValidateStrategyCSV = (csv: string) => {
+  const rows = trimAndSplitByLine(csv)
 
   const parsed = rows
     .filter(validateCollateralOrCollectionRow)
@@ -118,10 +118,10 @@ export const validate: ValidateStrategyCSV = (csv) => {
 }
 
 // hashes the parameters of the terms and collateral to produce a single bytes32 value to act as the root
-export const prepareLeaves = (csv: any) => {
-  let leaves: string[] = []
+export const prepareLeaves = (csv: Array<Collateral | Collection>) => {
+  const leaves: string[] = []
 
-  csv.forEach((row: any) => {
+  csv.forEach((row: Collateral | Collection) => {
     switch (row.type) {
       case StrategyLeafType.Collection: {
         leaves.push(hashCollection(row))
