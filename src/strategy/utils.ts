@@ -1,11 +1,7 @@
 import { BigNumber, utils } from 'ethers'
 import invariant from 'tiny-invariant'
-import { Collateral, Collection } from 'types'
 
-export enum StrategyLeafType {
-  Collateral = 1,
-  Collection = 2,
-}
+import { Collateral, Collection, StrategyLeafType } from '../types'
 
 export const hashCollateral = (collateral: Collateral): string => {
   invariant(collateral, 'hashCollateral: collateral must be defined')
@@ -38,15 +34,7 @@ export const hashCollection = (collection: Collection): string => {
   invariant(collection, 'hashCollection: collection must be defined')
 
   return utils.solidityKeccak256(
-    [
-      'uint8',
-      'address',
-      'address',
-      'uint256',
-      'uint256',
-      'uint256',
-      'uint256',
-    ],
+    ['uint8', 'address', 'address', 'uint256', 'uint256', 'uint256', 'uint256'],
     [
       collection.type,
       collection.token,
@@ -59,7 +47,7 @@ export const hashCollection = (collection: Collection): string => {
   )
 }
 
-export type ParsedStrategyRow = Array< Collateral | Collection>
+export type ParsedStrategyRow = Array<Collateral | Collection>
 
 export interface StrategyObjectFactory<RowType> {
   (rowData: string): RowType
@@ -122,11 +110,9 @@ interface ValidateStrategyCSV {
 export const validate: ValidateStrategyCSV = (csv) => {
   let rows = trimAndSplitByLine(csv)
 
-  const parsed = [
-    ...rows
-      .filter(validateCollateralOrCollectionRow)
-      .map(createCollateralOrCollection),
-  ]
+  const parsed = rows
+    .filter(validateCollateralOrCollectionRow)
+    .map(createCollateralOrCollection)
 
   return parsed
 }
@@ -136,9 +122,7 @@ export const prepareLeaves = (csv: any) => {
   let leaves: string[] = []
 
   csv.forEach((row: any) => {
-
     switch (row.type) {
-
       case StrategyLeafType.Collection: {
         leaves.push(hashCollection(row))
         break

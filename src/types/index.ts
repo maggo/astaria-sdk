@@ -1,8 +1,12 @@
 import { BigNumber } from 'ethers'
 
-export * from './contracts'
-
 declare var __DEV__: boolean
+
+export enum StrategyLeafType {
+  Strategy = 0,
+  Collateral = 1,
+  Collection = 2,
+}
 
 /**
  * Strategy
@@ -71,7 +75,7 @@ export interface Collateral extends StrategyRow {
   /** `uint8` - Type of leaf format (`Collateral = 1`) */
   type: StrategyLeafType.Collateral
   /** `uint256` - Token ID of ERC721 inside the collection */
-  tokenId: string
+  tokenId: BigNumber
 }
 
 /**

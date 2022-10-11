@@ -2,7 +2,7 @@ import { utils } from 'ethers'
 import MerkleTree from 'merkletreejs'
 import invariant from 'tiny-invariant'
 
-import { validate, prepareLeaves, ParsedStrategyRow } from 'strategy/utils'
+import { validate, prepareLeaves, ParsedStrategyRow } from './utils'
 
 export class StrategyTree extends MerkleTree {
   private csv: ParsedStrategyRow
