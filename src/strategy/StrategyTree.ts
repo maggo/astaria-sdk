@@ -2,7 +2,7 @@ import { utils } from 'ethers'
 import MerkleTree from 'merkletreejs'
 import invariant from 'tiny-invariant'
 
-import { validate, prepareLeaves, ParsedStrategyRow } from 'strategy/utils'
+import { validate, prepareLeaves, ParsedStrategyRow } from './utils'
 
 export class StrategyTree extends MerkleTree {
   private csv: ParsedStrategyRow
@@ -14,10 +14,9 @@ export class StrategyTree extends MerkleTree {
       csv.length > 0,
       'StrategyTree: Provided csv string did not produce a valid StrategyTree value'
     )
-
     const leaves = prepareLeaves(csv)
 
-    super(leaves, utils.keccak256)
+    super(leaves, utils.keccak256, { sort: true })
 
     this.csv = csv
   }
