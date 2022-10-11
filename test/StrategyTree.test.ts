@@ -9,6 +9,8 @@ describe('StrategyTree', () => {
 
     const strategyTree = new StrategyTree(csv)
 
-    expect("0x1dcafa759dd2905d4304194ea92349bda959cc4bfcdee6f1faa71e03a7f83e41").toEqual(strategyTree.getHexRoot())
+    expect(
+      '0x1dcafa759dd2905d4304194ea92349bda959cc4bfcdee6f1faa71e03a7f83e41'
+    ).toEqual(strategyTree.getHexRoot())
   })
 })
