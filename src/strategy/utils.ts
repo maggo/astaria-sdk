@@ -1,12 +1,19 @@
-import { BigNumber, utils } from 'ethers'
+import { JsonRpcProvider } from '@ethersproject/providers'
+import { BigNumber } from '@ethersproject/bignumber'
+import {
+  keccak256,
+  defaultAbiCoder,
+  getAddress,
+  splitSignature,
+} from 'ethers/lib/utils'
 import invariant from 'tiny-invariant'
 
-import { Collateral, Collection, StrategyLeafType } from '../types'
+import { Collateral, Collection, Strategy, StrategyLeafType } from '../types'
 
 export const hashCollateral = (collateral: Collateral): string => {
   invariant(collateral, 'hashCollateral: collateral must be defined')
 
-  return utils.solidityKeccak256(
+  let encode = defaultAbiCoder.encode(
     [
       'uint8',
       'address',
@@ -28,12 +35,14 @@ export const hashCollateral = (collateral: Collateral): string => {
       collateral.lien.maxPotentialDebt,
     ]
   )
+
+  return keccak256(encode)
 }
 
 export const hashCollection = (collection: Collection): string => {
   invariant(collection, 'hashCollection: collection must be defined')
 
-  return utils.solidityKeccak256(
+  const encode = defaultAbiCoder.encode(
     ['uint8', 'address', 'address', 'uint256', 'uint256', 'uint256', 'uint256'],
     [
       collection.type,
@@ -45,6 +54,8 @@ export const hashCollection = (collection: Collection): string => {
       collection.lien.maxPotentialDebt,
     ]
   )
+
+  return keccak256(encode)
 }
 
 export type ParsedStrategyRow = Array<Collateral | Collection>
@@ -62,9 +73,9 @@ export const createCollateralOrCollection: StrategyObjectFactory<
     case StrategyLeafType.Collateral: {
       return {
         type: StrategyLeafType.Collateral,
-        token: String(row.token),
+        token: getAddress(row.token.toLowerCase()),
         tokenId: BigNumber.from(String(row.tokenId)),
-        borrower: String(row.borrower),
+        borrower: getAddress(row.borrower.toLowerCase()),
         lien: {
           amount: BigNumber.from(String(row.amount)),
           rate: BigNumber.from(String(row.rate)),
@@ -77,8 +88,8 @@ export const createCollateralOrCollection: StrategyObjectFactory<
     case StrategyLeafType.Collection: {
       return {
         type: StrategyLeafType.Collection,
-        token: String(row.token),
-        borrower: String(row.borrower),
+        token: getAddress(row.token.toLowerCase()),
+        borrower: getAddress(row.borrower.toLowerCase()),
         lien: {
           amount: BigNumber.from(String(row.amount)),
           rate: BigNumber.from(String(row.rate)),
@@ -136,4 +147,48 @@ export const prepareLeaves = (csv: Array<Collateral | Collection>) => {
   })
 
   return leaves
+}
+
+export const signRoot = async (
+  strategy: Strategy,
+  provider: JsonRpcProvider,
+  root: string,
+  verifyingContract: string,
+  chainId: number
+) => {
+  const typedData = {
+    types: {
+      EIP712Domain: [
+        { name: 'version', type: 'string' },
+        { name: 'chainId', type: 'uint256' },
+        { name: 'verifyingContract', type: 'address' },
+      ],
+      StrategyDetails: [
+        { name: 'nonce', type: 'uint256' },
+        { name: 'deadline', type: 'uint256' },
+        { name: 'root', type: 'bytes32' },
+      ],
+    },
+    primaryType: 'StrategyDetails' as const,
+    domain: {
+      version: strategy.version,
+      chainId: chainId,
+      verifyingContract: verifyingContract,
+    },
+    message: {
+      nonce: strategy.nonce.toHexString(),
+      deadline: strategy.expiration.toHexString(),
+      root: root,
+    },
+  }
+
+  const signer = provider.getSigner()
+  const account = await signer.getAddress()
+
+  const signature = await signer.provider.send('eth_signTypedData_v4', [
+    account,
+    typedData,
+  ])
+
+  return splitSignature(signature)
 }
