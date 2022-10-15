@@ -6,11 +6,19 @@ import {
   getAddress,
   splitSignature,
 } from 'ethers/lib/utils'
-import { Wallet } from 'ethers'
+import { Wallet, Signature } from 'ethers'
 import invariant from 'tiny-invariant'
 
-import { Collateral, Collection, Strategy, StrategyLeafType } from '../types'
+import {
+  Collateral,
+  Collection,
+  Strategy,
+  StrategyLeafType,
+  IPFSStrategyPayload,
+  TypedData,
+} from '../types'
 const ethSigUtil = require('eth-sig-util')
+const stringify = require('json-stringify-deterministic')
 
 export const hashCollateral = (collateral: Collateral): string => {
   invariant(collateral, 'hashCollateral: collateral must be defined')
@@ -132,23 +140,19 @@ export const validate: ValidateStrategyCSV = (csv: string) => {
 
 // hashes the parameters of the terms and collateral to produce a single bytes32 value to act as the root
 export const prepareLeaves = (csv: Array<Collateral | Collection>) => {
-  const leaves: string[] = []
-
   csv.forEach((row: Collateral | Collection) => {
     switch (row.type) {
       case StrategyLeafType.Collection: {
-        leaves.push(hashCollection(row))
+        row.leaf = hashCollection(row)
         break
       }
 
       case StrategyLeafType.Collateral: {
-        leaves.push(hashCollateral(row))
+        row.leaf = hashCollateral(row)
         break
       }
     }
   })
-
-  return leaves
 }
 
 export const signRootRemote = async (
@@ -188,12 +192,16 @@ export const signRootLocal = async (
   return splitSignature(signature)
 }
 
-const getTypedData = (
+const hexStringToBuffer = (hex: string) => {
+  return Buffer.from(hex.replace('0x', ''), 'hex')
+}
+
+export const getTypedData = (
   strategy: Strategy,
   root: string,
   verifyingContract: string,
   chainId: number
-) => {
+): TypedData => {
   return {
     types: {
       EIP712Domain: [
@@ -219,4 +227,33 @@ const getTypedData = (
       root: root,
     },
   }
+}
+
+const byLeafAscending = (
+  x: Collateral | Collection,
+  y: Collateral | Collection
+) => {
+  return Buffer.compare(
+    hexStringToBuffer(x.leaf as string),
+    hexStringToBuffer(y.leaf as string)
+  )
+}
+
+export const encodeIPFSStrategyPayload = (
+  typedData: TypedData,
+  signature: Signature,
+  csv: ParsedStrategyRow
+): string => {
+  const payload: IPFSStrategyPayload = {
+    typedData: typedData,
+    signature: signature,
+    leaves: csv,
+  }
+  return stringify(payload)
+}
+
+export const decodeIPFSStrategyPayload = (
+  strategy: string
+): IPFSStrategyPayload => {
+  return JSON.parse(strategy)
 }

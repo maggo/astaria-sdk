@@ -5339,6 +5339,11 @@ json-stable-stringify-without-jsonify@^1.0.1:
   resolved "https://registry.npmjs.org/json-stable-stringify-without-jsonify/-/json-stable-stringify-without-jsonify-1.0.1.tgz"
   integrity sha512-Bdboy+l7tA3OGW6FjyFHWkP5LuByj1Tk33Ljyq0axyzdk9//JSi2u3fP1QSmd1KNwq6VOKYGlAu87CisVir6Pw==
 
+json-stringify-deterministic@^1.0.7:
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/json-stringify-deterministic/-/json-stringify-deterministic-1.0.7.tgz#b5e37549581ac8ec8439ca7e9b746d23da56ac20"
+  integrity sha512-VGSL+V2s/AqL25ixC4459kAlyIYsS+VUJ3owa/FKr4ZeMJeTZERlzGXJ2xWIHcTfd/fwgTvNyh7/RWMDvkFciw==
+
 json-stringify-safe@~5.0.1:
   version "5.0.1"
   resolved "https://registry.npmjs.org/json-stringify-safe/-/json-stringify-safe-5.0.1.tgz"

@@ -61,6 +61,7 @@
   "dependencies": {
     "eth-sig-util": "^3.0.1",
     "ethers": "^5.6.9",
+    "json-stringify-deterministic": "^1.0.7",
     "merkletreejs": "^0.2.32",
     "tiny-invariant": "^1.2.0"
   },

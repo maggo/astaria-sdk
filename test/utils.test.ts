@@ -3,8 +3,16 @@ import { Web3Provider, ExternalProvider } from '@ethersproject/providers'
 import { AddressZero } from '@ethersproject/constants'
 import ganache from 'ganache'
 import { Wallet } from 'ethers'
+import { join } from 'path'
+import { readFile } from 'fs/promises'
 
-import { signRootRemote, signRootLocal } from '../src/strategy/utils'
+import { StrategyTree } from '../src/strategy/StrategyTree'
+import {
+  signRootRemote,
+  signRootLocal,
+  getTypedData,
+  encodeIPFSStrategyPayload,
+} from '../src/strategy/utils'
 import { Strategy } from '../src/types'
 
 describe('util.signRoot using remote', () => {
@@ -70,5 +78,42 @@ describe('util.signRoot using remote', () => {
     expect(sig.compact).toEqual(
       '0x00d6bdd90151dcf83b578a735be4a2d71a46ae08bde99e9aa23d1eaf4c24fc1619987e97f52e004a642ecbc9629f3069ac78133c441ef946f988a27c44726e77'
     )
+  })
+  test('encoding and decoding for IPFS', async () => {
+    const csv = await readFile(join(__dirname, '__mocks__/test.csv'), 'utf8')
+    const expected = await readFile(
+      join(__dirname, '__mocks__/encode.json'),
+      'utf8'
+    )
+
+    const strategyTree = new StrategyTree(csv)
+
+    const root = strategyTree.getHexRoot()
+    const wallet = Wallet.fromMnemonic(
+      'junk junk junk junk junk junk junk junk junk junk junk test'
+    )
+    const verifyingContract = AddressZero
+    const strategy: Strategy = {
+      version: 0,
+      strategist: AddressZero,
+      expiration: BigNumber.from(0),
+      nonce: BigNumber.from(0),
+      vault: AddressZero,
+    }
+    const typedData = getTypedData(strategy, root, verifyingContract, 0)
+    const signature = await signRootLocal(
+      strategy,
+      wallet,
+      root,
+      verifyingContract,
+      0
+    )
+    const strategyPayload = encodeIPFSStrategyPayload(
+      typedData,
+      signature,
+      strategyTree.getCSV
+    )
+
+    expect(strategyPayload).toEqual(expected)
   })
 })
