@@ -26,9 +26,14 @@ jobs:
         run: yarn lint
 
       - name: Test
-        run: yarn test --ci --coverage --maxWorkers=2
-        env:
-          NODE_OPTIONS: "${{ matrix.node == '16.x' && '' || '--openssl-legacy-provider' }}"
+        run: |
+          echo =====matrix.node====== ${{ matrix.node }}
+          if [[ ${{ matrix.node }} == 16.x ]]; then
+            yarn test --ci --coverage --maxWorkers=2
+          else
+
+            NODE_OPTIONS=--openssl-legacy-provider yarn test --ci --coverage --maxWorkers=2
+          fi
 
       - name: Build
         run: yarn build
