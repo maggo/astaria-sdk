@@ -26,9 +26,14 @@ jobs:
         run: yarn lint
 
       - name: Test
+        if: matrix.node-version != '18'
+        run: yarn test --ci --coverage --maxWorkers=2
+
+      - name: Test
+        if: matrix.node-version == '18'
+        run: yarn test --ci --coverage --maxWorkers=2
         env: 
           NODE_OPTIONS: --openssl-legacy-provider
-        run: yarn test --ci --coverage --maxWorkers=2
 
       - name: Build
         run: yarn build
