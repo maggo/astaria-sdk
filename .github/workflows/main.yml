@@ -28,7 +28,7 @@ jobs:
       - name: Test
         run: yarn test --ci --coverage --maxWorkers=2
         env:
-          NODE_OPTIONS: "${{ matrix.node == '16.x' && '--openssl-legacy-provider' || '' }}"
+          NODE_OPTIONS: "${{ matrix.node == '16.x' && '' || '--openssl-legacy-provider' }}"
 
       - name: Build
         run: yarn build
