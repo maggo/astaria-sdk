@@ -1,4 +1,5 @@
-import { BigNumber } from 'ethers'
+import { BigNumber, Signature } from 'ethers'
+import { ParsedStrategyRow } from '../strategy/utils'
 
 declare var __DEV__: boolean
 
@@ -56,6 +57,7 @@ export interface Lien {
  * StrategyRow
  */
 export interface StrategyRow {
+  leaf?: string
   /** `uint8` - Type of leaf format */
   type: StrategyLeafType.Collateral | StrategyLeafType.Collection
   /** `address` - Address of ERC721 collection */
@@ -84,4 +86,38 @@ export interface Collateral extends StrategyRow {
 export interface Collection extends StrategyRow {
   /** `uint8` - Type of leaf format (`Collection = 2`) */
   type: StrategyLeafType.Collection
+}
+
+export interface IPFSStrategyPayload {
+  typedData: any
+  signature: Signature
+  leaves: ParsedStrategyRow
+}
+
+export interface TypedData {
+  types: types
+  primaryType: string
+  domain: domain
+  message: message
+}
+
+export interface types {
+  EIP712Domain: Array<type>
+  StrategyDetails: Array<type>
+}
+export interface type {
+  name: string
+  type: string
+}
+
+export interface domain {
+  version: string
+  chainId: number
+  verifyingContract: string
+}
+
+export interface message {
+  nonce: string
+  deadline: string
+  root: string
 }

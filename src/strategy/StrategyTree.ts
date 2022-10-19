@@ -14,13 +14,14 @@ export class StrategyTree extends MerkleTree {
       csv.length > 0,
       'StrategyTree: Provided csv string did not produce a valid StrategyTree value'
     )
-    const leaves = prepareLeaves(csv)
+    prepareLeaves(csv)
+    const leaves = csv.map((row) => row.leaf)
     super(leaves, utils.keccak256, { sort: true })
 
     this.csv = csv
   }
 
-  get rawCSV(): ParsedStrategyRow {
+  get getCSV(): ParsedStrategyRow {
     return this.csv
   }
 }

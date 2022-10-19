@@ -6,9 +6,19 @@ import {
   getAddress,
   splitSignature,
 } from 'ethers/lib/utils'
+import { Wallet, Signature } from 'ethers'
 import invariant from 'tiny-invariant'
 
-import { Collateral, Collection, Strategy, StrategyLeafType } from '../types'
+import {
+  Collateral,
+  Collection,
+  Strategy,
+  StrategyLeafType,
+  IPFSStrategyPayload,
+  TypedData,
+} from '../types'
+const ethSigUtil = require('eth-sig-util')
+const stringify = require('json-stringify-deterministic')
 
 export const hashCollateral = (collateral: Collateral): string => {
   invariant(collateral, 'hashCollateral: collateral must be defined')
@@ -130,33 +140,69 @@ export const validate: ValidateStrategyCSV = (csv: string) => {
 
 // hashes the parameters of the terms and collateral to produce a single bytes32 value to act as the root
 export const prepareLeaves = (csv: Array<Collateral | Collection>) => {
-  const leaves: string[] = []
-
   csv.forEach((row: Collateral | Collection) => {
     switch (row.type) {
       case StrategyLeafType.Collection: {
-        leaves.push(hashCollection(row))
+        row.leaf = hashCollection(row)
         break
       }
 
       case StrategyLeafType.Collateral: {
-        leaves.push(hashCollateral(row))
+        row.leaf = hashCollateral(row)
         break
       }
     }
   })
-
-  return leaves
 }
 
-export const signRoot = async (
+export const signRootRemote = async (
   strategy: Strategy,
   provider: JsonRpcProvider,
   root: string,
   verifyingContract: string,
   chainId: number
 ) => {
-  const typedData = {
+  const typedData = getTypedData(strategy, root, verifyingContract, chainId)
+  const signer = provider.getSigner()
+  const account = await signer.getAddress()
+
+  const signature = await signer.provider.send('eth_signTypedData_v4', [
+    account,
+    typedData,
+  ])
+
+  return splitSignature(signature)
+}
+
+export const signRootLocal = async (
+  strategy: Strategy,
+  wallet: Wallet,
+  root: string,
+  verifyingContract: string,
+  chainId: number
+) => {
+  const typedData = getTypedData(strategy, root, verifyingContract, chainId)
+  const privateKey = Uint8Array.from(
+    Buffer.from(wallet.privateKey.replace('0x', ''), 'hex')
+  )
+  const signature = ethSigUtil.signTypedData(privateKey, {
+    data: typedData,
+  })
+
+  return splitSignature(signature)
+}
+
+const hexStringToBuffer = (hex: string) => {
+  return Buffer.from(hex.replace('0x', ''), 'hex')
+}
+
+export const getTypedData = (
+  strategy: Strategy,
+  root: string,
+  verifyingContract: string,
+  chainId: number
+): TypedData => {
+  return {
     types: {
       EIP712Domain: [
         { name: 'version', type: 'string' },
@@ -171,7 +217,7 @@ export const signRoot = async (
     },
     primaryType: 'StrategyDetails' as const,
     domain: {
-      version: strategy.version,
+      version: String(strategy.version),
       chainId: chainId,
       verifyingContract: verifyingContract,
     },
@@ -181,14 +227,33 @@ export const signRoot = async (
       root: root,
     },
   }
+}
 
-  const signer = provider.getSigner()
-  const account = await signer.getAddress()
+const byLeafAscending = (
+  x: Collateral | Collection,
+  y: Collateral | Collection
+) => {
+  return Buffer.compare(
+    hexStringToBuffer(x.leaf as string),
+    hexStringToBuffer(y.leaf as string)
+  )
+}
 
-  const signature = await signer.provider.send('eth_signTypedData_v4', [
-    account,
-    typedData,
-  ])
+export const encodeIPFSStrategyPayload = (
+  typedData: TypedData,
+  signature: Signature,
+  csv: ParsedStrategyRow
+): string => {
+  const payload: IPFSStrategyPayload = {
+    typedData: typedData,
+    signature: signature,
+    leaves: csv,
+  }
+  return stringify(payload)
+}
 
-  return splitSignature(signature)
+export const decodeIPFSStrategyPayload = (
+  strategy: string
+): IPFSStrategyPayload => {
+  return JSON.parse(strategy)
 }
