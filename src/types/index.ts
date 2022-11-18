@@ -7,6 +7,7 @@ export enum StrategyLeafType {
   Strategy = 0,
   Collateral = 1,
   Collection = 2,
+  UniV3Collateral = 3,
 }
 
 /**
@@ -51,6 +52,8 @@ export interface Lien {
   duration: BigNumber
   /** `uint256` - a maximum total value of all liens higher in the lien queue calculated using their rate and remaining duration. Value is `$WETH` expressed as `10**18`. A zero value indicates that the lien is in the most senior position */
   maxPotentialDebt: BigNumber
+  /** `uint256` - the value used as the starting price in the event of a liquidation dutch auction */
+  liquidationInitialAsk: BigNumber
 }
 
 /**
@@ -59,7 +62,10 @@ export interface Lien {
 export interface StrategyRow {
   leaf?: string
   /** `uint8` - Type of leaf format */
-  type: StrategyLeafType.Collateral | StrategyLeafType.Collection
+  type:
+    | StrategyLeafType.Collateral
+    | StrategyLeafType.Collection
+    | StrategyLeafType.UniV3Collateral
   /** `address` - Address of ERC721 collection */
   token: string
   /** `uint256` - Token ID of ERC721 inside the collection */
@@ -86,6 +92,21 @@ export interface Collateral extends StrategyRow {
 export interface Collection extends StrategyRow {
   /** `uint8` - Type of leaf format (`Collection = 2`) */
   type: StrategyLeafType.Collection
+}
+
+export interface UniV3Collateral extends StrategyRow {
+  /** `uint8` - Type of leaf format (`UniV3Collateral = 3`) */
+  type: StrategyLeafType.UniV3Collateral
+
+  /** UniV3 parameters */
+  token0: string
+  token1: string
+  fee: BigNumber
+  tickLower: BigNumber
+  tickUpper: BigNumber
+  minLiquidity: BigNumber
+  amount0Min: BigNumber
+  amount1Min: BigNumber
 }
 
 export interface IPFSStrategyPayload {
