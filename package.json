@@ -41,6 +41,7 @@
   "release": {
     "branches": [
       "master",
+      "develop",
       {
         "name": "develop",
         "channel": "alpha",
