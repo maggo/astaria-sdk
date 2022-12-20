@@ -1,11 +1,13 @@
 name: Release
 
+# on:
+#   workflow_run:
+#     workflows: [CI]
+#     branches: [develop]
+#     types: [completed]
+
 on:
-  workflow_run:
-    workflows: [CI]
-    branches: [develop]
-    types:
-      - completed
+  workflow_dispatch:
 
 jobs:
   release:
