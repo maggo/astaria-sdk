@@ -10,12 +10,54 @@ name: Release
 #   push:
 #     branches: [develop]
 
-on: [workflow_dispatch]
+on:
+  workflow_dispatch:
+    inputs:
+      dryRun:
+        description: 'Dry Run'
+        required: true
+        default: 'true'
+        type: boolean
 
 jobs:
+  release-dry-run:
+    name: Release dry-run
+    runs-on: ubuntu-latest
+
+    if: inputs.dryRun == 'true'
+
+    # if: ${{ github.event.workflow_run.conclusion == 'success' }}
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+          cache: yarn
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Build
+        run: yarn build
+
+      - name: Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npx semantic-release --dry-run
+
   release:
     name: Release on alpha channel
     runs-on: ubuntu-latest
+
+    if: inputs.dryRun != 'true'
 
     # if: ${{ github.event.workflow_run.conclusion == 'success' }}
 

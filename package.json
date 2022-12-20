@@ -14,7 +14,7 @@
     "analyze": "size-limit --why",
     "typechain:compile": "typechain --target ethers-v5 --out-dir './src/contracts' './abi/*.json'",
     "postinstall": "yarn run typechain:compile",
-    "semantic-release": "semantic-release --dry-run"
+    "semantic-release": "semantic-release"
   },
   "dependencies": {
     "eth-sig-util": "^3.0.1",
