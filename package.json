@@ -38,16 +38,16 @@
     "trailingComma": "es5",
     "useTabs": false
   },
-  "release": {
-    "branches": [
-      "master",
-      {
-        "name": "develop",
-        "channel": "alpha",
-        "prerelease": true
-      }
-    ]
-  },
+  "branches": [
+    {
+      "name": "master"
+    },
+    {
+      "name": "develop",
+      "channel": "alpha",
+      "prerelease": "alpha"
+    }
+  ],
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
