@@ -4,7 +4,7 @@
     "type": "git",
     "url": "https://github.com/astariaxyz/astaria-sdk.git"
   },
-  "version": "0.0.0-alpha",
+  "version": "0.0.0",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -27,7 +27,7 @@
     "analyze": "size-limit --why",
     "typechain:compile": "typechain --target ethers-v5 --out-dir './src/contracts' './abi/*.json'",
     "postinstall": "yarn run typechain:compile",
-    "semantic-release": "semantic-release"
+    "semantic-release": "semantic-release --dry-run"
   },
   "prettier": {
     "arrowParens": "always",
@@ -41,7 +41,6 @@
   "release": {
     "branches": [
       "master",
-      "develop",
       {
         "name": "develop",
         "channel": "alpha",
