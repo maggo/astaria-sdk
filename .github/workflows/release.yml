@@ -24,7 +24,7 @@ jobs:
     name: Release dry-run
     runs-on: ubuntu-latest
 
-    if: inputs.dryRun == 'true'
+    if: inputs.dryRun == true
 
     # if: ${{ github.event.workflow_run.conclusion == 'success' }}
 
@@ -57,7 +57,7 @@ jobs:
     name: Release on alpha channel
     runs-on: ubuntu-latest
 
-    if: inputs.dryRun != 'true'
+    if: inputs.dryRun != true
 
     # if: ${{ github.event.workflow_run.conclusion == 'success' }}
 
