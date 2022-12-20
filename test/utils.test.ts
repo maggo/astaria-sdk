@@ -1,10 +1,10 @@
+import { join } from 'path'
+import { readFile } from 'fs/promises'
+import { Wallet } from 'ethers'
 import { BigNumber } from '@ethersproject/bignumber'
 import { Web3Provider, ExternalProvider } from '@ethersproject/providers'
 import { AddressZero } from '@ethersproject/constants'
 import ganache from 'ganache'
-import { Wallet } from 'ethers'
-import { join } from 'path'
-import { readFile } from 'fs/promises'
 
 import { StrategyTree } from '../src/strategy/StrategyTree'
 import {
