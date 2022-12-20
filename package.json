@@ -4,7 +4,7 @@
     "type": "git",
     "url": "https://github.com/astariaxyz/astaria-sdk.git"
   },
-  "version": "1.0.0-alpha.0",
+  "version": "0.0.0-alpha",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -48,6 +48,10 @@
         "prerelease": true
       }
     ]
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   },
   "module": "dist/sdk.esm.js",
   "size-limit": [
