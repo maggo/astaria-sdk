@@ -1,20 +1,19 @@
 name: Release
 
 on:
-  # workflow_run:
-  #   workflows: ["CI"]
-  #   branches: [develop]
-  #   types:
-  #     - completed
-  push:
-    branches:
-      - develop
+  workflow_run:
+    workflows: [CI]
+    branches: [develop]
+    types:
+      - completed
 
 jobs:
   release:
     name: Release
-    needs: build
     runs-on: ubuntu-latest
+
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -24,7 +23,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: 'lts/*'
+          node-version: '16.x'
 
       - name: Install dependencies
         run: yarn install --frozen-lockfile
