@@ -1,3 +1,10 @@
+# [1.0.0-alpha.2](https://github.com/astariaxyz/astaria-sdk/compare/v1.0.0-alpha.1...v1.0.0-alpha.2) (2022-12-21)
+
+
+### Features
+
+* add codegen output to git, update config ([91bb2b2](https://github.com/astariaxyz/astaria-sdk/commit/91bb2b29aebfd949dd905d130affd3bcc0674bed))
+
 # 1.0.0-alpha.1 (2022-12-20)
 
 
