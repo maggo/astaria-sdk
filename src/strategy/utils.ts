@@ -254,13 +254,9 @@ export const prepareLeaves = (
 }
 
 export const signRootRemote = async (
-  strategy: Strategy,
-  provider: JsonRpcProvider,
-  root: string,
-  verifyingContract: string,
-  chainId: number
+  typedData: TypedData,
+  provider: JsonRpcProvider
 ) => {
-  const typedData = getTypedData(strategy, root, verifyingContract, chainId)
   const signer = provider.getSigner()
   const account = await signer.getAddress()
 
@@ -272,14 +268,7 @@ export const signRootRemote = async (
   return splitSignature(signature)
 }
 
-export const signRootLocal = async (
-  strategy: Strategy,
-  wallet: Wallet,
-  root: string,
-  verifyingContract: string,
-  chainId: number
-) => {
-  const typedData = getTypedData(strategy, root, verifyingContract, chainId)
+export const signRootLocal = async (typedData: TypedData, wallet: Wallet) => {
   const privateKey = Uint8Array.from(
     Buffer.from(wallet.privateKey.replace('0x', ''), 'hex')
   )

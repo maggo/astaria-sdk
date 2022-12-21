@@ -41,11 +41,8 @@ describe('util.signRoot using remote', () => {
       '0x40c9e8c33c4cf5ff06180afea2e6a3bab45b6bfb4fafca7ec401e4201fded1a9'
 
     const sig = await signRootRemote(
-      strategy,
-      provider,
-      root,
-      verifyingContract,
-      0
+      getTypedData(strategy, root, verifyingContract, 0),
+      provider
     )
 
     expect(sig.compact).toEqual(
@@ -68,11 +65,8 @@ describe('util.signRoot using remote', () => {
       '0x414cd89c8a2d6724f47829348352a78687a99c57ee83a47933f2021c84f405b9'
 
     const sig = await signRootLocal(
-      strategy,
-      wallet,
-      root,
-      verifyingContract,
-      0
+      getTypedData(strategy, root, verifyingContract, 0),
+      wallet
     )
 
     expect(sig.compact).toEqual(
@@ -101,19 +95,13 @@ describe('util.signRoot using remote', () => {
       vault: AddressZero,
     }
     const typedData = getTypedData(strategy, root, verifyingContract, 0)
-    const signature = await signRootLocal(
-      strategy,
-      wallet,
-      root,
-      verifyingContract,
-      0
-    )
+    const signature = await signRootLocal(typedData, wallet)
     const strategyPayload = encodeIPFSStrategyPayload(
       typedData,
       signature,
       strategyTree.getCSV
     )
 
-    expect(strategyPayload).toEqual(expected)
+    expect(JSON.parse(strategyPayload)).toEqual(JSON.parse(expected))
   })
 })
