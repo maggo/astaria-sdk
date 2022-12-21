@@ -1,0 +1,45 @@
+# 1.0.0-alpha.1 (2022-12-20)
+
+
+### Bug Fixes
+
+* add module name mappings to jest config ([e71fb39](https://github.com/astariaxyz/astaria-sdk/commit/e71fb3907513db0d0c9c9b672ac065e7f09481e9))
+* build and test passing ([1d07915](https://github.com/astariaxyz/astaria-sdk/commit/1d07915b15b8fd03e5d97ea8745270c5ddf6e959))
+* ci/cd issues with linter ([0365530](https://github.com/astariaxyz/astaria-sdk/commit/03655306e51b6aa124bac45e3ab2fec7984f2a2e))
+* disable husky pre-commit hooks in ci ([9c74a77](https://github.com/astariaxyz/astaria-sdk/commit/9c74a7753bc4508ee4d2ec238099927ad61188db))
+* git actions ([a2fd9d1](https://github.com/astariaxyz/astaria-sdk/commit/a2fd9d1edc139b1fa0430b345c962dd4441359b5))
+* git actions ([5efb590](https://github.com/astariaxyz/astaria-sdk/commit/5efb5902b27827ddac21e91ded948a563c62c1bd))
+* git actions ([d761de6](https://github.com/astariaxyz/astaria-sdk/commit/d761de68f4fd953c5c0059c589d8674337f76db7))
+* git actions ([0888cb7](https://github.com/astariaxyz/astaria-sdk/commit/0888cb731a9af083c4d713fc1140a5248d4d6bb9))
+* git actions ([1d65781](https://github.com/astariaxyz/astaria-sdk/commit/1d65781fc08baee58af323ba78d396edee385c1e))
+* git actions ([447ce3a](https://github.com/astariaxyz/astaria-sdk/commit/447ce3ae7352ef2e6db85b3d709559d640fa2e4c))
+* git actions ([e6a478d](https://github.com/astariaxyz/astaria-sdk/commit/e6a478d63d5e64a4b7dff4e2ad35e862186d9f30))
+* git actions ([bbb8e62](https://github.com/astariaxyz/astaria-sdk/commit/bbb8e62fa692ddd3dbaaf623714e9a3dd856ba55))
+* git actions ([28ef8dd](https://github.com/astariaxyz/astaria-sdk/commit/28ef8ddc9f0026c066d7e7c9bbf8e61ec0e56424))
+* git actions ([6b13665](https://github.com/astariaxyz/astaria-sdk/commit/6b13665b4c78844776f851319bec459677c6bda1))
+* github actions and lint errors ([4850337](https://github.com/astariaxyz/astaria-sdk/commit/4850337eb25f9830cb0b26bd89a196faf5899d36))
+* relative paths, tests broken ([eaee739](https://github.com/astariaxyz/astaria-sdk/commit/eaee739cda5b9b476c895a84b3a749d4c1bff6b6))
+* revert ([cfe82e2](https://github.com/astariaxyz/astaria-sdk/commit/cfe82e28a6df714bc8d239f6b8b42efce3b3dfc7))
+* tests ([7d9a742](https://github.com/astariaxyz/astaria-sdk/commit/7d9a742ccf0198dc065ac3daa6a9ced16d5ee061))
+* tests ([324664b](https://github.com/astariaxyz/astaria-sdk/commit/324664bbb7953f86ae4a02a081fcf2d52359b82e))
+
+
+### Features
+
+* add typechain integration ([e53498c](https://github.com/astariaxyz/astaria-sdk/commit/e53498c0216874b9df831e7d66576f00a96780e1))
+* build and release, dispatch trigger ([e23dd88](https://github.com/astariaxyz/astaria-sdk/commit/e23dd8844ace3b127c361755bc829f8d9a943644))
+* optional dry-run for manual trigger ([05a6cb8](https://github.com/astariaxyz/astaria-sdk/commit/05a6cb8a55b7894a60c08d8ff75dbba6b9d16ed7))
+* publishing alpha releases ([40308b1](https://github.com/astariaxyz/astaria-sdk/commit/40308b1f262659902c1344a7c9e2024f376d536e))
+* release dry-run ([caf3cd9](https://github.com/astariaxyz/astaria-sdk/commit/caf3cd91b08dcb0dd03cc6e809e868cc9111c113))
+* semantic-release workflow dispatch ([8f57069](https://github.com/astariaxyz/astaria-sdk/commit/8f5706942bfee97d9c483d121b05ac518ebb5ea9))
+* store raw csv on StategyTree ([b6f94ac](https://github.com/astariaxyz/astaria-sdk/commit/b6f94ac49a2c5fb8860e14018ae8a11b2d7e10bf))
+* update actions config ([82924b3](https://github.com/astariaxyz/astaria-sdk/commit/82924b3cea95b602febfca1c6a425f96193671eb))
+* update license ([c251fd2](https://github.com/astariaxyz/astaria-sdk/commit/c251fd2def7957b26feec53fd493a64996fb2298))
+* update package name ([77bec3e](https://github.com/astariaxyz/astaria-sdk/commit/77bec3e70d72f2af4a13e1fb93473704723c7dbd))
+* update publish config to public access ([3a6bf73](https://github.com/astariaxyz/astaria-sdk/commit/3a6bf73375a227f1ffe799d4113f19474e0c2c8b))
+* update release branch config ([8d3dc4d](https://github.com/astariaxyz/astaria-sdk/commit/8d3dc4db4e410b7b18ec212c0d0027fe5f8c5ff2))
+* update release config and prepare for publish ([0fb5e1e](https://github.com/astariaxyz/astaria-sdk/commit/0fb5e1e66695f874be682bf415958ce954a26fd6))
+* update testing version matrix ([906d026](https://github.com/astariaxyz/astaria-sdk/commit/906d0264b4a8a5275896479b41e1671df8c0fd23))
+* update workflow dependencies to latest ([6c146cb](https://github.com/astariaxyz/astaria-sdk/commit/6c146cbd96ebef747b73d5885dc95355f3d378e7))
+* workflow dispatch ([b1cda8a](https://github.com/astariaxyz/astaria-sdk/commit/b1cda8a88732f8d0404e9b6fc1b829549dbe3c20))
+* workflow_dispatch dryRun variable ([d186080](https://github.com/astariaxyz/astaria-sdk/commit/d1860807dd37dc337b3715736ab4167b6faab99b))
