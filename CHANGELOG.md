@@ -1,3 +1,10 @@
+# [1.0.0-alpha.4](https://github.com/astariaxyz/astaria-sdk/compare/v1.0.0-alpha.3...v1.0.0-alpha.4) (2022-12-21)
+
+
+### Features
+
+* add typescript bindings to distribution ([4822ddb](https://github.com/astariaxyz/astaria-sdk/commit/4822ddb26ce2254f1c0893406b271a99967e3ad1))
+
 # [1.0.0-alpha.3](https://github.com/astariaxyz/astaria-sdk/compare/v1.0.0-alpha.2...v1.0.0-alpha.3) (2022-12-21)
 
 
