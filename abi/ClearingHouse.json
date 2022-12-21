@@ -271,24 +271,12 @@
     "absolutePath": "src/ClearingHouse.sol",
     "id": 60049,
     "exportedSymbols": {
-      "ClearingHouse": [
-        60048
-      ],
-      "Clone": [
-        120
-      ],
-      "ERC20": [
-        56223
-      ],
-      "IAstariaRouter": [
-        69282
-      ],
-      "SafeTransferLib": [
-        57406
-      ],
-      "WETH": [
-        56866
-      ]
+      "ClearingHouse": [60048],
+      "Clone": [120],
+      "ERC20": [56223],
+      "IAstariaRouter": [69282],
+      "SafeTransferLib": [57406],
+      "WETH": [56866]
     },
     "nodeType": "SourceUnit",
     "src": "179:936:131",
@@ -298,12 +286,7 @@
         "nodeType": "PragmaDirective",
         "src": "179:24:131",
         "nodes": [],
-        "literals": [
-          "solidity",
-          "^",
-          "0.8",
-          ".17"
-        ]
+        "literals": ["solidity", "^", "0.8", ".17"]
       },
       {
         "id": 59952,
@@ -449,9 +432,7 @@
             "libraryName": {
               "id": 59963,
               "name": "SafeTransferLib",
-              "nameLocations": [
-                "536:15:131"
-              ],
+              "nameLocations": ["536:15:131"],
               "nodeType": "IdentifierPath",
               "referencedDeclaration": 57406,
               "src": "536:15:131"
@@ -462,9 +443,7 @@
               "pathNode": {
                 "id": 59964,
                 "name": "ERC20",
-                "nameLocations": [
-                  "556:5:131"
-                ],
+                "nameLocations": ["556:5:131"],
                 "nodeType": "IdentifierPath",
                 "referencedDeclaration": 56223,
                 "src": "556:5:131"
@@ -489,9 +468,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    59971
-                  ],
+                  "assignments": [59971],
                   "declarations": [
                     {
                       "constant": false,
@@ -514,9 +491,7 @@
                         "pathNode": {
                           "id": 59969,
                           "name": "IAstariaRouter",
-                          "nameLocations": [
-                            "600:14:131"
-                          ],
+                          "nameLocations": ["600:14:131"],
                           "nodeType": "IdentifierPath",
                           "referencedDeclaration": 69282,
                           "src": "600:14:131"
@@ -811,10 +786,7 @@
                       "id": 59978,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        -18,
-                        -18
-                      ],
+                      "overloadedDeclarations": [-18, -18],
                       "referencedDeclaration": -18,
                       "src": "671:7:131",
                       "typeDescriptions": {
@@ -1044,9 +1016,7 @@
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
-                      "names": [
-                        "value"
-                      ],
+                      "names": ["value"],
                       "nodeType": "FunctionCallOptions",
                       "options": [
                         {
@@ -1104,9 +1074,7 @@
                   "src": "752:73:131"
                 },
                 {
-                  "assignments": [
-                    60010
-                  ],
+                  "assignments": [60010],
                   "declarations": [
                     {
                       "constant": false,
@@ -1679,9 +1647,7 @@
             "baseName": {
               "id": 59961,
               "name": "Clone",
-              "nameLocations": [
-                "520:5:131"
-              ],
+              "nameLocations": ["520:5:131"],
               "nodeType": "IdentifierPath",
               "referencedDeclaration": 120,
               "src": "520:5:131"
@@ -1695,10 +1661,7 @@
         "contractDependencies": [],
         "contractKind": "contract",
         "fullyImplemented": true,
-        "linearizedBaseContracts": [
-          60048,
-          120
-        ],
+        "linearizedBaseContracts": [60048, 120],
         "name": "ClearingHouse",
         "nameLocation": "503:13:131",
         "scope": 60049,

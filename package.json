@@ -12,8 +12,8 @@
     "prepare": "tsdx build && husky install",
     "size": "size-limit",
     "analyze": "size-limit --why",
+    "format": "npx prettier --write !src/contracts/**/* !abi !dist .",
     "typechain:compile": "typechain --target ethers-v5 --out-dir './src/contracts' './abi/*.json'",
-    "postinstall": "yarn run typechain:compile",
     "semantic-release": "semantic-release"
   },
   "dependencies": {
@@ -42,15 +42,6 @@
     "typechain": "^8.1.1",
     "typescript": "^4.9.4"
   },
-  "prettier": {
-    "arrowParens": "always",
-    "printWidth": 80,
-    "requirePragma": false,
-    "semi": false,
-    "singleQuote": true,
-    "trailingComma": "es5",
-    "useTabs": false
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/astariaxyz/astaria-sdk.git"
@@ -63,8 +54,7 @@
   "typings": "dist/index.d.ts",
   "module": "dist/sdk.esm.js",
   "files": [
-    "dist",
-    "src"
+    "dist"
   ],
   "engines": {
     "node": ">=16"
@@ -83,7 +73,7 @@
     "*.{ts,tsx}": [
       "tsdx lint",
       "eslint --cache --fix",
-      "prettier --write ."
+      "npx prettier --write !src/contracts/**/* !abi !dist ."
     ]
   }
 }

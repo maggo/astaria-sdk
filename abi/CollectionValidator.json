@@ -1049,24 +1049,12 @@
     "absolutePath": "src/strategies/CollectionValidator.sol",
     "id": 72658,
     "exportedSymbols": {
-      "CollectionValidator": [
-        72657
-      ],
-      "ERC721": [
-        56767
-      ],
-      "IAstariaRouter": [
-        69282
-      ],
-      "ICollectionValidator": [
-        72541
-      ],
-      "ILienToken": [
-        70649
-      ],
-      "IStrategyValidator": [
-        70921
-      ]
+      "CollectionValidator": [72657],
+      "ERC721": [56767],
+      "IAstariaRouter": [69282],
+      "ICollectionValidator": [72541],
+      "ILienToken": [70649],
+      "IStrategyValidator": [70921]
     },
     "nodeType": "SourceUnit",
     "src": "180:1623:173",
@@ -1076,12 +1064,7 @@
         "nodeType": "PragmaDirective",
         "src": "180:24:173",
         "nodes": [],
-        "literals": [
-          "solidity",
-          "^",
-          "0.8",
-          ".17"
-        ]
+        "literals": ["solidity", "^", "0.8", ".17"]
       },
       {
         "id": 72522,
@@ -1303,10 +1286,7 @@
                   "pathNode": {
                     "id": 72537,
                     "name": "ILienToken.Details",
-                    "nameLocations": [
-                      "597:10:173",
-                      "608:7:173"
-                    ],
+                    "nameLocations": ["597:10:173", "608:7:173"],
                     "nodeType": "IdentifierPath",
                     "referencedDeclaration": 70266,
                     "src": "597:18:173"
@@ -1333,9 +1313,7 @@
             "baseName": {
               "id": 72529,
               "name": "IStrategyValidator",
-              "nameLocations": [
-                "493:18:173"
-              ],
+              "nameLocations": ["493:18:173"],
               "nodeType": "IdentifierPath",
               "referencedDeclaration": 70921,
               "src": "493:18:173"
@@ -1349,10 +1327,7 @@
         "contractDependencies": [],
         "contractKind": "interface",
         "fullyImplemented": false,
-        "linearizedBaseContracts": [
-          72541,
-          70921
-        ],
+        "linearizedBaseContracts": [72541, 70921],
         "name": "ICollectionValidator",
         "nameLocation": "469:20:173",
         "scope": 72658,
@@ -1649,10 +1624,7 @@
                     "pathNode": {
                       "id": 72553,
                       "name": "ICollectionValidator.Details",
-                      "nameLocations": [
-                        "818:20:173",
-                        "839:7:173"
-                      ],
+                      "nameLocations": ["818:20:173", "839:7:173"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 72540,
                       "src": "818:28:173"
@@ -1788,10 +1760,7 @@
                     "pathNode": {
                       "id": 72567,
                       "name": "ICollectionValidator.Details",
-                      "nameLocations": [
-                        "955:20:173",
-                        "976:7:173"
-                      ],
+                      "nameLocations": ["955:20:173", "976:7:173"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 72540,
                       "src": "955:28:173"
@@ -1859,9 +1828,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    72602
-                  ],
+                  "assignments": [72602],
                   "declarations": [
                     {
                       "constant": false,
@@ -1884,10 +1851,7 @@
                         "pathNode": {
                           "id": 72600,
                           "name": "ICollectionValidator.Details",
-                          "nameLocations": [
-                            "1361:20:173",
-                            "1382:7:173"
-                          ],
+                          "nameLocations": ["1361:20:173", "1382:7:173"],
                           "nodeType": "IdentifierPath",
                           "referencedDeclaration": 72540,
                           "src": "1361:28:173"
@@ -2068,10 +2032,7 @@
                             "id": 72612,
                             "name": "revert",
                             "nodeType": "Identifier",
-                            "overloadedDeclarations": [
-                              -19,
-                              -19
-                            ],
+                            "overloadedDeclarations": [-19, -19],
                             "referencedDeclaration": -19,
                             "src": "1482:6:173",
                             "typeDescriptions": {
@@ -2310,10 +2271,7 @@
                             "id": 72625,
                             "name": "require",
                             "nodeType": "Identifier",
-                            "overloadedDeclarations": [
-                              -18,
-                              -18
-                            ],
+                            "overloadedDeclarations": [-18, -18],
                             "referencedDeclaration": -18,
                             "src": "1555:7:173",
                             "typeDescriptions": {
@@ -2436,10 +2394,7 @@
                       "id": 72635,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        -18,
-                        -18
-                      ],
+                      "overloadedDeclarations": [-18, -18],
                       "referencedDeclaration": -18,
                       "src": "1665:7:173",
                       "typeDescriptions": {
@@ -2624,9 +2579,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              70920
-            ],
+            "baseFunctions": [70920],
             "functionSelector": "195b3f59",
             "implemented": true,
             "kind": "function",
@@ -2664,10 +2617,7 @@
                     "pathNode": {
                       "id": 72581,
                       "name": "IAstariaRouter.NewLienRequest",
-                      "nameLocations": [
-                        "1121:14:173",
-                        "1136:14:173"
-                      ],
+                      "nameLocations": ["1121:14:173", "1136:14:173"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 68959,
                       "src": "1121:29:173"
@@ -2819,10 +2769,7 @@
                     "pathNode": {
                       "id": 72594,
                       "name": "ILienToken.Details",
-                      "nameLocations": [
-                        "1323:10:173",
-                        "1334:7:173"
-                      ],
+                      "nameLocations": ["1323:10:173", "1334:7:173"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 70266,
                       "src": "1323:18:173"
@@ -2851,9 +2798,7 @@
             "baseName": {
               "id": 72542,
               "name": "ICollectionValidator",
-              "nameLocations": [
-                "661:20:173"
-              ],
+              "nameLocations": ["661:20:173"],
               "nodeType": "IdentifierPath",
               "referencedDeclaration": 72541,
               "src": "661:20:173"
@@ -2867,11 +2812,7 @@
         "contractDependencies": [],
         "contractKind": "contract",
         "fullyImplemented": true,
-        "linearizedBaseContracts": [
-          72657,
-          72541,
-          70921
-        ],
+        "linearizedBaseContracts": [72657, 72541, 70921],
         "name": "CollectionValidator",
         "nameLocation": "638:19:173",
         "scope": 72658,

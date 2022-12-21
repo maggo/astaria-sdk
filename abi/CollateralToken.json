@@ -4080,111 +4080,41 @@
     "absolutePath": "src/CollateralToken.sol",
     "id": 62016,
     "exportedSymbols": {
-      "AdvancedOrder": [
-        35044
-      ],
-      "Auth": [
-        54916
-      ],
-      "Authority": [
-        54929
-      ],
-      "Bytes32AddressLib": [
-        56905
-      ],
-      "ClonesWithImmutableArgs": [
-        228
-      ],
-      "CollateralLookup": [
-        71453
-      ],
-      "CollateralToken": [
-        62015
-      ],
-      "ConduitControllerInterface": [
-        31925
-      ],
-      "Consideration": [
-        34059
-      ],
-      "ConsiderationInterface": [
-        32349
-      ],
-      "ConsiderationItem": [
-        34931
-      ],
-      "CriteriaResolver": [
-        35066
-      ],
-      "ERC20": [
-        56223
-      ],
-      "ERC721": [
-        26990
-      ],
-      "FixedPointMathLib": [
-        57064
-      ],
-      "IAstariaRouter": [
-        69282
-      ],
-      "ICollateralToken": [
-        69611
-      ],
-      "IERC165": [
-        69788
-      ],
-      "IERC721": [
-        70156
-      ],
-      "IERC721Receiver": [
-        70174
-      ],
-      "IFlashAction": [
-        70192
-      ],
-      "ILienToken": [
-        70649
-      ],
-      "IRoyaltyEngine": [
-        70885
-      ],
-      "ISecurityHook": [
-        70897
-      ],
-      "ITransferProxy": [
-        70948
-      ],
-      "ItemType": [
-        34867
-      ],
-      "OfferItem": [
-        34917
-      ],
-      "Order": [
-        35032
-      ],
-      "OrderComponents": [
-        34905
-      ],
-      "OrderParameters": [
-        35026
-      ],
-      "OrderType": [
-        34828
-      ],
-      "SafeTransferLib": [
-        57406
-      ],
-      "SeaportInterface": [
-        32638
-      ],
-      "VaultImplementation": [
-        67903
-      ],
-      "ZoneInterface": [
-        32763
-      ]
+      "AdvancedOrder": [35044],
+      "Auth": [54916],
+      "Authority": [54929],
+      "Bytes32AddressLib": [56905],
+      "ClonesWithImmutableArgs": [228],
+      "CollateralLookup": [71453],
+      "CollateralToken": [62015],
+      "ConduitControllerInterface": [31925],
+      "Consideration": [34059],
+      "ConsiderationInterface": [32349],
+      "ConsiderationItem": [34931],
+      "CriteriaResolver": [35066],
+      "ERC20": [56223],
+      "ERC721": [26990],
+      "FixedPointMathLib": [57064],
+      "IAstariaRouter": [69282],
+      "ICollateralToken": [69611],
+      "IERC165": [69788],
+      "IERC721": [70156],
+      "IERC721Receiver": [70174],
+      "IFlashAction": [70192],
+      "ILienToken": [70649],
+      "IRoyaltyEngine": [70885],
+      "ISecurityHook": [70897],
+      "ITransferProxy": [70948],
+      "ItemType": [34867],
+      "OfferItem": [34917],
+      "Order": [35032],
+      "OrderComponents": [34905],
+      "OrderParameters": [35026],
+      "OrderType": [34828],
+      "SafeTransferLib": [57406],
+      "SeaportInterface": [32638],
+      "VaultImplementation": [67903],
+      "ZoneInterface": [32763]
     },
     "nodeType": "SourceUnit",
     "src": "180:20357:132",
@@ -4194,22 +4124,14 @@
         "nodeType": "PragmaDirective",
         "src": "180:24:132",
         "nodes": [],
-        "literals": [
-          "solidity",
-          "^",
-          "0.8",
-          ".17"
-        ]
+        "literals": ["solidity", "^", "0.8", ".17"]
       },
       {
         "id": 60051,
         "nodeType": "PragmaDirective",
         "src": "206:33:132",
         "nodes": [],
-        "literals": [
-          "experimental",
-          "ABIEncoderV2"
-        ]
+        "literals": ["experimental", "ABIEncoderV2"]
       },
       {
         "id": 60053,
@@ -4983,9 +4905,7 @@
             "libraryName": {
               "id": 60121,
               "name": "SafeTransferLib",
-              "nameLocations": [
-                "2165:15:132"
-              ],
+              "nameLocations": ["2165:15:132"],
               "nodeType": "IdentifierPath",
               "referencedDeclaration": 57406,
               "src": "2165:15:132"
@@ -4996,9 +4916,7 @@
               "pathNode": {
                 "id": 60122,
                 "name": "ERC20",
-                "nameLocations": [
-                  "2185:5:132"
-                ],
+                "nameLocations": ["2185:5:132"],
                 "nodeType": "IdentifierPath",
                 "referencedDeclaration": 56223,
                 "src": "2185:5:132"
@@ -5020,9 +4938,7 @@
             "libraryName": {
               "id": 60125,
               "name": "CollateralLookup",
-              "nameLocations": [
-                "2200:16:132"
-              ],
+              "nameLocations": ["2200:16:132"],
               "nodeType": "IdentifierPath",
               "referencedDeclaration": 71453,
               "src": "2200:16:132"
@@ -5048,9 +4964,7 @@
             "libraryName": {
               "id": 60128,
               "name": "FixedPointMathLib",
-              "nameLocations": [
-                "2238:17:132"
-              ],
+              "nameLocations": ["2238:17:132"],
               "nodeType": "IdentifierPath",
               "referencedDeclaration": 57064,
               "src": "2238:17:132"
@@ -5122,9 +5036,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    60164
-                  ],
+                  "assignments": [60164],
                   "declarations": [
                     {
                       "constant": false,
@@ -5147,9 +5059,7 @@
                         "pathNode": {
                           "id": 60162,
                           "name": "CollateralStorage",
-                          "nameLocations": [
-                            "2666:17:132"
-                          ],
+                          "nameLocations": ["2666:17:132"],
                           "nodeType": "IdentifierPath",
                           "referencedDeclaration": 69417,
                           "src": "2666:17:132"
@@ -5760,11 +5670,7 @@
                   "src": "2971:36:132"
                 },
                 {
-                  "assignments": [
-                    null,
-                    null,
-                    60220
-                  ],
+                  "assignments": [null, null, 60220],
                   "declarations": [
                     null,
                     null,
@@ -5865,9 +5771,7 @@
                   "src": "3013:57:132"
                 },
                 {
-                  "assignments": [
-                    60227
-                  ],
+                  "assignments": [60227],
                   "declarations": [
                     {
                       "constant": false,
@@ -6672,9 +6576,7 @@
                 "modifierName": {
                   "id": 60150,
                   "name": "Auth",
-                  "nameLocations": [
-                    "2572:4:132"
-                  ],
+                  "nameLocations": ["2572:4:132"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 54916,
                   "src": "2572:4:132"
@@ -6722,9 +6624,7 @@
                 "modifierName": {
                   "id": 60157,
                   "name": "ERC721",
-                  "nameLocations": [
-                    "2616:6:132"
-                  ],
+                  "nameLocations": ["2616:6:132"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 26990,
                   "src": "2616:6:132"
@@ -6760,9 +6660,7 @@
                     "pathNode": {
                       "id": 60134,
                       "name": "Authority",
-                      "nameLocations": [
-                        "2404:9:132"
-                      ],
+                      "nameLocations": ["2404:9:132"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 54929,
                       "src": "2404:9:132"
@@ -6797,9 +6695,7 @@
                     "pathNode": {
                       "id": 60137,
                       "name": "ITransferProxy",
-                      "nameLocations": [
-                        "2430:14:132"
-                      ],
+                      "nameLocations": ["2430:14:132"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 70948,
                       "src": "2430:14:132"
@@ -6834,9 +6730,7 @@
                     "pathNode": {
                       "id": 60140,
                       "name": "ILienToken",
-                      "nameLocations": [
-                        "2466:10:132"
-                      ],
+                      "nameLocations": ["2466:10:132"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 70649,
                       "src": "2466:10:132"
@@ -6871,9 +6765,7 @@
                     "pathNode": {
                       "id": 60143,
                       "name": "ConsiderationInterface",
-                      "nameLocations": [
-                        "2494:22:132"
-                      ],
+                      "nameLocations": ["2494:22:132"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 32349,
                       "src": "2494:22:132"
@@ -6908,9 +6800,7 @@
                     "pathNode": {
                       "id": 60146,
                       "name": "IRoyaltyEngine",
-                      "nameLocations": [
-                        "2531:14:132"
-                      ],
+                      "nameLocations": ["2531:14:132"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 70885,
                       "src": "2531:14:132"
@@ -7004,9 +6894,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              69520
-            ],
+            "baseFunctions": [69520],
             "functionSelector": "387b6629",
             "implemented": true,
             "kind": "function",
@@ -7044,9 +6932,7 @@
                     "pathNode": {
                       "id": 60284,
                       "name": "ConsiderationInterface",
-                      "nameLocations": [
-                        "3492:22:132"
-                      ],
+                      "nameLocations": ["3492:22:132"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 32349,
                       "src": "3492:22:132"
@@ -7080,9 +6966,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    60301
-                  ],
+                  "assignments": [60301],
                   "declarations": [
                     {
                       "constant": false,
@@ -7105,9 +6989,7 @@
                         "pathNode": {
                           "id": 60299,
                           "name": "CollateralStorage",
-                          "nameLocations": [
-                            "3641:17:132"
-                          ],
+                          "nameLocations": ["3641:17:132"],
                           "nodeType": "IdentifierPath",
                           "referencedDeclaration": 69417,
                           "src": "3641:17:132"
@@ -7158,9 +7040,7 @@
                   "src": "3641:51:132"
                 },
                 {
-                  "assignments": [
-                    60306
-                  ],
+                  "assignments": [60306],
                   "declarations": [
                     {
                       "constant": false,
@@ -7382,9 +7262,7 @@
                   "src": "3699:104:132"
                 },
                 {
-                  "assignments": [
-                    60321
-                  ],
+                  "assignments": [60321],
                   "declarations": [
                     {
                       "constant": false,
@@ -8088,9 +7966,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              69554
-            ],
+            "baseFunctions": [69554],
             "functionSelector": "b58e1c35",
             "implemented": true,
             "kind": "function",
@@ -8122,9 +7998,7 @@
                     "pathNode": {
                       "id": 60294,
                       "name": "OrderParameters",
-                      "nameLocations": [
-                        "3595:15:132"
-                      ],
+                      "nameLocations": ["3595:15:132"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 35026,
                       "src": "3595:15:132"
@@ -8246,9 +8120,7 @@
                     "pathNode": {
                       "id": 60374,
                       "name": "CollateralStorage",
-                      "nameLocations": [
-                        "4391:17:132"
-                      ],
+                      "nameLocations": ["4391:17:132"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 69417,
                       "src": "4391:17:132"
@@ -8282,9 +8154,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    60395
-                  ],
+                  "assignments": [60395],
                   "declarations": [
                     {
                       "constant": false,
@@ -8307,9 +8177,7 @@
                         "pathNode": {
                           "id": 60393,
                           "name": "CollateralStorage",
-                          "nameLocations": [
-                            "4660:17:132"
-                          ],
+                          "nameLocations": ["4660:17:132"],
                           "nodeType": "IdentifierPath",
                           "referencedDeclaration": 69417,
                           "src": "4660:17:132"
@@ -8582,9 +8450,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              32743
-            ],
+            "baseFunctions": [32743],
             "functionSelector": "0e1d31dc",
             "implemented": true,
             "kind": "function",
@@ -8759,9 +8625,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    60437
-                  ],
+                  "assignments": [60437],
                   "declarations": [
                     {
                       "constant": false,
@@ -8784,9 +8648,7 @@
                         "pathNode": {
                           "id": 60435,
                           "name": "CollateralStorage",
-                          "nameLocations": [
-                            "5206:17:132"
-                          ],
+                          "nameLocations": ["5206:17:132"],
                           "nodeType": "IdentifierPath",
                           "referencedDeclaration": 69417,
                           "src": "5206:17:132"
@@ -9091,9 +8953,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              32762
-            ],
+            "baseFunctions": [32762],
             "functionSelector": "33131570",
             "implemented": true,
             "kind": "function",
@@ -9180,9 +9040,7 @@
                     "pathNode": {
                       "id": 60421,
                       "name": "AdvancedOrder",
-                      "nameLocations": [
-                        "5023:13:132"
-                      ],
+                      "nameLocations": ["5023:13:132"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 35044,
                       "src": "5023:13:132"
@@ -9254,9 +9112,7 @@
                       "pathNode": {
                         "id": 60427,
                         "name": "CriteriaResolver",
-                        "nameLocations": [
-                          "5098:16:132"
-                        ],
+                        "nameLocations": ["5098:16:132"],
                         "nodeType": "IdentifierPath",
                         "referencedDeclaration": 35066,
                         "src": "5098:16:132"
@@ -9516,10 +9372,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              26787,
-              69787
-            ],
+            "baseFunctions": [26787, 69787],
             "functionSelector": "01ffc9a7",
             "implemented": true,
             "kind": "function",
@@ -9533,9 +9386,7 @@
                 {
                   "id": 60464,
                   "name": "ERC721",
-                  "nameLocations": [
-                    "5499:6:132"
-                  ],
+                  "nameLocations": ["5499:6:132"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 26990,
                   "src": "5499:6:132"
@@ -9543,9 +9394,7 @@
                 {
                   "id": 60465,
                   "name": "IERC165",
-                  "nameLocations": [
-                    "5507:7:132"
-                  ],
+                  "nameLocations": ["5507:7:132"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 69788,
                   "src": "5507:7:132"
@@ -9783,9 +9632,7 @@
                   },
                   "id": 60511,
                   "initializationExpression": {
-                    "assignments": [
-                      60494
-                    ],
+                    "assignments": [60494],
                     "declarations": [
                       {
                         "constant": false,
@@ -9872,9 +9719,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              69455
-            ],
+            "baseFunctions": [69455],
             "documentation": {
               "id": 60484,
               "nodeType": "StructuredDocumentation",
@@ -9891,9 +9736,7 @@
                 "modifierName": {
                   "id": 60490,
                   "name": "requiresAuth",
-                  "nameLocations": [
-                    "5854:12:132"
-                  ],
+                  "nameLocations": ["5854:12:132"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 54821,
                   "src": "5854:12:132"
@@ -9930,9 +9773,7 @@
                       "pathNode": {
                         "id": 60485,
                         "name": "File",
-                        "nameLocations": [
-                          "5822:4:132"
-                        ],
+                        "nameLocations": ["5822:4:132"],
                         "nodeType": "IdentifierPath",
                         "referencedDeclaration": 69440,
                         "src": "5822:4:132"
@@ -9980,9 +9821,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    60524
-                  ],
+                  "assignments": [60524],
                   "declarations": [
                     {
                       "constant": false,
@@ -10005,9 +9844,7 @@
                         "pathNode": {
                           "id": 60522,
                           "name": "CollateralStorage",
-                          "nameLocations": [
-                            "6164:17:132"
-                          ],
+                          "nameLocations": ["6164:17:132"],
                           "nodeType": "IdentifierPath",
                           "referencedDeclaration": 69417,
                           "src": "6164:17:132"
@@ -10058,9 +9895,7 @@
                   "src": "6164:51:132"
                 },
                 {
-                  "assignments": [
-                    60530
-                  ],
+                  "assignments": [60530],
                   "declarations": [
                     {
                       "constant": false,
@@ -10083,9 +9918,7 @@
                         "pathNode": {
                           "id": 60528,
                           "name": "FileType",
-                          "nameLocations": [
-                            "6222:8:132"
-                          ],
+                          "nameLocations": ["6222:8:132"],
                           "nodeType": "IdentifierPath",
                           "referencedDeclaration": 69434,
                           "src": "6222:8:132"
@@ -10133,9 +9966,7 @@
                   "src": "6222:29:132"
                 },
                 {
-                  "assignments": [
-                    60535
-                  ],
+                  "assignments": [60535],
                   "declarations": [
                     {
                       "constant": false,
@@ -10732,11 +10563,7 @@
                                 "src": "7091:63:132"
                               },
                               {
-                                "assignments": [
-                                  null,
-                                  null,
-                                  60676
-                                ],
+                                "assignments": [null, null, 60676],
                                 "declarations": [
                                   null,
                                   null,
@@ -11209,10 +11036,7 @@
                                 "src": "7350:68:132"
                               },
                               {
-                                "assignments": [
-                                  60712,
-                                  60714
-                                ],
+                                "assignments": [60712, 60714],
                                 "declarations": [
                                   {
                                     "constant": false,
@@ -11937,11 +11761,7 @@
                           "src": "6801:246:132",
                           "statements": [
                             {
-                              "assignments": [
-                                60621,
-                                60623,
-                                60625
-                              ],
+                              "assignments": [60621, 60623, 60625],
                               "declarations": [
                                 {
                                   "constant": false,
@@ -12363,10 +12183,7 @@
                         "src": "6640:121:132",
                         "statements": [
                           {
-                            "assignments": [
-                              60594,
-                              60596
-                            ],
+                            "assignments": [60594, 60596],
                             "declarations": [
                               {
                                 "constant": false,
@@ -12648,10 +12465,7 @@
                       "src": "6477:122:132",
                       "statements": [
                         {
-                          "assignments": [
-                            60567,
-                            60569
-                          ],
+                          "assignments": [60567, 60569],
                           "declarations": [
                             {
                               "constant": false,
@@ -12934,9 +12748,7 @@
                     "src": "6332:104:132",
                     "statements": [
                       {
-                        "assignments": [
-                          60544
-                        ],
+                        "assignments": [60544],
                         "declarations": [
                           {
                             "constant": false,
@@ -13246,9 +13058,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              69462
-            ],
+            "baseFunctions": [69462],
             "documentation": {
               "id": 60514,
               "nodeType": "StructuredDocumentation",
@@ -13265,9 +13075,7 @@
                 "modifierName": {
                   "id": 60519,
                   "name": "requiresAuth",
-                  "nameLocations": [
-                    "6145:12:132"
-                  ],
+                  "nameLocations": ["6145:12:132"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 54821,
                   "src": "6145:12:132"
@@ -13303,9 +13111,7 @@
                     "pathNode": {
                       "id": 60515,
                       "name": "File",
-                      "nameLocations": [
-                        "6114:4:132"
-                      ],
+                      "nameLocations": ["6114:4:132"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 69440,
                       "src": "6114:4:132"
@@ -13345,9 +13151,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    60788
-                  ],
+                  "assignments": [60788],
                   "declarations": [
                     {
                       "constant": false,
@@ -13370,9 +13174,7 @@
                         "pathNode": {
                           "id": 60786,
                           "name": "CollateralStorage",
-                          "nameLocations": [
-                            "7974:17:132"
-                          ],
+                          "nameLocations": ["7974:17:132"],
                           "nodeType": "IdentifierPath",
                           "referencedDeclaration": 69417,
                           "src": "7974:17:132"
@@ -13857,9 +13659,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    60828
-                  ],
+                  "assignments": [60828],
                   "declarations": [
                     {
                       "constant": false,
@@ -13882,9 +13682,7 @@
                         "pathNode": {
                           "id": 60826,
                           "name": "CollateralStorage",
-                          "nameLocations": [
-                            "8373:17:132"
-                          ],
+                          "nameLocations": ["8373:17:132"],
                           "nodeType": "IdentifierPath",
                           "referencedDeclaration": 69417,
                           "src": "8373:17:132"
@@ -14042,10 +13840,7 @@
                       "id": 60832,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        -18,
-                        -18
-                      ],
+                      "overloadedDeclarations": [-18, -18],
                       "referencedDeclaration": -18,
                       "src": "8431:7:132",
                       "typeDescriptions": {
@@ -14131,9 +13926,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    60857
-                  ],
+                  "assignments": [60857],
                   "declarations": [
                     {
                       "constant": false,
@@ -14169,9 +13962,7 @@
                   "src": "8633:12:132"
                 },
                 {
-                  "assignments": [
-                    60860
-                  ],
+                  "assignments": [60860],
                   "declarations": [
                     {
                       "constant": false,
@@ -14206,9 +13997,7 @@
                   "src": "8651:15:132"
                 },
                 {
-                  "assignments": [
-                    60864
-                  ],
+                  "assignments": [60864],
                   "declarations": [
                     {
                       "constant": false,
@@ -14231,9 +14020,7 @@
                         "pathNode": {
                           "id": 60862,
                           "name": "CollateralStorage",
-                          "nameLocations": [
-                            "8672:17:132"
-                          ],
+                          "nameLocations": ["8672:17:132"],
                           "nodeType": "IdentifierPath",
                           "referencedDeclaration": 69417,
                           "src": "8672:17:132"
@@ -14784,9 +14571,7 @@
                   }
                 },
                 {
-                  "assignments": [
-                    60907
-                  ],
+                  "assignments": [60907],
                   "declarations": [
                     {
                       "constant": false,
@@ -14809,9 +14594,7 @@
                         "pathNode": {
                           "id": 60905,
                           "name": "IERC721",
-                          "nameLocations": [
-                            "9080:7:132"
-                          ],
+                          "nameLocations": ["9080:7:132"],
                           "nodeType": "IdentifierPath",
                           "referencedDeclaration": 70156,
                           "src": "9080:7:132"
@@ -14880,9 +14663,7 @@
                   "src": "9080:27:132"
                 },
                 {
-                  "assignments": [
-                    60913
-                  ],
+                  "assignments": [60913],
                   "declarations": [
                     {
                       "constant": false,
@@ -16378,9 +16159,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              69473
-            ],
+            "baseFunctions": [69473],
             "functionSelector": "88803a9f",
             "implemented": true,
             "kind": "function",
@@ -16405,9 +16184,7 @@
                 "modifierName": {
                   "id": 60852,
                   "name": "onlyOwner",
-                  "nameLocations": [
-                    "8603:9:132"
-                  ],
+                  "nameLocations": ["8603:9:132"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 60843,
                   "src": "8603:9:132"
@@ -16443,9 +16220,7 @@
                     "pathNode": {
                       "id": 60844,
                       "name": "IFlashAction",
-                      "nameLocations": [
-                        "8517:12:132"
-                      ],
+                      "nameLocations": ["8517:12:132"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 70192,
                       "src": "8517:12:132"
@@ -16539,9 +16314,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    61030
-                  ],
+                  "assignments": [61030],
                   "declarations": [
                     {
                       "constant": false,
@@ -16564,9 +16337,7 @@
                         "pathNode": {
                           "id": 61028,
                           "name": "CollateralStorage",
-                          "nameLocations": [
-                            "10248:17:132"
-                          ],
+                          "nameLocations": ["10248:17:132"],
                           "nodeType": "IdentifierPath",
                           "referencedDeclaration": 69417,
                           "src": "10248:17:132"
@@ -16846,9 +16617,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              69547
-            ],
+            "baseFunctions": [69547],
             "functionSelector": "0330e35b",
             "implemented": true,
             "kind": "function",
@@ -16873,9 +16642,7 @@
                 "modifierName": {
                   "id": 61024,
                   "name": "releaseCheck",
-                  "nameLocations": [
-                    "10213:12:132"
-                  ],
+                  "nameLocations": ["10213:12:132"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 60822,
                   "src": "10213:12:132"
@@ -16971,10 +16738,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    61064,
-                    61066
-                  ],
+                  "assignments": [61064, 61066],
                   "declarations": [
                     {
                       "constant": false,
@@ -17540,9 +17304,7 @@
                     "pathNode": {
                       "id": 61054,
                       "name": "CollateralStorage",
-                      "nameLocations": [
-                        "10742:17:132"
-                      ],
+                      "nameLocations": ["10742:17:132"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 69417,
                       "src": "10742:17:132"
@@ -17637,9 +17399,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    61108
-                  ],
+                  "assignments": [61108],
                   "declarations": [
                     {
                       "constant": false,
@@ -17662,9 +17422,7 @@
                         "pathNode": {
                           "id": 61106,
                           "name": "CollateralStorage",
-                          "nameLocations": [
-                            "11221:17:132"
-                          ],
+                          "nameLocations": ["11221:17:132"],
                           "nodeType": "IdentifierPath",
                           "referencedDeclaration": 69417,
                           "src": "11221:17:132"
@@ -17813,9 +17571,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    61123
-                  ],
+                  "assignments": [61123],
                   "declarations": [
                     {
                       "constant": false,
@@ -17838,9 +17594,7 @@
                         "pathNode": {
                           "id": 61121,
                           "name": "CollateralStorage",
-                          "nameLocations": [
-                            "11365:17:132"
-                          ],
+                          "nameLocations": ["11365:17:132"],
                           "nodeType": "IdentifierPath",
                           "referencedDeclaration": 69417,
                           "src": "11365:17:132"
@@ -17990,9 +17744,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    61143
-                  ],
+                  "assignments": [61143],
                   "declarations": [
                     {
                       "constant": false,
@@ -18015,9 +17767,7 @@
                         "pathNode": {
                           "id": 61141,
                           "name": "Asset",
-                          "nameLocations": [
-                            "11786:5:132"
-                          ],
+                          "nameLocations": ["11786:5:132"],
                           "nodeType": "IdentifierPath",
                           "referencedDeclaration": 69361,
                           "src": "11786:5:132"
@@ -18188,9 +17938,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              69539
-            ],
+            "baseFunctions": [69539],
             "documentation": {
               "id": 61132,
               "nodeType": "StructuredDocumentation",
@@ -18316,10 +18064,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    61169,
-                    61171
-                  ],
+                  "assignments": [61169, 61171],
                   "declarations": [
                     {
                       "constant": false,
@@ -18540,10 +18285,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              26400,
-              70098
-            ],
+            "baseFunctions": [26400, 70098],
             "documentation": {
               "id": 61158,
               "nodeType": "StructuredDocumentation",
@@ -18563,9 +18305,7 @@
                 {
                   "id": 61162,
                   "name": "ERC721",
-                  "nameLocations": [
-                    "12198:6:132"
-                  ],
+                  "nameLocations": ["12198:6:132"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 26990,
                   "src": "12198:6:132"
@@ -18573,9 +18313,7 @@
                 {
                   "id": 61163,
                   "name": "IERC721",
-                  "nameLocations": [
-                    "12206:7:132"
-                  ],
+                  "nameLocations": ["12206:7:132"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 70156,
                   "src": "12206:7:132"
@@ -18747,9 +18485,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              69480
-            ],
+            "baseFunctions": [69480],
             "functionSelector": "d68265c3",
             "implemented": true,
             "kind": "function",
@@ -18938,9 +18674,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              69487
-            ],
+            "baseFunctions": [69487],
             "functionSelector": "db067b43",
             "implemented": true,
             "kind": "function",
@@ -19033,9 +18767,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    61229
-                  ],
+                  "assignments": [61229],
                   "declarations": [
                     {
                       "constant": false,
@@ -19058,9 +18790,7 @@
                         "pathNode": {
                           "id": 61227,
                           "name": "CollateralStorage",
-                          "nameLocations": [
-                            "12955:17:132"
-                          ],
+                          "nameLocations": ["12955:17:132"],
                           "nodeType": "IdentifierPath",
                           "referencedDeclaration": 69417,
                           "src": "12955:17:132"
@@ -19323,9 +19053,7 @@
                   }
                 },
                 {
-                  "assignments": [
-                    61250
-                  ],
+                  "assignments": [61250],
                   "declarations": [
                     {
                       "constant": false,
@@ -19640,9 +19368,7 @@
                   }
                 },
                 {
-                  "assignments": [
-                    61274
-                  ],
+                  "assignments": [61274],
                   "declarations": [
                     {
                       "constant": false,
@@ -19665,9 +19391,7 @@
                         "pathNode": {
                           "id": 61272,
                           "name": "OrderParameters",
-                          "nameLocations": [
-                            "13538:15:132"
-                          ],
+                          "nameLocations": ["13538:15:132"],
                           "nodeType": "IdentifierPath",
                           "referencedDeclaration": 35026,
                           "src": "13538:15:132"
@@ -20194,9 +19918,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              69561
-            ],
+            "baseFunctions": [69561],
             "functionSelector": "7202c848",
             "implemented": true,
             "kind": "function",
@@ -20298,9 +20020,7 @@
                 "modifierName": {
                   "id": 61218,
                   "name": "onlyOwner",
-                  "nameLocations": [
-                    "12779:9:132"
-                  ],
+                  "nameLocations": ["12779:9:132"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 60843,
                   "src": "12779:9:132"
@@ -20336,9 +20056,7 @@
                     "pathNode": {
                       "id": 61214,
                       "name": "ListUnderlyingForSaleParams",
-                      "nameLocations": [
-                        "12717:27:132"
-                      ],
+                      "nameLocations": ["12717:27:132"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 69426,
                       "src": "12717:27:132"
@@ -20378,9 +20096,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    61330
-                  ],
+                  "assignments": [61330],
                   "declarations": [
                     {
                       "constant": false,
@@ -20404,9 +20120,7 @@
                           "pathNode": {
                             "id": 61327,
                             "name": "OfferItem",
-                            "nameLocations": [
-                              "14121:9:132"
-                            ],
+                            "nameLocations": ["14121:9:132"],
                             "nodeType": "IdentifierPath",
                             "referencedDeclaration": 34917,
                             "src": "14121:9:132"
@@ -20474,9 +20188,7 @@
                           "pathNode": {
                             "id": 61331,
                             "name": "OfferItem",
-                            "nameLocations": [
-                              "14152:9:132"
-                            ],
+                            "nameLocations": ["14152:9:132"],
                             "nodeType": "IdentifierPath",
                             "referencedDeclaration": 34917,
                             "src": "14152:9:132"
@@ -20517,9 +20229,7 @@
                   "src": "14121:45:132"
                 },
                 {
-                  "assignments": [
-                    61340
-                  ],
+                  "assignments": [61340],
                   "declarations": [
                     {
                       "constant": false,
@@ -20542,9 +20252,7 @@
                         "pathNode": {
                           "id": 61338,
                           "name": "Asset",
-                          "nameLocations": [
-                            "14173:5:132"
-                          ],
+                          "nameLocations": ["14173:5:132"],
                           "nodeType": "IdentifierPath",
                           "referencedDeclaration": 69361,
                           "src": "14173:5:132"
@@ -20846,9 +20554,7 @@
                   "src": "14236:125:132"
                 },
                 {
-                  "assignments": [
-                    61363
-                  ],
+                  "assignments": [61363],
                   "declarations": [
                     {
                       "constant": false,
@@ -20893,9 +20599,7 @@
                   "src": "14368:35:132"
                 },
                 {
-                  "assignments": [
-                    61369
-                  ],
+                  "assignments": [61369],
                   "declarations": [
                     {
                       "constant": false,
@@ -20939,9 +20643,7 @@
                   "src": "14409:39:132"
                 },
                 {
-                  "assignments": [
-                    61375
-                  ],
+                  "assignments": [61375],
                   "declarations": [
                     {
                       "constant": false,
@@ -21594,9 +21296,7 @@
                   "src": "14498:579:132"
                 },
                 {
-                  "assignments": [
-                    61429
-                  ],
+                  "assignments": [61429],
                   "declarations": [
                     {
                       "constant": false,
@@ -21620,9 +21320,7 @@
                           "pathNode": {
                             "id": 61426,
                             "name": "ConsiderationItem",
-                            "nameLocations": [
-                              "15082:17:132"
-                            ],
+                            "nameLocations": ["15082:17:132"],
                             "nodeType": "IdentifierPath",
                             "referencedDeclaration": 34931,
                             "src": "15082:17:132"
@@ -21780,9 +21478,7 @@
                           "pathNode": {
                             "id": 61430,
                             "name": "ConsiderationItem",
-                            "nameLocations": [
-                              "15134:17:132"
-                            ],
+                            "nameLocations": ["15134:17:132"],
                             "nodeType": "IdentifierPath",
                             "referencedDeclaration": 34931,
                             "src": "15134:17:132"
@@ -24148,9 +23844,7 @@
                     "pathNode": {
                       "id": 61310,
                       "name": "CollateralStorage",
-                      "nameLocations": [
-                        "13922:17:132"
-                      ],
+                      "nameLocations": ["13922:17:132"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 69417,
                       "src": "13922:17:132"
@@ -24300,9 +23994,7 @@
                     "pathNode": {
                       "id": 61322,
                       "name": "OrderParameters",
-                      "nameLocations": [
-                        "14075:15:132"
-                      ],
+                      "nameLocations": ["14075:15:132"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 35026,
                       "src": "14075:15:132"
@@ -24336,9 +24028,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    61607
-                  ],
+                  "assignments": [61607],
                   "declarations": [
                     {
                       "constant": false,
@@ -24361,9 +24051,7 @@
                         "pathNode": {
                           "id": 61605,
                           "name": "CollateralStorage",
-                          "nameLocations": [
-                            "16678:17:132"
-                          ],
+                          "nameLocations": ["16678:17:132"],
                           "nodeType": "IdentifierPath",
                           "referencedDeclaration": 69417,
                           "src": "16678:17:132"
@@ -24830,9 +24518,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              69508
-            ],
+            "baseFunctions": [69508],
             "functionSelector": "d163259a",
             "implemented": true,
             "kind": "function",
@@ -24843,9 +24529,7 @@
                 "modifierName": {
                   "id": 61599,
                   "name": "requiresAuth",
-                  "nameLocations": [
-                    "16604:12:132"
-                  ],
+                  "nameLocations": ["16604:12:132"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 54821,
                   "src": "16604:12:132"
@@ -24881,9 +24565,7 @@
                     "pathNode": {
                       "id": 61595,
                       "name": "AuctionVaultParams",
-                      "nameLocations": [
-                        "16551:18:132"
-                      ],
+                      "nameLocations": ["16551:18:132"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 69498,
                       "src": "16551:18:132"
@@ -24925,9 +24607,7 @@
                     "pathNode": {
                       "id": 61601,
                       "name": "OrderParameters",
-                      "nameLocations": [
-                        "16630:15:132"
-                      ],
+                      "nameLocations": ["16630:15:132"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 35026,
                       "src": "16630:15:132"
@@ -24961,9 +24641,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    61650
-                  ],
+                  "assignments": [61650],
                   "declarations": [
                     {
                       "constant": false,
@@ -24986,9 +24664,7 @@
                         "pathNode": {
                           "id": 61648,
                           "name": "CollateralStorage",
-                          "nameLocations": [
-                            "17149:17:132"
-                          ],
+                          "nameLocations": ["17149:17:132"],
                           "nodeType": "IdentifierPath",
                           "referencedDeclaration": 69417,
                           "src": "17149:17:132"
@@ -25146,9 +24822,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              69529
-            ],
+            "baseFunctions": [69529],
             "functionSelector": "9ce9d319",
             "implemented": true,
             "kind": "function",
@@ -25865,9 +25539,7 @@
                   "src": "17681:139:132"
                 },
                 {
-                  "assignments": [
-                    61721
-                  ],
+                  "assignments": [61721],
                   "declarations": [
                     {
                       "constant": false,
@@ -25891,9 +25563,7 @@
                           "pathNode": {
                             "id": 61718,
                             "name": "Order",
-                            "nameLocations": [
-                              "17826:5:132"
-                            ],
+                            "nameLocations": ["17826:5:132"],
                             "nodeType": "IdentifierPath",
                             "referencedDeclaration": 35032,
                             "src": "17826:5:132"
@@ -25961,9 +25631,7 @@
                           "pathNode": {
                             "id": 61722,
                             "name": "Order",
-                            "nameLocations": [
-                              "17856:5:132"
-                            ],
+                            "nameLocations": ["17856:5:132"],
                             "nodeType": "IdentifierPath",
                             "referencedDeclaration": 35032,
                             "src": "17856:5:132"
@@ -26428,9 +26096,7 @@
                     "pathNode": {
                       "id": 61664,
                       "name": "CollateralStorage",
-                      "nameLocations": [
-                        "17315:17:132"
-                      ],
+                      "nameLocations": ["17315:17:132"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 69417,
                       "src": "17315:17:132"
@@ -26492,9 +26158,7 @@
                     "pathNode": {
                       "id": 61669,
                       "name": "Order",
-                      "nameLocations": [
-                        "17374:5:132"
-                      ],
+                      "nameLocations": ["17374:5:132"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 35032,
                       "src": "17374:5:132"
@@ -26585,9 +26249,7 @@
                     "pathNode": {
                       "id": 61765,
                       "name": "Order",
-                      "nameLocations": [
-                        "18119:5:132"
-                      ],
+                      "nameLocations": ["18119:5:132"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 35032,
                       "src": "18119:5:132"
@@ -26617,9 +26279,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    61778
-                  ],
+                  "assignments": [61778],
                   "declarations": [
                     {
                       "constant": false,
@@ -26642,9 +26302,7 @@
                         "pathNode": {
                           "id": 61776,
                           "name": "CollateralStorage",
-                          "nameLocations": [
-                            "18214:17:132"
-                          ],
+                          "nameLocations": ["18214:17:132"],
                           "nodeType": "IdentifierPath",
                           "referencedDeclaration": 69417,
                           "src": "18214:17:132"
@@ -27043,9 +26701,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              69514
-            ],
+            "baseFunctions": [69514],
             "functionSelector": "2e993611",
             "implemented": true,
             "kind": "function",
@@ -27056,9 +26712,7 @@
                 "modifierName": {
                   "id": 61773,
                   "name": "requiresAuth",
-                  "nameLocations": [
-                    "18195:12:132"
-                  ],
+                  "nameLocations": ["18195:12:132"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 54821,
                   "src": "18195:12:132"
@@ -27230,9 +26884,7 @@
                     "pathNode": {
                       "id": 61811,
                       "name": "CollateralStorage",
-                      "nameLocations": [
-                        "18532:17:132"
-                      ],
+                      "nameLocations": ["18532:17:132"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 69417,
                       "src": "18532:17:132"
@@ -27299,9 +26951,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    61844
-                  ],
+                  "assignments": [61844],
                   "declarations": [
                     {
                       "constant": false,
@@ -27324,9 +26974,7 @@
                         "pathNode": {
                           "id": 61842,
                           "name": "CollateralStorage",
-                          "nameLocations": [
-                            "19137:17:132"
-                          ],
+                          "nameLocations": ["19137:17:132"],
                           "nodeType": "IdentifierPath",
                           "referencedDeclaration": 69417,
                           "src": "19137:17:132"
@@ -27377,9 +27025,7 @@
                   "src": "19137:51:132"
                 },
                 {
-                  "assignments": [
-                    61849
-                  ],
+                  "assignments": [61849],
                   "declarations": [
                     {
                       "constant": false,
@@ -27635,9 +27281,7 @@
                     "src": "19303:349:132",
                     "statements": [
                       {
-                        "assignments": [
-                          61866
-                        ],
+                        "assignments": [61866],
                         "declarations": [
                           {
                             "constant": false,
@@ -28114,9 +27758,7 @@
                   }
                 },
                 {
-                  "assignments": [
-                    61902
-                  ],
+                  "assignments": [61902],
                   "declarations": [
                     {
                       "constant": false,
@@ -28139,9 +27781,7 @@
                         "pathNode": {
                           "id": 61900,
                           "name": "Asset",
-                          "nameLocations": [
-                            "19657:5:132"
-                          ],
+                          "nameLocations": ["19657:5:132"],
                           "nodeType": "IdentifierPath",
                           "referencedDeclaration": 69361,
                           "src": "19657:5:132"
@@ -28334,10 +27974,7 @@
                             "id": 61994,
                             "name": "revert",
                             "nodeType": "Identifier",
-                            "overloadedDeclarations": [
-                              -19,
-                              -19
-                            ],
+                            "overloadedDeclarations": [-19, -19],
                             "referencedDeclaration": -19,
                             "src": "20380:6:132",
                             "typeDescriptions": {
@@ -28581,10 +28218,7 @@
                             "id": 61915,
                             "name": "require",
                             "nodeType": "Identifier",
-                            "overloadedDeclarations": [
-                              -18,
-                              -18
-                            ],
+                            "overloadedDeclarations": [-18, -18],
                             "referencedDeclaration": -18,
                             "src": "19777:7:132",
                             "typeDescriptions": {
@@ -28899,9 +28533,7 @@
                         }
                       },
                       {
-                        "assignments": [
-                          61952
-                        ],
+                        "assignments": [61952],
                         "declarations": [
                           {
                             "constant": false,
@@ -29247,14 +28879,8 @@
                             "isPure": false,
                             "kind": "structConstructorCall",
                             "lValueRequested": false,
-                            "nameLocations": [
-                              "20170:13:132",
-                              "20205:7:132"
-                            ],
-                            "names": [
-                              "tokenContract",
-                              "tokenId"
-                            ],
+                            "nameLocations": ["20170:13:132", "20205:7:132"],
+                            "names": ["tokenContract", "tokenId"],
                             "nodeType": "FunctionCall",
                             "src": "20154:77:132",
                             "tryCall": false,
@@ -29444,9 +29070,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              70173
-            ],
+            "baseFunctions": [70173],
             "documentation": {
               "id": 61826,
               "nodeType": "StructuredDocumentation",
@@ -29463,9 +29087,7 @@
                 "modifierName": {
                   "id": 61837,
                   "name": "whenNotPaused",
-                  "nameLocations": [
-                    "19100:13:132"
-                  ],
+                  "nameLocations": ["19100:13:132"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 62014,
                   "src": "19100:13:132"
@@ -29804,9 +29426,7 @@
             "baseName": {
               "id": 60111,
               "name": "Auth",
-              "nameLocations": [
-                "2084:4:132"
-              ],
+              "nameLocations": ["2084:4:132"],
               "nodeType": "IdentifierPath",
               "referencedDeclaration": 54916,
               "src": "2084:4:132"
@@ -29819,9 +29439,7 @@
             "baseName": {
               "id": 60113,
               "name": "ERC721",
-              "nameLocations": [
-                "2092:6:132"
-              ],
+              "nameLocations": ["2092:6:132"],
               "nodeType": "IdentifierPath",
               "referencedDeclaration": 26990,
               "src": "2092:6:132"
@@ -29834,9 +29452,7 @@
             "baseName": {
               "id": 60115,
               "name": "IERC721Receiver",
-              "nameLocations": [
-                "2102:15:132"
-              ],
+              "nameLocations": ["2102:15:132"],
               "nodeType": "IdentifierPath",
               "referencedDeclaration": 70174,
               "src": "2102:15:132"
@@ -29849,9 +29465,7 @@
             "baseName": {
               "id": 60117,
               "name": "ICollateralToken",
-              "nameLocations": [
-                "2121:16:132"
-              ],
+              "nameLocations": ["2121:16:132"],
               "nodeType": "IdentifierPath",
               "referencedDeclaration": 69611,
               "src": "2121:16:132"
@@ -29864,9 +29478,7 @@
             "baseName": {
               "id": 60119,
               "name": "ZoneInterface",
-              "nameLocations": [
-                "2141:13:132"
-              ],
+              "nameLocations": ["2141:13:132"],
               "nodeType": "IdentifierPath",
               "referencedDeclaration": 32763,
               "src": "2141:13:132"
@@ -29881,31 +29493,14 @@
         "contractKind": "contract",
         "fullyImplemented": true,
         "linearizedBaseContracts": [
-          62015,
-          32763,
-          69611,
-          70174,
-          26990,
-          70156,
-          69788,
-          54916
+          62015, 32763, 69611, 70174, 26990, 70156, 69788, 54916
         ],
         "name": "CollateralToken",
         "nameLocation": "2063:15:132",
         "scope": 62016,
         "usedErrors": [
-          125,
-          69581,
-          69583,
-          69585,
-          69590,
-          69592,
-          69594,
-          69596,
-          69598,
-          69606,
-          69608,
-          69610
+          125, 69581, 69583, 69585, 69590, 69592, 69594, 69596, 69598, 69606,
+          69608, 69610
         ]
       }
     ],

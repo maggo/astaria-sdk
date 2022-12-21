@@ -24,16 +24,7 @@ module.exports = {
         tarballDir: 'dist',
       },
     ],
-    [
-      '@semantic-release/github',
-      {
-        assets: [
-          {
-            path: 'dist/*.tgz',
-          },
-        ],
-      },
-    ],
+    '@semantic-release/github',
     [
       '@semantic-release/git',
       {

@@ -1383,48 +1383,20 @@
     "absolutePath": "lib/gpl/src/AuctionHouse.sol",
     "id": 25989,
     "exportedSymbols": {
-      "AuctionHouse": [
-        25988
-      ],
-      "Auth": [
-        29002
-      ],
-      "Authority": [
-        29015
-      ],
-      "ERC20": [
-        30309
-      ],
-      "FixedPointMathLib": [
-        31032
-      ],
-      "IAstariaRouter": [
-        42041
-      ],
-      "IAuctionHouse": [
-        28263
-      ],
-      "ICollateralToken": [
-        42240
-      ],
-      "ILienToken": [
-        43095
-      ],
-      "IPublicVault": [
-        43263
-      ],
-      "ITransferProxy": [
-        43342
-      ],
-      "PublicVault": [
-        39430
-      ],
-      "SafeCastLib": [
-        28843
-      ],
-      "SafeTransferLib": [
-        31374
-      ]
+      "AuctionHouse": [25988],
+      "Auth": [29002],
+      "Authority": [29015],
+      "ERC20": [30309],
+      "FixedPointMathLib": [31032],
+      "IAstariaRouter": [42041],
+      "IAuctionHouse": [28263],
+      "ICollateralToken": [42240],
+      "ILienToken": [43095],
+      "IPublicVault": [43263],
+      "ITransferProxy": [43342],
+      "PublicVault": [39430],
+      "SafeCastLib": [28843],
+      "SafeTransferLib": [31374]
     },
     "nodeType": "SourceUnit",
     "src": "37:10750:21",
@@ -1434,22 +1406,14 @@
         "nodeType": "PragmaDirective",
         "src": "37:24:21",
         "nodes": [],
-        "literals": [
-          "solidity",
-          "^",
-          "0.8",
-          ".16"
-        ]
+        "literals": ["solidity", "^", "0.8", ".16"]
       },
       {
         "id": 25064,
         "nodeType": "PragmaDirective",
         "src": "63:33:21",
         "nodes": [],
-        "literals": [
-          "experimental",
-          "ABIEncoderV2"
-        ]
+        "literals": ["experimental", "ABIEncoderV2"]
       },
       {
         "id": 25067,
@@ -1775,9 +1739,7 @@
             "libraryName": {
               "id": 25093,
               "name": "SafeTransferLib",
-              "nameLocations": [
-                "843:15:21"
-              ],
+              "nameLocations": ["843:15:21"],
               "nodeType": "IdentifierPath",
               "referencedDeclaration": 31374,
               "src": "843:15:21"
@@ -1788,9 +1750,7 @@
               "pathNode": {
                 "id": 25094,
                 "name": "ERC20",
-                "nameLocations": [
-                  "863:5:21"
-                ],
+                "nameLocations": ["863:5:21"],
                 "nodeType": "IdentifierPath",
                 "referencedDeclaration": 30309,
                 "src": "863:5:21"
@@ -1812,9 +1772,7 @@
             "libraryName": {
               "id": 25097,
               "name": "SafeCastLib",
-              "nameLocations": [
-                "878:11:21"
-              ],
+              "nameLocations": ["878:11:21"],
               "nodeType": "IdentifierPath",
               "referencedDeclaration": 28843,
               "src": "878:11:21"
@@ -1839,9 +1797,7 @@
             "libraryName": {
               "id": 25100,
               "name": "FixedPointMathLib",
-              "nameLocations": [
-                "911:17:21"
-              ],
+              "nameLocations": ["911:17:21"],
               "nodeType": "IdentifierPath",
               "referencedDeclaration": 31032,
               "src": "911:17:21"
@@ -1996,9 +1952,7 @@
               "pathNode": {
                 "id": 25111,
                 "name": "ITransferProxy",
-                "nameLocations": [
-                  "1346:14:21"
-                ],
+                "nameLocations": ["1346:14:21"],
                 "nodeType": "IdentifierPath",
                 "referencedDeclaration": 43342,
                 "src": "1346:14:21"
@@ -2034,9 +1988,7 @@
               "pathNode": {
                 "id": 25114,
                 "name": "IAstariaRouter",
-                "nameLocations": [
-                  "1379:14:21"
-                ],
+                "nameLocations": ["1379:14:21"],
                 "nodeType": "IdentifierPath",
                 "referencedDeclaration": 42041,
                 "src": "1379:14:21"
@@ -2072,9 +2024,7 @@
               "pathNode": {
                 "id": 25117,
                 "name": "ILienToken",
-                "nameLocations": [
-                  "1412:10:21"
-                ],
+                "nameLocations": ["1412:10:21"],
                 "nodeType": "IdentifierPath",
                 "referencedDeclaration": 43095,
                 "src": "1412:10:21"
@@ -2110,9 +2060,7 @@
               "pathNode": {
                 "id": 25120,
                 "name": "ICollateralToken",
-                "nameLocations": [
-                  "1437:16:21"
-                ],
+                "nameLocations": ["1437:16:21"],
                 "nodeType": "IdentifierPath",
                 "referencedDeclaration": 42240,
                 "src": "1437:16:21"
@@ -2166,10 +2114,7 @@
                 "pathNode": {
                   "id": 25124,
                   "name": "IAuctionHouse.Auction",
-                  "nameLocations": [
-                    "1586:13:21",
-                    "1600:7:21"
-                  ],
+                  "nameLocations": ["1586:13:21", "1600:7:21"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 28160,
                   "src": "1586:21:21"
@@ -3049,9 +2994,7 @@
                 "modifierName": {
                   "id": 25146,
                   "name": "Auth",
-                  "nameLocations": [
-                    "1851:4:21"
-                  ],
+                  "nameLocations": ["1851:4:21"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 29002,
                   "src": "1851:4:21"
@@ -3115,9 +3058,7 @@
                     "pathNode": {
                       "id": 25130,
                       "name": "Authority",
-                      "nameLocations": [
-                        "1686:9:21"
-                      ],
+                      "nameLocations": ["1686:9:21"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 29015,
                       "src": "1686:9:21"
@@ -3152,9 +3093,7 @@
                     "pathNode": {
                       "id": 25133,
                       "name": "ICollateralToken",
-                      "nameLocations": [
-                        "1712:16:21"
-                      ],
+                      "nameLocations": ["1712:16:21"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 42240,
                       "src": "1712:16:21"
@@ -3189,9 +3128,7 @@
                     "pathNode": {
                       "id": 25136,
                       "name": "ILienToken",
-                      "nameLocations": [
-                        "1752:10:21"
-                      ],
+                      "nameLocations": ["1752:10:21"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 43095,
                       "src": "1752:10:21"
@@ -3226,9 +3163,7 @@
                     "pathNode": {
                       "id": 25139,
                       "name": "ITransferProxy",
-                      "nameLocations": [
-                        "1780:14:21"
-                      ],
+                      "nameLocations": ["1780:14:21"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 43342,
                       "src": "1780:14:21"
@@ -3263,9 +3198,7 @@
                     "pathNode": {
                       "id": 25142,
                       "name": "IAstariaRouter",
-                      "nameLocations": [
-                        "1816:14:21"
-                      ],
+                      "nameLocations": ["1816:14:21"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 42041,
                       "src": "1816:14:21"
@@ -3409,10 +3342,7 @@
                       "id": 25238,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        -18,
-                        -18
-                      ],
+                      "overloadedDeclarations": [-18, -18],
                       "referencedDeclaration": -18,
                       "src": "2875:7:21",
                       "typeDescriptions": {
@@ -3538,10 +3468,7 @@
                       "id": 25247,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        -18,
-                        -18
-                      ],
+                      "overloadedDeclarations": [-18, -18],
                       "referencedDeclaration": -18,
                       "src": "2913:7:21",
                       "typeDescriptions": {
@@ -3570,9 +3497,7 @@
                   "src": "2913:58:21"
                 },
                 {
-                  "assignments": [
-                    25257
-                  ],
+                  "assignments": [25257],
                   "declarations": [
                     {
                       "constant": false,
@@ -3595,9 +3520,7 @@
                         "pathNode": {
                           "id": 25255,
                           "name": "Auction",
-                          "nameLocations": [
-                            "2977:7:21"
-                          ],
+                          "nameLocations": ["2977:7:21"],
                           "nodeType": "IdentifierPath",
                           "referencedDeclaration": 28160,
                           "src": "2977:7:21"
@@ -3924,9 +3847,7 @@
                   },
                   "id": 25292,
                   "initializationExpression": {
-                    "assignments": [
-                      25271
-                    ],
+                    "assignments": [25271],
                     "declarations": [
                       {
                         "constant": false,
@@ -4742,9 +4663,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              28219
-            ],
+            "baseFunctions": [28219],
             "documentation": {
               "id": 25215,
               "nodeType": "StructuredDocumentation",
@@ -4761,9 +4680,7 @@
                 "modifierName": {
                   "id": 25235,
                   "name": "requiresAuth",
-                  "nameLocations": [
-                    "2856:12:21"
-                  ],
+                  "nameLocations": ["2856:12:21"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 28907,
                   "src": "2856:12:21"
@@ -4990,10 +4907,7 @@
                       "pathNode": {
                         "id": 25230,
                         "name": "ILienToken.AuctionStack",
-                        "nameLocations": [
-                          "2804:10:21",
-                          "2815:12:21"
-                        ],
+                        "nameLocations": ["2804:10:21", "2815:12:21"],
                         "nodeType": "IdentifierPath",
                         "referencedDeclaration": 42958,
                         "src": "2804:23:21"
@@ -5103,10 +5017,7 @@
                       "id": 25365,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        -18,
-                        -18
-                      ],
+                      "overloadedDeclarations": [-18, -18],
                       "referencedDeclaration": -18,
                       "src": "3987:7:21",
                       "typeDescriptions": {
@@ -5135,9 +5046,7 @@
                   "src": "3987:31:21"
                 },
                 {
-                  "assignments": [
-                    25372
-                  ],
+                  "assignments": [25372],
                   "declarations": [
                     {
                       "constant": false,
@@ -5226,9 +5135,7 @@
                   "src": "4024:45:21"
                 },
                 {
-                  "assignments": [
-                    25379
-                  ],
+                  "assignments": [25379],
                   "declarations": [
                     {
                       "constant": false,
@@ -5316,9 +5223,7 @@
                   "src": "4075:49:21"
                 },
                 {
-                  "assignments": [
-                    25386
-                  ],
+                  "assignments": [25386],
                   "declarations": [
                     {
                       "constant": false,
@@ -5406,9 +5311,7 @@
                   "src": "4130:45:21"
                 },
                 {
-                  "assignments": [
-                    25393
-                  ],
+                  "assignments": [25393],
                   "declarations": [
                     {
                       "constant": false,
@@ -5616,10 +5519,7 @@
                       "id": 25399,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        -18,
-                        -18
-                      ],
+                      "overloadedDeclarations": [-18, -18],
                       "referencedDeclaration": -18,
                       "src": "4239:7:21",
                       "typeDescriptions": {
@@ -5845,10 +5745,7 @@
                       "id": 25409,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        -18,
-                        -18
-                      ],
+                      "overloadedDeclarations": [-18, -18],
                       "referencedDeclaration": -18,
                       "src": "4314:7:21",
                       "typeDescriptions": {
@@ -5877,9 +5774,7 @@
                   "src": "4314:218:21"
                 },
                 {
-                  "assignments": [
-                    25425
-                  ],
+                  "assignments": [25425],
                   "declarations": [
                     {
                       "constant": false,
@@ -6072,9 +5967,7 @@
                     "src": "4754:144:21",
                     "statements": [
                       {
-                        "assignments": [
-                          25438
-                        ],
+                        "assignments": [25438],
                         "declarations": [
                           {
                             "constant": false,
@@ -6300,9 +6193,7 @@
                   }
                 },
                 {
-                  "assignments": [
-                    25456
-                  ],
+                  "assignments": [25456],
                   "declarations": [
                     {
                       "constant": false,
@@ -6687,9 +6578,7 @@
                   "src": "5061:114:21"
                 },
                 {
-                  "assignments": [
-                    25483
-                  ],
+                  "assignments": [25483],
                   "declarations": [
                     {
                       "constant": false,
@@ -7455,9 +7344,7 @@
                   "src": "5603:46:21"
                 },
                 {
-                  "assignments": [
-                    25540
-                  ],
+                  "assignments": [25540],
                   "declarations": [
                     {
                       "constant": false,
@@ -7634,9 +7521,7 @@
                     "src": "6039:686:21",
                     "statements": [
                       {
-                        "assignments": [
-                          25552
-                        ],
+                        "assignments": [25552],
                         "declarations": [
                           {
                             "constant": false,
@@ -8547,9 +8432,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              28226
-            ],
+            "baseFunctions": [28226],
             "documentation": {
               "id": 25357,
               "nodeType": "StructuredDocumentation",
@@ -8854,10 +8737,7 @@
                       "id": 25634,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        -18,
-                        -18
-                      ],
+                      "overloadedDeclarations": [-18, -18],
                       "referencedDeclaration": -18,
                       "src": "7394:7:21",
                       "typeDescriptions": {
@@ -8886,9 +8766,7 @@
                   "src": "7394:145:21"
                 },
                 {
-                  "assignments": [
-                    25652
-                  ],
+                  "assignments": [25652],
                   "declarations": [
                     {
                       "constant": false,
@@ -8911,9 +8789,7 @@
                         "pathNode": {
                           "id": 25650,
                           "name": "Auction",
-                          "nameLocations": [
-                            "7546:7:21"
-                          ],
+                          "nameLocations": ["7546:7:21"],
                           "nodeType": "IdentifierPath",
                           "referencedDeclaration": 28160,
                           "src": "7546:7:21"
@@ -9565,9 +9441,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              28233
-            ],
+            "baseFunctions": [28233],
             "documentation": {
               "id": 25624,
               "nodeType": "StructuredDocumentation",
@@ -9584,9 +9458,7 @@
                 "modifierName": {
                   "id": 25629,
                   "name": "requiresAuth",
-                  "nameLocations": [
-                    "7344:12:21"
-                  ],
+                  "nameLocations": ["7344:12:21"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 28907,
                   "src": "7344:12:21"
@@ -9771,10 +9643,7 @@
                       "id": 25715,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        -18,
-                        -18
-                      ],
+                      "overloadedDeclarations": [-18, -18],
                       "referencedDeclaration": -18,
                       "src": "8152:7:21",
                       "typeDescriptions": {
@@ -9803,9 +9672,7 @@
                   "src": "8152:59:21"
                 },
                 {
-                  "assignments": [
-                    25723
-                  ],
+                  "assignments": [25723],
                   "declarations": [
                     {
                       "constant": false,
@@ -10237,10 +10104,7 @@
                       "id": 25729,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        -18,
-                        -18
-                      ],
+                      "overloadedDeclarations": [-18, -18],
                       "referencedDeclaration": -18,
                       "src": "8280:7:21",
                       "typeDescriptions": {
@@ -10269,9 +10133,7 @@
                   "src": "8280:257:21"
                 },
                 {
-                  "assignments": [
-                    25756
-                  ],
+                  "assignments": [25756],
                   "declarations": [
                     {
                       "constant": false,
@@ -10968,9 +10830,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              28240
-            ],
+            "baseFunctions": [28240],
             "documentation": {
               "id": 25706,
               "nodeType": "StructuredDocumentation",
@@ -10987,9 +10847,7 @@
                 "modifierName": {
                   "id": 25712,
                   "name": "requiresAuth",
-                  "nameLocations": [
-                    "8131:12:21"
-                  ],
+                  "nameLocations": ["8131:12:21"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 28907,
                   "src": "8131:12:21"
@@ -11085,9 +10943,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    25827
-                  ],
+                  "assignments": [25827],
                   "declarations": [
                     {
                       "constant": false,
@@ -11110,10 +10966,7 @@
                         "pathNode": {
                           "id": 25825,
                           "name": "IAuctionHouse.Auction",
-                          "nameLocations": [
-                            "9282:13:21",
-                            "9296:7:21"
-                          ],
+                          "nameLocations": ["9282:13:21", "9296:7:21"],
                           "nodeType": "IdentifierPath",
                           "referencedDeclaration": 28160,
                           "src": "9282:21:21"
@@ -11333,9 +11186,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              28262
-            ],
+            "baseFunctions": [28262],
             "functionSelector": "44f27e30",
             "implemented": true,
             "kind": "function",
@@ -11660,10 +11511,7 @@
                       "id": 25857,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        -18,
-                        -18
-                      ],
+                      "overloadedDeclarations": [-18, -18],
                       "referencedDeclaration": -18,
                       "src": "9739:7:21",
                       "typeDescriptions": {
@@ -11692,9 +11540,7 @@
                   "src": "9739:59:21"
                 },
                 {
-                  "assignments": [
-                    25869
-                  ],
+                  "assignments": [25869],
                   "declarations": [
                     {
                       "constant": false,
@@ -11717,9 +11563,7 @@
                         "pathNode": {
                           "id": 25867,
                           "name": "Auction",
-                          "nameLocations": [
-                            "9804:7:21"
-                          ],
+                          "nameLocations": ["9804:7:21"],
                           "nodeType": "IdentifierPath",
                           "referencedDeclaration": 28160,
                           "src": "9804:7:21"
@@ -11926,10 +11770,7 @@
                     "src": "9911:438:21",
                     "statements": [
                       {
-                        "assignments": [
-                          25888,
-                          25890
-                        ],
+                        "assignments": [25888, 25890],
                         "declarations": [
                           {
                             "constant": false,
@@ -11953,10 +11794,7 @@
                                 "pathNode": {
                                   "id": 25885,
                                   "name": "ILienToken.AuctionStack",
-                                  "nameLocations": [
-                                    "9929:10:21",
-                                    "9940:12:21"
-                                  ],
+                                  "nameLocations": ["9929:10:21", "9940:12:21"],
                                   "nodeType": "IdentifierPath",
                                   "referencedDeclaration": 42958,
                                   "src": "9929:23:21"
@@ -12412,9 +12250,7 @@
                             },
                             "id": 25930,
                             "initializationExpression": {
-                              "assignments": [
-                                25909
-                              ],
+                              "assignments": [25909],
                               "declarations": [
                                 {
                                   "constant": false,
@@ -13207,9 +13043,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              28247
-            ],
+            "baseFunctions": [28247],
             "functionSelector": "3c0868f0",
             "implemented": true,
             "kind": "function",
@@ -13296,9 +13130,7 @@
             "baseName": {
               "id": 25089,
               "name": "Auth",
-              "nameLocations": [
-                "813:4:21"
-              ],
+              "nameLocations": ["813:4:21"],
               "nodeType": "IdentifierPath",
               "referencedDeclaration": 29002,
               "src": "813:4:21"
@@ -13311,9 +13143,7 @@
             "baseName": {
               "id": 25091,
               "name": "IAuctionHouse",
-              "nameLocations": [
-                "819:13:21"
-              ],
+              "nameLocations": ["819:13:21"],
               "nodeType": "IdentifierPath",
               "referencedDeclaration": 28263,
               "src": "819:13:21"
@@ -13327,11 +13157,7 @@
         "contractDependencies": [],
         "contractKind": "contract",
         "fullyImplemented": true,
-        "linearizedBaseContracts": [
-          25988,
-          28263,
-          29002
-        ],
+        "linearizedBaseContracts": [25988, 28263, 29002],
         "name": "AuctionHouse",
         "nameLocation": "797:12:21",
         "scope": 25989,
