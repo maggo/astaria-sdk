@@ -1,3 +1,10 @@
+# [1.0.0-alpha.3](https://github.com/astariaxyz/astaria-sdk/compare/v1.0.0-alpha.2...v1.0.0-alpha.3) (2022-12-21)
+
+
+### Features
+
+* add custom resolutions to support typescript v4 ([a20bd68](https://github.com/astariaxyz/astaria-sdk/commit/a20bd68148538d84fb4bbe0197e5a7fc43b3c3da))
+
 # [1.0.0-alpha.2](https://github.com/astariaxyz/astaria-sdk/compare/v1.0.0-alpha.1...v1.0.0-alpha.2) (2022-12-21)
 
 ### Features
