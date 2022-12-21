@@ -7539,60 +7539,24 @@
     "absolutePath": "src/LienToken.sol",
     "id": 64718,
     "exportedSymbols": {
-      "Auth": [
-        54916
-      ],
-      "Authority": [
-        54929
-      ],
-      "Base64": [
-        71427
-      ],
-      "CollateralLookup": [
-        71453
-      ],
-      "ERC20": [
-        56223
-      ],
-      "ERC721": [
-        26990
-      ],
-      "FixedPointMathLib": [
-        57064
-      ],
-      "IAstariaRouter": [
-        69282
-      ],
-      "ICollateralToken": [
-        69611
-      ],
-      "IERC165": [
-        69788
-      ],
-      "IERC721": [
-        70156
-      ],
-      "ILienToken": [
-        70649
-      ],
-      "IPublicVault": [
-        70829
-      ],
-      "ITransferProxy": [
-        70948
-      ],
-      "LienToken": [
-        64717
-      ],
-      "SafeCastLib": [
-        28393
-      ],
-      "SafeTransferLib": [
-        57406
-      ],
-      "VaultImplementation": [
-        67903
-      ]
+      "Auth": [54916],
+      "Authority": [54929],
+      "Base64": [71427],
+      "CollateralLookup": [71453],
+      "ERC20": [56223],
+      "ERC721": [26990],
+      "FixedPointMathLib": [57064],
+      "IAstariaRouter": [69282],
+      "ICollateralToken": [69611],
+      "IERC165": [69788],
+      "IERC721": [70156],
+      "ILienToken": [70649],
+      "IPublicVault": [70829],
+      "ITransferProxy": [70948],
+      "LienToken": [64717],
+      "SafeCastLib": [28393],
+      "SafeTransferLib": [57406],
+      "VaultImplementation": [67903]
     },
     "nodeType": "SourceUnit",
     "src": "180:25503:133",
@@ -7602,22 +7566,14 @@
         "nodeType": "PragmaDirective",
         "src": "180:24:133",
         "nodes": [],
-        "literals": [
-          "solidity",
-          "^",
-          "0.8",
-          ".17"
-        ]
+        "literals": ["solidity", "^", "0.8", ".17"]
       },
       {
         "id": 62018,
         "nodeType": "PragmaDirective",
         "src": "206:33:133",
         "nodes": [],
-        "literals": [
-          "experimental",
-          "ABIEncoderV2"
-        ]
+        "literals": ["experimental", "ABIEncoderV2"]
       },
       {
         "id": 62021,
@@ -8061,9 +8017,7 @@
             "libraryName": {
               "id": 62059,
               "name": "FixedPointMathLib",
-              "nameLocations": [
-                "1570:17:133"
-              ],
+              "nameLocations": ["1570:17:133"],
               "nodeType": "IdentifierPath",
               "referencedDeclaration": 57064,
               "src": "1570:17:133"
@@ -8088,9 +8042,7 @@
             "libraryName": {
               "id": 62062,
               "name": "CollateralLookup",
-              "nameLocations": [
-                "1609:16:133"
-              ],
+              "nameLocations": ["1609:16:133"],
               "nodeType": "IdentifierPath",
               "referencedDeclaration": 71453,
               "src": "1609:16:133"
@@ -8116,9 +8068,7 @@
             "libraryName": {
               "id": 62065,
               "name": "SafeCastLib",
-              "nameLocations": [
-                "1647:11:133"
-              ],
+              "nameLocations": ["1647:11:133"],
               "nodeType": "IdentifierPath",
               "referencedDeclaration": 28393,
               "src": "1647:11:133"
@@ -8143,9 +8093,7 @@
             "libraryName": {
               "id": 62068,
               "name": "SafeTransferLib",
-              "nameLocations": [
-                "1680:15:133"
-              ],
+              "nameLocations": ["1680:15:133"],
               "nodeType": "IdentifierPath",
               "referencedDeclaration": 57406,
               "src": "1680:15:133"
@@ -8156,9 +8104,7 @@
               "pathNode": {
                 "id": 62069,
                 "name": "ERC20",
-                "nameLocations": [
-                  "1700:5:133"
-                ],
+                "nameLocations": ["1700:5:133"],
                 "nodeType": "IdentifierPath",
                 "referencedDeclaration": 56223,
                 "src": "1700:5:133"
@@ -8227,9 +8173,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    62100
-                  ],
+                  "assignments": [62100],
                   "declarations": [
                     {
                       "constant": false,
@@ -8252,9 +8196,7 @@
                         "pathNode": {
                           "id": 62098,
                           "name": "LienStorage",
-                          "nameLocations": [
-                            "2348:11:133"
-                          ],
+                          "nameLocations": ["2348:11:133"],
                           "nodeType": "IdentifierPath",
                           "referencedDeclaration": 70250,
                           "src": "2348:11:133"
@@ -8633,9 +8575,7 @@
                 "modifierName": {
                   "id": 62085,
                   "name": "Auth",
-                  "nameLocations": [
-                    "2268:4:133"
-                  ],
+                  "nameLocations": ["2268:4:133"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 54916,
                   "src": "2268:4:133"
@@ -8683,9 +8623,7 @@
                 "modifierName": {
                   "id": 62093,
                   "name": "ERC721",
-                  "nameLocations": [
-                    "2306:6:133"
-                  ],
+                  "nameLocations": ["2306:6:133"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 26990,
                   "src": "2306:6:133"
@@ -8721,9 +8659,7 @@
                     "pathNode": {
                       "id": 62076,
                       "name": "Authority",
-                      "nameLocations": [
-                        "2188:9:133"
-                      ],
+                      "nameLocations": ["2188:9:133"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 54929,
                       "src": "2188:9:133"
@@ -8758,9 +8694,7 @@
                     "pathNode": {
                       "id": 62079,
                       "name": "ITransferProxy",
-                      "nameLocations": [
-                        "2214:14:133"
-                      ],
+                      "nameLocations": ["2214:14:133"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 70948,
                       "src": "2214:14:133"
@@ -8910,9 +8844,7 @@
                     "pathNode": {
                       "id": 62128,
                       "name": "LienStorage",
-                      "nameLocations": [
-                        "2557:11:133"
-                      ],
+                      "nameLocations": ["2557:11:133"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 70250,
                       "src": "2557:11:133"
@@ -8946,9 +8878,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    62144
-                  ],
+                  "assignments": [62144],
                   "declarations": [
                     {
                       "constant": false,
@@ -8971,9 +8901,7 @@
                         "pathNode": {
                           "id": 62142,
                           "name": "FileType",
-                          "nameLocations": [
-                            "2704:8:133"
-                          ],
+                          "nameLocations": ["2704:8:133"],
                           "nodeType": "IdentifierPath",
                           "referencedDeclaration": 70209,
                           "src": "2704:8:133"
@@ -9021,9 +8949,7 @@
                   "src": "2704:29:133"
                 },
                 {
-                  "assignments": [
-                    62149
-                  ],
+                  "assignments": [62149],
                   "declarations": [
                     {
                       "constant": false,
@@ -9086,9 +9012,7 @@
                   "src": "2739:33:133"
                 },
                 {
-                  "assignments": [
-                    62155
-                  ],
+                  "assignments": [62155],
                   "declarations": [
                     {
                       "constant": false,
@@ -9111,9 +9035,7 @@
                         "pathNode": {
                           "id": 62153,
                           "name": "LienStorage",
-                          "nameLocations": [
-                            "2778:11:133"
-                          ],
+                          "nameLocations": ["2778:11:133"],
                           "nodeType": "IdentifierPath",
                           "referencedDeclaration": 70250,
                           "src": "2778:11:133"
@@ -9794,9 +9716,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              70559
-            ],
+            "baseFunctions": [70559],
             "functionSelector": "b05e52fd",
             "implemented": true,
             "kind": "function",
@@ -9807,9 +9727,7 @@
                 "modifierName": {
                   "id": 62139,
                   "name": "requiresAuth",
-                  "nameLocations": [
-                    "2685:12:133"
-                  ],
+                  "nameLocations": ["2685:12:133"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 54821,
                   "src": "2685:12:133"
@@ -9845,9 +9763,7 @@
                     "pathNode": {
                       "id": 62135,
                       "name": "File",
-                      "nameLocations": [
-                        "2652:4:133"
-                      ],
+                      "nameLocations": ["2652:4:133"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 70215,
                       "src": "2652:4:133"
@@ -10071,10 +9987,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              26787,
-              69787
-            ],
+            "baseFunctions": [26787, 69787],
             "functionSelector": "01ffc9a7",
             "implemented": true,
             "kind": "function",
@@ -10088,9 +10001,7 @@
                 {
                   "id": 62213,
                   "name": "ERC721",
-                  "nameLocations": [
-                    "3235:6:133"
-                  ],
+                  "nameLocations": ["3235:6:133"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 26990,
                   "src": "3235:6:133"
@@ -10098,9 +10009,7 @@
                 {
                   "id": 62214,
                   "name": "IERC165",
-                  "nameLocations": [
-                    "3243:7:133"
-                  ],
+                  "nameLocations": ["3243:7:133"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 69788,
                   "src": "3243:7:133"
@@ -10448,10 +10357,7 @@
                             "id": 62259,
                             "name": "require",
                             "nodeType": "Identifier",
-                            "overloadedDeclarations": [
-                              -18,
-                              -18
-                            ],
+                            "overloadedDeclarations": [-18, -18],
                             "referencedDeclaration": -18,
                             "src": "3651:7:133",
                             "typeDescriptions": {
@@ -10574,9 +10480,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              70449
-            ],
+            "baseFunctions": [70449],
             "functionSelector": "9b9761fb",
             "implemented": true,
             "kind": "function",
@@ -10677,9 +10581,7 @@
                 "modifierName": {
                   "id": 62237,
                   "name": "validateStack",
-                  "nameLocations": [
-                    "3472:13:133"
-                  ],
+                  "nameLocations": ["3472:13:133"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 62636,
                   "src": "3472:13:133"
@@ -10715,10 +10617,7 @@
                     "pathNode": {
                       "id": 62233,
                       "name": "ILienToken.LienActionBuyout",
-                      "nameLocations": [
-                        "3410:10:133",
-                        "3421:16:133"
-                      ],
+                      "nameLocations": ["3410:10:133", "3421:16:133"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 70319,
                       "src": "3410:27:133"
@@ -10761,9 +10660,7 @@
                       "pathNode": {
                         "id": 62245,
                         "name": "Stack",
-                        "nameLocations": [
-                          "3552:5:133"
-                        ],
+                        "nameLocations": ["3552:5:133"],
                         "nodeType": "IdentifierPath",
                         "referencedDeclaration": 70296,
                         "src": "3552:5:133"
@@ -10806,9 +10703,7 @@
                     "pathNode": {
                       "id": 62249,
                       "name": "Stack",
-                      "nameLocations": [
-                        "3568:5:133"
-                      ],
+                      "nameLocations": ["3568:5:133"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 70296,
                       "src": "3568:5:133"
@@ -11169,11 +11064,7 @@
                         "4214:8:133",
                         "4249:5:133"
                       ],
-                      "names": [
-                        "newLien",
-                        "position",
-                        "stack"
-                      ],
+                      "names": ["newLien", "position", "stack"],
                       "nodeType": "FunctionCall",
                       "src": "4131:155:133",
                       "tryCall": false,
@@ -11497,10 +11388,7 @@
                   }
                 },
                 {
-                  "assignments": [
-                    62344,
-                    62346
-                  ],
+                  "assignments": [62344, 62346],
                   "declarations": [
                     {
                       "constant": false,
@@ -12577,9 +12465,7 @@
                   "src": "4971:168:133"
                 },
                 {
-                  "assignments": [
-                    62420
-                  ],
+                  "assignments": [62420],
                   "declarations": [
                     {
                       "constant": false,
@@ -13791,9 +13677,7 @@
                     "pathNode": {
                       "id": 62282,
                       "name": "LienStorage",
-                      "nameLocations": [
-                        "3846:11:133"
-                      ],
+                      "nameLocations": ["3846:11:133"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 70250,
                       "src": "3846:11:133"
@@ -13828,10 +13712,7 @@
                     "pathNode": {
                       "id": 62285,
                       "name": "ILienToken.LienActionBuyout",
-                      "nameLocations": [
-                        "3873:10:133",
-                        "3884:16:133"
-                      ],
+                      "nameLocations": ["3873:10:133", "3884:16:133"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 70319,
                       "src": "3873:27:133"
@@ -13874,9 +13755,7 @@
                       "pathNode": {
                         "id": 62289,
                         "name": "Stack",
-                        "nameLocations": [
-                          "3939:5:133"
-                        ],
+                        "nameLocations": ["3939:5:133"],
                         "nodeType": "IdentifierPath",
                         "referencedDeclaration": 70296,
                         "src": "3939:5:133"
@@ -13919,9 +13798,7 @@
                     "pathNode": {
                       "id": 62293,
                       "name": "Stack",
-                      "nameLocations": [
-                        "3955:5:133"
-                      ],
+                      "nameLocations": ["3955:5:133"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 70296,
                       "src": "3955:5:133"
@@ -14224,9 +14101,7 @@
                     "pathNode": {
                       "id": 62499,
                       "name": "LienStorage",
-                      "nameLocations": [
-                        "5961:11:133"
-                      ],
+                      "nameLocations": ["5961:11:133"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 70250,
                       "src": "5961:11:133"
@@ -14262,10 +14137,7 @@
                       "pathNode": {
                         "id": 62502,
                         "name": "ILienToken.Stack",
-                        "nameLocations": [
-                          "5988:10:133",
-                          "5999:5:133"
-                        ],
+                        "nameLocations": ["5988:10:133", "5999:5:133"],
                         "nodeType": "IdentifierPath",
                         "referencedDeclaration": 70296,
                         "src": "5988:16:133"
@@ -14335,9 +14207,7 @@
                     "pathNode": {
                       "id": 62508,
                       "name": "Stack",
-                      "nameLocations": [
-                        "6049:5:133"
-                      ],
+                      "nameLocations": ["6049:5:133"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 70296,
                       "src": "6049:5:133"
@@ -14434,10 +14304,7 @@
                       "pathNode": {
                         "id": 62516,
                         "name": "ILienToken.Stack",
-                        "nameLocations": [
-                          "6138:10:133",
-                          "6149:5:133"
-                        ],
+                        "nameLocations": ["6138:10:133", "6149:5:133"],
                         "nodeType": "IdentifierPath",
                         "referencedDeclaration": 70296,
                         "src": "6138:16:133"
@@ -14566,9 +14433,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              70403
-            ],
+            "baseFunctions": [70403],
             "functionSelector": "396173d5",
             "implemented": true,
             "kind": "function",
@@ -14600,9 +14465,7 @@
                     "pathNode": {
                       "id": 62543,
                       "name": "Stack",
-                      "nameLocations": [
-                        "6316:5:133"
-                      ],
+                      "nameLocations": ["6316:5:133"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 70296,
                       "src": "6316:5:133"
@@ -14670,9 +14533,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    62569
-                  ],
+                  "assignments": [62569],
                   "declarations": [
                     {
                       "constant": false,
@@ -15042,9 +14903,7 @@
                     "pathNode": {
                       "id": 62559,
                       "name": "Stack",
-                      "nameLocations": [
-                        "6672:5:133"
-                      ],
+                      "nameLocations": ["6672:5:133"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 70296,
                       "src": "6672:5:133"
@@ -15139,9 +14998,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    62601
-                  ],
+                  "assignments": [62601],
                   "declarations": [
                     {
                       "constant": false,
@@ -15164,9 +15021,7 @@
                         "pathNode": {
                           "id": 62599,
                           "name": "LienStorage",
-                          "nameLocations": [
-                            "7004:11:133"
-                          ],
+                          "nameLocations": ["7004:11:133"],
                           "nodeType": "IdentifierPath",
                           "referencedDeclaration": 70250,
                           "src": "7004:11:133"
@@ -15217,9 +15072,7 @@
                   "src": "7004:46:133"
                 },
                 {
-                  "assignments": [
-                    62606
-                  ],
+                  "assignments": [62606],
                   "declarations": [
                     {
                       "constant": false,
@@ -15690,9 +15543,7 @@
                       "pathNode": {
                         "id": 62594,
                         "name": "Stack",
-                        "nameLocations": [
-                          "6976:5:133"
-                        ],
+                        "nameLocations": ["6976:5:133"],
                         "nodeType": "IdentifierPath",
                         "referencedDeclaration": 70296,
                         "src": "6976:5:133"
@@ -15871,9 +15722,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              70363
-            ],
+            "baseFunctions": [70363],
             "functionSelector": "6037a83a",
             "implemented": true,
             "kind": "function",
@@ -15910,9 +15759,7 @@
                 "modifierName": {
                   "id": 62648,
                   "name": "validateStack",
-                  "nameLocations": [
-                    "7405:13:133"
-                  ],
+                  "nameLocations": ["7405:13:133"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 62636,
                   "src": "7405:13:133"
@@ -15926,9 +15773,7 @@
                 "modifierName": {
                   "id": 62652,
                   "name": "requiresAuth",
-                  "nameLocations": [
-                    "7440:12:133"
-                  ],
+                  "nameLocations": ["7440:12:133"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 54821,
                   "src": "7440:12:133"
@@ -16019,9 +15864,7 @@
                       "pathNode": {
                         "id": 62641,
                         "name": "Stack",
-                        "nameLocations": [
-                          "7345:5:133"
-                        ],
+                        "nameLocations": ["7345:5:133"],
                         "nodeType": "IdentifierPath",
                         "referencedDeclaration": 70296,
                         "src": "7345:5:133"
@@ -16203,9 +16046,7 @@
                     "src": "7879:1110:133",
                     "statements": [
                       {
-                        "assignments": [
-                          62700
-                        ],
+                        "assignments": [62700],
                         "declarations": [
                           {
                             "constant": false,
@@ -16228,9 +16069,7 @@
                               "pathNode": {
                                 "id": 62698,
                                 "name": "AuctionStack",
-                                "nameLocations": [
-                                  "7887:12:133"
-                                ],
+                                "nameLocations": ["7887:12:133"],
                                 "nodeType": "IdentifierPath",
                                 "referencedDeclaration": 70497,
                                 "src": "7887:12:133"
@@ -16482,9 +16321,7 @@
                         "src": "7979:37:133"
                       },
                       {
-                        "assignments": [
-                          62723
-                        ],
+                        "assignments": [62723],
                         "declarations": [
                           {
                             "constant": false,
@@ -16967,9 +16804,7 @@
                         "src": "8223:52:133"
                       },
                       {
-                        "assignments": [
-                          62763
-                        ],
+                        "assignments": [62763],
                         "declarations": [
                           {
                             "constant": false,
@@ -17160,9 +16995,7 @@
                           "src": "8370:574:133",
                           "statements": [
                             {
-                              "assignments": [
-                                62775
-                              ],
+                              "assignments": [62775],
                               "declarations": [
                                 {
                                   "constant": false,
@@ -17835,9 +17668,7 @@
                   },
                   "id": 62819,
                   "initializationExpression": {
-                    "assignments": [
-                      62691
-                    ],
+                    "assignments": [62691],
                     "declarations": [
                       {
                         "constant": false,
@@ -18055,9 +17886,7 @@
                     "pathNode": {
                       "id": 62666,
                       "name": "LienStorage",
-                      "nameLocations": [
-                        "7636:11:133"
-                      ],
+                      "nameLocations": ["7636:11:133"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 70250,
                       "src": "7636:11:133"
@@ -18147,9 +17976,7 @@
                       "pathNode": {
                         "id": 62673,
                         "name": "Stack",
-                        "nameLocations": [
-                          "7716:5:133"
-                        ],
+                        "nameLocations": ["7716:5:133"],
                         "nodeType": "IdentifierPath",
                         "referencedDeclaration": 70296,
                         "src": "7716:5:133"
@@ -18248,10 +18075,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              26400,
-              70098
-            ],
+            "baseFunctions": [26400, 70098],
             "functionSelector": "c87b56dd",
             "implemented": true,
             "kind": "function",
@@ -18265,9 +18089,7 @@
                 {
                   "id": 62836,
                   "name": "ERC721",
-                  "nameLocations": [
-                    "9134:6:133"
-                  ],
+                  "nameLocations": ["9134:6:133"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 26990,
                   "src": "9134:6:133"
@@ -18275,9 +18097,7 @@
                 {
                   "id": 62837,
                   "name": "IERC721",
-                  "nameLocations": [
-                    "9142:7:133"
-                  ],
+                  "nameLocations": ["9142:7:133"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 70156,
                   "src": "9142:7:133"
@@ -18370,9 +18190,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    62859
-                  ],
+                  "assignments": [62859],
                   "declarations": [
                     {
                       "constant": false,
@@ -18395,9 +18213,7 @@
                         "pathNode": {
                           "id": 62857,
                           "name": "LienStorage",
-                          "nameLocations": [
-                            "9320:11:133"
-                          ],
+                          "nameLocations": ["9320:11:133"],
                           "nodeType": "IdentifierPath",
                           "referencedDeclaration": 70250,
                           "src": "9320:11:133"
@@ -18702,10 +18518,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              26632,
-              70135
-            ],
+            "baseFunctions": [26632, 70135],
             "functionSelector": "23b872dd",
             "implemented": true,
             "kind": "function",
@@ -18719,9 +18532,7 @@
                 {
                   "id": 62853,
                   "name": "ERC721",
-                  "nameLocations": [
-                    "9297:6:133"
-                  ],
+                  "nameLocations": ["9297:6:133"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 26990,
                   "src": "9297:6:133"
@@ -18729,9 +18540,7 @@
                 {
                   "id": 62854,
                   "name": "IERC721",
-                  "nameLocations": [
-                    "9305:7:133"
-                  ],
+                  "nameLocations": ["9305:7:133"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 70156,
                   "src": "9305:7:133"
@@ -18906,9 +18715,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              70334
-            ],
+            "baseFunctions": [70334],
             "functionSelector": "3398b637",
             "implemented": true,
             "kind": "function",
@@ -18946,9 +18753,7 @@
                     "pathNode": {
                       "id": 62886,
                       "name": "IAstariaRouter",
-                      "nameLocations": [
-                        "9567:14:133"
-                      ],
+                      "nameLocations": ["9567:14:133"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 69282,
                       "src": "9567:14:133"
@@ -19036,9 +18841,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              70340
-            ],
+            "baseFunctions": [70340],
             "functionSelector": "f5f1f1a7",
             "implemented": true,
             "kind": "function",
@@ -19076,9 +18879,7 @@
                     "pathNode": {
                       "id": 62897,
                       "name": "ICollateralToken",
-                      "nameLocations": [
-                        "9691:16:133"
-                      ],
+                      "nameLocations": ["9691:16:133"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 69611,
                       "src": "9691:16:133"
@@ -19360,9 +19161,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    62949
-                  ],
+                  "assignments": [62949],
                   "declarations": [
                     {
                       "constant": false,
@@ -19385,9 +19184,7 @@
                         "pathNode": {
                           "id": 62947,
                           "name": "LienStorage",
-                          "nameLocations": [
-                            "10157:11:133"
-                          ],
+                          "nameLocations": ["10157:11:133"],
                           "nodeType": "IdentifierPath",
                           "referencedDeclaration": 70250,
                           "src": "10157:11:133"
@@ -19438,9 +19235,7 @@
                   "src": "10157:46:133"
                 },
                 {
-                  "assignments": [
-                    62955
-                  ],
+                  "assignments": [62955],
                   "declarations": [
                     {
                       "constant": false,
@@ -19463,9 +19258,7 @@
                         "pathNode": {
                           "id": 62953,
                           "name": "Stack",
-                          "nameLocations": [
-                            "10231:5:133"
-                          ],
+                          "nameLocations": ["10231:5:133"],
                           "nodeType": "IdentifierPath",
                           "referencedDeclaration": 70296,
                           "src": "10231:5:133"
@@ -20390,9 +20183,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              70435
-            ],
+            "baseFunctions": [70435],
             "functionSelector": "eb189538",
             "implemented": true,
             "kind": "function",
@@ -20403,9 +20194,7 @@
                 "modifierName": {
                   "id": 62930,
                   "name": "requiresAuth",
-                  "nameLocations": [
-                    "9986:12:133"
-                  ],
+                  "nameLocations": ["9986:12:133"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 54821,
                   "src": "9986:12:133"
@@ -20477,9 +20266,7 @@
                 "modifierName": {
                   "id": 62932,
                   "name": "validateStack",
-                  "nameLocations": [
-                    "10003:13:133"
-                  ],
+                  "nameLocations": ["10003:13:133"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 62636,
                   "src": "10003:13:133"
@@ -20515,10 +20302,7 @@
                     "pathNode": {
                       "id": 62926,
                       "name": "ILienToken.LienActionEncumber",
-                      "nameLocations": [
-                        "9924:10:133",
-                        "9935:18:133"
-                      ],
+                      "nameLocations": ["9924:10:133", "9935:18:133"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 70310,
                       "src": "9924:29:133"
@@ -20588,9 +20372,7 @@
                       "pathNode": {
                         "id": 62940,
                         "name": "Stack",
-                        "nameLocations": [
-                          "10094:5:133"
-                        ],
+                        "nameLocations": ["10094:5:133"],
                         "nodeType": "IdentifierPath",
                         "referencedDeclaration": 70296,
                         "src": "10094:5:133"
@@ -22204,9 +21986,7 @@
                   ]
                 },
                 {
-                  "assignments": [
-                    63151
-                  ],
+                  "assignments": [63151],
                   "declarations": [
                     {
                       "constant": false,
@@ -22229,9 +22009,7 @@
                         "pathNode": {
                           "id": 63149,
                           "name": "Point",
-                          "nameLocations": [
-                            "11935:5:133"
-                          ],
+                          "nameLocations": ["11935:5:133"],
                           "nodeType": "IdentifierPath",
                           "referencedDeclaration": 70289,
                           "src": "11935:5:133"
@@ -22678,13 +22456,7 @@
                       "12083:8:133",
                       "12127:3:133"
                     ],
-                    "names": [
-                      "lienId",
-                      "amount",
-                      "last",
-                      "position",
-                      "end"
-                    ],
+                    "names": ["lienId", "amount", "last", "position", "end"],
                     "nodeType": "FunctionCall",
                     "src": "11956:246:133",
                     "tryCall": false,
@@ -22868,14 +22640,8 @@
                         "isPure": false,
                         "kind": "structConstructorCall",
                         "lValueRequested": false,
-                        "nameLocations": [
-                          "12273:4:133",
-                          "12292:5:133"
-                        ],
-                        "names": [
-                          "lien",
-                          "point"
-                        ],
+                        "nameLocations": ["12273:4:133", "12292:5:133"],
+                        "names": ["lien", "point"],
                         "nodeType": "FunctionCall",
                         "src": "12266:40:133",
                         "tryCall": false,
@@ -22935,9 +22701,7 @@
                     "pathNode": {
                       "id": 63023,
                       "name": "LienStorage",
-                      "nameLocations": [
-                        "10838:11:133"
-                      ],
+                      "nameLocations": ["10838:11:133"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 70250,
                       "src": "10838:11:133"
@@ -22972,10 +22736,7 @@
                     "pathNode": {
                       "id": 63026,
                       "name": "ILienToken.LienActionEncumber",
-                      "nameLocations": [
-                        "10865:10:133",
-                        "10876:18:133"
-                      ],
+                      "nameLocations": ["10865:10:133", "10876:18:133"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 70310,
                       "src": "10865:29:133"
@@ -23044,10 +22805,7 @@
                     "pathNode": {
                       "id": 63032,
                       "name": "ILienToken.Stack",
-                      "nameLocations": [
-                        "10950:10:133",
-                        "10961:5:133"
-                      ],
+                      "nameLocations": ["10950:10:133", "10961:5:133"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 70296,
                       "src": "10950:16:133"
@@ -23190,9 +22948,7 @@
                             "pathNode": {
                               "id": 63213,
                               "name": "Stack",
-                              "nameLocations": [
-                                "12485:5:133"
-                              ],
+                              "nameLocations": ["12485:5:133"],
                               "nodeType": "IdentifierPath",
                               "referencedDeclaration": 70296,
                               "src": "12485:5:133"
@@ -23323,9 +23079,7 @@
                   "src": "12516:32:133"
                 },
                 {
-                  "assignments": [
-                    63232
-                  ],
+                  "assignments": [63232],
                   "declarations": [
                     {
                       "constant": false,
@@ -23463,9 +23217,7 @@
                     "src": "12661:466:133",
                     "statements": [
                       {
-                        "assignments": [
-                          63249
-                        ],
+                        "assignments": [63249],
                         "declarations": [
                           {
                             "constant": false,
@@ -24305,9 +24057,7 @@
                   },
                   "id": 63311,
                   "initializationExpression": {
-                    "assignments": [
-                      63241
-                    ],
+                    "assignments": [63241],
                     "declarations": [
                       {
                         "constant": false,
@@ -24654,9 +24404,7 @@
                     "pathNode": {
                       "id": 63196,
                       "name": "LienStorage",
-                      "nameLocations": [
-                        "12343:11:133"
-                      ],
+                      "nameLocations": ["12343:11:133"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 70250,
                       "src": "12343:11:133"
@@ -24692,9 +24440,7 @@
                       "pathNode": {
                         "id": 63199,
                         "name": "Stack",
-                        "nameLocations": [
-                          "12370:5:133"
-                        ],
+                        "nameLocations": ["12370:5:133"],
                         "nodeType": "IdentifierPath",
                         "referencedDeclaration": 70296,
                         "src": "12370:5:133"
@@ -24737,9 +24483,7 @@
                     "pathNode": {
                       "id": 63203,
                       "name": "Stack",
-                      "nameLocations": [
-                        "12396:5:133"
-                      ],
+                      "nameLocations": ["12396:5:133"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 70296,
                       "src": "12396:5:133"
@@ -24782,9 +24526,7 @@
                       "pathNode": {
                         "id": 63207,
                         "name": "Stack",
-                        "nameLocations": [
-                          "12439:5:133"
-                        ],
+                        "nameLocations": ["12439:5:133"],
                         "nodeType": "IdentifierPath",
                         "referencedDeclaration": 70296,
                         "src": "12439:5:133"
@@ -24826,9 +24568,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    63340
-                  ],
+                  "assignments": [63340],
                   "declarations": [
                     {
                       "constant": false,
@@ -24851,9 +24591,7 @@
                         "pathNode": {
                           "id": 63338,
                           "name": "LienStorage",
-                          "nameLocations": [
-                            "13384:11:133"
-                          ],
+                          "nameLocations": ["13384:11:133"],
                           "nodeType": "IdentifierPath",
                           "referencedDeclaration": 70250,
                           "src": "13384:11:133"
@@ -25043,10 +24781,7 @@
                       "id": 63344,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        -18,
-                        -18
-                      ],
+                      "overloadedDeclarations": [-18, -18],
                       "referencedDeclaration": -18,
                       "src": "13436:7:133",
                       "typeDescriptions": {
@@ -25075,9 +24810,7 @@
                   "src": "13436:72:133"
                 },
                 {
-                  "assignments": [
-                    63356
-                  ],
+                  "assignments": [63356],
                   "declarations": [
                     {
                       "constant": false,
@@ -25702,9 +25435,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              70457
-            ],
+            "baseFunctions": [70457],
             "functionSelector": "a6fb7bc0",
             "implemented": true,
             "kind": "function",
@@ -25795,9 +25526,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    63422
-                  ],
+                  "assignments": [63422],
                   "declarations": [
                     {
                       "constant": false,
@@ -25821,9 +25550,7 @@
                           "pathNode": {
                             "id": 63419,
                             "name": "AuctionStack",
-                            "nameLocations": [
-                              "14040:12:133"
-                            ],
+                            "nameLocations": ["14040:12:133"],
                             "nodeType": "IdentifierPath",
                             "referencedDeclaration": 70497,
                             "src": "14040:12:133"
@@ -25920,9 +25647,7 @@
                   "src": "14040:64:133"
                 },
                 {
-                  "assignments": [
-                    63430
-                  ],
+                  "assignments": [63430],
                   "declarations": [
                     {
                       "constant": false,
@@ -26337,9 +26062,7 @@
                     "src": "14446:180:133",
                     "statements": [
                       {
-                        "assignments": [
-                          63473
-                        ],
+                        "assignments": [63473],
                         "declarations": [
                           {
                             "constant": false,
@@ -26687,9 +26410,7 @@
                   },
                   "id": 63496,
                   "initializationExpression": {
-                    "assignments": [
-                      63462
-                    ],
+                    "assignments": [63462],
                     "declarations": [
                       {
                         "constant": false,
@@ -26806,9 +26527,7 @@
                     "pathNode": {
                       "id": 63405,
                       "name": "LienStorage",
-                      "nameLocations": [
-                        "13904:11:133"
-                      ],
+                      "nameLocations": ["13904:11:133"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 70250,
                       "src": "13904:11:133"
@@ -27037,9 +26756,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              70513
-            ],
+            "baseFunctions": [70513],
             "functionSelector": "44f27e30",
             "implemented": true,
             "kind": "function",
@@ -27105,9 +26822,7 @@
                     "pathNode": {
                       "id": 63502,
                       "name": "AuctionData",
-                      "nameLocations": [
-                        "14715:11:133"
-                      ],
+                      "nameLocations": ["14715:11:133"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 70504,
                       "src": "14715:11:133"
@@ -27341,9 +27056,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              70420
-            ],
+            "baseFunctions": [70420],
             "functionSelector": "f790695e",
             "implemented": true,
             "kind": "function",
@@ -27375,10 +27088,7 @@
                     "pathNode": {
                       "id": 63514,
                       "name": "ILienToken.Stack",
-                      "nameLocations": [
-                        "14844:10:133",
-                        "14855:5:133"
-                      ],
+                      "nameLocations": ["14844:10:133", "14855:5:133"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 70296,
                       "src": "14844:16:133"
@@ -27904,9 +27614,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              70328
-            ],
+            "baseFunctions": [70328],
             "functionSelector": "082f62c6",
             "implemented": true,
             "kind": "function",
@@ -27938,9 +27646,7 @@
                     "pathNode": {
                       "id": 63537,
                       "name": "Lien",
-                      "nameLocations": [
-                        "15094:4:133"
-                      ],
+                      "nameLocations": ["15094:4:133"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 70278,
                       "src": "15094:4:133"
@@ -28087,9 +27793,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              70411
-            ],
+            "baseFunctions": [70411],
             "functionSelector": "6a53691c",
             "implemented": true,
             "kind": "function",
@@ -28272,9 +27976,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              70374
-            ],
+            "baseFunctions": [70374],
             "functionSelector": "52335c8d",
             "implemented": true,
             "kind": "function",
@@ -28306,9 +28008,7 @@
                     "pathNode": {
                       "id": 63591,
                       "name": "Stack",
-                      "nameLocations": [
-                        "15524:5:133"
-                      ],
+                      "nameLocations": ["15524:5:133"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 70296,
                       "src": "15524:5:133"
@@ -28403,9 +28103,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    63621
-                  ],
+                  "assignments": [63621],
                   "declarations": [
                     {
                       "constant": false,
@@ -28520,9 +28218,7 @@
                   "src": "15788:47:133"
                 },
                 {
-                  "assignments": [
-                    63629
-                  ],
+                  "assignments": [63629],
                   "declarations": [
                     {
                       "constant": false,
@@ -28798,9 +28494,7 @@
                     "pathNode": {
                       "id": 63608,
                       "name": "LienStorage",
-                      "nameLocations": [
-                        "15682:11:133"
-                      ],
+                      "nameLocations": ["15682:11:133"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 70250,
                       "src": "15682:11:133"
@@ -28835,9 +28529,7 @@
                     "pathNode": {
                       "id": 63611,
                       "name": "Stack",
-                      "nameLocations": [
-                        "15705:5:133"
-                      ],
+                      "nameLocations": ["15705:5:133"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 70296,
                       "src": "15705:5:133"
@@ -29081,9 +28773,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              70473
-            ],
+            "baseFunctions": [70473],
             "functionSelector": "2fd0c78b",
             "implemented": true,
             "kind": "function",
@@ -29120,9 +28810,7 @@
                 "modifierName": {
                   "id": 63656,
                   "name": "validateStack",
-                  "nameLocations": [
-                    "16093:13:133"
-                  ],
+                  "nameLocations": ["16093:13:133"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 62636,
                   "src": "16093:13:133"
@@ -29186,9 +28874,7 @@
                       "pathNode": {
                         "id": 63649,
                         "name": "Stack",
-                        "nameLocations": [
-                          "16031:5:133"
-                        ],
+                        "nameLocations": ["16031:5:133"],
                         "nodeType": "IdentifierPath",
                         "referencedDeclaration": 70296,
                         "src": "16031:5:133"
@@ -29266,9 +28952,7 @@
                       "pathNode": {
                         "id": 63660,
                         "name": "Stack",
-                        "nameLocations": [
-                          "16141:5:133"
-                        ],
+                        "nameLocations": ["16141:5:133"],
                         "nodeType": "IdentifierPath",
                         "referencedDeclaration": 70296,
                         "src": "16141:5:133"
@@ -29310,9 +28994,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    63699
-                  ],
+                  "assignments": [63699],
                   "declarations": [
                     {
                       "constant": false,
@@ -29335,9 +29017,7 @@
                         "pathNode": {
                           "id": 63697,
                           "name": "LienStorage",
-                          "nameLocations": [
-                            "16466:11:133"
-                          ],
+                          "nameLocations": ["16466:11:133"],
                           "nodeType": "IdentifierPath",
                           "referencedDeclaration": 70250,
                           "src": "16466:11:133"
@@ -29696,9 +29376,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              70490
-            ],
+            "baseFunctions": [70490],
             "functionSelector": "59c63afc",
             "implemented": true,
             "kind": "function",
@@ -29735,9 +29413,7 @@
                 "modifierName": {
                   "id": 63688,
                   "name": "validateStack",
-                  "nameLocations": [
-                    "16385:13:133"
-                  ],
+                  "nameLocations": ["16385:13:133"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 62636,
                   "src": "16385:13:133"
@@ -29801,9 +29477,7 @@
                       "pathNode": {
                         "id": 63679,
                         "name": "Stack",
-                        "nameLocations": [
-                          "16301:5:133"
-                        ],
+                        "nameLocations": ["16301:5:133"],
                         "nodeType": "IdentifierPath",
                         "referencedDeclaration": 70296,
                         "src": "16301:5:133"
@@ -29908,9 +29582,7 @@
                       "pathNode": {
                         "id": 63692,
                         "name": "Stack",
-                        "nameLocations": [
-                          "16433:5:133"
-                        ],
+                        "nameLocations": ["16433:5:133"],
                         "nodeType": "IdentifierPath",
                         "referencedDeclaration": 70296,
                         "src": "16433:5:133"
@@ -29952,9 +29624,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    63746
-                  ],
+                  "assignments": [63746],
                   "declarations": [
                     {
                       "constant": false,
@@ -30042,9 +29712,7 @@
                   "src": "16863:39:133"
                 },
                 {
-                  "assignments": [
-                    63753
-                  ],
+                  "assignments": [63753],
                   "declarations": [
                     {
                       "constant": false,
@@ -30132,9 +29800,7 @@
                   "src": "16908:33:133"
                 },
                 {
-                  "assignments": [
-                    63760
-                  ],
+                  "assignments": [63760],
                   "declarations": [
                     {
                       "constant": false,
@@ -30222,9 +29888,7 @@
                   "src": "16947:42:133"
                 },
                 {
-                  "assignments": [
-                    63767
-                  ],
+                  "assignments": [63767],
                   "declarations": [
                     {
                       "constant": false,
@@ -30309,9 +29973,7 @@
                   "src": "17024:31:133"
                 },
                 {
-                  "assignments": [
-                    63773
-                  ],
+                  "assignments": [63773],
                   "declarations": [
                     {
                       "constant": false,
@@ -31341,12 +31003,8 @@
                                     "isPure": false,
                                     "kind": "structConstructorCall",
                                     "lValueRequested": false,
-                                    "nameLocations": [
-                                      "17581:7:133"
-                                    ],
-                                    "names": [
-                                      "lienEnd"
-                                    ],
+                                    "nameLocations": ["17581:7:133"],
+                                    "names": ["lienEnd"],
                                     "nodeType": "FunctionCall",
                                     "src": "17542:53:133",
                                     "tryCall": false,
@@ -31573,9 +31231,7 @@
                     "pathNode": {
                       "id": 63726,
                       "name": "LienStorage",
-                      "nameLocations": [
-                        "16683:11:133"
-                      ],
+                      "nameLocations": ["16683:11:133"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 70250,
                       "src": "16683:11:133"
@@ -31638,9 +31294,7 @@
                       "pathNode": {
                         "id": 63731,
                         "name": "AuctionStack",
-                        "nameLocations": [
-                          "16736:12:133"
-                        ],
+                        "nameLocations": ["16736:12:133"],
                         "nodeType": "IdentifierPath",
                         "referencedDeclaration": 70497,
                         "src": "16736:12:133"
@@ -31798,9 +31452,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    63887
-                  ],
+                  "assignments": [63887],
                   "declarations": [
                     {
                       "constant": false,
@@ -32272,9 +31924,7 @@
                   },
                   "id": 63925,
                   "initializationExpression": {
-                    "assignments": [
-                      63892
-                    ],
+                    "assignments": [63892],
                     "declarations": [
                       {
                         "constant": false,
@@ -32496,9 +32146,7 @@
                     "pathNode": {
                       "id": 63869,
                       "name": "LienStorage",
-                      "nameLocations": [
-                        "18012:11:133"
-                      ],
+                      "nameLocations": ["18012:11:133"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 70250,
                       "src": "18012:11:133"
@@ -32534,9 +32182,7 @@
                       "pathNode": {
                         "id": 63872,
                         "name": "Stack",
-                        "nameLocations": [
-                          "18039:5:133"
-                        ],
+                        "nameLocations": ["18039:5:133"],
                         "nodeType": "IdentifierPath",
                         "referencedDeclaration": 70296,
                         "src": "18039:5:133"
@@ -32614,9 +32260,7 @@
                       "pathNode": {
                         "id": 63879,
                         "name": "Stack",
-                        "nameLocations": [
-                          "18119:5:133"
-                        ],
+                        "nameLocations": ["18119:5:133"],
                         "nodeType": "IdentifierPath",
                         "referencedDeclaration": 70296,
                         "src": "18119:5:133"
@@ -33042,9 +32686,7 @@
                     "pathNode": {
                       "id": 63938,
                       "name": "LienStorage",
-                      "nameLocations": [
-                        "18574:11:133"
-                      ],
+                      "nameLocations": ["18574:11:133"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 70250,
                       "src": "18574:11:133"
@@ -33107,9 +32749,7 @@
                       "pathNode": {
                         "id": 63943,
                         "name": "Stack",
-                        "nameLocations": [
-                          "18627:5:133"
-                        ],
+                        "nameLocations": ["18627:5:133"],
                         "nodeType": "IdentifierPath",
                         "referencedDeclaration": 70296,
                         "src": "18627:5:133"
@@ -33157,9 +32797,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    63985
-                  ],
+                  "assignments": [63985],
                   "declarations": [
                     {
                       "constant": false,
@@ -33555,9 +33193,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              70349
-            ],
+            "baseFunctions": [70349],
             "functionSelector": "2e3b8883",
             "implemented": true,
             "kind": "function",
@@ -33589,9 +33225,7 @@
                     "pathNode": {
                       "id": 63977,
                       "name": "Stack",
-                      "nameLocations": [
-                        "18866:5:133"
-                      ],
+                      "nameLocations": ["18866:5:133"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 70296,
                       "src": "18866:5:133"
@@ -33715,9 +33349,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              70523
-            ],
+            "baseFunctions": [70523],
             "functionSelector": "289952d3",
             "implemented": true,
             "kind": "function",
@@ -33815,9 +33447,7 @@
                 "modifierName": {
                   "id": 64017,
                   "name": "validateStack",
-                  "nameLocations": [
-                    "19196:13:133"
-                  ],
+                  "nameLocations": ["19196:13:133"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 62636,
                   "src": "19196:13:133"
@@ -33854,9 +33484,7 @@
                       "pathNode": {
                         "id": 64012,
                         "name": "Stack",
-                        "nameLocations": [
-                          "19150:5:133"
-                        ],
+                        "nameLocations": ["19150:5:133"],
                         "nodeType": "IdentifierPath",
                         "referencedDeclaration": 70296,
                         "src": "19150:5:133"
@@ -33932,9 +33560,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    64043
-                  ],
+                  "assignments": [64043],
                   "declarations": [
                     {
                       "constant": false,
@@ -34264,9 +33890,7 @@
                   },
                   "id": 64071,
                   "initializationExpression": {
-                    "assignments": [
-                      64048
-                    ],
+                    "assignments": [64048],
                     "declarations": [
                       {
                         "constant": false,
@@ -34337,9 +33961,7 @@
                       "pathNode": {
                         "id": 64034,
                         "name": "Stack",
-                        "nameLocations": [
-                          "19391:5:133"
-                        ],
+                        "nameLocations": ["19391:5:133"],
                         "nodeType": "IdentifierPath",
                         "referencedDeclaration": 70296,
                         "src": "19391:5:133"
@@ -34649,9 +34271,7 @@
                   },
                   "id": 64117,
                   "initializationExpression": {
-                    "assignments": [
-                      64097
-                    ],
+                    "assignments": [64097],
                     "declarations": [
                       {
                         "constant": false,
@@ -34738,9 +34358,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              70535
-            ],
+            "baseFunctions": [70535],
             "functionSelector": "e544b594",
             "implemented": true,
             "kind": "function",
@@ -34838,9 +34456,7 @@
                 "modifierName": {
                   "id": 64081,
                   "name": "validateStack",
-                  "nameLocations": [
-                    "19756:13:133"
-                  ],
+                  "nameLocations": ["19756:13:133"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 62636,
                   "src": "19756:13:133"
@@ -34877,9 +34493,7 @@
                       "pathNode": {
                         "id": 64074,
                         "name": "Stack",
-                        "nameLocations": [
-                          "19697:5:133"
-                        ],
+                        "nameLocations": ["19697:5:133"],
                         "nodeType": "IdentifierPath",
                         "referencedDeclaration": 70296,
                         "src": "19697:5:133"
@@ -35139,9 +34753,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              70383
-            ],
+            "baseFunctions": [70383],
             "functionSelector": "c97deeee",
             "implemented": true,
             "kind": "function",
@@ -35173,9 +34785,7 @@
                     "pathNode": {
                       "id": 64120,
                       "name": "Stack",
-                      "nameLocations": [
-                        "20004:5:133"
-                      ],
+                      "nameLocations": ["20004:5:133"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 70296,
                       "src": "20004:5:133"
@@ -35385,9 +34995,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              70394
-            ],
+            "baseFunctions": [70394],
             "functionSelector": "d2d58325",
             "implemented": true,
             "kind": "function",
@@ -35419,9 +35027,7 @@
                     "pathNode": {
                       "id": 64140,
                       "name": "Stack",
-                      "nameLocations": [
-                        "20157:5:133"
-                      ],
+                      "nameLocations": ["20157:5:133"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 70296,
                       "src": "20157:5:133"
@@ -35721,9 +35327,7 @@
                     "pathNode": {
                       "id": 64162,
                       "name": "Stack",
-                      "nameLocations": [
-                        "20526:5:133"
-                      ],
+                      "nameLocations": ["20526:5:133"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 70296,
                       "src": "20526:5:133"
@@ -35818,9 +35422,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    64196
-                  ],
+                  "assignments": [64196],
                   "declarations": [
                     {
                       "constant": false,
@@ -36205,9 +35807,7 @@
                     "pathNode": {
                       "id": 64185,
                       "name": "LienStorage",
-                      "nameLocations": [
-                        "20914:11:133"
-                      ],
+                      "nameLocations": ["20914:11:133"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 70250,
                       "src": "20914:11:133"
@@ -36242,9 +35842,7 @@
                     "pathNode": {
                       "id": 64188,
                       "name": "Stack",
-                      "nameLocations": [
-                        "20937:5:133"
-                      ],
+                      "nameLocations": ["20937:5:133"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 70296,
                       "src": "20937:5:133"
@@ -36312,9 +35910,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    64244
-                  ],
+                  "assignments": [64244],
                   "declarations": [
                     {
                       "constant": false,
@@ -36337,9 +35933,7 @@
                         "pathNode": {
                           "id": 64242,
                           "name": "Stack",
-                          "nameLocations": [
-                            "21606:5:133"
-                          ],
+                          "nameLocations": ["21606:5:133"],
                           "nodeType": "IdentifierPath",
                           "referencedDeclaration": 70296,
                           "src": "21606:5:133"
@@ -36396,9 +35990,7 @@
                   "src": "21606:42:133"
                 },
                 {
-                  "assignments": [
-                    64250
-                  ],
+                  "assignments": [64250],
                   "declarations": [
                     {
                       "constant": false,
@@ -36628,9 +36220,7 @@
                   }
                 },
                 {
-                  "assignments": [
-                    64268
-                  ],
+                  "assignments": [64268],
                   "declarations": [
                     {
                       "constant": false,
@@ -36814,9 +36404,7 @@
                   }
                 },
                 {
-                  "assignments": [
-                    64283
-                  ],
+                  "assignments": [64283],
                   "declarations": [
                     {
                       "constant": false,
@@ -36931,9 +36519,7 @@
                   "src": "22049:47:133"
                 },
                 {
-                  "assignments": [
-                    64291
-                  ],
+                  "assignments": [64291],
                   "declarations": [
                     {
                       "constant": false,
@@ -37018,9 +36604,7 @@
                   "src": "22102:35:133"
                 },
                 {
-                  "assignments": [
-                    64297
-                  ],
+                  "assignments": [64297],
                   "declarations": [
                     {
                       "constant": false,
@@ -37120,9 +36704,7 @@
                   "src": "22143:49:133"
                 },
                 {
-                  "assignments": [
-                    64304
-                  ],
+                  "assignments": [64304],
                   "declarations": [
                     {
                       "constant": false,
@@ -37559,11 +37141,7 @@
                                 "22450:6:133",
                                 "22488:9:133"
                               ],
-                              "names": [
-                                "interestOwed",
-                                "amount",
-                                "lienSlope"
-                              ],
+                              "names": ["interestOwed", "amount", "lienSlope"],
                               "nodeType": "FunctionCall",
                               "src": "22354:177:133",
                               "tryCall": false,
@@ -39096,9 +38674,7 @@
                     "pathNode": {
                       "id": 64221,
                       "name": "LienStorage",
-                      "nameLocations": [
-                        "21440:11:133"
-                      ],
+                      "nameLocations": ["21440:11:133"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 70250,
                       "src": "21440:11:133"
@@ -39134,9 +38710,7 @@
                       "pathNode": {
                         "id": 64224,
                         "name": "Stack",
-                        "nameLocations": [
-                          "21467:5:133"
-                        ],
+                        "nameLocations": ["21467:5:133"],
                         "nodeType": "IdentifierPath",
                         "referencedDeclaration": 70296,
                         "src": "21467:5:133"
@@ -39269,9 +38843,7 @@
                       "pathNode": {
                         "id": 64235,
                         "name": "Stack",
-                        "nameLocations": [
-                          "21575:5:133"
-                        ],
+                        "nameLocations": ["21575:5:133"],
                         "nodeType": "IdentifierPath",
                         "referencedDeclaration": 70296,
                         "src": "21575:5:133"
@@ -39340,9 +38912,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    64466
-                  ],
+                  "assignments": [64466],
                   "declarations": [
                     {
                       "constant": false,
@@ -39459,10 +39029,7 @@
                       "id": 64470,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        -18,
-                        -18
-                      ],
+                      "overloadedDeclarations": [-18, -18],
                       "referencedDeclaration": -18,
                       "src": "23883:7:133",
                       "typeDescriptions": {
@@ -39585,10 +39152,7 @@
                             "pathNode": {
                               "id": 64477,
                               "name": "ILienToken.Stack",
-                              "nameLocations": [
-                                "23930:10:133",
-                                "23941:5:133"
-                              ],
+                              "nameLocations": ["23930:10:133", "23941:5:133"],
                               "nodeType": "IdentifierPath",
                               "referencedDeclaration": 70296,
                               "src": "23930:16:133"
@@ -39636,9 +39200,7 @@
                   "src": "23915:45:133"
                 },
                 {
-                  "assignments": [
-                    64488
-                  ],
+                  "assignments": [64488],
                   "declarations": [
                     {
                       "constant": false,
@@ -40419,9 +39981,7 @@
                       "pathNode": {
                         "id": 64453,
                         "name": "Stack",
-                        "nameLocations": [
-                          "23751:5:133"
-                        ],
+                        "nameLocations": ["23751:5:133"],
                         "nodeType": "IdentifierPath",
                         "referencedDeclaration": 70296,
                         "src": "23751:5:133"
@@ -40499,9 +40059,7 @@
                       "pathNode": {
                         "id": 64460,
                         "name": "Stack",
-                        "nameLocations": [
-                          "23815:5:133"
-                        ],
+                        "nameLocations": ["23815:5:133"],
                         "nodeType": "IdentifierPath",
                         "referencedDeclaration": 70296,
                         "src": "23815:5:133"
@@ -40833,9 +40391,7 @@
                     "pathNode": {
                       "id": 64552,
                       "name": "LienStorage",
-                      "nameLocations": [
-                        "24401:11:133"
-                      ],
+                      "nameLocations": ["24401:11:133"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 70250,
                       "src": "24401:11:133"
@@ -41168,9 +40724,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              70543
-            ],
+            "baseFunctions": [70543],
             "functionSelector": "d13136fd",
             "implemented": true,
             "kind": "function",
@@ -41579,9 +41133,7 @@
                     "pathNode": {
                       "id": 64604,
                       "name": "LienStorage",
-                      "nameLocations": [
-                        "24869:11:133"
-                      ],
+                      "nameLocations": ["24869:11:133"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 70250,
                       "src": "24869:11:133"
@@ -41677,9 +41229,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    64644
-                  ],
+                  "assignments": [64644],
                   "declarations": [
                     {
                       "constant": false,
@@ -41702,9 +41252,7 @@
                         "pathNode": {
                           "id": 64642,
                           "name": "LienStorage",
-                          "nameLocations": [
-                            "25150:11:133"
-                          ],
+                          "nameLocations": ["25150:11:133"],
                           "nodeType": "IdentifierPath",
                           "referencedDeclaration": 70250,
                           "src": "25150:11:133"
@@ -41755,9 +41303,7 @@
                   "src": "25150:46:133"
                 },
                 {
-                  "assignments": [
-                    64649
-                  ],
+                  "assignments": [64649],
                   "declarations": [
                     {
                       "constant": false,
@@ -42084,10 +41630,7 @@
                       "id": 64654,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        -18,
-                        -18
-                      ],
+                      "overloadedDeclarations": [-18, -18],
                       "referencedDeclaration": -18,
                       "src": "25243:7:133",
                       "typeDescriptions": {
@@ -42354,9 +41897,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              70552
-            ],
+            "baseFunctions": [70552],
             "functionSelector": "4bf1c849",
             "implemented": true,
             "kind": "function",
@@ -42388,9 +41929,7 @@
                     "pathNode": {
                       "id": 64635,
                       "name": "Lien",
-                      "nameLocations": [
-                        "25099:4:133"
-                      ],
+                      "nameLocations": ["25099:4:133"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 70278,
                       "src": "25099:4:133"
@@ -42659,9 +42198,7 @@
                     "pathNode": {
                       "id": 64692,
                       "name": "LienStorage",
-                      "nameLocations": [
-                        "25516:11:133"
-                      ],
+                      "nameLocations": ["25516:11:133"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 70250,
                       "src": "25516:11:133"
@@ -42751,9 +42288,7 @@
             "baseName": {
               "id": 62053,
               "name": "ERC721",
-              "nameLocations": [
-                "1535:6:133"
-              ],
+              "nameLocations": ["1535:6:133"],
               "nodeType": "IdentifierPath",
               "referencedDeclaration": 26990,
               "src": "1535:6:133"
@@ -42766,9 +42301,7 @@
             "baseName": {
               "id": 62055,
               "name": "ILienToken",
-              "nameLocations": [
-                "1543:10:133"
-              ],
+              "nameLocations": ["1543:10:133"],
               "nodeType": "IdentifierPath",
               "referencedDeclaration": 70649,
               "src": "1543:10:133"
@@ -42781,9 +42314,7 @@
             "baseName": {
               "id": 62057,
               "name": "Auth",
-              "nameLocations": [
-                "1555:4:133"
-              ],
+              "nameLocations": ["1555:4:133"],
               "nodeType": "IdentifierPath",
               "referencedDeclaration": 54916,
               "src": "1555:4:133"
@@ -42803,26 +42334,11 @@
           "text": " @title LienToken\n @notice This contract handles the creation, payments, buyouts, and liquidations of tokenized NFT-collateralized debt (liens). Vaults which originate loans against supported collateral are issued a LienToken representing the right to loan repayments and auctioned funds on liquidation."
         },
         "fullyImplemented": true,
-        "linearizedBaseContracts": [
-          64717,
-          54916,
-          70649,
-          26990,
-          70156,
-          69788
-        ],
+        "linearizedBaseContracts": [64717, 54916, 70649, 26990, 70156, 69788],
         "name": "LienToken",
         "nameLocation": "1522:9:133",
         "scope": 64718,
-        "usedErrors": [
-          70612,
-          70618,
-          70620,
-          70622,
-          70624,
-          70643,
-          70648
-        ]
+        "usedErrors": [70612, 70618, 70620, 70622, 70624, 70643, 70648]
       }
     ],
     "license": "UNLICENSED"

@@ -2451,48 +2451,20 @@
     "absolutePath": "src/WithdrawProxy.sol",
     "id": 68591,
     "exportedSymbols": {
-      "Auth": [
-        54916
-      ],
-      "Authority": [
-        54929
-      ],
-      "ERC20": [
-        56223
-      ],
-      "ERC4626Cloned": [
-        25940
-      ],
-      "FixedPointMathLib": [
-        57064
-      ],
-      "IERC20Metadata": [
-        69891
-      ],
-      "IERC4626": [
-        70061
-      ],
-      "ITransferProxy": [
-        70948
-      ],
-      "IWithdrawProxy": [
-        71369
-      ],
-      "PublicVault": [
-        66610
-      ],
-      "SafeCastLib": [
-        28393
-      ],
-      "SafeTransferLib": [
-        57406
-      ],
-      "WithdrawProxy": [
-        68590
-      ],
-      "WithdrawVaultBase": [
-        68684
-      ]
+      "Auth": [54916],
+      "Authority": [54929],
+      "ERC20": [56223],
+      "ERC4626Cloned": [25940],
+      "FixedPointMathLib": [57064],
+      "IERC20Metadata": [69891],
+      "IERC4626": [70061],
+      "ITransferProxy": [70948],
+      "IWithdrawProxy": [71369],
+      "PublicVault": [66610],
+      "SafeCastLib": [28393],
+      "SafeTransferLib": [57406],
+      "WithdrawProxy": [68590],
+      "WithdrawVaultBase": [68684]
     },
     "nodeType": "SourceUnit",
     "src": "180:8638:138",
@@ -2502,12 +2474,7 @@
         "nodeType": "PragmaDirective",
         "src": "180:24:138",
         "nodes": [],
-        "literals": [
-          "solidity",
-          "^",
-          "0.8",
-          ".17"
-        ]
+        "literals": ["solidity", "^", "0.8", ".17"]
       },
       {
         "id": 67908,
@@ -2847,9 +2814,7 @@
             "libraryName": {
               "id": 67936,
               "name": "SafeTransferLib",
-              "nameLocations": [
-                "1524:15:138"
-              ],
+              "nameLocations": ["1524:15:138"],
               "nodeType": "IdentifierPath",
               "referencedDeclaration": 57406,
               "src": "1524:15:138"
@@ -2860,9 +2825,7 @@
               "pathNode": {
                 "id": 67937,
                 "name": "ERC20",
-                "nameLocations": [
-                  "1544:5:138"
-                ],
+                "nameLocations": ["1544:5:138"],
                 "nodeType": "IdentifierPath",
                 "referencedDeclaration": 56223,
                 "src": "1544:5:138"
@@ -2884,9 +2847,7 @@
             "libraryName": {
               "id": 67940,
               "name": "FixedPointMathLib",
-              "nameLocations": [
-                "1559:17:138"
-              ],
+              "nameLocations": ["1559:17:138"],
               "nodeType": "IdentifierPath",
               "referencedDeclaration": 57064,
               "src": "1559:17:138"
@@ -2911,9 +2872,7 @@
             "libraryName": {
               "id": 67943,
               "name": "SafeCastLib",
-              "nameLocations": [
-                "1598:11:138"
-              ],
+              "nameLocations": ["1598:11:138"],
               "nodeType": "IdentifierPath",
               "referencedDeclaration": 28393,
               "src": "1598:11:138"
@@ -3334,9 +3293,7 @@
                     "pathNode": {
                       "id": 67975,
                       "name": "InvalidStates",
-                      "nameLocations": [
-                        "2486:13:138"
-                      ],
+                      "nameLocations": ["2486:13:138"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 67974,
                       "src": "2486:13:138"
@@ -3389,9 +3346,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              69890
-            ],
+            "baseFunctions": [69890],
             "functionSelector": "313ce567",
             "implemented": true,
             "kind": "function",
@@ -3515,10 +3470,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              25438,
-              68663
-            ],
+            "baseFunctions": [25438, 68663],
             "functionSelector": "38d52e0f",
             "implemented": true,
             "kind": "function",
@@ -3532,9 +3484,7 @@
                 {
                   "id": 67990,
                   "name": "ERC4626Cloned",
-                  "nameLocations": [
-                    "2636:13:138"
-                  ],
+                  "nameLocations": ["2636:13:138"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 25940,
                   "src": "2636:13:138"
@@ -3542,9 +3492,7 @@
                 {
                   "id": 67991,
                   "name": "WithdrawVaultBase",
-                  "nameLocations": [
-                    "2651:17:138"
-                  ],
+                  "nameLocations": ["2651:17:138"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 68684,
                   "src": "2651:17:138"
@@ -3686,9 +3634,7 @@
                               "id": 68010,
                               "name": "asset",
                               "nodeType": "Identifier",
-                              "overloadedDeclarations": [
-                                68001
-                              ],
+                              "overloadedDeclarations": [68001],
                               "referencedDeclaration": 68001,
                               "src": "2853:5:138",
                               "typeDescriptions": {
@@ -3785,10 +3731,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              25731,
-              69936
-            ],
+            "baseFunctions": [25731, 69936],
             "functionSelector": "01e1d114",
             "implemented": true,
             "kind": "function",
@@ -3802,9 +3745,7 @@
                 {
                   "id": 68003,
                   "name": "ERC4626Cloned",
-                  "nameLocations": [
-                    "2785:13:138"
-                  ],
+                  "nameLocations": ["2785:13:138"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 25940,
                   "src": "2785:13:138"
@@ -3812,9 +3753,7 @@
                 {
                   "id": 68004,
                   "name": "IERC4626",
-                  "nameLocations": [
-                    "2800:8:138"
-                  ],
+                  "nameLocations": ["2800:8:138"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 70061,
                   "src": "2800:8:138"
@@ -3912,9 +3851,7 @@
                                       "id": 68036,
                                       "name": "asset",
                                       "nodeType": "Identifier",
-                                      "overloadedDeclarations": [
-                                        68001
-                                      ],
+                                      "overloadedDeclarations": [68001],
                                       "referencedDeclaration": 68001,
                                       "src": "3213:5:138",
                                       "typeDescriptions": {
@@ -4108,10 +4045,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              68611,
-              69878
-            ],
+            "baseFunctions": [68611, 69878],
             "documentation": {
               "id": 68022,
               "nodeType": "StructuredDocumentation",
@@ -4131,9 +4065,7 @@
                 {
                   "id": 68024,
                   "name": "IERC20Metadata",
-                  "nameLocations": [
-                    "3077:14:138"
-                  ],
+                  "nameLocations": ["3077:14:138"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 69891,
                   "src": "3077:14:138"
@@ -4141,9 +4073,7 @@
                 {
                   "id": 68025,
                   "name": "WithdrawVaultBase",
-                  "nameLocations": [
-                    "3093:17:138"
-                  ],
+                  "nameLocations": ["3093:17:138"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 68684,
                   "src": "3093:17:138"
@@ -4288,9 +4218,7 @@
                                       "id": 68063,
                                       "name": "asset",
                                       "nodeType": "Identifier",
-                                      "overloadedDeclarations": [
-                                        68001
-                                      ],
+                                      "overloadedDeclarations": [68001],
                                       "referencedDeclaration": 68001,
                                       "src": "3566:5:138",
                                       "typeDescriptions": {
@@ -4492,10 +4420,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              68616,
-              69884
-            ],
+            "baseFunctions": [68616, 69884],
             "documentation": {
               "id": 68046,
               "nodeType": "StructuredDocumentation",
@@ -4515,9 +4440,7 @@
                 {
                   "id": 68048,
                   "name": "IERC20Metadata",
-                  "nameLocations": [
-                    "3429:14:138"
-                  ],
+                  "nameLocations": ["3429:14:138"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 69891,
                   "src": "3429:14:138"
@@ -4525,9 +4448,7 @@
                 {
                   "id": 68049,
                   "name": "WithdrawVaultBase",
-                  "nameLocations": [
-                    "3445:17:138"
-                  ],
+                  "nameLocations": ["3445:17:138"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 68684,
                   "src": "3445:17:138"
@@ -4701,10 +4622,7 @@
                       "id": 68085,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        -18,
-                        -18
-                      ],
+                      "overloadedDeclarations": [-18, -18],
                       "referencedDeclaration": -18,
                       "src": "3971:7:138",
                       "typeDescriptions": {
@@ -4822,10 +4740,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              25540,
-              70004
-            ],
+            "baseFunctions": [25540, 70004],
             "documentation": {
               "id": 68073,
               "nodeType": "StructuredDocumentation",
@@ -4845,9 +4760,7 @@
                 {
                   "id": 68079,
                   "name": "ERC4626Cloned",
-                  "nameLocations": [
-                    "3909:13:138"
-                  ],
+                  "nameLocations": ["3909:13:138"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 25940,
                   "src": "3909:13:138"
@@ -4855,9 +4768,7 @@
                 {
                   "id": 68080,
                   "name": "IERC4626",
-                  "nameLocations": [
-                    "3924:8:138"
-                  ],
+                  "nameLocations": ["3924:8:138"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 70061,
                   "src": "3924:8:138"
@@ -5015,10 +4926,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              25492,
-              69978
-            ],
+            "baseFunctions": [25492, 69978],
             "functionSelector": "6e553f65",
             "implemented": true,
             "kind": "function",
@@ -5032,9 +4940,7 @@
                 {
                   "id": 68108,
                   "name": "ERC4626Cloned",
-                  "nameLocations": [
-                    "4168:13:138"
-                  ],
+                  "nameLocations": ["4168:13:138"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 25940,
                   "src": "4168:13:138"
@@ -5042,9 +4948,7 @@
                 {
                   "id": 68109,
                   "name": "IERC4626",
-                  "nameLocations": [
-                    "4183:8:138"
-                  ],
+                  "nameLocations": ["4183:8:138"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 70061,
                   "src": "4183:8:138"
@@ -5165,9 +5069,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    68134
-                  ],
+                  "assignments": [68134],
                   "declarations": [
                     {
                       "constant": false,
@@ -5190,9 +5092,7 @@
                         "pathNode": {
                           "id": 68132,
                           "name": "WPStorage",
-                          "nameLocations": [
-                            "4423:9:138"
-                          ],
+                          "nameLocations": ["4423:9:138"],
                           "nodeType": "IdentifierPath",
                           "referencedDeclaration": 67969,
                           "src": "4423:9:138"
@@ -5491,10 +5391,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              25630,
-              70032
-            ],
+            "baseFunctions": [25630, 70032],
             "functionSelector": "b460af94",
             "implemented": true,
             "kind": "function",
@@ -5508,9 +5405,7 @@
                 {
                   "id": 68126,
                   "name": "ERC4626Cloned",
-                  "nameLocations": [
-                    "4367:13:138"
-                  ],
+                  "nameLocations": ["4367:13:138"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 25940,
                   "src": "4367:13:138"
@@ -5518,9 +5413,7 @@
                 {
                   "id": 68127,
                   "name": "IERC4626",
-                  "nameLocations": [
-                    "4382:8:138"
-                  ],
+                  "nameLocations": ["4382:8:138"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 70061,
                   "src": "4382:8:138"
@@ -5669,9 +5562,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    68174
-                  ],
+                  "assignments": [68174],
                   "declarations": [
                     {
                       "constant": false,
@@ -5694,9 +5585,7 @@
                         "pathNode": {
                           "id": 68172,
                           "name": "WPStorage",
-                          "nameLocations": [
-                            "5293:9:138"
-                          ],
+                          "nameLocations": ["5293:9:138"],
                           "nodeType": "IdentifierPath",
                           "referencedDeclaration": 67969,
                           "src": "5293:9:138"
@@ -5995,10 +5884,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              25726,
-              70060
-            ],
+            "baseFunctions": [25726, 70060],
             "documentation": {
               "id": 68158,
               "nodeType": "StructuredDocumentation",
@@ -6018,9 +5904,7 @@
                 {
                   "id": 68166,
                   "name": "ERC4626Cloned",
-                  "nameLocations": [
-                    "5237:13:138"
-                  ],
+                  "nameLocations": ["5237:13:138"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 25940,
                   "src": "5237:13:138"
@@ -6028,9 +5912,7 @@
                 {
                   "id": 68167,
                   "name": "IERC4626",
-                  "nameLocations": [
-                    "5252:8:138"
-                  ],
+                  "nameLocations": ["5252:8:138"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 70061,
                   "src": "5252:8:138"
@@ -6280,9 +6162,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              69787
-            ],
+            "baseFunctions": [69787],
             "functionSelector": "01ffc9a7",
             "implemented": true,
             "kind": "function",
@@ -6374,9 +6254,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    68219
-                  ],
+                  "assignments": [68219],
                   "declarations": [
                     {
                       "constant": false,
@@ -6505,9 +6383,7 @@
                     "pathNode": {
                       "id": 68214,
                       "name": "WPStorage",
-                      "nameLocations": [
-                        "5905:9:138"
-                      ],
+                      "nameLocations": ["5905:9:138"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 67969,
                       "src": "5905:9:138"
@@ -6541,9 +6417,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    68231
-                  ],
+                  "assignments": [68231],
                   "declarations": [
                     {
                       "constant": false,
@@ -6566,9 +6440,7 @@
                         "pathNode": {
                           "id": 68229,
                           "name": "WPStorage",
-                          "nameLocations": [
-                            "6083:9:138"
-                          ],
+                          "nameLocations": ["6083:9:138"],
                           "nodeType": "IdentifierPath",
                           "referencedDeclaration": 67969,
                           "src": "6083:9:138"
@@ -6654,9 +6526,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              71366
-            ],
+            "baseFunctions": [71366],
             "functionSelector": "989673b1",
             "implemented": true,
             "kind": "function",
@@ -6720,9 +6590,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    68246
-                  ],
+                  "assignments": [68246],
                   "declarations": [
                     {
                       "constant": false,
@@ -6745,9 +6613,7 @@
                         "pathNode": {
                           "id": 68244,
                           "name": "WPStorage",
-                          "nameLocations": [
-                            "6219:9:138"
-                          ],
+                          "nameLocations": ["6219:9:138"],
                           "nodeType": "IdentifierPath",
                           "referencedDeclaration": 67969,
                           "src": "6219:9:138"
@@ -6833,9 +6699,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              71360
-            ],
+            "baseFunctions": [71360],
             "functionSelector": "a5573720",
             "implemented": true,
             "kind": "function",
@@ -6899,9 +6763,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    68261
-                  ],
+                  "assignments": [68261],
                   "declarations": [
                     {
                       "constant": false,
@@ -6924,9 +6786,7 @@
                         "pathNode": {
                           "id": 68259,
                           "name": "WPStorage",
-                          "nameLocations": [
-                            "6348:9:138"
-                          ],
+                          "nameLocations": ["6348:9:138"],
                           "nodeType": "IdentifierPath",
                           "referencedDeclaration": 67969,
                           "src": "6348:9:138"
@@ -7012,9 +6872,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              71354
-            ],
+            "baseFunctions": [71354],
             "functionSelector": "b701e727",
             "implemented": true,
             "kind": "function",
@@ -7187,10 +7045,7 @@
                       "id": 68274,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        -18,
-                        -18
-                      ],
+                      "overloadedDeclarations": [-18, -18],
                       "referencedDeclaration": -18,
                       "src": "6483:7:138",
                       "typeDescriptions": {
@@ -7219,9 +7074,7 @@
                   "src": "6483:53:138"
                 },
                 {
-                  "assignments": [
-                    68285
-                  ],
+                  "assignments": [68285],
                   "declarations": [
                     {
                       "constant": false,
@@ -7244,9 +7097,7 @@
                         "pathNode": {
                           "id": 68283,
                           "name": "WPStorage",
-                          "nameLocations": [
-                            "6542:9:138"
-                          ],
+                          "nameLocations": ["6542:9:138"],
                           "nodeType": "IdentifierPath",
                           "referencedDeclaration": 67969,
                           "src": "6542:9:138"
@@ -7357,9 +7208,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              71348
-            ],
+            "baseFunctions": [71348],
             "functionSelector": "1ccf45bc",
             "implemented": true,
             "kind": "function",
@@ -7423,9 +7272,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    68301
-                  ],
+                  "assignments": [68301],
                   "declarations": [
                     {
                       "constant": false,
@@ -7448,9 +7295,7 @@
                         "pathNode": {
                           "id": 68299,
                           "name": "WPStorage",
-                          "nameLocations": [
-                            "6655:9:138"
-                          ],
+                          "nameLocations": ["6655:9:138"],
                           "nodeType": "IdentifierPath",
                           "referencedDeclaration": 67969,
                           "src": "6655:9:138"
@@ -8034,9 +7879,7 @@
                   }
                 },
                 {
-                  "assignments": [
-                    68345
-                  ],
+                  "assignments": [68345],
                   "declarations": [
                     {
                       "constant": false,
@@ -8087,9 +7930,7 @@
                   "src": "7109:26:138"
                 },
                 {
-                  "assignments": [
-                    68349
-                  ],
+                  "assignments": [68349],
                   "declarations": [
                     {
                       "constant": false,
@@ -8206,9 +8047,7 @@
                                 "id": 68351,
                                 "name": "asset",
                                 "nodeType": "Identifier",
-                                "overloadedDeclarations": [
-                                  68001
-                                ],
+                                "overloadedDeclarations": [68001],
                                 "referencedDeclaration": 68001,
                                 "src": "7165:5:138",
                                 "typeDescriptions": {
@@ -9010,9 +8849,7 @@
                                             "id": 68423,
                                             "name": "asset",
                                             "nodeType": "Identifier",
-                                            "overloadedDeclarations": [
-                                              68001
-                                            ],
+                                            "overloadedDeclarations": [68001],
                                             "referencedDeclaration": 68001,
                                             "src": "7643:5:138",
                                             "typeDescriptions": {
@@ -9406,9 +9243,7 @@
                                           "id": 68441,
                                           "name": "asset",
                                           "nodeType": "Identifier",
-                                          "overloadedDeclarations": [
-                                            68001
-                                          ],
+                                          "overloadedDeclarations": [68001],
                                           "referencedDeclaration": 68001,
                                           "src": "7774:5:138",
                                           "typeDescriptions": {
@@ -9582,9 +9417,7 @@
                                     "id": 68403,
                                     "name": "asset",
                                     "nodeType": "Identifier",
-                                    "overloadedDeclarations": [
-                                      68001
-                                    ],
+                                    "overloadedDeclarations": [68001],
                                     "referencedDeclaration": 68001,
                                     "src": "7494:5:138",
                                     "typeDescriptions": {
@@ -9912,9 +9745,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              71342
-            ],
+            "baseFunctions": [71342],
             "functionSelector": "4e71d92d",
             "implemented": true,
             "kind": "function",
@@ -10039,10 +9870,7 @@
                       "id": 68481,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        -18,
-                        -18
-                      ],
+                      "overloadedDeclarations": [-18, -18],
                       "referencedDeclaration": -18,
                       "src": "8026:7:138",
                       "typeDescriptions": {
@@ -10071,9 +9899,7 @@
                   "src": "8026:30:138"
                 },
                 {
-                  "assignments": [
-                    68490
-                  ],
+                  "assignments": [68490],
                   "declarations": [
                     {
                       "constant": false,
@@ -10180,9 +10006,7 @@
                               "id": 68492,
                               "name": "asset",
                               "nodeType": "Identifier",
-                              "overloadedDeclarations": [
-                                68001
-                              ],
+                              "overloadedDeclarations": [68001],
                               "referencedDeclaration": 68001,
                               "src": "8086:5:138",
                               "typeDescriptions": {
@@ -10420,9 +10244,7 @@
                               "id": 68512,
                               "name": "asset",
                               "nodeType": "Identifier",
-                              "overloadedDeclarations": [
-                                68001
-                              ],
+                              "overloadedDeclarations": [68001],
                               "referencedDeclaration": 68001,
                               "src": "8189:5:138",
                               "typeDescriptions": {
@@ -10536,9 +10358,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              71338
-            ],
+            "baseFunctions": [71338],
             "functionSelector": "0aeba34e",
             "implemented": true,
             "kind": "function",
@@ -10747,10 +10567,7 @@
                       "id": 68528,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        -18,
-                        -18
-                      ],
+                      "overloadedDeclarations": [-18, -18],
                       "referencedDeclaration": -18,
                       "src": "8334:7:138",
                       "typeDescriptions": {
@@ -10900,9 +10717,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              71320
-            ],
+            "baseFunctions": [71320],
             "functionSelector": "042ef56e",
             "implemented": true,
             "kind": "function",
@@ -11055,10 +10870,7 @@
                       "id": 68553,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        -18,
-                        -18
-                      ],
+                      "overloadedDeclarations": [-18, -18],
                       "referencedDeclaration": -18,
                       "src": "8582:7:138",
                       "typeDescriptions": {
@@ -11087,9 +10899,7 @@
                   "src": "8582:30:138"
                 },
                 {
-                  "assignments": [
-                    68563
-                  ],
+                  "assignments": [68563],
                   "declarations": [
                     {
                       "constant": false,
@@ -11112,9 +10922,7 @@
                         "pathNode": {
                           "id": 68561,
                           "name": "WPStorage",
-                          "nameLocations": [
-                            "8618:9:138"
-                          ],
+                          "nameLocations": ["8618:9:138"],
                           "nodeType": "IdentifierPath",
                           "referencedDeclaration": 67969,
                           "src": "8618:9:138"
@@ -11422,9 +11230,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              71328
-            ],
+            "baseFunctions": [71328],
             "functionSelector": "59a13ae5",
             "implemented": true,
             "kind": "function",
@@ -11510,9 +11316,7 @@
             "baseName": {
               "id": 67932,
               "name": "ERC4626Cloned",
-              "nameLocations": [
-                "1481:13:138"
-              ],
+              "nameLocations": ["1481:13:138"],
               "nodeType": "IdentifierPath",
               "referencedDeclaration": 25940,
               "src": "1481:13:138"
@@ -11525,9 +11329,7 @@
             "baseName": {
               "id": 67934,
               "name": "WithdrawVaultBase",
-              "nameLocations": [
-                "1496:17:138"
-              ],
+              "nameLocations": ["1496:17:138"],
               "nodeType": "IdentifierPath",
               "referencedDeclaration": 68684,
               "src": "1496:17:138"
@@ -11548,25 +11350,13 @@
         },
         "fullyImplemented": true,
         "linearizedBaseContracts": [
-          68590,
-          68684,
-          71369,
-          25940,
-          25404,
-          70061,
-          69891,
-          69866,
-          69788,
-          70845,
+          68590, 68684, 71369, 25940, 25404, 70061, 69891, 69866, 69788, 70845,
           120
         ],
         "name": "WithdrawProxy",
         "nameLocation": "1464:13:138",
         "scope": 68591,
-        "usedErrors": [
-          67979,
-          71368
-        ]
+        "usedErrors": [67979, 71368]
       }
     ],
     "license": "UNLICENSED"

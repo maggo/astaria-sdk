@@ -5417,78 +5417,30 @@
     "absolutePath": "src/PublicVault.sol",
     "id": 66611,
     "exportedSymbols": {
-      "AstariaVaultBase": [
-        59879
-      ],
-      "Auth": [
-        54916
-      ],
-      "Authority": [
-        54929
-      ],
-      "ClonesWithImmutableArgs": [
-        228
-      ],
-      "ERC20": [
-        56223
-      ],
-      "ERC20Cloned": [
-        25404
-      ],
-      "ERC4626": [
-        55755
-      ],
-      "ERC4626Cloned": [
-        25940
-      ],
-      "FixedPointMathLib": [
-        57064
-      ],
-      "IAstariaRouter": [
-        69282
-      ],
-      "IERC165": [
-        69788
-      ],
-      "IERC20": [
-        69866
-      ],
-      "IERC20Metadata": [
-        69891
-      ],
-      "IERC4626": [
-        70061
-      ],
-      "ILienToken": [
-        70649
-      ],
-      "IPublicVault": [
-        70829
-      ],
-      "ITokenBase": [
-        70934
-      ],
-      "LienToken": [
-        64717
-      ],
-      "Math": [
-        85689
-      ],
-      "PublicVault": [
-        66610
-      ],
-      "SafeCastLib": [
-        28393
-      ],
-      "SafeTransferLib": [
-        57406
-      ],
-      "VaultImplementation": [
-        67903
-      ],
-      "WithdrawProxy": [
-        68590
-      ]
+      "AstariaVaultBase": [59879],
+      "Auth": [54916],
+      "Authority": [54929],
+      "ClonesWithImmutableArgs": [228],
+      "ERC20": [56223],
+      "ERC20Cloned": [25404],
+      "ERC4626": [55755],
+      "ERC4626Cloned": [25940],
+      "FixedPointMathLib": [57064],
+      "IAstariaRouter": [69282],
+      "IERC165": [69788],
+      "IERC20": [69866],
+      "IERC20Metadata": [69891],
+      "IERC4626": [70061],
+      "ILienToken": [70649],
+      "IPublicVault": [70829],
+      "ITokenBase": [70934],
+      "LienToken": [64717],
+      "Math": [85689],
+      "PublicVault": [66610],
+      "SafeCastLib": [28393],
+      "SafeTransferLib": [57406],
+      "VaultImplementation": [67903],
+      "WithdrawProxy": [68590]
     },
     "nodeType": "SourceUnit",
     "src": "180:19663:134",
@@ -5498,12 +5450,7 @@
         "nodeType": "PragmaDirective",
         "src": "180:24:134",
         "nodes": [],
-        "literals": [
-          "solidity",
-          "^",
-          "0.8",
-          ".17"
-        ]
+        "literals": ["solidity", "^", "0.8", ".17"]
       },
       {
         "id": 64722,
@@ -6103,9 +6050,7 @@
             "libraryName": {
               "id": 64773,
               "name": "FixedPointMathLib",
-              "nameLocations": [
-                "1678:17:134"
-              ],
+              "nameLocations": ["1678:17:134"],
               "nodeType": "IdentifierPath",
               "referencedDeclaration": 57064,
               "src": "1678:17:134"
@@ -6130,9 +6075,7 @@
             "libraryName": {
               "id": 64776,
               "name": "SafeTransferLib",
-              "nameLocations": [
-                "1717:15:134"
-              ],
+              "nameLocations": ["1717:15:134"],
               "nodeType": "IdentifierPath",
               "referencedDeclaration": 57406,
               "src": "1717:15:134"
@@ -6143,9 +6086,7 @@
               "pathNode": {
                 "id": 64777,
                 "name": "ERC20",
-                "nameLocations": [
-                  "1737:5:134"
-                ],
+                "nameLocations": ["1737:5:134"],
                 "nodeType": "IdentifierPath",
                 "referencedDeclaration": 56223,
                 "src": "1737:5:134"
@@ -6167,9 +6108,7 @@
             "libraryName": {
               "id": 64780,
               "name": "SafeCastLib",
-              "nameLocations": [
-                "1752:11:134"
-              ],
+              "nameLocations": ["1752:11:134"],
               "nodeType": "IdentifierPath",
               "referencedDeclaration": 28393,
               "src": "1752:11:134"
@@ -6295,10 +6234,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              25438,
-              59836
-            ],
+            "baseFunctions": [25438, 59836],
             "functionSelector": "38d52e0f",
             "implemented": true,
             "kind": "function",
@@ -6312,9 +6248,7 @@
                 {
                   "id": 64787,
                   "name": "AstariaVaultBase",
-                  "nameLocations": [
-                    "1954:16:134"
-                  ],
+                  "nameLocations": ["1954:16:134"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 59879,
                   "src": "1954:16:134"
@@ -6322,9 +6256,7 @@
                 {
                   "id": 64788,
                   "name": "ERC4626Cloned",
-                  "nameLocations": [
-                    "1972:13:134"
-                  ],
+                  "nameLocations": ["1972:13:134"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 25940,
                   "src": "1972:13:134"
@@ -6413,9 +6345,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              69890
-            ],
+            "baseFunctions": [69890],
             "functionSelector": "313ce567",
             "implemented": true,
             "kind": "function",
@@ -6429,9 +6359,7 @@
                 {
                   "id": 64800,
                   "name": "IERC20Metadata",
-                  "nameLocations": [
-                    "2111:14:134"
-                  ],
+                  "nameLocations": ["2111:14:134"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 69891,
                   "src": "2111:14:134"
@@ -6529,9 +6457,7 @@
                                       "id": 64823,
                                       "name": "asset",
                                       "nodeType": "Identifier",
-                                      "overloadedDeclarations": [
-                                        64798
-                                      ],
+                                      "overloadedDeclarations": [64798],
                                       "referencedDeclaration": 64798,
                                       "src": "2376:5:134",
                                       "typeDescriptions": {
@@ -6725,11 +6651,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              59788,
-              66948,
-              69878
-            ],
+            "baseFunctions": [59788, 66948, 69878],
             "functionSelector": "06fdde03",
             "implemented": true,
             "kind": "function",
@@ -6743,9 +6665,7 @@
                 {
                   "id": 64810,
                   "name": "IERC20Metadata",
-                  "nameLocations": [
-                    "2234:14:134"
-                  ],
+                  "nameLocations": ["2234:14:134"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 69891,
                   "src": "2234:14:134"
@@ -6753,9 +6673,7 @@
                 {
                   "id": 64811,
                   "name": "AstariaVaultBase",
-                  "nameLocations": [
-                    "2250:16:134"
-                  ],
+                  "nameLocations": ["2250:16:134"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 59879,
                   "src": "2250:16:134"
@@ -6763,9 +6681,7 @@
                 {
                   "id": 64812,
                   "name": "VaultImplementation",
-                  "nameLocations": [
-                    "2268:19:134"
-                  ],
+                  "nameLocations": ["2268:19:134"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 67903,
                   "src": "2268:19:134"
@@ -6863,9 +6779,7 @@
                                       "id": 64847,
                                       "name": "asset",
                                       "nodeType": "Identifier",
-                                      "overloadedDeclarations": [
-                                        64798
-                                      ],
+                                      "overloadedDeclarations": [64798],
                                       "referencedDeclaration": 64798,
                                       "src": "2605:5:134",
                                       "typeDescriptions": {
@@ -7059,11 +6973,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              59793,
-              66954,
-              69884
-            ],
+            "baseFunctions": [59793, 66954, 69884],
             "functionSelector": "95d89b41",
             "implemented": true,
             "kind": "function",
@@ -7077,9 +6987,7 @@
                 {
                   "id": 64834,
                   "name": "IERC20Metadata",
-                  "nameLocations": [
-                    "2467:14:134"
-                  ],
+                  "nameLocations": ["2467:14:134"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 69891,
                   "src": "2467:14:134"
@@ -7087,9 +6995,7 @@
                 {
                   "id": 64835,
                   "name": "AstariaVaultBase",
-                  "nameLocations": [
-                    "2483:16:134"
-                  ],
+                  "nameLocations": ["2483:16:134"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 59879,
                   "src": "2483:16:134"
@@ -7097,9 +7003,7 @@
                 {
                   "id": 64836,
                   "name": "VaultImplementation",
-                  "nameLocations": [
-                    "2501:19:134"
-                  ],
+                  "nameLocations": ["2501:19:134"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 67903,
                   "src": "2501:19:134"
@@ -7164,9 +7068,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    64872
-                  ],
+                  "assignments": [64872],
                   "declarations": [
                     {
                       "constant": false,
@@ -7189,9 +7091,7 @@
                         "pathNode": {
                           "id": 64870,
                           "name": "VaultData",
-                          "nameLocations": [
-                            "3153:9:134"
-                          ],
+                          "nameLocations": ["3153:9:134"],
                           "nodeType": "IdentifierPath",
                           "referencedDeclaration": 70682,
                           "src": "3153:9:134"
@@ -7387,9 +7287,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              25726
-            ],
+            "baseFunctions": [25726],
             "documentation": {
               "id": 64857,
               "nodeType": "StructuredDocumentation",
@@ -7409,9 +7307,7 @@
                 {
                   "id": 64865,
                   "name": "ERC4626Cloned",
-                  "nameLocations": [
-                    "3107:13:134"
-                  ],
+                  "nameLocations": ["3107:13:134"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 25940,
                   "src": "3107:13:134"
@@ -7640,9 +7536,7 @@
                   "src": "3428:32:134"
                 },
                 {
-                  "assignments": [
-                    64908
-                  ],
+                  "assignments": [64908],
                   "declarations": [
                     {
                       "constant": false,
@@ -7665,9 +7559,7 @@
                         "pathNode": {
                           "id": 64906,
                           "name": "VaultData",
-                          "nameLocations": [
-                            "3466:9:134"
-                          ],
+                          "nameLocations": ["3466:9:134"],
                           "nodeType": "IdentifierPath",
                           "referencedDeclaration": 70682,
                           "src": "3466:9:134"
@@ -7837,9 +7729,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              25630
-            ],
+            "baseFunctions": [25630],
             "functionSelector": "b460af94",
             "implemented": true,
             "kind": "function",
@@ -7853,9 +7743,7 @@
                 {
                   "id": 64895,
                   "name": "ERC4626Cloned",
-                  "nameLocations": [
-                    "3382:13:134"
-                  ],
+                  "nameLocations": ["3382:13:134"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 25940,
                   "src": "3382:13:134"
@@ -8004,9 +7892,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    64936
-                  ],
+                  "assignments": [64936],
                   "declarations": [
                     {
                       "constant": false,
@@ -8029,9 +7915,7 @@
                         "pathNode": {
                           "id": 64934,
                           "name": "VaultData",
-                          "nameLocations": [
-                            "3803:9:134"
-                          ],
+                          "nameLocations": ["3803:9:134"],
                           "nodeType": "IdentifierPath",
                           "referencedDeclaration": 70682,
                           "src": "3803:9:134"
@@ -8850,9 +8734,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              70726
-            ],
+            "baseFunctions": [70726],
             "functionSelector": "a3a911ba",
             "implemented": true,
             "kind": "function",
@@ -9224,9 +9106,7 @@
                     "pathNode": {
                       "id": 64998,
                       "name": "WithdrawProxy",
-                      "nameLocations": [
-                        "4498:13:134"
-                      ],
+                      "nameLocations": ["4498:13:134"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 68590,
                       "src": "4498:13:134"
@@ -10505,9 +10385,7 @@
                                       "id": 65117,
                                       "name": "asset",
                                       "nodeType": "Identifier",
-                                      "overloadedDeclarations": [
-                                        64798
-                                      ],
+                                      "overloadedDeclarations": [64798],
                                       "referencedDeclaration": 64798,
                                       "src": "5656:5:134",
                                       "typeDescriptions": {
@@ -10804,9 +10682,7 @@
                     "pathNode": {
                       "id": 65069,
                       "name": "VaultData",
-                      "nameLocations": [
-                        "5221:9:134"
-                      ],
+                      "nameLocations": ["5221:9:134"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 70682,
                       "src": "5221:9:134"
@@ -10873,9 +10749,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    65148
-                  ],
+                  "assignments": [65148],
                   "declarations": [
                     {
                       "constant": false,
@@ -10898,9 +10772,7 @@
                         "pathNode": {
                           "id": 65146,
                           "name": "VIData",
-                          "nameLocations": [
-                            "5914:6:134"
-                          ],
+                          "nameLocations": ["5914:6:134"],
                           "nodeType": "IdentifierPath",
                           "referencedDeclaration": 71180,
                           "src": "5914:6:134"
@@ -11054,10 +10926,7 @@
                             "id": 65154,
                             "name": "require",
                             "nodeType": "Identifier",
-                            "overloadedDeclarations": [
-                              -18,
-                              -18
-                            ],
+                            "overloadedDeclarations": [-18, -18],
                             "referencedDeclaration": -18,
                             "src": "5984:7:134",
                             "typeDescriptions": {
@@ -11089,9 +10958,7 @@
                   }
                 },
                 {
-                  "assignments": [
-                    65164
-                  ],
+                  "assignments": [65164],
                   "declarations": [
                     {
                       "constant": false,
@@ -11129,9 +10996,7 @@
                       "id": 65165,
                       "name": "totalAssets",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        65902
-                      ],
+                      "overloadedDeclarations": [65902],
                       "referencedDeclaration": 65902,
                       "src": "6044:11:134",
                       "typeDescriptions": {
@@ -11467,9 +11332,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              25540
-            ],
+            "baseFunctions": [25540],
             "functionSelector": "94bf804d",
             "implemented": true,
             "kind": "function",
@@ -11480,9 +11343,7 @@
                 "modifierName": {
                   "id": 65141,
                   "name": "whenNotPaused",
-                  "nameLocations": [
-                    "5870:13:134"
-                  ],
+                  "nameLocations": ["5870:13:134"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 67144,
                   "src": "5870:13:134"
@@ -11500,9 +11361,7 @@
                 {
                   "id": 65139,
                   "name": "ERC4626Cloned",
-                  "nameLocations": [
-                    "5851:13:134"
-                  ],
+                  "nameLocations": ["5851:13:134"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 25940,
                   "src": "5851:13:134"
@@ -11623,9 +11482,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    65207
-                  ],
+                  "assignments": [65207],
                   "declarations": [
                     {
                       "constant": false,
@@ -11648,9 +11505,7 @@
                         "pathNode": {
                           "id": 65205,
                           "name": "VIData",
-                          "nameLocations": [
-                            "6552:6:134"
-                          ],
+                          "nameLocations": ["6552:6:134"],
                           "nodeType": "IdentifierPath",
                           "referencedDeclaration": 71180,
                           "src": "6552:6:134"
@@ -11804,10 +11659,7 @@
                             "id": 65213,
                             "name": "require",
                             "nodeType": "Identifier",
-                            "overloadedDeclarations": [
-                              -18,
-                              -18
-                            ],
+                            "overloadedDeclarations": [-18, -18],
                             "referencedDeclaration": -18,
                             "src": "6622:7:134",
                             "typeDescriptions": {
@@ -11839,9 +11691,7 @@
                   }
                 },
                 {
-                  "assignments": [
-                    65223
-                  ],
+                  "assignments": [65223],
                   "declarations": [
                     {
                       "constant": false,
@@ -11879,9 +11729,7 @@
                       "id": 65224,
                       "name": "totalAssets",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        65902
-                      ],
+                      "overloadedDeclarations": [65902],
                       "referencedDeclaration": 65902,
                       "src": "6682:11:134",
                       "typeDescriptions": {
@@ -12217,9 +12065,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              25492
-            ],
+            "baseFunctions": [25492],
             "documentation": {
               "id": 65192,
               "nodeType": "StructuredDocumentation",
@@ -12236,9 +12082,7 @@
                 "modifierName": {
                   "id": 65200,
                   "name": "whenNotPaused",
-                  "nameLocations": [
-                    "6508:13:134"
-                  ],
+                  "nameLocations": ["6508:13:134"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 67144,
                   "src": "6508:13:134"
@@ -12256,9 +12100,7 @@
                 {
                   "id": 65198,
                   "name": "ERC4626Cloned",
-                  "nameLocations": [
-                    "6489:13:134"
-                  ],
+                  "nameLocations": ["6489:13:134"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 25940,
                   "src": "6489:13:134"
@@ -12433,9 +12275,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              25327
-            ],
+            "baseFunctions": [25327],
             "documentation": {
               "id": 65251,
               "nodeType": "StructuredDocumentation",
@@ -12527,10 +12367,7 @@
                         "id": 65265,
                         "name": "timeToEpochEnd",
                         "nodeType": "Identifier",
-                        "overloadedDeclarations": [
-                          66549,
-                          66587
-                        ],
+                        "overloadedDeclarations": [66549, 66587],
                         "referencedDeclaration": 66549,
                         "src": "7165:14:134",
                         "typeDescriptions": {
@@ -12660,9 +12497,7 @@
                   }
                 },
                 {
-                  "assignments": [
-                    65278
-                  ],
+                  "assignments": [65278],
                   "declarations": [
                     {
                       "constant": false,
@@ -12685,9 +12520,7 @@
                         "pathNode": {
                           "id": 65276,
                           "name": "VaultData",
-                          "nameLocations": [
-                            "7256:9:134"
-                          ],
+                          "nameLocations": ["7256:9:134"],
                           "nodeType": "IdentifierPath",
                           "referencedDeclaration": 70682,
                           "src": "7256:9:134"
@@ -12882,9 +12715,7 @@
                   }
                 },
                 {
-                  "assignments": [
-                    65295
-                  ],
+                  "assignments": [65295],
                   "declarations": [
                     {
                       "constant": false,
@@ -12907,9 +12738,7 @@
                         "pathNode": {
                           "id": 65293,
                           "name": "WithdrawProxy",
-                          "nameLocations": [
-                            "7411:13:134"
-                          ],
+                          "nameLocations": ["7411:13:134"],
                           "nodeType": "IdentifierPath",
                           "referencedDeclaration": 68590,
                           "src": "7411:13:134"
@@ -13122,9 +12951,7 @@
                     "src": "7635:309:134",
                     "statements": [
                       {
-                        "assignments": [
-                          65311
-                        ],
+                        "assignments": [65311],
                         "declarations": [
                           {
                             "constant": false,
@@ -13147,9 +12974,7 @@
                               "pathNode": {
                                 "id": 65309,
                                 "name": "WithdrawProxy",
-                                "nameLocations": [
-                                  "7643:13:134"
-                                ],
+                                "nameLocations": ["7643:13:134"],
                                 "nodeType": "IdentifierPath",
                                 "referencedDeclaration": 68590,
                                 "src": "7643:13:134"
@@ -14052,9 +13877,7 @@
                     "src": "8299:975:134",
                     "statements": [
                       {
-                        "assignments": [
-                          65379
-                        ],
+                        "assignments": [65379],
                         "declarations": [
                           {
                             "constant": false,
@@ -14206,9 +14029,7 @@
                                           "id": 65390,
                                           "name": "totalSupply",
                                           "nodeType": "Identifier",
-                                          "overloadedDeclarations": [
-                                            65919
-                                          ],
+                                          "overloadedDeclarations": [65919],
                                           "referencedDeclaration": 65919,
                                           "src": "8461:11:134",
                                           "typeDescriptions": {
@@ -14565,9 +14386,7 @@
                         }
                       },
                       {
-                        "assignments": [
-                          65417
-                        ],
+                        "assignments": [65417],
                         "declarations": [
                           {
                             "constant": false,
@@ -14866,9 +14685,7 @@
                                   "id": 65437,
                                   "name": "totalAssets",
                                   "nodeType": "Identifier",
-                                  "overloadedDeclarations": [
-                                    65902
-                                  ],
+                                  "overloadedDeclarations": [65902],
                                   "referencedDeclaration": 65902,
                                   "src": "8832:11:134",
                                   "typeDescriptions": {
@@ -15305,9 +15122,7 @@
                                     "id": 65469,
                                     "name": "totalAssets",
                                     "nodeType": "Identifier",
-                                    "overloadedDeclarations": [
-                                      65902
-                                    ],
+                                    "overloadedDeclarations": [65902],
                                     "referencedDeclaration": 65902,
                                     "src": "9112:11:134",
                                     "typeDescriptions": {
@@ -15580,9 +15395,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              70776
-            ],
+            "baseFunctions": [70776],
             "functionSelector": "b19c2c70",
             "implemented": true,
             "kind": "function",
@@ -16167,9 +15980,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              69787
-            ],
+            "baseFunctions": [69787],
             "functionSelector": "01ffc9a7",
             "implemented": true,
             "kind": "function",
@@ -16183,9 +15994,7 @@
                 {
                   "id": 65499,
                   "name": "IERC165",
-                  "nameLocations": [
-                    "9432:7:134"
-                  ],
+                  "nameLocations": ["9432:7:134"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 69788,
                   "src": "9432:7:134"
@@ -16278,9 +16087,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    65545
-                  ],
+                  "assignments": [65545],
                   "declarations": [
                     {
                       "constant": false,
@@ -16303,9 +16110,7 @@
                         "pathNode": {
                           "id": 65543,
                           "name": "VaultData",
-                          "nameLocations": [
-                            "9787:9:134"
-                          ],
+                          "nameLocations": ["9787:9:134"],
                           "nodeType": "IdentifierPath",
                           "referencedDeclaration": 70682,
                           "src": "9787:9:134"
@@ -16472,9 +16277,7 @@
                     "src": "9866:989:134",
                     "statements": [
                       {
-                        "assignments": [
-                          65557
-                        ],
+                        "assignments": [65557],
                         "declarations": [
                           {
                             "constant": false,
@@ -16729,9 +16532,7 @@
                           "src": "10202:647:134",
                           "statements": [
                             {
-                              "assignments": [
-                                65574
-                              ],
+                              "assignments": [65574],
                               "declarations": [
                                 {
                                   "constant": false,
@@ -16838,9 +16639,7 @@
                                           "id": 65576,
                                           "name": "asset",
                                           "nodeType": "Identifier",
-                                          "overloadedDeclarations": [
-                                            64798
-                                          ],
+                                          "overloadedDeclarations": [64798],
                                           "referencedDeclaration": 64798,
                                           "src": "10244:5:134",
                                           "typeDescriptions": {
@@ -17291,9 +17090,7 @@
                                           "id": 65615,
                                           "name": "asset",
                                           "nodeType": "Identifier",
-                                          "overloadedDeclarations": [
-                                            64798
-                                          ],
+                                          "overloadedDeclarations": [64798],
                                           "referencedDeclaration": 64798,
                                           "src": "10608:5:134",
                                           "typeDescriptions": {
@@ -17555,9 +17352,7 @@
                   }
                 },
                 {
-                  "assignments": [
-                    65639
-                  ],
+                  "assignments": [65639],
                   "declarations": [
                     {
                       "constant": false,
@@ -17779,10 +17574,7 @@
                             "id": 65651,
                             "name": "timeToEpochEnd",
                             "nodeType": "Identifier",
-                            "overloadedDeclarations": [
-                              66549,
-                              66587
-                            ],
+                            "overloadedDeclarations": [66549, 66587],
                             "referencedDeclaration": 66549,
                             "src": "10974:14:134",
                             "typeDescriptions": {
@@ -18278,9 +18070,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              70772
-            ],
+            "baseFunctions": [70772],
             "functionSelector": "64e4cf3b",
             "implemented": true,
             "kind": "function",
@@ -18316,9 +18106,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    65701
-                  ],
+                  "assignments": [65701],
                   "declarations": [
                     {
                       "constant": false,
@@ -18341,9 +18129,7 @@
                         "pathNode": {
                           "id": 65699,
                           "name": "VaultData",
-                          "nameLocations": [
-                            "11439:9:134"
-                          ],
+                          "nameLocations": ["11439:9:134"],
                           "nodeType": "IdentifierPath",
                           "referencedDeclaration": 70682,
                           "src": "11439:9:134"
@@ -18411,10 +18197,7 @@
                         "id": 65705,
                         "name": "timeToEpochEnd",
                         "nodeType": "Identifier",
-                        "overloadedDeclarations": [
-                          66549,
-                          66587
-                        ],
+                        "overloadedDeclarations": [66549, 66587],
                         "referencedDeclaration": 66549,
                         "src": "11490:14:134",
                         "typeDescriptions": {
@@ -18711,9 +18494,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              67561
-            ],
+            "baseFunctions": [67561],
             "implemented": true,
             "kind": "function",
             "modifiers": [],
@@ -18726,9 +18507,7 @@
                 {
                   "id": 65696,
                   "name": "VaultImplementation",
-                  "nameLocations": [
-                    "11412:19:134"
-                  ],
+                  "nameLocations": ["11412:19:134"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 67903,
                   "src": "11412:19:134"
@@ -18761,10 +18540,7 @@
                     "pathNode": {
                       "id": 65690,
                       "name": "IAstariaRouter.Commitment",
-                      "nameLocations": [
-                        "11318:14:134",
-                        "11333:10:134"
-                      ],
+                      "nameLocations": ["11318:14:134", "11333:10:134"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 68967,
                       "src": "11318:25:134"
@@ -18914,9 +18690,7 @@
                     "pathNode": {
                       "id": 65732,
                       "name": "VaultData",
-                      "nameLocations": [
-                        "11692:9:134"
-                      ],
+                      "nameLocations": ["11692:9:134"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 70682,
                       "src": "11692:9:134"
@@ -18950,9 +18724,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    65753
-                  ],
+                  "assignments": [65753],
                   "declarations": [
                     {
                       "constant": false,
@@ -18975,9 +18747,7 @@
                         "pathNode": {
                           "id": 65751,
                           "name": "VaultData",
-                          "nameLocations": [
-                            "12099:9:134"
-                          ],
+                          "nameLocations": ["12099:9:134"],
                           "nodeType": "IdentifierPath",
                           "referencedDeclaration": 70682,
                           "src": "12099:9:134"
@@ -19183,9 +18953,7 @@
                   ]
                 },
                 {
-                  "assignments": [
-                    65771
-                  ],
+                  "assignments": [65771],
                   "declarations": [
                     {
                       "constant": false,
@@ -19593,9 +19361,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              67552
-            ],
+            "baseFunctions": [67552],
             "documentation": {
               "id": 65739,
               "nodeType": "StructuredDocumentation",
@@ -20474,9 +20240,7 @@
                     "pathNode": {
                       "id": 65814,
                       "name": "VaultData",
-                      "nameLocations": [
-                        "12567:9:134"
-                      ],
+                      "nameLocations": ["12567:9:134"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 70682,
                       "src": "12567:9:134"
@@ -20544,9 +20308,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    65873
-                  ],
+                  "assignments": [65873],
                   "declarations": [
                     {
                       "constant": false,
@@ -20569,9 +20331,7 @@
                         "pathNode": {
                           "id": 65871,
                           "name": "VaultData",
-                          "nameLocations": [
-                            "13183:9:134"
-                          ],
+                          "nameLocations": ["13183:9:134"],
                           "nodeType": "IdentifierPath",
                           "referencedDeclaration": 70682,
                           "src": "13183:9:134"
@@ -20622,9 +20382,7 @@
                   "src": "13183:40:134"
                 },
                 {
-                  "assignments": [
-                    65878
-                  ],
+                  "assignments": [65878],
                   "declarations": [
                     {
                       "constant": false,
@@ -20976,9 +20734,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              25731
-            ],
+            "baseFunctions": [25731],
             "documentation": {
               "id": 65864,
               "nodeType": "StructuredDocumentation",
@@ -20998,9 +20754,7 @@
                 {
                   "id": 65866,
                   "name": "ERC4626Cloned",
-                  "nameLocations": [
-                    "13138:13:134"
-                  ],
+                  "nameLocations": ["13138:13:134"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 25940,
                   "src": "13138:13:134"
@@ -21184,10 +20938,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              25128,
-              69815
-            ],
+            "baseFunctions": [25128, 69815],
             "functionSelector": "18160ddd",
             "implemented": true,
             "kind": "function",
@@ -21201,9 +20952,7 @@
                 {
                   "id": 65904,
                   "name": "IERC20",
-                  "nameLocations": [
-                    "13424:6:134"
-                  ],
+                  "nameLocations": ["13424:6:134"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 69866,
                   "src": "13424:6:134"
@@ -21211,9 +20960,7 @@
                 {
                   "id": 65905,
                   "name": "ERC20Cloned",
-                  "nameLocations": [
-                    "13432:11:134"
-                  ],
+                  "nameLocations": ["13432:11:134"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 25404,
                   "src": "13432:11:134"
@@ -21367,10 +21114,7 @@
                       "id": 65922,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        -18,
-                        -18
-                      ],
+                      "overloadedDeclarations": [-18, -18],
                       "referencedDeclaration": -18,
                       "src": "13611:7:134",
                       "typeDescriptions": {
@@ -21399,9 +21143,7 @@
                   "src": "13611:30:134"
                 },
                 {
-                  "assignments": [
-                    65932
-                  ],
+                  "assignments": [65932],
                   "declarations": [
                     {
                       "constant": false,
@@ -21424,9 +21166,7 @@
                         "pathNode": {
                           "id": 65930,
                           "name": "VaultData",
-                          "nameLocations": [
-                            "13671:9:134"
-                          ],
+                          "nameLocations": ["13671:9:134"],
                           "nodeType": "IdentifierPath",
                           "referencedDeclaration": 70682,
                           "src": "13671:9:134"
@@ -21477,9 +21217,7 @@
                   "src": "13671:40:134"
                 },
                 {
-                  "assignments": [
-                    65937
-                  ],
+                  "assignments": [65937],
                   "declarations": [
                     {
                       "constant": false,
@@ -21695,9 +21433,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              70757
-            ],
+            "baseFunctions": [70757],
             "functionSelector": "4e71d92d",
             "implemented": true,
             "kind": "function",
@@ -21867,10 +21603,7 @@
                       "id": 65960,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        -18,
-                        -18
-                      ],
+                      "overloadedDeclarations": [-18, -18],
                       "referencedDeclaration": -18,
                       "src": "13914:7:134",
                       "typeDescriptions": {
@@ -21899,9 +21632,7 @@
                   "src": "13914:44:134"
                 },
                 {
-                  "assignments": [
-                    65973
-                  ],
+                  "assignments": [65973],
                   "declarations": [
                     {
                       "constant": false,
@@ -21924,9 +21655,7 @@
                         "pathNode": {
                           "id": 65971,
                           "name": "VaultData",
-                          "nameLocations": [
-                            "13964:9:134"
-                          ],
+                          "nameLocations": ["13964:9:134"],
                           "nodeType": "IdentifierPath",
                           "referencedDeclaration": 70682,
                           "src": "13964:9:134"
@@ -22267,9 +21996,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              70733
-            ],
+            "baseFunctions": [70733],
             "functionSelector": "38663c3f",
             "implemented": true,
             "kind": "function",
@@ -22301,9 +22028,7 @@
                     "pathNode": {
                       "id": 65955,
                       "name": "BeforePaymentParams",
-                      "nameLocations": [
-                        "13864:19:134"
-                      ],
+                      "nameLocations": ["13864:19:134"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 70689,
                       "src": "13864:19:134"
@@ -22616,10 +22341,7 @@
                       "id": 66005,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        -18,
-                        -18
-                      ],
+                      "overloadedDeclarations": [-18, -18],
                       "referencedDeclaration": -18,
                       "src": "14236:7:134",
                       "typeDescriptions": {
@@ -22738,9 +22460,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              70739
-            ],
+            "baseFunctions": [70739],
             "functionSelector": "f1e9f4f5",
             "implemented": true,
             "kind": "function",
@@ -22931,9 +22651,7 @@
                     "pathNode": {
                       "id": 66033,
                       "name": "VaultData",
-                      "nameLocations": [
-                        "14425:9:134"
-                      ],
+                      "nameLocations": ["14425:9:134"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 70682,
                       "src": "14425:9:134"
@@ -23315,9 +23033,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              70747
-            ],
+            "baseFunctions": [70747],
             "functionSelector": "349f723d",
             "implemented": true,
             "kind": "function",
@@ -23874,9 +23590,7 @@
                     "pathNode": {
                       "id": 66103,
                       "name": "VaultData",
-                      "nameLocations": [
-                        "14902:9:134"
-                      ],
+                      "nameLocations": ["14902:9:134"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 70682,
                       "src": "14902:9:134"
@@ -24077,10 +23791,7 @@
                       "id": 66125,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        -18,
-                        -18
-                      ],
+                      "overloadedDeclarations": [-18, -18],
                       "referencedDeclaration": -18,
                       "src": "15081:7:134",
                       "typeDescriptions": {
@@ -24230,9 +23941,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              70753
-            ],
+            "baseFunctions": [70753],
             "functionSelector": "59f9556e",
             "implemented": true,
             "kind": "function",
@@ -24296,9 +24005,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    66157
-                  ],
+                  "assignments": [66157],
                   "declarations": [
                     {
                       "constant": false,
@@ -24321,9 +24028,7 @@
                         "pathNode": {
                           "id": 66155,
                           "name": "VaultData",
-                          "nameLocations": [
-                            "15592:9:134"
-                          ],
+                          "nameLocations": ["15592:9:134"],
                           "nodeType": "IdentifierPath",
                           "referencedDeclaration": 70682,
                           "src": "15592:9:134"
@@ -24546,9 +24251,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              25939
-            ],
+            "baseFunctions": [25939],
             "documentation": {
               "id": 66147,
               "nodeType": "StructuredDocumentation",
@@ -24769,9 +24472,7 @@
                     "src": "16126:279:134",
                     "statements": [
                       {
-                        "assignments": [
-                          66195
-                        ],
+                        "assignments": [66195],
                         "declarations": [
                           {
                             "constant": false,
@@ -24906,9 +24607,7 @@
                         "src": "16203:196:134",
                         "statements": [
                           {
-                            "assignments": [
-                              66205
-                            ],
+                            "assignments": [66205],
                             "declarations": [
                               {
                                 "constant": false,
@@ -25220,9 +24919,7 @@
                     "pathNode": {
                       "id": 66178,
                       "name": "VaultData",
-                      "nameLocations": [
-                        "16001:9:134"
-                      ],
+                      "nameLocations": ["16001:9:134"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 70682,
                       "src": "16001:9:134"
@@ -25426,9 +25123,7 @@
                     "pathNode": {
                       "id": 66229,
                       "name": "ILienToken",
-                      "nameLocations": [
-                        "16456:10:134"
-                      ],
+                      "nameLocations": ["16456:10:134"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 70649,
                       "src": "16456:10:134"
@@ -25596,10 +25291,7 @@
                       "id": 66245,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        -18,
-                        -18
-                      ],
+                      "overloadedDeclarations": [-18, -18],
                       "referencedDeclaration": -18,
                       "src": "16584:7:134",
                       "typeDescriptions": {
@@ -25628,9 +25320,7 @@
                   "src": "16584:44:134"
                 },
                 {
-                  "assignments": [
-                    66258
-                  ],
+                  "assignments": [66258],
                   "declarations": [
                     {
                       "constant": false,
@@ -25653,9 +25343,7 @@
                         "pathNode": {
                           "id": 66256,
                           "name": "VaultData",
-                          "nameLocations": [
-                            "16634:9:134"
-                          ],
+                          "nameLocations": ["16634:9:134"],
                           "nodeType": "IdentifierPath",
                           "referencedDeclaration": 70682,
                           "src": "16634:9:134"
@@ -26271,9 +25959,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              70789
-            ],
+            "baseFunctions": [70789],
             "functionSelector": "2d4ece9d",
             "implemented": true,
             "kind": "function",
@@ -26305,9 +25991,7 @@
                     "pathNode": {
                       "id": 66240,
                       "name": "BuyoutLienParams",
-                      "nameLocations": [
-                        "16537:16:134"
-                      ],
+                      "nameLocations": ["16537:16:134"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 70696,
                       "src": "16537:16:134"
@@ -26481,10 +26165,7 @@
                       "id": 66312,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        -18,
-                        -18
-                      ],
+                      "overloadedDeclarations": [-18, -18],
                       "referencedDeclaration": -18,
                       "src": "17091:7:134",
                       "typeDescriptions": {
@@ -26691,9 +26372,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              70712
-            ],
+            "baseFunctions": [70712],
             "functionSelector": "aaed42b7",
             "implemented": true,
             "kind": "function",
@@ -26725,9 +26404,7 @@
                     "pathNode": {
                       "id": 66307,
                       "name": "LiquidationPaymentParams",
-                      "nameLocations": [
-                        "17031:24:134"
-                      ],
+                      "nameLocations": ["17031:24:134"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 70706,
                       "src": "17031:24:134"
@@ -26901,10 +26578,7 @@
                       "id": 66346,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        -18,
-                        -18
-                      ],
+                      "overloadedDeclarations": [-18, -18],
                       "referencedDeclaration": -18,
                       "src": "17711:7:134",
                       "typeDescriptions": {
@@ -26933,9 +26607,7 @@
                   "src": "17711:44:134"
                 },
                 {
-                  "assignments": [
-                    66359
-                  ],
+                  "assignments": [66359],
                   "declarations": [
                     {
                       "constant": false,
@@ -26958,9 +26630,7 @@
                         "pathNode": {
                           "id": 66357,
                           "name": "VaultData",
-                          "nameLocations": [
-                            "17793:9:134"
-                          ],
+                          "nameLocations": ["17793:9:134"],
                           "nodeType": "IdentifierPath",
                           "referencedDeclaration": 70682,
                           "src": "17793:9:134"
@@ -27636,9 +27306,7 @@
                   }
                 },
                 {
-                  "assignments": [
-                    66412
-                  ],
+                  "assignments": [66412],
                   "declarations": [
                     {
                       "constant": false,
@@ -27808,9 +27476,7 @@
                   "src": "18196:37:134"
                 },
                 {
-                  "assignments": [
-                    66424
-                  ],
+                  "assignments": [66424],
                   "declarations": [
                     {
                       "constant": false,
@@ -27866,10 +27532,7 @@
                       "id": 66425,
                       "name": "timeToEpochEnd",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        66549,
-                        66587
-                      ],
+                      "overloadedDeclarations": [66549, 66587],
                       "referencedDeclaration": 66587,
                       "src": "18260:14:134",
                       "typeDescriptions": {
@@ -28364,9 +28027,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              70800
-            ],
+            "baseFunctions": [70800],
             "documentation": {
               "id": 66336,
               "nodeType": "StructuredDocumentation",
@@ -28431,9 +28092,7 @@
                     "pathNode": {
                       "id": 66339,
                       "name": "AfterLiquidationParams",
-                      "nameLocations": [
-                        "17609:22:134"
-                      ],
+                      "nameLocations": ["17609:22:134"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 70703,
                       "src": "17609:22:134"
@@ -28704,9 +28363,7 @@
                     "pathNode": {
                       "id": 66466,
                       "name": "VaultData",
-                      "nameLocations": [
-                        "18689:9:134"
-                      ],
+                      "nameLocations": ["18689:9:134"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 70682,
                       "src": "18689:9:134"
@@ -28773,9 +28430,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    66495
-                  ],
+                  "assignments": [66495],
                   "declarations": [
                     {
                       "constant": false,
@@ -28798,9 +28453,7 @@
                         "pathNode": {
                           "id": 66493,
                           "name": "VaultData",
-                          "nameLocations": [
-                            "18910:9:134"
-                          ],
+                          "nameLocations": ["18910:9:134"],
                           "nodeType": "IdentifierPath",
                           "referencedDeclaration": 70682,
                           "src": "18910:9:134"
@@ -28851,9 +28504,7 @@
                   "src": "18910:40:134"
                 },
                 {
-                  "assignments": [
-                    66500
-                  ],
+                  "assignments": [66500],
                   "declarations": [
                     {
                       "constant": false,
@@ -29296,10 +28947,7 @@
                       "id": 66504,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        -18,
-                        -18
-                      ],
+                      "overloadedDeclarations": [-18, -18],
                       "referencedDeclaration": -18,
                       "src": "18999:7:134",
                       "typeDescriptions": {
@@ -29399,9 +29047,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              70782
-            ],
+            "baseFunctions": [70782],
             "functionSelector": "65612e68",
             "implemented": true,
             "kind": "function",
@@ -29525,10 +29171,7 @@
                       "id": 66542,
                       "name": "timeToEpochEnd",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        66549,
-                        66587
-                      ],
+                      "overloadedDeclarations": [66549, 66587],
                       "referencedDeclaration": 66587,
                       "src": "19271:14:134",
                       "typeDescriptions": {
@@ -29559,9 +29202,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              70763
-            ],
+            "baseFunctions": [70763],
             "functionSelector": "200298bf",
             "implemented": true,
             "kind": "function",
@@ -29625,9 +29266,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    66557
-                  ],
+                  "assignments": [66557],
                   "declarations": [
                     {
                       "constant": false,
@@ -30146,10 +29785,7 @@
                         "id": 66593,
                         "name": "timeToEpochEnd",
                         "nodeType": "Identifier",
-                        "overloadedDeclarations": [
-                          66549,
-                          66587
-                        ],
+                        "overloadedDeclarations": [66549, 66587],
                         "referencedDeclaration": 66549,
                         "src": "19692:14:134",
                         "typeDescriptions": {
@@ -30219,9 +29855,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              67771
-            ],
+            "baseFunctions": [67771],
             "implemented": true,
             "kind": "function",
             "modifiers": [],
@@ -30297,9 +29931,7 @@
                       "id": 66605,
                       "name": "_timeToSecondEndIfPublic",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        66600
-                      ],
+                      "overloadedDeclarations": [66600],
                       "referencedDeclaration": 66600,
                       "src": "19809:24:134",
                       "typeDescriptions": {
@@ -30330,9 +29962,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              70768
-            ],
+            "baseFunctions": [70768],
             "functionSelector": "90bec11d",
             "implemented": true,
             "kind": "function",
@@ -30391,9 +30021,7 @@
             "baseName": {
               "id": 64765,
               "name": "AstariaVaultBase",
-              "nameLocations": [
-                "1595:16:134"
-              ],
+              "nameLocations": ["1595:16:134"],
               "nodeType": "IdentifierPath",
               "referencedDeclaration": 59879,
               "src": "1595:16:134"
@@ -30406,9 +30034,7 @@
             "baseName": {
               "id": 64767,
               "name": "VaultImplementation",
-              "nameLocations": [
-                "1615:19:134"
-              ],
+              "nameLocations": ["1615:19:134"],
               "nodeType": "IdentifierPath",
               "referencedDeclaration": 67903,
               "src": "1615:19:134"
@@ -30421,9 +30047,7 @@
             "baseName": {
               "id": 64769,
               "name": "IPublicVault",
-              "nameLocations": [
-                "1638:12:134"
-              ],
+              "nameLocations": ["1638:12:134"],
               "nodeType": "IdentifierPath",
               "referencedDeclaration": 70829,
               "src": "1638:12:134"
@@ -30436,9 +30060,7 @@
             "baseName": {
               "id": 64771,
               "name": "ERC4626Cloned",
-              "nameLocations": [
-                "1654:13:134"
-              ],
+              "nameLocations": ["1654:13:134"],
               "nodeType": "IdentifierPath",
               "referencedDeclaration": 25940,
               "src": "1654:13:134"
@@ -30453,30 +30075,13 @@
         "contractKind": "contract",
         "fullyImplemented": true,
         "linearizedBaseContracts": [
-          66610,
-          25940,
-          25404,
-          70061,
-          69891,
-          69866,
-          70829,
-          67903,
-          71283,
-          69788,
-          56787,
-          59879,
-          69319,
-          70845,
-          120
+          66610, 25940, 25404, 70061, 69891, 69866, 70829, 67903, 71283, 69788,
+          56787, 59879, 69319, 70845, 120
         ],
         "name": "PublicVault",
         "nameLocation": "1578:11:134",
         "scope": 66611,
-        "usedErrors": [
-          125,
-          70805,
-          71155
-        ]
+        "usedErrors": [125, 70805, 71155]
       }
     ],
     "license": "UNLICENSED"

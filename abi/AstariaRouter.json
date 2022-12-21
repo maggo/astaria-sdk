@@ -5687,75 +5687,29 @@
     "absolutePath": "src/AstariaRouter.sol",
     "id": 59766,
     "exportedSymbols": {
-      "AstariaRouter": [
-        59765
-      ],
-      "Auth": [
-        54916
-      ],
-      "Authority": [
-        54929
-      ],
-      "ClonesWithImmutableArgs": [
-        228
-      ],
-      "CollateralLookup": [
-        71453
-      ],
-      "ERC20": [
-        56223
-      ],
-      "ERC4626Router": [
-        26120
-      ],
-      "ERC4626RouterBase": [
-        26326
-      ],
-      "ERC721": [
-        56767
-      ],
-      "FixedPointMathLib": [
-        57064
-      ],
-      "IAstariaRouter": [
-        69282
-      ],
-      "ICollateralToken": [
-        69611
-      ],
-      "IERC4626": [
-        70061
-      ],
-      "ILienToken": [
-        70649
-      ],
-      "IPublicVault": [
-        70829
-      ],
-      "IStrategyValidator": [
-        70921
-      ],
-      "ITransferProxy": [
-        70948
-      ],
-      "IVaultImplementation": [
-        71283
-      ],
-      "MerkleProofLib": [
-        85707
-      ],
-      "OrderParameters": [
-        35026
-      ],
-      "Pausable": [
-        85819
-      ],
-      "SafeCastLib": [
-        28393
-      ],
-      "SafeTransferLib": [
-        57406
-      ]
+      "AstariaRouter": [59765],
+      "Auth": [54916],
+      "Authority": [54929],
+      "ClonesWithImmutableArgs": [228],
+      "CollateralLookup": [71453],
+      "ERC20": [56223],
+      "ERC4626Router": [26120],
+      "ERC4626RouterBase": [26326],
+      "ERC721": [56767],
+      "FixedPointMathLib": [57064],
+      "IAstariaRouter": [69282],
+      "ICollateralToken": [69611],
+      "IERC4626": [70061],
+      "ILienToken": [70649],
+      "IPublicVault": [70829],
+      "IStrategyValidator": [70921],
+      "ITransferProxy": [70948],
+      "IVaultImplementation": [71283],
+      "MerkleProofLib": [85707],
+      "OrderParameters": [35026],
+      "Pausable": [85819],
+      "SafeCastLib": [28393],
+      "SafeTransferLib": [57406]
     },
     "nodeType": "SourceUnit",
     "src": "180:22206:128",
@@ -5765,12 +5719,7 @@
         "nodeType": "PragmaDirective",
         "src": "180:24:128",
         "nodes": [],
-        "literals": [
-          "solidity",
-          "^",
-          "0.8",
-          ".17"
-        ]
+        "literals": ["solidity", "^", "0.8", ".17"]
       },
       {
         "id": 57411,
@@ -6396,9 +6345,7 @@
             "libraryName": {
               "id": 57465,
               "name": "SafeTransferLib",
-              "nameLocations": [
-                "1897:15:128"
-              ],
+              "nameLocations": ["1897:15:128"],
               "nodeType": "IdentifierPath",
               "referencedDeclaration": 57406,
               "src": "1897:15:128"
@@ -6409,9 +6356,7 @@
               "pathNode": {
                 "id": 57466,
                 "name": "ERC20",
-                "nameLocations": [
-                  "1917:5:128"
-                ],
+                "nameLocations": ["1917:5:128"],
                 "nodeType": "IdentifierPath",
                 "referencedDeclaration": 56223,
                 "src": "1917:5:128"
@@ -6433,9 +6378,7 @@
             "libraryName": {
               "id": 57469,
               "name": "SafeCastLib",
-              "nameLocations": [
-                "1932:11:128"
-              ],
+              "nameLocations": ["1932:11:128"],
               "nodeType": "IdentifierPath",
               "referencedDeclaration": 28393,
               "src": "1932:11:128"
@@ -6460,9 +6403,7 @@
             "libraryName": {
               "id": 57472,
               "name": "CollateralLookup",
-              "nameLocations": [
-                "1965:16:128"
-              ],
+              "nameLocations": ["1965:16:128"],
               "nodeType": "IdentifierPath",
               "referencedDeclaration": 71453,
               "src": "1965:16:128"
@@ -6488,9 +6429,7 @@
             "libraryName": {
               "id": 57475,
               "name": "FixedPointMathLib",
-              "nameLocations": [
-                "2003:17:128"
-              ],
+              "nameLocations": ["2003:17:128"],
               "nodeType": "IdentifierPath",
               "referencedDeclaration": 57064,
               "src": "2003:17:128"
@@ -6562,9 +6501,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    57518
-                  ],
+                  "assignments": [57518],
                   "declarations": [
                     {
                       "constant": false,
@@ -6587,9 +6524,7 @@
                         "pathNode": {
                           "id": 57516,
                           "name": "RouterStorage",
-                          "nameLocations": [
-                            "3219:13:128"
-                          ],
+                          "nameLocations": ["3219:13:128"],
                           "nodeType": "IdentifierPath",
                           "referencedDeclaration": 68915,
                           "src": "3219:13:128"
@@ -9480,9 +9415,7 @@
                 "modifierName": {
                   "id": 57507,
                   "name": "Auth",
-                  "nameLocations": [
-                    "3175:4:128"
-                  ],
+                  "nameLocations": ["3175:4:128"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 54916,
                   "src": "3175:4:128"
@@ -9518,9 +9451,7 @@
                     "pathNode": {
                       "id": 57482,
                       "name": "Authority",
-                      "nameLocations": [
-                        "2884:9:128"
-                      ],
+                      "nameLocations": ["2884:9:128"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 54929,
                       "src": "2884:9:128"
@@ -9583,9 +9514,7 @@
                     "pathNode": {
                       "id": 57487,
                       "name": "ICollateralToken",
-                      "nameLocations": [
-                        "2929:16:128"
-                      ],
+                      "nameLocations": ["2929:16:128"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 69611,
                       "src": "2929:16:128"
@@ -9620,9 +9549,7 @@
                     "pathNode": {
                       "id": 57490,
                       "name": "ILienToken",
-                      "nameLocations": [
-                        "2969:10:128"
-                      ],
+                      "nameLocations": ["2969:10:128"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 70649,
                       "src": "2969:10:128"
@@ -9657,9 +9584,7 @@
                     "pathNode": {
                       "id": 57493,
                       "name": "ITransferProxy",
-                      "nameLocations": [
-                        "2997:14:128"
-                      ],
+                      "nameLocations": ["2997:14:128"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 70948,
                       "src": "2997:14:128"
@@ -9986,9 +9911,7 @@
                       "id": 57762,
                       "name": "pullToken",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        57831
-                      ],
+                      "overloadedDeclarations": [57831],
                       "referencedDeclaration": 57831,
                       "src": "4657:9:128",
                       "typeDescriptions": {
@@ -10395,9 +10318,7 @@
                     "pathNode": {
                       "id": 57749,
                       "name": "IPublicVault",
-                      "nameLocations": [
-                        "4528:12:128"
-                      ],
+                      "nameLocations": ["4528:12:128"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 70829,
                       "src": "4528:12:128"
@@ -10547,9 +10468,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    57811
-                  ],
+                  "assignments": [57811],
                   "declarations": [
                     {
                       "constant": false,
@@ -10572,9 +10491,7 @@
                         "pathNode": {
                           "id": 57809,
                           "name": "RouterStorage",
-                          "nameLocations": [
-                            "4958:13:128"
-                          ],
+                          "nameLocations": ["4958:13:128"],
                           "nodeType": "IdentifierPath",
                           "referencedDeclaration": 68915,
                           "src": "4958:13:128"
@@ -10820,9 +10737,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              25970
-            ],
+            "baseFunctions": [25970],
             "functionSelector": "73d15414",
             "implemented": true,
             "kind": "function",
@@ -11030,9 +10945,7 @@
                     "pathNode": {
                       "id": 57833,
                       "name": "RouterStorage",
-                      "nameLocations": [
-                        "5177:13:128"
-                      ],
+                      "nameLocations": ["5177:13:128"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 68915,
                       "src": "5177:13:128"
@@ -11066,9 +10979,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    57846
-                  ],
+                  "assignments": [57846],
                   "declarations": [
                     {
                       "constant": false,
@@ -11091,9 +11002,7 @@
                         "pathNode": {
                           "id": 57844,
                           "name": "RouterStorage",
-                          "nameLocations": [
-                            "5315:13:128"
-                          ],
+                          "nameLocations": ["5315:13:128"],
                           "nodeType": "IdentifierPath",
                           "referencedDeclaration": 68915,
                           "src": "5315:13:128"
@@ -11179,9 +11088,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              69012
-            ],
+            "baseFunctions": [69012],
             "functionSelector": "017e7e58",
             "implemented": true,
             "kind": "function",
@@ -11246,9 +11153,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    57861
-                  ],
+                  "assignments": [57861],
                   "declarations": [
                     {
                       "constant": false,
@@ -11271,9 +11176,7 @@
                         "pathNode": {
                           "id": 57859,
                           "name": "RouterStorage",
-                          "nameLocations": [
-                            "5462:13:128"
-                          ],
+                          "nameLocations": ["5462:13:128"],
                           "nodeType": "IdentifierPath",
                           "referencedDeclaration": 68915,
                           "src": "5462:13:128"
@@ -11359,9 +11262,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              69067
-            ],
+            "baseFunctions": [69067],
             "functionSelector": "1ff0c9d6",
             "implemented": true,
             "kind": "function",
@@ -11426,9 +11327,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    57877
-                  ],
+                  "assignments": [57877],
                   "declarations": [
                     {
                       "constant": false,
@@ -11451,9 +11350,7 @@
                         "pathNode": {
                           "id": 57875,
                           "name": "RouterStorage",
-                          "nameLocations": [
-                            "5617:13:128"
-                          ],
+                          "nameLocations": ["5617:13:128"],
                           "nodeType": "IdentifierPath",
                           "referencedDeclaration": 68915,
                           "src": "5617:13:128"
@@ -11539,9 +11436,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              69056
-            ],
+            "baseFunctions": [69056],
             "functionSelector": "41700b97",
             "implemented": true,
             "kind": "function",
@@ -11579,9 +11474,7 @@
                     "pathNode": {
                       "id": 57871,
                       "name": "ILienToken",
-                      "nameLocations": [
-                        "5599:10:128"
-                      ],
+                      "nameLocations": ["5599:10:128"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 70649,
                       "src": "5599:10:128"
@@ -11615,9 +11508,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    57893
-                  ],
+                  "assignments": [57893],
                   "declarations": [
                     {
                       "constant": false,
@@ -11640,9 +11531,7 @@
                         "pathNode": {
                           "id": 57891,
                           "name": "RouterStorage",
-                          "nameLocations": [
-                            "5763:13:128"
-                          ],
+                          "nameLocations": ["5763:13:128"],
                           "nodeType": "IdentifierPath",
                           "referencedDeclaration": 68915,
                           "src": "5763:13:128"
@@ -11728,9 +11617,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              69062
-            ],
+            "baseFunctions": [69062],
             "functionSelector": "96d6401d",
             "implemented": true,
             "kind": "function",
@@ -11768,9 +11655,7 @@
                     "pathNode": {
                       "id": 57887,
                       "name": "ITransferProxy",
-                      "nameLocations": [
-                        "5741:14:128"
-                      ],
+                      "nameLocations": ["5741:14:128"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 70948,
                       "src": "5741:14:128"
@@ -11804,9 +11689,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    57909
-                  ],
+                  "assignments": [57909],
                   "declarations": [
                     {
                       "constant": false,
@@ -11829,9 +11712,7 @@
                         "pathNode": {
                           "id": 57907,
                           "name": "RouterStorage",
-                          "nameLocations": [
-                            "5894:13:128"
-                          ],
+                          "nameLocations": ["5894:13:128"],
                           "nodeType": "IdentifierPath",
                           "referencedDeclaration": 68915,
                           "src": "5894:13:128"
@@ -11917,9 +11798,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              69050
-            ],
+            "baseFunctions": [69050],
             "functionSelector": "ad5c4648",
             "implemented": true,
             "kind": "function",
@@ -11957,9 +11836,7 @@
                     "pathNode": {
                       "id": 57903,
                       "name": "ERC20",
-                      "nameLocations": [
-                        "5881:5:128"
-                      ],
+                      "nameLocations": ["5881:5:128"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 56223,
                       "src": "5881:5:128"
@@ -11993,9 +11870,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    57925
-                  ],
+                  "assignments": [57925],
                   "declarations": [
                     {
                       "constant": false,
@@ -12018,9 +11893,7 @@
                         "pathNode": {
                           "id": 57923,
                           "name": "RouterStorage",
-                          "nameLocations": [
-                            "6038:13:128"
-                          ],
+                          "nameLocations": ["6038:13:128"],
                           "nodeType": "IdentifierPath",
                           "referencedDeclaration": 68915,
                           "src": "6038:13:128"
@@ -12106,9 +11979,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              69073
-            ],
+            "baseFunctions": [69073],
             "functionSelector": "f5f1f1a7",
             "implemented": true,
             "kind": "function",
@@ -12146,9 +12017,7 @@
                     "pathNode": {
                       "id": 57919,
                       "name": "ICollateralToken",
-                      "nameLocations": [
-                        "6014:16:128"
-                      ],
+                      "nameLocations": ["6014:16:128"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 69611,
                       "src": "6014:16:128"
@@ -12182,9 +12051,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    57940
-                  ],
+                  "assignments": [57940],
                   "declarations": [
                     {
                       "constant": false,
@@ -12207,9 +12074,7 @@
                         "pathNode": {
                           "id": 57938,
                           "name": "RouterStorage",
-                          "nameLocations": [
-                            "6184:13:128"
-                          ],
+                          "nameLocations": ["6184:13:128"],
                           "nodeType": "IdentifierPath",
                           "referencedDeclaration": 68915,
                           "src": "6184:13:128"
@@ -12295,9 +12160,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              69078
-            ],
+            "baseFunctions": [69078],
             "functionSelector": "a9583d5f",
             "implemented": true,
             "kind": "function",
@@ -12414,9 +12277,7 @@
                 "modifierName": {
                   "id": 57951,
                   "name": "requiresAuth",
-                  "nameLocations": [
-                    "6393:12:128"
-                  ],
+                  "nameLocations": ["6393:12:128"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 54821,
                   "src": "6393:12:128"
@@ -12430,9 +12291,7 @@
                 "modifierName": {
                   "id": 57953,
                   "name": "whenNotPaused",
-                  "nameLocations": [
-                    "6406:13:128"
-                  ],
+                  "nameLocations": ["6406:13:128"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 85771,
                   "src": "6406:13:128"
@@ -12525,9 +12384,7 @@
                 "modifierName": {
                   "id": 57963,
                   "name": "requiresAuth",
-                  "nameLocations": [
-                    "6576:12:128"
-                  ],
+                  "nameLocations": ["6576:12:128"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 54821,
                   "src": "6576:12:128"
@@ -12541,9 +12398,7 @@
                 "modifierName": {
                   "id": 57965,
                   "name": "whenPaused",
-                  "nameLocations": [
-                    "6589:10:128"
-                  ],
+                  "nameLocations": ["6589:10:128"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 85782,
                   "src": "6589:10:128"
@@ -12728,9 +12583,7 @@
                   },
                   "id": 57999,
                   "initializationExpression": {
-                    "assignments": [
-                      57982
-                    ],
+                    "assignments": [57982],
                     "declarations": [
                       {
                         "constant": false,
@@ -12817,9 +12670,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              69156
-            ],
+            "baseFunctions": [69156],
             "functionSelector": "609a8b8c",
             "implemented": true,
             "kind": "function",
@@ -12830,9 +12681,7 @@
                 "modifierName": {
                   "id": 57978,
                   "name": "requiresAuth",
-                  "nameLocations": [
-                    "6676:12:128"
-                  ],
+                  "nameLocations": ["6676:12:128"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 54821,
                   "src": "6676:12:128"
@@ -12869,9 +12718,7 @@
                       "pathNode": {
                         "id": 57973,
                         "name": "File",
-                        "nameLocations": [
-                          "6644:4:128"
-                        ],
+                        "nameLocations": ["6644:4:128"],
                         "nodeType": "IdentifierPath",
                         "referencedDeclaration": 68845,
                         "src": "6644:4:128"
@@ -12919,9 +12766,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    58011
-                  ],
+                  "assignments": [58011],
                   "declarations": [
                     {
                       "constant": false,
@@ -12944,9 +12789,7 @@
                         "pathNode": {
                           "id": 58009,
                           "name": "RouterStorage",
-                          "nameLocations": [
-                            "6839:13:128"
-                          ],
+                          "nameLocations": ["6839:13:128"],
                           "nodeType": "IdentifierPath",
                           "referencedDeclaration": 68915,
                           "src": "6839:13:128"
@@ -12997,9 +12840,7 @@
                   "src": "6839:43:128"
                 },
                 {
-                  "assignments": [
-                    58017
-                  ],
+                  "assignments": [58017],
                   "declarations": [
                     {
                       "constant": false,
@@ -13022,9 +12863,7 @@
                         "pathNode": {
                           "id": 58015,
                           "name": "FileType",
-                          "nameLocations": [
-                            "6888:8:128"
-                          ],
+                          "nameLocations": ["6888:8:128"],
                           "nodeType": "IdentifierPath",
                           "referencedDeclaration": 68839,
                           "src": "6888:8:128"
@@ -13072,9 +12911,7 @@
                   "src": "6888:29:128"
                 },
                 {
-                  "assignments": [
-                    58022
-                  ],
+                  "assignments": [58022],
                   "declarations": [
                     {
                       "constant": false,
@@ -13955,10 +13792,7 @@
                                             "src": "9278:119:128",
                                             "statements": [
                                               {
-                                                "assignments": [
-                                                  58349,
-                                                  58351
-                                                ],
+                                                "assignments": [58349, 58351],
                                                 "declarations": [
                                                   {
                                                     "constant": false,
@@ -14240,9 +14074,7 @@
                                           "src": "9153:79:128",
                                           "statements": [
                                             {
-                                              "assignments": [
-                                                58328
-                                              ],
+                                              "assignments": [58328],
                                               "declarations": [
                                                 {
                                                   "constant": false,
@@ -15240,9 +15072,7 @@
                                 "src": "8529:110:128",
                                 "statements": [
                                   {
-                                    "assignments": [
-                                      58229
-                                    ],
+                                    "assignments": [58229],
                                     "declarations": [
                                       {
                                         "constant": false,
@@ -15486,9 +15316,7 @@
                               "src": "8376:105:128",
                               "statements": [
                                 {
-                                  "assignments": [
-                                    58206
-                                  ],
+                                  "assignments": [58206],
                                   "declarations": [
                                     {
                                       "constant": false,
@@ -15732,10 +15560,7 @@
                             "src": "8101:232:128",
                             "statements": [
                               {
-                                "assignments": [
-                                  58171,
-                                  58173
-                                ],
+                                "assignments": [58171, 58173],
                                 "declarations": [
                                   {
                                     "constant": false,
@@ -16120,10 +15945,7 @@
                           "src": "7827:236:128",
                           "statements": [
                             {
-                              "assignments": [
-                                58136,
-                                58138
-                              ],
+                              "assignments": [58136, 58138],
                               "declarations": [
                                 {
                                   "constant": false,
@@ -16508,10 +16330,7 @@
                         "src": "7547:240:128",
                         "statements": [
                           {
-                            "assignments": [
-                              58101,
-                              58103
-                            ],
+                            "assignments": [58101, 58103],
                             "declarations": [
                               {
                                 "constant": false,
@@ -16896,10 +16715,7 @@
                       "src": "7263:242:128",
                       "statements": [
                         {
-                          "assignments": [
-                            58066,
-                            58068
-                          ],
+                          "assignments": [58066, 58068],
                           "declarations": [
                             {
                               "constant": false,
@@ -17284,10 +17100,7 @@
                     "src": "6998:222:128",
                     "statements": [
                       {
-                        "assignments": [
-                          58031,
-                          58033
-                        ],
+                        "assignments": [58031, 58033],
                         "declarations": [
                           {
                             "constant": false,
@@ -17735,9 +17548,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              69163
-            ],
+            "baseFunctions": [69163],
             "functionSelector": "b05e52fd",
             "implemented": true,
             "kind": "function",
@@ -17748,9 +17559,7 @@
                 "modifierName": {
                   "id": 58006,
                   "name": "requiresAuth",
-                  "nameLocations": [
-                    "6820:12:128"
-                  ],
+                  "nameLocations": ["6820:12:128"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 54821,
                   "src": "6820:12:128"
@@ -17786,9 +17595,7 @@
                     "pathNode": {
                       "id": 58002,
                       "name": "File",
-                      "nameLocations": [
-                        "6789:4:128"
-                      ],
+                      "nameLocations": ["6789:4:128"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 68845,
                       "src": "6789:4:128"
@@ -17828,9 +17635,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    58401
-                  ],
+                  "assignments": [58401],
                   "declarations": [
                     {
                       "constant": false,
@@ -17853,9 +17658,7 @@
                         "pathNode": {
                           "id": 58399,
                           "name": "RouterStorage",
-                          "nameLocations": [
-                            "9543:13:128"
-                          ],
+                          "nameLocations": ["9543:13:128"],
                           "nodeType": "IdentifierPath",
                           "referencedDeclaration": 68915,
                           "src": "9543:13:128"
@@ -18037,10 +17840,7 @@
                       "id": 58405,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        -18,
-                        -18
-                      ],
+                      "overloadedDeclarations": [-18, -18],
                       "referencedDeclaration": -18,
                       "src": "9592:7:128",
                       "typeDescriptions": {
@@ -18129,9 +17929,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              69169
-            ],
+            "baseFunctions": [69169],
             "functionSelector": "e87f7c31",
             "implemented": true,
             "kind": "function",
@@ -18196,9 +17994,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    58432
-                  ],
+                  "assignments": [58432],
                   "declarations": [
                     {
                       "constant": false,
@@ -18221,9 +18017,7 @@
                         "pathNode": {
                           "id": 58430,
                           "name": "RouterStorage",
-                          "nameLocations": [
-                            "9730:13:128"
-                          ],
+                          "nameLocations": ["9730:13:128"],
                           "nodeType": "IdentifierPath",
                           "referencedDeclaration": 68915,
                           "src": "9730:13:128"
@@ -18450,10 +18244,7 @@
                       "id": 58436,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        -18,
-                        -18
-                      ],
+                      "overloadedDeclarations": [-18, -18],
                       "referencedDeclaration": -18,
                       "src": "9779:7:128",
                       "typeDescriptions": {
@@ -18488,9 +18279,7 @@
                     "src": "9916:756:128",
                     "statements": [
                       {
-                        "assignments": [
-                          58463
-                        ],
+                        "assignments": [58463],
                         "declarations": [
                           {
                             "constant": false,
@@ -18513,9 +18302,7 @@
                               "pathNode": {
                                 "id": 58461,
                                 "name": "FileType",
-                                "nameLocations": [
-                                  "9924:8:128"
-                                ],
+                                "nameLocations": ["9924:8:128"],
                                 "nodeType": "IdentifierPath",
                                 "referencedDeclaration": 68839,
                                 "src": "9924:8:128"
@@ -18588,9 +18375,7 @@
                         "src": "9924:28:128"
                       },
                       {
-                        "assignments": [
-                          58470
-                        ],
+                        "assignments": [58470],
                         "declarations": [
                           {
                             "constant": false,
@@ -18965,9 +18750,7 @@
                                 "src": "10507:110:128",
                                 "statements": [
                                   {
-                                    "assignments": [
-                                      58554
-                                    ],
+                                    "assignments": [58554],
                                     "declarations": [
                                       {
                                         "constant": false,
@@ -19214,9 +18997,7 @@
                               "src": "10363:102:128",
                               "statements": [
                                 {
-                                  "assignments": [
-                                    58531
-                                  ],
+                                  "assignments": [58531],
                                   "declarations": [
                                     {
                                       "constant": false,
@@ -19463,9 +19244,7 @@
                             "src": "10211:114:128",
                             "statements": [
                               {
-                                "assignments": [
-                                  58508
-                                ],
+                                "assignments": [58508],
                                 "declarations": [
                                   {
                                     "constant": false,
@@ -19712,10 +19491,7 @@
                           "src": "10037:130:128",
                           "statements": [
                             {
-                              "assignments": [
-                                58481,
-                                58483
-                              ],
+                              "assignments": [58481, 58483],
                               "declarations": [
                                 {
                                   "constant": false,
@@ -20049,9 +19825,7 @@
                   },
                   "id": 58581,
                   "initializationExpression": {
-                    "assignments": [
-                      58451
-                    ],
+                    "assignments": [58451],
                     "declarations": [
                       {
                         "constant": false,
@@ -20138,9 +19912,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              69177
-            ],
+            "baseFunctions": [69177],
             "functionSelector": "ca17ba75",
             "implemented": true,
             "kind": "function",
@@ -20173,9 +19945,7 @@
                       "pathNode": {
                         "id": 58424,
                         "name": "File",
-                        "nameLocations": [
-                          "9693:4:128"
-                        ],
+                        "nameLocations": ["9693:4:128"],
                         "nodeType": "IdentifierPath",
                         "referencedDeclaration": 68845,
                         "src": "9693:4:128"
@@ -20732,10 +20502,7 @@
                             "id": 58626,
                             "name": "revert",
                             "nodeType": "Identifier",
-                            "overloadedDeclarations": [
-                              -19,
-                              -19
-                            ],
+                            "overloadedDeclarations": [-19, -19],
                             "referencedDeclaration": -19,
                             "src": "11035:6:128",
                             "typeDescriptions": {
@@ -20768,9 +20535,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              69185
-            ],
+            "baseFunctions": [69185],
             "functionSelector": "0472a61d",
             "implemented": true,
             "kind": "function",
@@ -20863,9 +20628,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    58642
-                  ],
+                  "assignments": [58642],
                   "declarations": [
                     {
                       "constant": false,
@@ -20888,9 +20651,7 @@
                         "pathNode": {
                           "id": 58640,
                           "name": "RouterStorage",
-                          "nameLocations": [
-                            "11158:13:128"
-                          ],
+                          "nameLocations": ["11158:13:128"],
                           "nodeType": "IdentifierPath",
                           "referencedDeclaration": 68915,
                           "src": "11158:13:128"
@@ -21079,9 +20840,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              69086
-            ],
+            "baseFunctions": [69086],
             "functionSelector": "e9edc477",
             "implemented": true,
             "kind": "function",
@@ -21277,10 +21036,7 @@
                       "id": 58666,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        -18,
-                        -18
-                      ],
+                      "overloadedDeclarations": [-18, -18],
                       "referencedDeclaration": -18,
                       "src": "11388:7:128",
                       "typeDescriptions": {
@@ -21309,9 +21065,7 @@
                   "src": "11388:32:128"
                 },
                 {
-                  "assignments": [
-                    58676
-                  ],
+                  "assignments": [58676],
                   "declarations": [
                     {
                       "constant": false,
@@ -21685,9 +21439,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              68979
-            ],
+            "baseFunctions": [68979],
             "functionSelector": "f44794ca",
             "implemented": true,
             "kind": "function",
@@ -21719,10 +21471,7 @@
                     "pathNode": {
                       "id": 58683,
                       "name": "IAstariaRouter.Commitment",
-                      "nameLocations": [
-                        "11556:14:128",
-                        "11571:10:128"
-                      ],
+                      "nameLocations": ["11556:14:128", "11571:10:128"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 68967,
                       "src": "11556:25:128"
@@ -21791,10 +21540,7 @@
                     "pathNode": {
                       "id": 58689,
                       "name": "ILienToken.Lien",
-                      "nameLocations": [
-                        "11661:10:128",
-                        "11672:4:128"
-                      ],
+                      "nameLocations": ["11661:10:128", "11672:4:128"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 70278,
                       "src": "11661:15:128"
@@ -22015,9 +21761,7 @@
                   }
                 },
                 {
-                  "assignments": [
-                    58730
-                  ],
+                  "assignments": [58730],
                   "declarations": [
                     {
                       "constant": false,
@@ -22396,10 +22140,7 @@
                   }
                 },
                 {
-                  "assignments": [
-                    58757,
-                    58760
-                  ],
+                  "assignments": [58757, 58760],
                   "declarations": [
                     {
                       "constant": false,
@@ -22449,10 +22190,7 @@
                         "pathNode": {
                           "id": 58758,
                           "name": "ILienToken.Details",
-                          "nameLocations": [
-                            "12325:10:128",
-                            "12336:7:128"
-                          ],
+                          "nameLocations": ["12325:10:128", "12336:7:128"],
                           "nodeType": "IdentifierPath",
                           "referencedDeclaration": 70266,
                           "src": "12325:18:128"
@@ -24246,9 +23984,7 @@
                     "pathNode": {
                       "id": 58702,
                       "name": "RouterStorage",
-                      "nameLocations": [
-                        "11824:13:128"
-                      ],
+                      "nameLocations": ["11824:13:128"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 68915,
                       "src": "11824:13:128"
@@ -24283,10 +24019,7 @@
                     "pathNode": {
                       "id": 58705,
                       "name": "IAstariaRouter.Commitment",
-                      "nameLocations": [
-                        "11853:14:128",
-                        "11868:10:128"
-                      ],
+                      "nameLocations": ["11853:14:128", "11868:10:128"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 68967,
                       "src": "11853:25:128"
@@ -24355,10 +24088,7 @@
                     "pathNode": {
                       "id": 58711,
                       "name": "ILienToken.Lien",
-                      "nameLocations": [
-                        "11960:10:128",
-                        "11971:4:128"
-                      ],
+                      "nameLocations": ["11960:10:128", "11971:4:128"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 70278,
                       "src": "11960:15:128"
@@ -24392,9 +24122,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    58900
-                  ],
+                  "assignments": [58900],
                   "declarations": [
                     {
                       "constant": false,
@@ -24417,9 +24145,7 @@
                         "pathNode": {
                           "id": 58898,
                           "name": "RouterStorage",
-                          "nameLocations": [
-                            "13914:13:128"
-                          ],
+                          "nameLocations": ["13914:13:128"],
                           "nodeType": "IdentifierPath",
                           "referencedDeclaration": 68915,
                           "src": "13914:13:128"
@@ -24470,9 +24196,7 @@
                   "src": "13914:43:128"
                 },
                 {
-                  "assignments": [
-                    58905
-                  ],
+                  "assignments": [58905],
                   "declarations": [
                     {
                       "constant": false,
@@ -25335,9 +25059,7 @@
                   },
                   "id": 58974,
                   "initializationExpression": {
-                    "assignments": [
-                      58929
-                    ],
+                    "assignments": [58929],
                     "declarations": [
                       {
                         "constant": false,
@@ -25839,9 +25561,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              69027
-            ],
+            "baseFunctions": [69027],
             "functionSelector": "06ce7e7b",
             "implemented": true,
             "kind": "function",
@@ -25852,9 +25572,7 @@
                 "modifierName": {
                   "id": 58888,
                   "name": "whenNotPaused",
-                  "nameLocations": [
-                    "13820:13:128"
-                  ],
+                  "nameLocations": ["13820:13:128"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 85771,
                   "src": "13820:13:128"
@@ -25891,10 +25609,7 @@
                       "pathNode": {
                         "id": 58883,
                         "name": "IAstariaRouter.Commitment",
-                        "nameLocations": [
-                          "13757:14:128",
-                          "13772:10:128"
-                        ],
+                        "nameLocations": ["13757:14:128", "13772:10:128"],
                         "nodeType": "IdentifierPath",
                         "referencedDeclaration": 68967,
                         "src": "13757:25:128"
@@ -25981,10 +25696,7 @@
                       "pathNode": {
                         "id": 58893,
                         "name": "ILienToken.Stack",
-                        "nameLocations": [
-                          "13873:10:128",
-                          "13884:5:128"
-                        ],
+                        "nameLocations": ["13873:10:128", "13884:5:128"],
                         "nodeType": "IdentifierPath",
                         "referencedDeclaration": 70296,
                         "src": "13873:16:128"
@@ -26026,9 +25738,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    59024
-                  ],
+                  "assignments": [59024],
                   "declarations": [
                     {
                       "constant": false,
@@ -26350,9 +26060,7 @@
                   "src": "14835:23:128"
                 },
                 {
-                  "assignments": [
-                    59049
-                  ],
+                  "assignments": [59049],
                   "declarations": [
                     {
                       "constant": false,
@@ -26375,9 +26083,7 @@
                         "pathNode": {
                           "id": 59047,
                           "name": "RouterStorage",
-                          "nameLocations": [
-                            "14864:13:128"
-                          ],
+                          "nameLocations": ["14864:13:128"],
                           "nodeType": "IdentifierPath",
                           "referencedDeclaration": 68915,
                           "src": "14864:13:128"
@@ -26731,9 +26437,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              69006
-            ],
+            "baseFunctions": [69006],
             "functionSelector": "0a036a0a",
             "implemented": true,
             "kind": "function",
@@ -26744,9 +26448,7 @@
                 "modifierName": {
                   "id": 59015,
                   "name": "whenNotPaused",
-                  "nameLocations": [
-                    "14706:13:128"
-                  ],
+                  "nameLocations": ["14706:13:128"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 85771,
                   "src": "14706:13:128"
@@ -26844,9 +26546,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    59095
-                  ],
+                  "assignments": [59095],
                   "declarations": [
                     {
                       "constant": false,
@@ -26869,9 +26569,7 @@
                         "pathNode": {
                           "id": 59093,
                           "name": "RouterStorage",
-                          "nameLocations": [
-                            "15302:13:128"
-                          ],
+                          "nameLocations": ["15302:13:128"],
                           "nodeType": "IdentifierPath",
                           "referencedDeclaration": 68915,
                           "src": "15302:13:128"
@@ -27418,9 +27116,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              68998
-            ],
+            "baseFunctions": [68998],
             "functionSelector": "fd940dad",
             "implemented": true,
             "kind": "function",
@@ -27431,9 +27127,7 @@
                 "modifierName": {
                   "id": 59088,
                   "name": "whenNotPaused",
-                  "nameLocations": [
-                    "15264:13:128"
-                  ],
+                  "nameLocations": ["15264:13:128"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 85771,
                   "src": "15264:13:128"
@@ -27676,9 +27370,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    59160
-                  ],
+                  "assignments": [59160],
                   "declarations": [
                     {
                       "constant": false,
@@ -27701,9 +27393,7 @@
                         "pathNode": {
                           "id": 59158,
                           "name": "RouterStorage",
-                          "nameLocations": [
-                            "16054:13:128"
-                          ],
+                          "nameLocations": ["16054:13:128"],
                           "nodeType": "IdentifierPath",
                           "referencedDeclaration": 68915,
                           "src": "16054:13:128"
@@ -28482,9 +28172,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              69044
-            ],
+            "baseFunctions": [69044],
             "functionSelector": "22d51d7e",
             "implemented": true,
             "kind": "function",
@@ -28495,9 +28183,7 @@
                 "modifierName": {
                   "id": 59145,
                   "name": "whenNotPaused",
-                  "nameLocations": [
-                    "15935:13:128"
-                  ],
+                  "nameLocations": ["15935:13:128"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 85771,
                   "src": "15935:13:128"
@@ -28511,9 +28197,7 @@
                 "modifierName": {
                   "id": 59147,
                   "name": "onlyVaults",
-                  "nameLocations": [
-                    "15953:10:128"
-                  ],
+                  "nameLocations": ["15953:10:128"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 58605,
                   "src": "15953:10:128"
@@ -28549,10 +28233,7 @@
                     "pathNode": {
                       "id": 59139,
                       "name": "IAstariaRouter.Commitment",
-                      "nameLocations": [
-                        "15850:14:128",
-                        "15865:10:128"
-                      ],
+                      "nameLocations": ["15850:14:128", "15865:10:128"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 68967,
                       "src": "15850:25:128"
@@ -28650,10 +28331,7 @@
                       "pathNode": {
                         "id": 59151,
                         "name": "ILienToken.Stack",
-                        "nameLocations": [
-                          "15999:10:128",
-                          "16010:5:128"
-                        ],
+                        "nameLocations": ["15999:10:128", "16010:5:128"],
                         "nodeType": "IdentifierPath",
                         "referencedDeclaration": 70296,
                         "src": "15999:16:128"
@@ -28722,9 +28400,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    59218
-                  ],
+                  "assignments": [59218],
                   "declarations": [
                     {
                       "constant": false,
@@ -28747,9 +28423,7 @@
                         "pathNode": {
                           "id": 59216,
                           "name": "RouterStorage",
-                          "nameLocations": [
-                            "16819:13:128"
-                          ],
+                          "nameLocations": ["16819:13:128"],
                           "nodeType": "IdentifierPath",
                           "referencedDeclaration": 68915,
                           "src": "16819:13:128"
@@ -29088,9 +28762,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              69140
-            ],
+            "baseFunctions": [69140],
             "functionSelector": "100fea66",
             "implemented": true,
             "kind": "function",
@@ -29122,10 +28794,7 @@
                     "pathNode": {
                       "id": 59209,
                       "name": "ILienToken.Stack",
-                      "nameLocations": [
-                        "16741:10:128",
-                        "16752:5:128"
-                      ],
+                      "nameLocations": ["16741:10:128", "16752:5:128"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 70296,
                       "src": "16741:16:128"
@@ -29364,9 +29033,7 @@
                   }
                 },
                 {
-                  "assignments": [
-                    59269
-                  ],
+                  "assignments": [59269],
                   "declarations": [
                     {
                       "constant": false,
@@ -29389,9 +29056,7 @@
                         "pathNode": {
                           "id": 59267,
                           "name": "RouterStorage",
-                          "nameLocations": [
-                            "17230:13:128"
-                          ],
+                          "nameLocations": ["17230:13:128"],
                           "nodeType": "IdentifierPath",
                           "referencedDeclaration": 68915,
                           "src": "17230:13:128"
@@ -29442,9 +29107,7 @@
                   "src": "17230:43:128"
                 },
                 {
-                  "assignments": [
-                    59274
-                  ],
+                  "assignments": [59274],
                   "declarations": [
                     {
                       "constant": false,
@@ -30435,9 +30098,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              69131
-            ],
+            "baseFunctions": [69131],
             "functionSelector": "4252c5c6",
             "implemented": true,
             "kind": "function",
@@ -30470,10 +30131,7 @@
                       "pathNode": {
                         "id": 59243,
                         "name": "ILienToken.Stack",
-                        "nameLocations": [
-                          "17014:10:128",
-                          "17025:5:128"
-                        ],
+                        "nameLocations": ["17014:10:128", "17025:5:128"],
                         "nodeType": "IdentifierPath",
                         "referencedDeclaration": 70296,
                         "src": "17014:16:128"
@@ -30550,9 +30208,7 @@
                     "pathNode": {
                       "id": 59250,
                       "name": "OrderParameters",
-                      "nameLocations": [
-                        "17087:15:128"
-                      ],
+                      "nameLocations": ["17087:15:128"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 35026,
                       "src": "17087:15:128"
@@ -30586,9 +30242,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    59351
-                  ],
+                  "assignments": [59351],
                   "declarations": [
                     {
                       "constant": false,
@@ -30611,9 +30265,7 @@
                         "pathNode": {
                           "id": 59349,
                           "name": "RouterStorage",
-                          "nameLocations": [
-                            "18014:13:128"
-                          ],
+                          "nameLocations": ["18014:13:128"],
                           "nodeType": "IdentifierPath",
                           "referencedDeclaration": 68915,
                           "src": "18014:13:128"
@@ -30784,9 +30436,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              69094
-            ],
+            "baseFunctions": [69094],
             "functionSelector": "379bd553",
             "implemented": true,
             "kind": "function",
@@ -30878,9 +30528,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    59373
-                  ],
+                  "assignments": [59373],
                   "declarations": [
                     {
                       "constant": false,
@@ -30903,9 +30551,7 @@
                         "pathNode": {
                           "id": 59371,
                           "name": "RouterStorage",
-                          "nameLocations": [
-                            "18238:13:128"
-                          ],
+                          "nameLocations": ["18238:13:128"],
                           "nodeType": "IdentifierPath",
                           "referencedDeclaration": 68915,
                           "src": "18238:13:128"
@@ -31076,9 +30722,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              69102
-            ],
+            "baseFunctions": [69102],
             "functionSelector": "0f0245ad",
             "implemented": true,
             "kind": "function",
@@ -31170,9 +30814,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    59395
-                  ],
+                  "assignments": [59395],
                   "declarations": [
                     {
                       "constant": false,
@@ -31195,9 +30837,7 @@
                         "pathNode": {
                           "id": 59393,
                           "name": "RouterStorage",
-                          "nameLocations": [
-                            "18461:13:128"
-                          ],
+                          "nameLocations": ["18461:13:128"],
                           "nodeType": "IdentifierPath",
                           "referencedDeclaration": 68915,
                           "src": "18461:13:128"
@@ -31368,9 +31008,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              69118
-            ],
+            "baseFunctions": [69118],
             "functionSelector": "1276cf53",
             "implemented": true,
             "kind": "function",
@@ -31462,9 +31100,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    59417
-                  ],
+                  "assignments": [59417],
                   "declarations": [
                     {
                       "constant": false,
@@ -31487,9 +31123,7 @@
                         "pathNode": {
                           "id": 59415,
                           "name": "RouterStorage",
-                          "nameLocations": [
-                            "18735:13:128"
-                          ],
+                          "nameLocations": ["18735:13:128"],
                           "nodeType": "IdentifierPath",
                           "referencedDeclaration": 68915,
                           "src": "18735:13:128"
@@ -31660,9 +31294,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              69110
-            ],
+            "baseFunctions": [69110],
             "functionSelector": "aaf6b93b",
             "implemented": true,
             "kind": "function",
@@ -31912,9 +31544,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              69148
-            ],
+            "baseFunctions": [69148],
             "documentation": {
               "id": 59431,
               "nodeType": "StructuredDocumentation",
@@ -32013,9 +31643,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    59466
-                  ],
+                  "assignments": [59466],
                   "declarations": [
                     {
                       "constant": false,
@@ -32038,9 +31666,7 @@
                         "pathNode": {
                           "id": 59464,
                           "name": "RouterStorage",
-                          "nameLocations": [
-                            "19386:13:128"
-                          ],
+                          "nameLocations": ["19386:13:128"],
                           "nodeType": "IdentifierPath",
                           "referencedDeclaration": 68915,
                           "src": "19386:13:128"
@@ -32091,9 +31717,7 @@
                   "src": "19386:43:128"
                 },
                 {
-                  "assignments": [
-                    59471
-                  ],
+                  "assignments": [59471],
                   "declarations": [
                     {
                       "constant": false,
@@ -33217,9 +32841,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              69200
-            ],
+            "baseFunctions": [69200],
             "functionSelector": "34e4b616",
             "implemented": true,
             "kind": "function",
@@ -33251,10 +32873,7 @@
                     "pathNode": {
                       "id": 59451,
                       "name": "ILienToken.Lien",
-                      "nameLocations": [
-                        "19257:10:128",
-                        "19268:4:128"
-                      ],
+                      "nameLocations": ["19257:10:128", "19268:4:128"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 70278,
                       "src": "19257:15:128"
@@ -33317,10 +32936,7 @@
                       "pathNode": {
                         "id": 59456,
                         "name": "ILienToken.Stack",
-                        "nameLocations": [
-                          "19315:10:128",
-                          "19326:5:128"
-                        ],
+                        "nameLocations": ["19315:10:128", "19326:5:128"],
                         "nodeType": "IdentifierPath",
                         "referencedDeclaration": 70296,
                         "src": "19315:16:128"
@@ -33396,9 +33012,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    59572
-                  ],
+                  "assignments": [59572],
                   "declarations": [
                     {
                       "constant": false,
@@ -34697,9 +34311,7 @@
                     "pathNode": {
                       "id": 59551,
                       "name": "RouterStorage",
-                      "nameLocations": [
-                        "20347:13:128"
-                      ],
+                      "nameLocations": ["20347:13:128"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 68915,
                       "src": "20347:13:128"
@@ -34941,9 +34553,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    59678
-                  ],
+                  "assignments": [59678],
                   "declarations": [
                     {
                       "constant": false,
@@ -35546,9 +35156,7 @@
                     "pathNode": {
                       "id": 59663,
                       "name": "RouterStorage",
-                      "nameLocations": [
-                        "21479:13:128"
-                      ],
+                      "nameLocations": ["21479:13:128"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 68915,
                       "src": "21479:13:128"
@@ -35583,10 +35191,7 @@
                     "pathNode": {
                       "id": 59666,
                       "name": "IAstariaRouter.Commitment",
-                      "nameLocations": [
-                        "21508:14:128",
-                        "21523:10:128"
-                      ],
+                      "nameLocations": ["21508:14:128", "21523:10:128"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 68967,
                       "src": "21508:25:128"
@@ -35656,10 +35261,7 @@
                       "pathNode": {
                         "id": 59672,
                         "name": "ILienToken.Stack",
-                        "nameLocations": [
-                          "21574:10:128",
-                          "21585:5:128"
-                        ],
+                        "nameLocations": ["21574:10:128", "21585:5:128"],
                         "nodeType": "IdentifierPath",
                         "referencedDeclaration": 70296,
                         "src": "21574:16:128"
@@ -35701,9 +35303,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    59729
-                  ],
+                  "assignments": [59729],
                   "declarations": [
                     {
                       "constant": false,
@@ -35726,9 +35326,7 @@
                         "pathNode": {
                           "id": 59727,
                           "name": "ERC721",
-                          "nameLocations": [
-                            "22146:6:128"
-                          ],
+                          "nameLocations": ["22146:6:128"],
                           "nodeType": "IdentifierPath",
                           "referencedDeclaration": 56767,
                           "src": "22146:6:128"
@@ -36238,9 +35836,7 @@
                     "pathNode": {
                       "id": 59718,
                       "name": "RouterStorage",
-                      "nameLocations": [
-                        "22055:13:128"
-                      ],
+                      "nameLocations": ["22055:13:128"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 68915,
                       "src": "22055:13:128"
@@ -36330,9 +35926,7 @@
             "baseName": {
               "id": 57457,
               "name": "Auth",
-              "nameLocations": [
-                "1841:4:128"
-              ],
+              "nameLocations": ["1841:4:128"],
               "nodeType": "IdentifierPath",
               "referencedDeclaration": 54916,
               "src": "1841:4:128"
@@ -36345,9 +35939,7 @@
             "baseName": {
               "id": 57459,
               "name": "ERC4626Router",
-              "nameLocations": [
-                "1847:13:128"
-              ],
+              "nameLocations": ["1847:13:128"],
               "nodeType": "IdentifierPath",
               "referencedDeclaration": 26120,
               "src": "1847:13:128"
@@ -36360,9 +35952,7 @@
             "baseName": {
               "id": 57461,
               "name": "Pausable",
-              "nameLocations": [
-                "1862:8:128"
-              ],
+              "nameLocations": ["1862:8:128"],
               "nodeType": "IdentifierPath",
               "referencedDeclaration": 85819,
               "src": "1862:8:128"
@@ -36375,9 +35965,7 @@
             "baseName": {
               "id": 57463,
               "name": "IAstariaRouter",
-              "nameLocations": [
-                "1872:14:128"
-              ],
+              "nameLocations": ["1872:14:128"],
               "nodeType": "IdentifierPath",
               "referencedDeclaration": 69282,
               "src": "1872:14:128"
@@ -36398,40 +35986,15 @@
         },
         "fullyImplemented": true,
         "linearizedBaseContracts": [
-          59765,
-          69282,
-          69330,
-          85819,
-          85715,
-          26120,
-          26326,
-          27094,
-          27233,
-          27219,
-          27141,
-          54916
+          59765, 69282, 69330, 85819, 85715, 26120, 26326, 27094, 27233, 27219,
+          27141, 54916
         ],
         "name": "AstariaRouter",
         "nameLocation": "1824:13:128",
         "scope": 59766,
         "usedErrors": [
-          125,
-          27149,
-          27152,
-          27155,
-          27158,
-          68854,
-          69220,
-          69224,
-          69228,
-          69232,
-          69237,
-          69243,
-          69248,
-          69253,
-          69266,
-          69270,
-          70805
+          125, 27149, 27152, 27155, 27158, 68854, 69220, 69224, 69228, 69232,
+          69237, 69243, 69248, 69253, 69266, 69270, 70805
         ]
       }
     ],

@@ -92,12 +92,8 @@
     "absolutePath": "src/libraries/CollateralLookup.sol",
     "id": 71454,
     "exportedSymbols": {
-      "CollateralLookup": [
-        71453
-      ],
-      "IERC721": [
-        70156
-      ]
+      "CollateralLookup": [71453],
+      "IERC721": [70156]
     },
     "nodeType": "SourceUnit",
     "src": "180:279:166",
@@ -107,12 +103,7 @@
         "nodeType": "PragmaDirective",
         "src": "180:24:166",
         "nodes": [],
-        "literals": [
-          "solidity",
-          "^",
-          "0.8",
-          ".17"
-        ]
+        "literals": ["solidity", "^", "0.8", ".17"]
       },
       {
         "id": 71431,
@@ -439,9 +430,7 @@
         "contractDependencies": [],
         "contractKind": "library",
         "fullyImplemented": true,
-        "linearizedBaseContracts": [
-          71453
-        ],
+        "linearizedBaseContracts": [71453],
         "name": "CollateralLookup",
         "nameLocation": "268:16:166",
         "scope": 71454,

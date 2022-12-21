@@ -2938,48 +2938,20 @@
     "absolutePath": "src/VaultImplementation.sol",
     "id": 67904,
     "exportedSymbols": {
-      "AstariaVaultBase": [
-        59879
-      ],
-      "CollateralLookup": [
-        71453
-      ],
-      "ERC20": [
-        56223
-      ],
-      "ERC721": [
-        56767
-      ],
-      "ERC721TokenReceiver": [
-        56787
-      ],
-      "FixedPointMathLib": [
-        57064
-      ],
-      "IAstariaRouter": [
-        69282
-      ],
-      "ILienToken": [
-        70649
-      ],
-      "IPublicVault": [
-        70829
-      ],
-      "IVaultImplementation": [
-        71283
-      ],
-      "LienToken": [
-        64717
-      ],
-      "SafeCastLib": [
-        28393
-      ],
-      "SafeTransferLib": [
-        57406
-      ],
-      "VaultImplementation": [
-        67903
-      ]
+      "AstariaVaultBase": [59879],
+      "CollateralLookup": [71453],
+      "ERC20": [56223],
+      "ERC721": [56767],
+      "ERC721TokenReceiver": [56787],
+      "FixedPointMathLib": [57064],
+      "IAstariaRouter": [69282],
+      "ILienToken": [70649],
+      "IPublicVault": [70829],
+      "IVaultImplementation": [71283],
+      "LienToken": [64717],
+      "SafeCastLib": [28393],
+      "SafeTransferLib": [57406],
+      "VaultImplementation": [67903]
     },
     "nodeType": "SourceUnit",
     "src": "180:12532:137",
@@ -2989,12 +2961,7 @@
         "nodeType": "PragmaDirective",
         "src": "180:24:137",
         "nodes": [],
-        "literals": [
-          "solidity",
-          "^",
-          "0.8",
-          ".17"
-        ]
+        "literals": ["solidity", "^", "0.8", ".17"]
       },
       {
         "id": 66899,
@@ -3334,9 +3301,7 @@
             "libraryName": {
               "id": 66930,
               "name": "SafeTransferLib",
-              "nameLocations": [
-                "1199:15:137"
-              ],
+              "nameLocations": ["1199:15:137"],
               "nodeType": "IdentifierPath",
               "referencedDeclaration": 57406,
               "src": "1199:15:137"
@@ -3347,9 +3312,7 @@
               "pathNode": {
                 "id": 66931,
                 "name": "ERC20",
-                "nameLocations": [
-                  "1219:5:137"
-                ],
+                "nameLocations": ["1219:5:137"],
                 "nodeType": "IdentifierPath",
                 "referencedDeclaration": 56223,
                 "src": "1219:5:137"
@@ -3371,9 +3334,7 @@
             "libraryName": {
               "id": 66934,
               "name": "SafeCastLib",
-              "nameLocations": [
-                "1234:11:137"
-              ],
+              "nameLocations": ["1234:11:137"],
               "nodeType": "IdentifierPath",
               "referencedDeclaration": 28393,
               "src": "1234:11:137"
@@ -3398,9 +3359,7 @@
             "libraryName": {
               "id": 66937,
               "name": "CollateralLookup",
-              "nameLocations": [
-                "1267:16:137"
-              ],
+              "nameLocations": ["1267:16:137"],
               "nodeType": "IdentifierPath",
               "referencedDeclaration": 71453,
               "src": "1267:16:137"
@@ -3426,9 +3385,7 @@
             "libraryName": {
               "id": 66940,
               "name": "FixedPointMathLib",
-              "nameLocations": [
-                "1305:17:137"
-              ],
+              "nameLocations": ["1305:17:137"],
               "nodeType": "IdentifierPath",
               "referencedDeclaration": 57064,
               "src": "1305:17:137"
@@ -3449,9 +3406,7 @@
             "nodeType": "FunctionDefinition",
             "src": "1339:69:137",
             "nodes": [],
-            "baseFunctions": [
-              59788
-            ],
+            "baseFunctions": [59788],
             "functionSelector": "06fdde03",
             "implemented": false,
             "kind": "function",
@@ -3514,9 +3469,7 @@
             "nodeType": "FunctionDefinition",
             "src": "1412:71:137",
             "nodes": [],
-            "baseFunctions": [
-              59793
-            ],
+            "baseFunctions": [59793],
             "functionSelector": "95d89b41",
             "implemented": false,
             "kind": "function",
@@ -3684,9 +3637,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              71277
-            ],
+            "baseFunctions": [71277],
             "functionSelector": "30040e77",
             "implemented": true,
             "kind": "function",
@@ -3750,9 +3701,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    66972
-                  ],
+                  "assignments": [66972],
                   "declarations": [
                     {
                       "constant": false,
@@ -3775,9 +3724,7 @@
                         "pathNode": {
                           "id": 66970,
                           "name": "VIData",
-                          "nameLocations": [
-                            "1742:6:137"
-                          ],
+                          "nameLocations": ["1742:6:137"],
                           "nodeType": "IdentifierPath",
                           "referencedDeclaration": 71180,
                           "src": "1742:6:137"
@@ -4196,9 +4143,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              71201
-            ],
+            "baseFunctions": [71201],
             "functionSelector": "627cdcb9",
             "implemented": true,
             "kind": "function",
@@ -4323,10 +4268,7 @@
                       "id": 67011,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        -18,
-                        -18
-                      ],
+                      "overloadedDeclarations": [-18, -18],
                       "referencedDeclaration": -18,
                       "src": "2134:7:137",
                       "typeDescriptions": {
@@ -4469,9 +4411,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              71272
-            ],
+            "baseFunctions": [71272],
             "documentation": {
               "id": 67006,
               "nodeType": "StructuredDocumentation",
@@ -4623,9 +4563,7 @@
                     "pathNode": {
                       "id": 67030,
                       "name": "VIData",
-                      "nameLocations": [
-                        "2297:6:137"
-                      ],
+                      "nameLocations": ["2297:6:137"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 71180,
                       "src": "2297:6:137"
@@ -4748,10 +4686,7 @@
                       "id": 67044,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        -18,
-                        -18
-                      ],
+                      "overloadedDeclarations": [-18, -18],
                       "referencedDeclaration": -18,
                       "src": "2606:7:137",
                       "typeDescriptions": {
@@ -5070,10 +5005,7 @@
                       "id": 67065,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        -18,
-                        -18
-                      ],
+                      "overloadedDeclarations": [-18, -18],
                       "referencedDeclaration": -18,
                       "src": "2831:7:137",
                       "typeDescriptions": {
@@ -5315,10 +5247,7 @@
                       "id": 67084,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        -18,
-                        -18
-                      ],
+                      "overloadedDeclarations": [-18, -18],
                       "referencedDeclaration": -18,
                       "src": "3048:7:137",
                       "typeDescriptions": {
@@ -5521,9 +5450,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              56786
-            ],
+            "baseFunctions": [56786],
             "documentation": {
               "id": 67100,
               "nodeType": "StructuredDocumentation",
@@ -6070,9 +5997,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              71195
-            ],
+            "baseFunctions": [71195],
             "functionSelector": "c0e9b053",
             "implemented": true,
             "kind": "function",
@@ -6225,10 +6150,7 @@
                       "id": 67157,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        -18,
-                        -18
-                      ],
+                      "overloadedDeclarations": [-18, -18],
                       "referencedDeclaration": -18,
                       "src": "3829:7:137",
                       "typeDescriptions": {
@@ -6376,9 +6298,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              71198
-            ],
+            "baseFunctions": [71198],
             "functionSelector": "fc0e74d1",
             "implemented": true,
             "kind": "function",
@@ -6712,9 +6632,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              71267
-            ],
+            "baseFunctions": [71267],
             "functionSelector": "f698da25",
             "implemented": true,
             "kind": "function",
@@ -6771,9 +6689,7 @@
             "nodeType": "VariableDeclaration",
             "src": "4300:114:137",
             "nodes": [],
-            "baseFunctions": [
-              71282
-            ],
+            "baseFunctions": [71282],
             "constant": true,
             "functionSelector": "51ab5c49",
             "mutability": "constant",
@@ -6826,9 +6742,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    67214
-                  ],
+                  "assignments": [67214],
                   "declarations": [
                     {
                       "constant": false,
@@ -6851,9 +6765,7 @@
                         "pathNode": {
                           "id": 67212,
                           "name": "VIData",
-                          "nameLocations": [
-                            "4770:6:137"
-                          ],
+                          "nameLocations": ["4770:6:137"],
                           "nodeType": "IdentifierPath",
                           "referencedDeclaration": 71180,
                           "src": "4770:6:137"
@@ -6992,9 +6904,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              71262
-            ],
+            "baseFunctions": [71262],
             "functionSelector": "2917e097",
             "implemented": true,
             "kind": "function",
@@ -7026,10 +6936,7 @@
                     "pathNode": {
                       "id": 67203,
                       "name": "IAstariaRouter.StrategyDetails",
-                      "nameLocations": [
-                        "4656:14:137",
-                        "4671:15:137"
-                      ],
+                      "nameLocations": ["4656:14:137", "4671:15:137"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 68932,
                       "src": "4656:30:137"
@@ -7124,9 +7031,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    67239
-                  ],
+                  "assignments": [67239],
                   "declarations": [
                     {
                       "constant": false,
@@ -7608,9 +7513,7 @@
                     "pathNode": {
                       "id": 67226,
                       "name": "VIData",
-                      "nameLocations": [
-                        "4896:6:137"
-                      ],
+                      "nameLocations": ["4896:6:137"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 71180,
                       "src": "4896:6:137"
@@ -7645,10 +7548,7 @@
                     "pathNode": {
                       "id": 67229,
                       "name": "IAstariaRouter.StrategyDetails",
-                      "nameLocations": [
-                        "4918:14:137",
-                        "4933:15:137"
-                      ],
+                      "nameLocations": ["4918:14:137", "4933:15:137"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 68932,
                       "src": "4918:30:137"
@@ -7877,10 +7777,7 @@
                       "id": 67274,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        -18,
-                        -18
-                      ],
+                      "overloadedDeclarations": [-18, -18],
                       "referencedDeclaration": -18,
                       "src": "5305:7:137",
                       "typeDescriptions": {
@@ -7909,9 +7806,7 @@
                   "src": "5305:40:137"
                 },
                 {
-                  "assignments": [
-                    67287
-                  ],
+                  "assignments": [67287],
                   "declarations": [
                     {
                       "constant": false,
@@ -7934,9 +7829,7 @@
                         "pathNode": {
                           "id": 67285,
                           "name": "VIData",
-                          "nameLocations": [
-                            "5351:6:137"
-                          ],
+                          "nameLocations": ["5351:6:137"],
                           "nodeType": "IdentifierPath",
                           "referencedDeclaration": 71180,
                           "src": "5351:6:137"
@@ -8602,9 +8495,7 @@
                         },
                         "id": 67348,
                         "initializationExpression": {
-                          "assignments": [
-                            67325
-                          ],
+                          "assignments": [67325],
                           "declarations": [
                             {
                               "constant": false,
@@ -8694,9 +8585,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              71252
-            ],
+            "baseFunctions": [71252],
             "functionSelector": "474a1e54",
             "implemented": true,
             "kind": "function",
@@ -8728,9 +8617,7 @@
                     "pathNode": {
                       "id": 67269,
                       "name": "InitParams",
-                      "nameLocations": [
-                        "5254:10:137"
-                      ],
+                      "nameLocations": ["5254:10:137"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 71165,
                       "src": "5254:10:137"
@@ -8859,10 +8746,7 @@
                       "id": 67357,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        -18,
-                        -18
-                      ],
+                      "overloadedDeclarations": [-18, -18],
                       "referencedDeclaration": -18,
                       "src": "5777:7:137",
                       "typeDescriptions": {
@@ -8891,9 +8775,7 @@
                   "src": "5777:30:137"
                 },
                 {
-                  "assignments": [
-                    67367
-                  ],
+                  "assignments": [67367],
                   "declarations": [
                     {
                       "constant": false,
@@ -8916,9 +8798,7 @@
                         "pathNode": {
                           "id": 67365,
                           "name": "VIData",
-                          "nameLocations": [
-                            "5837:6:137"
-                          ],
+                          "nameLocations": ["5837:6:137"],
                           "nodeType": "IdentifierPath",
                           "referencedDeclaration": 71180,
                           "src": "5837:6:137"
@@ -9221,9 +9101,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              71246
-            ],
+            "baseFunctions": [71246],
             "functionSelector": "ca5eb5e1",
             "implemented": true,
             "kind": "function",
@@ -9288,9 +9166,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    67405
-                  ],
+                  "assignments": [67405],
                   "declarations": [
                     {
                       "constant": false,
@@ -9422,9 +9298,7 @@
                   "src": "6860:69:137"
                 },
                 {
-                  "assignments": [
-                    67415
-                  ],
+                  "assignments": [67415],
                   "declarations": [
                     {
                       "constant": false,
@@ -9447,9 +9321,7 @@
                         "pathNode": {
                           "id": 67413,
                           "name": "ERC721",
-                          "nameLocations": [
-                            "6935:6:137"
-                          ],
+                          "nameLocations": ["6935:6:137"],
                           "nodeType": "IdentifierPath",
                           "referencedDeclaration": 56767,
                           "src": "6935:6:137"
@@ -9582,9 +9454,7 @@
                   "src": "6935:47:137"
                 },
                 {
-                  "assignments": [
-                    67425
-                  ],
+                  "assignments": [67425],
                   "declarations": [
                     {
                       "constant": false,
@@ -9685,9 +9555,7 @@
                   "src": "6988:41:137"
                 },
                 {
-                  "assignments": [
-                    67432
-                  ],
+                  "assignments": [67432],
                   "declarations": [
                     {
                       "constant": false,
@@ -10282,10 +10150,7 @@
                                   "id": 67470,
                                   "name": "require",
                                   "nodeType": "Identifier",
-                                  "overloadedDeclarations": [
-                                    -18,
-                                    -18
-                                  ],
+                                  "overloadedDeclarations": [-18, -18],
                                   "referencedDeclaration": -18,
                                   "src": "7327:7:137",
                                   "typeDescriptions": {
@@ -10379,10 +10244,7 @@
                                   "id": 67463,
                                   "name": "require",
                                   "nodeType": "Identifier",
-                                  "overloadedDeclarations": [
-                                    -18,
-                                    -18
-                                  ],
+                                  "overloadedDeclarations": [-18, -18],
                                   "referencedDeclaration": -18,
                                   "src": "7273:7:137",
                                   "typeDescriptions": {
@@ -10417,9 +10279,7 @@
                   }
                 },
                 {
-                  "assignments": [
-                    67484
-                  ],
+                  "assignments": [67484],
                   "declarations": [
                     {
                       "constant": false,
@@ -10442,9 +10302,7 @@
                         "pathNode": {
                           "id": 67482,
                           "name": "VIData",
-                          "nameLocations": [
-                            "7393:6:137"
-                          ],
+                          "nameLocations": ["7393:6:137"],
                           "nodeType": "IdentifierPath",
                           "referencedDeclaration": 71180,
                           "src": "7393:6:137"
@@ -10495,9 +10353,7 @@
                   "src": "7393:32:137"
                 },
                 {
-                  "assignments": [
-                    67489
-                  ],
+                  "assignments": [67489],
                   "declarations": [
                     {
                       "constant": false,
@@ -11293,10 +11149,7 @@
                     "pathNode": {
                       "id": 67397,
                       "name": "IAstariaRouter.Commitment",
-                      "nameLocations": [
-                        "6772:14:137",
-                        "6787:10:137"
-                      ],
+                      "nameLocations": ["6772:14:137", "6787:10:137"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 68967,
                       "src": "6772:25:137"
@@ -11537,10 +11390,7 @@
                     "pathNode": {
                       "id": 67553,
                       "name": "IAstariaRouter.Commitment",
-                      "nameLocations": [
-                        "8091:14:137",
-                        "8106:10:137"
-                      ],
+                      "nameLocations": ["8091:14:137", "8106:10:137"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 68967,
                       "src": "8091:25:137"
@@ -11678,9 +11528,7 @@
                   "src": "8964:37:137"
                 },
                 {
-                  "assignments": [
-                    67584
-                  ],
+                  "assignments": [67584],
                   "declarations": [
                     {
                       "constant": false,
@@ -12092,9 +11940,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              71215
-            ],
+            "baseFunctions": [71215],
             "documentation": {
               "id": 67562,
               "nodeType": "StructuredDocumentation",
@@ -12111,9 +11957,7 @@
                 "modifierName": {
                   "id": 67569,
                   "name": "whenNotPaused",
-                  "nameLocations": [
-                    "8880:13:137"
-                  ],
+                  "nameLocations": ["8880:13:137"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 67144,
                   "src": "8880:13:137"
@@ -12149,10 +11993,7 @@
                     "pathNode": {
                       "id": 67563,
                       "name": "IAstariaRouter.Commitment",
-                      "nameLocations": [
-                        "8795:14:137",
-                        "8810:10:137"
-                      ],
+                      "nameLocations": ["8795:14:137", "8810:10:137"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 68967,
                       "src": "8795:25:137"
@@ -12250,10 +12091,7 @@
                       "pathNode": {
                         "id": 67573,
                         "name": "ILienToken.Stack",
-                        "nameLocations": [
-                          "8923:10:137",
-                          "8934:5:137"
-                        ],
+                        "nameLocations": ["8923:10:137", "8934:5:137"],
                         "nodeType": "IdentifierPath",
                         "referencedDeclaration": 70296,
                         "src": "8923:16:137"
@@ -12295,10 +12133,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    67638,
-                    67640
-                  ],
+                  "assignments": [67638, 67640],
                   "declarations": [
                     {
                       "constant": false,
@@ -13165,9 +13000,7 @@
                   "src": "10152:70:137"
                 },
                 {
-                  "assignments": [
-                    67697
-                  ],
+                  "assignments": [67697],
                   "declarations": [
                     {
                       "constant": false,
@@ -13190,9 +13023,7 @@
                         "pathNode": {
                           "id": 67695,
                           "name": "LienToken",
-                          "nameLocations": [
-                            "10229:9:137"
-                          ],
+                          "nameLocations": ["10229:9:137"],
                           "nodeType": "IdentifierPath",
                           "referencedDeclaration": 64717,
                           "src": "10229:9:137"
@@ -13995,10 +13826,7 @@
                                   "10858:10:137",
                                   "10899:20:137"
                                 ],
-                                "names": [
-                                  "commitment",
-                                  "timeToSecondEpochEnd"
-                                ],
+                                "names": ["commitment", "timeToSecondEpochEnd"],
                                 "nodeType": "FunctionCall",
                                 "src": "10814:148:137",
                                 "tryCall": false,
@@ -14152,11 +13980,7 @@
                           "10595:8:137",
                           "10625:8:137"
                         ],
-                        "names": [
-                          "incoming",
-                          "position",
-                          "encumber"
-                        ],
+                        "names": ["incoming", "position", "encumber"],
                         "nodeType": "FunctionCall",
                         "src": "10520:492:137",
                         "tryCall": false,
@@ -14223,9 +14047,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              71236
-            ],
+            "baseFunctions": [71236],
             "documentation": {
               "id": 67614,
               "nodeType": "StructuredDocumentation",
@@ -14242,9 +14064,7 @@
                 "modifierName": {
                   "id": 67627,
                   "name": "whenNotPaused",
-                  "nameLocations": [
-                    "9719:13:137"
-                  ],
+                  "nameLocations": ["9719:13:137"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 67144,
                   "src": "9719:13:137"
@@ -14334,10 +14154,7 @@
                     "pathNode": {
                       "id": 67619,
                       "name": "IAstariaRouter.Commitment",
-                      "nameLocations": [
-                        "9610:14:137",
-                        "9625:10:137"
-                      ],
+                      "nameLocations": ["9610:14:137", "9625:10:137"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 68967,
                       "src": "9610:25:137"
@@ -14373,10 +14190,7 @@
                       "pathNode": {
                         "id": 67622,
                         "name": "ILienToken.Stack",
-                        "nameLocations": [
-                          "9664:10:137",
-                          "9675:5:137"
-                        ],
+                        "nameLocations": ["9664:10:137", "9675:5:137"],
                         "nodeType": "IdentifierPath",
                         "referencedDeclaration": 70296,
                         "src": "9664:16:137"
@@ -14427,10 +14241,7 @@
                       "pathNode": {
                         "id": 67629,
                         "name": "ILienToken.Stack",
-                        "nameLocations": [
-                          "9746:10:137",
-                          "9757:5:137"
-                        ],
+                        "nameLocations": ["9746:10:137", "9757:5:137"],
                         "nodeType": "IdentifierPath",
                         "referencedDeclaration": 70296,
                         "src": "9746:16:137"
@@ -14473,10 +14284,7 @@
                     "pathNode": {
                       "id": 67633,
                       "name": "ILienToken.Stack",
-                      "nameLocations": [
-                        "9773:10:137",
-                        "9784:5:137"
-                      ],
+                      "nameLocations": ["9773:10:137", "9784:5:137"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 70296,
                       "src": "9773:16:137"
@@ -14853,9 +14661,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              71241
-            ],
+            "baseFunctions": [71241],
             "documentation": {
               "id": 67772,
               "nodeType": "StructuredDocumentation",
@@ -15186,9 +14992,7 @@
                   "src": "12170:72:137"
                 },
                 {
-                  "assignments": [
-                    67834
-                  ],
+                  "assignments": [67834],
                   "declarations": [
                     {
                       "constant": false,
@@ -15483,10 +15287,7 @@
                     "pathNode": {
                       "id": 67800,
                       "name": "IAstariaRouter.Commitment",
-                      "nameLocations": [
-                        "11944:14:137",
-                        "11959:10:137"
-                      ],
+                      "nameLocations": ["11944:14:137", "11959:10:137"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 68967,
                       "src": "11944:25:137"
@@ -15584,10 +15385,7 @@
                       "pathNode": {
                         "id": 67808,
                         "name": "ILienToken.Stack",
-                        "nameLocations": [
-                          "12065:10:137",
-                          "12076:5:137"
-                        ],
+                        "nameLocations": ["12065:10:137", "12076:5:137"],
                         "nodeType": "IdentifierPath",
                         "referencedDeclaration": 70296,
                         "src": "12065:16:137"
@@ -15656,9 +15454,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    67859
-                  ],
+                  "assignments": [67859],
                   "declarations": [
                     {
                       "constant": false,
@@ -15760,9 +15556,7 @@
                   "src": "12442:32:137"
                 },
                 {
-                  "assignments": [
-                    67866
-                  ],
+                  "assignments": [67866],
                   "declarations": [
                     {
                       "constant": false,
@@ -15909,9 +15703,7 @@
                     "src": "12529:157:137",
                     "statements": [
                       {
-                        "assignments": [
-                          67876
-                        ],
+                        "assignments": [67876],
                         "declarations": [
                           {
                             "constant": false,
@@ -16329,9 +16121,7 @@
             "baseName": {
               "id": 66924,
               "name": "AstariaVaultBase",
-              "nameLocations": [
-                "1125:16:137"
-              ],
+              "nameLocations": ["1125:16:137"],
               "nodeType": "IdentifierPath",
               "referencedDeclaration": 59879,
               "src": "1125:16:137"
@@ -16344,9 +16134,7 @@
             "baseName": {
               "id": 66926,
               "name": "ERC721TokenReceiver",
-              "nameLocations": [
-                "1145:19:137"
-              ],
+              "nameLocations": ["1145:19:137"],
               "nodeType": "IdentifierPath",
               "referencedDeclaration": 56787,
               "src": "1145:19:137"
@@ -16359,9 +16147,7 @@
             "baseName": {
               "id": 66928,
               "name": "IVaultImplementation",
-              "nameLocations": [
-                "1168:20:137"
-              ],
+              "nameLocations": ["1168:20:137"],
               "nodeType": "IdentifierPath",
               "referencedDeclaration": 71283,
               "src": "1168:20:137"
@@ -16382,21 +16168,12 @@
         },
         "fullyImplemented": false,
         "linearizedBaseContracts": [
-          67903,
-          71283,
-          69788,
-          56787,
-          59879,
-          69319,
-          70845,
-          120
+          67903, 71283, 69788, 56787, 59879, 69319, 70845, 120
         ],
         "name": "VaultImplementation",
         "nameLocation": "1100:19:137",
         "scope": 67904,
-        "usedErrors": [
-          71155
-        ]
+        "usedErrors": [71155]
       }
     ],
     "license": "UNLICENSED"

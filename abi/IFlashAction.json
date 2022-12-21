@@ -150,9 +150,7 @@
     "absolutePath": "src/interfaces/IFlashAction.sol",
     "id": 42563,
     "exportedSymbols": {
-      "IFlashAction": [
-        42562
-      ]
+      "IFlashAction": [42562]
     },
     "nodeType": "SourceUnit",
     "src": "180:218:65",
@@ -162,12 +160,7 @@
         "nodeType": "PragmaDirective",
         "src": "180:24:65",
         "nodes": [],
-        "literals": [
-          "solidity",
-          "^",
-          "0.8",
-          ".17"
-        ]
+        "literals": ["solidity", "^", "0.8", ".17"]
       },
       {
         "id": 42562,
@@ -278,9 +271,7 @@
                     "pathNode": {
                       "id": 42552,
                       "name": "Underlying",
-                      "nameLocations": [
-                        "323:10:65"
-                      ],
+                      "nameLocations": ["323:10:65"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 42551,
                       "src": "323:10:65"
@@ -370,9 +361,7 @@
         "contractDependencies": [],
         "contractKind": "interface",
         "fullyImplemented": false,
-        "linearizedBaseContracts": [
-          42562
-        ],
+        "linearizedBaseContracts": [42562],
         "name": "IFlashAction",
         "nameLocation": "216:12:65",
         "scope": 42563,
