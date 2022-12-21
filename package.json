@@ -61,7 +61,8 @@
   "typings": "dist/index.d.ts",
   "module": "dist/sdk.esm.js",
   "files": [
-    "dist"
+    "dist",
+    "src"
   ],
   "engines": {
     "node": ">=16"
