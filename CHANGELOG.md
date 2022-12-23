@@ -1,3 +1,10 @@
+# [1.0.0-alpha.7](https://github.com/astariaxyz/astaria-sdk/compare/v1.0.0-alpha.6...v1.0.0-alpha.7) (2022-12-23)
+
+
+### Bug Fixes
+
+* fromParsedStrategyRow is now public ([8ea69e3](https://github.com/astariaxyz/astaria-sdk/commit/8ea69e3f1ec2720adc9666e82668bec07192d06c))
+
 # [1.0.0-alpha.6](https://github.com/astariaxyz/astaria-sdk/compare/v1.0.0-alpha.5...v1.0.0-alpha.6) (2022-12-23)
 
 
