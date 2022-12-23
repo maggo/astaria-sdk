@@ -1,4 +1,4 @@
-import { utils, BigNumber } from 'ethers'
+import { utils } from 'ethers'
 import MerkleTree from 'merkletreejs'
 import invariant from 'tiny-invariant'
 import { StrategyLeafType, UniV3Collateral, Collateral } from '../types/index'
@@ -20,7 +20,9 @@ export class StrategyTree extends MerkleTree {
     this.csv = csv
   }
 
-  static fromParsedStrategyRow(strategy: ParsedStrategyRow): StrategyTree {
+  public static fromParsedStrategyRow(
+    strategy: ParsedStrategyRow
+  ): StrategyTree {
     let csv = strategy
       .map((term) => {
         let ret = ''
