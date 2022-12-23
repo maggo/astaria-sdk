@@ -1,16 +1,14 @@
 # [1.0.0-alpha.5](https://github.com/astariaxyz/astaria-sdk/compare/v1.0.0-alpha.4...v1.0.0-alpha.5) (2022-12-21)
 
-
 ### Bug Fixes
 
-* changes to fix v3 types ([1e73a2a](https://github.com/astariaxyz/astaria-sdk/commit/1e73a2a2e9c3fd305010814b18400ef7cef62965))
-* ensure that the results of encodeIPFSStrategyPayload are deterministic ([f41bd99](https://github.com/astariaxyz/astaria-sdk/commit/f41bd99757ab3daf2d37882dbde36ae7533ade7b))
-* remove linter from ci workflow, exclude src from build ([7c6a470](https://github.com/astariaxyz/astaria-sdk/commit/7c6a470f56e137c022f43aaa20e6bd1a13fafaef))
-
+- changes to fix v3 types ([1e73a2a](https://github.com/astariaxyz/astaria-sdk/commit/1e73a2a2e9c3fd305010814b18400ef7cef62965))
+- ensure that the results of encodeIPFSStrategyPayload are deterministic ([f41bd99](https://github.com/astariaxyz/astaria-sdk/commit/f41bd99757ab3daf2d37882dbde36ae7533ade7b))
+- remove linter from ci workflow, exclude src from build ([7c6a470](https://github.com/astariaxyz/astaria-sdk/commit/7c6a470f56e137c022f43aaa20e6bd1a13fafaef))
 
 ### Features
 
-* implement signature verification ([e88a1ce](https://github.com/astariaxyz/astaria-sdk/commit/e88a1ce012c79d08821b8f716699fdeb50f504f3))
+- implement signature verification ([e88a1ce](https://github.com/astariaxyz/astaria-sdk/commit/e88a1ce012c79d08821b8f716699fdeb50f504f3))
 
 # [1.0.0-alpha.4](https://github.com/astariaxyz/astaria-sdk/compare/v1.0.0-alpha.3...v1.0.0-alpha.4) (2022-12-21)
 

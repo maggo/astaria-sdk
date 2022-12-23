@@ -1,6 +1,7 @@
 import { join } from 'path'
+import { AddressZero } from '@ethersproject/constants'
 import { readFile } from 'fs/promises'
-
+import { Wallet, BigNumber } from 'ethers'
 import { StrategyTree } from '../src/strategy/StrategyTree'
 
 describe('StrategyTree', () => {
@@ -11,6 +12,15 @@ describe('StrategyTree', () => {
     const actual = strategyTree.getCSV.length
     const expected = 5
     expect(actual).toEqual(expected)
+  })
+  test('convert parsedStrategyRow to StrategyTree', async () => {
+    const csv = await readFile(join(__dirname, '__mocks__/test.csv'), 'utf8')
+    const tempStrategyTree = new StrategyTree(csv)
+    const strategyTree = StrategyTree.fromParsedStrategyRow(
+      tempStrategyTree.getCSV
+    )
+    expect(strategyTree.getHexRoot()).toEqual(tempStrategyTree.getHexRoot())
+    expect(strategyTree.getCSV).toEqual(tempStrategyTree.getCSV)
   })
   test('parses CSV into StrategyTree', async () => {
     const csv = await readFile(join(__dirname, '__mocks__/test.csv'), 'utf8')
