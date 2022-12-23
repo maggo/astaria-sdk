@@ -11,6 +11,7 @@ import { Wallet, Signature } from 'ethers'
 import invariant from 'tiny-invariant'
 
 import {
+  Lien,
   Collateral,
   Collection,
   Strategy,
@@ -332,11 +333,46 @@ export const encodeIPFSStrategyPayload = (
     signature: signature,
     leaves: csv,
   }
+
   return stringify(payload)
 }
 
 export const decodeIPFSStrategyPayload = (
   strategy: string
 ): IPFSStrategyPayload => {
-  return JSON.parse(strategy)
+  const data = JSON.parse(strategy)
+  let payload: IPFSStrategyPayload = data
+
+  payload.leaves = data.leaves.map((leaf: any) => {
+    leaf.lien = {
+      amount: BigNumber.from(`${leaf.lien.amount.hex}`),
+      duration: BigNumber.from(`${leaf.lien.duration.hex}`),
+      liquidationInitialAsk: BigNumber.from(
+        `${leaf.lien.liquidationInitialAsk.hex}`
+      ),
+      maxPotentialDebt: BigNumber.from(`${leaf.lien.maxPotentialDebt.hex}`),
+      rate: BigNumber.from(`${leaf.lien.rate.hex}`),
+    } as Lien
+
+    switch (leaf.type) {
+      case StrategyLeafType.Collateral: {
+        leaf.tokenId = BigNumber.from(`${leaf.tokenId.hex}`)
+        break
+      }
+      case StrategyLeafType.UniV3Collateral: {
+        leaf.amount0Min = BigNumber.from(leaf.amount0Min.hex)
+        leaf.amount1Min = BigNumber.from(leaf.amount1Min.hex)
+        leaf.fee = BigNumber.from(leaf.fee.hex)
+        leaf.minLiquidity = BigNumber.from(`${leaf.minLiquidity.hex}`)
+        leaf.tickLower = BigNumber.from(`${leaf.tickLower.hex}`)
+        leaf.tickUpper = BigNumber.from(`${leaf.tickUpper.hex}`)
+        break
+      }
+      default:
+        break
+    }
+    return leaf
+  })
+
+  return payload
 }
