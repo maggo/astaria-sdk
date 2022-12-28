@@ -1,3 +1,10 @@
+# [1.0.0-alpha.9](https://github.com/astariaxyz/astaria-sdk/compare/v1.0.0-alpha.8...v1.0.0-alpha.9) (2022-12-28)
+
+
+### Bug Fixes
+
+* update prepare in package.json ([#15](https://github.com/astariaxyz/astaria-sdk/issues/15)) ([edebf4b](https://github.com/astariaxyz/astaria-sdk/commit/edebf4b145335df1a7ef73fae504c8335f0de68e))
+
 # [1.0.0-alpha.8](https://github.com/astariaxyz/astaria-sdk/compare/v1.0.0-alpha.7...v1.0.0-alpha.8) (2022-12-28)
 
 
