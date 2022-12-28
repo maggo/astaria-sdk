@@ -1,3 +1,10 @@
+# [1.0.0-alpha.8](https://github.com/astariaxyz/astaria-sdk/compare/v1.0.0-alpha.7...v1.0.0-alpha.8) (2022-12-28)
+
+
+### Bug Fixes
+
+* target in tsconfig es6 -> ES6 ([f8e55c9](https://github.com/astariaxyz/astaria-sdk/commit/f8e55c97041ca1453f1f463c2bbf1e54c6e6ca5d))
+
 # [1.0.0-alpha.7](https://github.com/astariaxyz/astaria-sdk/compare/v1.0.0-alpha.6...v1.0.0-alpha.7) (2022-12-23)
 
 
