@@ -11,9 +11,9 @@ import {
 import { AddressZero } from '@ethersproject/constants'
 
 export enum StrategyLeafType {
-  Collateral = 0,
-  Collection = 1,
-  UniV3Collateral = 2,
+  Collateral = '0',
+  Collection = '1',
+  UniV3Collateral = '2',
 }
 
 /**

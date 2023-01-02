@@ -5,12 +5,13 @@ import { BigNumber } from '@ethersproject/bignumber'
 import { Web3Provider, ExternalProvider } from '@ethersproject/providers'
 import { AddressZero } from '@ethersproject/constants'
 import ganache from 'ganache'
-
+import * as fs from 'node:fs'
 import { StrategyTree } from '../src/strategy/StrategyTree'
 import {
   signRootRemote,
   signRootLocal,
   encodeIPFSStrategyPayload,
+  decodeIPFSStrategyPayload,
   verifySignature,
   getTypedData,
 } from '../src/strategy/utils'
@@ -76,7 +77,7 @@ describe('util.signRoot using remote', () => {
   })
   test('encoding and hashing for IPFS deterministically', async () => {
     const csv = await readFile(join(__dirname, '__mocks__/test.csv'), 'utf8')
-    const expected = 'QmT4RWQy42Dtiiasb6s4RpqiVvVHMPneyJ5CA7adXf9StN'
+    const expected = 'QmSHPeq9gGJ1UQcBgKN5YCziSTRbaQCT2MgPb5w1JrKr68'
     const strategyTree = StrategyTree.fromCSV(csv)
 
     const root = strategyTree.getHexRoot()
@@ -120,5 +121,9 @@ describe('util.signRoot using remote', () => {
     const actual = verifySignature(typedData, signature)
 
     expect(actual).toEqual(expected)
+  })
+  test('test decode', async () => {
+    const json = await readFile(join(__dirname, '__mocks__/test.json'), 'utf8')
+    expect(decodeIPFSStrategyPayload(json).strategy).toBeDefined()
   })
 })

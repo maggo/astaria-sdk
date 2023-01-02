@@ -1,0 +1,84 @@
+{
+  "signature": {
+    "_vs": "0xd7d88300add983cba558817510a2ec27dafb499a2ed683bc7fcade7b914b8d82",
+    "compact": "0xfd0ff41e7e81387bc1ef00b8f90f7ddb9156f3198e1853fac6b248f1277b0815d7d88300add983cba558817510a2ec27dafb499a2ed683bc7fcade7b914b8d82",
+    "r": "0xfd0ff41e7e81387bc1ef00b8f90f7ddb9156f3198e1853fac6b248f1277b0815",
+    "recoveryParam": 1,
+    "s": "0x57d88300add983cba558817510a2ec27dafb499a2ed683bc7fcade7b914b8d82",
+    "v": 28,
+    "yParityAndS": "0xd7d88300add983cba558817510a2ec27dafb499a2ed683bc7fcade7b914b8d82"
+  },
+  "strategy": [
+    {
+      "borrower": "0x8DcF103b7e35872e896c85B33F1fC5140213a7a5",
+      "leaf": "0xa3d1fec38e16fb92d421788d08fa4be00f71cf5b6332f8c470804283a2cb6b04",
+      "lien": {
+        "amount": {
+          "hex": "0x0a",
+          "type": "BigNumber"
+        },
+        "duration": {
+          "hex": "0x0a",
+          "type": "BigNumber"
+        },
+        "liquidationInitialAsk": {
+          "hex": "0x01",
+          "type": "BigNumber"
+        },
+        "maxPotentialDebt": {
+          "hex": "0x00",
+          "type": "BigNumber"
+        },
+        "rate": {
+          "hex": "0x0a",
+          "type": "BigNumber"
+        }
+      },
+      "token": "0x0E2f0c3519A6C5F89E406e6D62fDb675Cc8bE7EC",
+      "type": "1"
+    }
+  ],
+  "typedData": {
+    "domain": {
+      "chainId": 5,
+      "verifyingContract": "0xEc06316AC14f94c00483dC1C6F01276B68e25fE6",
+      "version": "0"
+    },
+    "message": {
+      "deadline": "0x0a",
+      "nonce": "0x00",
+      "root": "0xa3d1fec38e16fb92d421788d08fa4be00f71cf5b6332f8c470804283a2cb6b04"
+    },
+    "primaryType": "StrategyDetails",
+    "types": {
+      "EIP712Domain": [
+        {
+          "name": "version",
+          "type": "string"
+        },
+        {
+          "name": "chainId",
+          "type": "uint256"
+        },
+        {
+          "name": "verifyingContract",
+          "type": "address"
+        }
+      ],
+      "StrategyDetails": [
+        {
+          "name": "nonce",
+          "type": "uint256"
+        },
+        {
+          "name": "deadline",
+          "type": "uint256"
+        },
+        {
+          "name": "root",
+          "type": "bytes32"
+        }
+      ]
+    }
+  }
+}

@@ -147,7 +147,6 @@ export const getStrategyFromCSV = (csv: string): Strategy => {
       const data: any = RE_STRATEGY_ROW.exec(row)?.groups
       const temp = {
         ...data,
-        type: parseInt(data?.type),
         lien: {
           amount: data?.amount,
           rate: data?.rate,
