@@ -1,3 +1,15 @@
+# [1.0.0-alpha.10](https://github.com/astariaxyz/astaria-sdk/compare/v1.0.0-alpha.9...v1.0.0-alpha.10) (2023-01-02)
+
+
+### Features
+
+* add zod validation ([#16](https://github.com/astariaxyz/astaria-sdk/issues/16)) ([6dd5bdb](https://github.com/astariaxyz/astaria-sdk/commit/6dd5bdb25f2e0749f4846ed05e3a117fdd9a7cf6))
+
+
+### BREAKING CHANGES
+
+* StrategyTree constructor, type updates
+
 # [1.0.0-alpha.9](https://github.com/astariaxyz/astaria-sdk/compare/v1.0.0-alpha.8...v1.0.0-alpha.9) (2022-12-28)
 
 
