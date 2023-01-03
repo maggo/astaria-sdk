@@ -1,3 +1,15 @@
+# [1.0.0-alpha.11](https://github.com/astariaxyz/astaria-sdk/compare/v1.0.0-alpha.10...v1.0.0-alpha.11) (2023-01-03)
+
+
+### Bug Fixes
+
+* values for StrategyLeafType enum are now strings ([e5aa7cb](https://github.com/astariaxyz/astaria-sdk/commit/e5aa7cba95c517e1e13874847bb71da3dc25d7c0))
+
+
+### Features
+
+* improved zod validation ([48f5e63](https://github.com/astariaxyz/astaria-sdk/commit/48f5e6365e900ff9cd917c22fba710bcc585e749))
+
 # [1.0.0-alpha.10](https://github.com/astariaxyz/astaria-sdk/compare/v1.0.0-alpha.9...v1.0.0-alpha.10) (2023-01-02)
 
 ### Features
