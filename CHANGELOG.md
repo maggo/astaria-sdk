@@ -1,35 +1,30 @@
 # [1.0.0-alpha.10](https://github.com/astariaxyz/astaria-sdk/compare/v1.0.0-alpha.9...v1.0.0-alpha.10) (2023-01-02)
 
-
 ### Features
 
-* add zod validation ([#16](https://github.com/astariaxyz/astaria-sdk/issues/16)) ([6dd5bdb](https://github.com/astariaxyz/astaria-sdk/commit/6dd5bdb25f2e0749f4846ed05e3a117fdd9a7cf6))
-
+- add zod validation ([#16](https://github.com/astariaxyz/astaria-sdk/issues/16)) ([6dd5bdb](https://github.com/astariaxyz/astaria-sdk/commit/6dd5bdb25f2e0749f4846ed05e3a117fdd9a7cf6))
 
 ### BREAKING CHANGES
 
-* StrategyTree constructor, type updates
+- StrategyTree constructor, type updates
 
 # [1.0.0-alpha.9](https://github.com/astariaxyz/astaria-sdk/compare/v1.0.0-alpha.8...v1.0.0-alpha.9) (2022-12-28)
 
-
 ### Bug Fixes
 
-* update prepare in package.json ([#15](https://github.com/astariaxyz/astaria-sdk/issues/15)) ([edebf4b](https://github.com/astariaxyz/astaria-sdk/commit/edebf4b145335df1a7ef73fae504c8335f0de68e))
+- update prepare in package.json ([#15](https://github.com/astariaxyz/astaria-sdk/issues/15)) ([edebf4b](https://github.com/astariaxyz/astaria-sdk/commit/edebf4b145335df1a7ef73fae504c8335f0de68e))
 
 # [1.0.0-alpha.8](https://github.com/astariaxyz/astaria-sdk/compare/v1.0.0-alpha.7...v1.0.0-alpha.8) (2022-12-28)
 
-
 ### Bug Fixes
 
-* target in tsconfig es6 -> ES6 ([f8e55c9](https://github.com/astariaxyz/astaria-sdk/commit/f8e55c97041ca1453f1f463c2bbf1e54c6e6ca5d))
+- target in tsconfig es6 -> ES6 ([f8e55c9](https://github.com/astariaxyz/astaria-sdk/commit/f8e55c97041ca1453f1f463c2bbf1e54c6e6ca5d))
 
 # [1.0.0-alpha.7](https://github.com/astariaxyz/astaria-sdk/compare/v1.0.0-alpha.6...v1.0.0-alpha.7) (2022-12-23)
 
-
 ### Bug Fixes
 
-* fromParsedStrategyRow is now public ([8ea69e3](https://github.com/astariaxyz/astaria-sdk/commit/8ea69e3f1ec2720adc9666e82668bec07192d06c))
+- fromParsedStrategyRow is now public ([8ea69e3](https://github.com/astariaxyz/astaria-sdk/commit/8ea69e3f1ec2720adc9666e82668bec07192d06c))
 
 # [1.0.0-alpha.6](https://github.com/astariaxyz/astaria-sdk/compare/v1.0.0-alpha.5...v1.0.0-alpha.6) (2022-12-23)
 

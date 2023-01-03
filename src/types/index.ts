@@ -1,6 +1,6 @@
 import z from 'zod'
 import {
-  TickSchema,
+  Int24Schema,
   HexSchema,
   AddressSchema,
   Uint24Schema,
@@ -93,10 +93,10 @@ export const UniV3CollateralSchema = BaseDetailsSchema.extend({
   fee: Uint24Schema,
 
   /** `int24` - TickLower*/
-  tickLower: TickSchema,
+  tickLower: Int24Schema,
 
   /** `int24` - TickUpper*/
-  tickUpper: TickSchema,
+  tickUpper: Int24Schema,
 
   /** `uint128` - MinLiquidity*/
   minLiquidity: Uint128Schema,
@@ -129,7 +129,7 @@ export const TypesSchema = z.object({
 export const DomainSchema = z.object({
   version: z.string(),
   chainId: z.number(),
-  verifyingContract: z.string(),
+  verifyingContract: AddressSchema,
 })
 
 export const SignatureSchema = z.object({
@@ -145,7 +145,7 @@ export const SignatureSchema = z.object({
 export const MessageSchema = z.object({
   nonce: z.string(),
   deadline: z.string(),
-  root: z.string(),
+  root: HexSchema,
 })
 
 export const TypedDataSchema = z.object({
