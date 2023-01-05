@@ -2,6 +2,7 @@
 /* tslint:disable */
 /* eslint-disable */
 export type { AstariaRouter } from './AstariaRouter'
+export { VaultImplementation } from './VaultImplementation'
 export type { CollateralToken } from './CollateralToken'
 export type { LienToken } from './LienToken'
 export type { PublicVault } from './PublicVault'
@@ -9,6 +10,7 @@ export type { Vault } from './Vault'
 export type { WithdrawProxy } from './WithdrawProxy'
 export * as factories from './factories'
 export { AstariaRouter__factory } from './factories/AstariaRouter__factory'
+export { VaultImplementation__factory } from './factories/VaultImplementation__factory'
 export { CollateralToken__factory } from './factories/CollateralToken__factory'
 export { LienToken__factory } from './factories/LienToken__factory'
 export { PublicVault__factory } from './factories/PublicVault__factory'
