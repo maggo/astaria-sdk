@@ -1,3 +1,10 @@
+# [1.0.0-alpha.12](https://github.com/astariaxyz/astaria-sdk/compare/v1.0.0-alpha.11...v1.0.0-alpha.12) (2023-01-05)
+
+
+### Bug Fixes
+
+* fixed parsing for signed BigNumbers ([55d52a9](https://github.com/astariaxyz/astaria-sdk/commit/55d52a99a235fadbc0801412930c860c54a312fd))
+
 # [1.0.0-alpha.11](https://github.com/astariaxyz/astaria-sdk/compare/v1.0.0-alpha.10...v1.0.0-alpha.11) (2023-01-03)
 
 
