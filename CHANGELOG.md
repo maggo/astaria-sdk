@@ -1,28 +1,24 @@
 # [1.0.0-alpha.13](https://github.com/astariaxyz/astaria-sdk/compare/v1.0.0-alpha.12...v1.0.0-alpha.13) (2023-01-05)
 
-
 ### Bug Fixes
 
-* replaced vaultImplementation ([24dfa27](https://github.com/astariaxyz/astaria-sdk/commit/24dfa271fb37e738ca79e963526e26e2666c830b))
+- replaced vaultImplementation ([24dfa27](https://github.com/astariaxyz/astaria-sdk/commit/24dfa271fb37e738ca79e963526e26e2666c830b))
 
 # [1.0.0-alpha.12](https://github.com/astariaxyz/astaria-sdk/compare/v1.0.0-alpha.11...v1.0.0-alpha.12) (2023-01-05)
 
-
 ### Bug Fixes
 
-* fixed parsing for signed BigNumbers ([55d52a9](https://github.com/astariaxyz/astaria-sdk/commit/55d52a99a235fadbc0801412930c860c54a312fd))
+- fixed parsing for signed BigNumbers ([55d52a9](https://github.com/astariaxyz/astaria-sdk/commit/55d52a99a235fadbc0801412930c860c54a312fd))
 
 # [1.0.0-alpha.11](https://github.com/astariaxyz/astaria-sdk/compare/v1.0.0-alpha.10...v1.0.0-alpha.11) (2023-01-03)
 
-
 ### Bug Fixes
 
-* values for StrategyLeafType enum are now strings ([e5aa7cb](https://github.com/astariaxyz/astaria-sdk/commit/e5aa7cba95c517e1e13874847bb71da3dc25d7c0))
-
+- values for StrategyLeafType enum are now strings ([e5aa7cb](https://github.com/astariaxyz/astaria-sdk/commit/e5aa7cba95c517e1e13874847bb71da3dc25d7c0))
 
 ### Features
 
-* improved zod validation ([48f5e63](https://github.com/astariaxyz/astaria-sdk/commit/48f5e6365e900ff9cd917c22fba710bcc585e749))
+- improved zod validation ([48f5e63](https://github.com/astariaxyz/astaria-sdk/commit/48f5e6365e900ff9cd917c22fba710bcc585e749))
 
 # [1.0.0-alpha.10](https://github.com/astariaxyz/astaria-sdk/compare/v1.0.0-alpha.9...v1.0.0-alpha.10) (2023-01-02)
 
