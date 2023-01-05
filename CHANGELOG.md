@@ -1,3 +1,10 @@
+# [1.0.0-alpha.13](https://github.com/astariaxyz/astaria-sdk/compare/v1.0.0-alpha.12...v1.0.0-alpha.13) (2023-01-05)
+
+
+### Bug Fixes
+
+* replaced vaultImplementation ([24dfa27](https://github.com/astariaxyz/astaria-sdk/commit/24dfa271fb37e738ca79e963526e26e2666c830b))
+
 # [1.0.0-alpha.12](https://github.com/astariaxyz/astaria-sdk/compare/v1.0.0-alpha.11...v1.0.0-alpha.12) (2023-01-05)
 
 
