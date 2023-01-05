@@ -5,7 +5,6 @@ import { BigNumber } from '@ethersproject/bignumber'
 import { Web3Provider, ExternalProvider } from '@ethersproject/providers'
 import { AddressZero } from '@ethersproject/constants'
 import ganache from 'ganache'
-import * as fs from 'node:fs'
 import { StrategyTree } from '../src/strategy/StrategyTree'
 import {
   signRootRemote,
@@ -124,6 +123,8 @@ describe('util.signRoot using remote', () => {
   })
   test('test decode', async () => {
     const json = await readFile(join(__dirname, '__mocks__/test.json'), 'utf8')
-    expect(decodeIPFSStrategyPayload(json).strategy).toBeDefined()
+    const { strategy, signature, typedData } = decodeIPFSStrategyPayload(json)
+    expect(strategy).toBeDefined()
+    console.log(verifySignature(typedData, signature))
   })
 })

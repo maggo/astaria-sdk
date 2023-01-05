@@ -1,41 +1,61 @@
 {
   "signature": {
-    "_vs": "0xd7d88300add983cba558817510a2ec27dafb499a2ed683bc7fcade7b914b8d82",
-    "compact": "0xfd0ff41e7e81387bc1ef00b8f90f7ddb9156f3198e1853fac6b248f1277b0815d7d88300add983cba558817510a2ec27dafb499a2ed683bc7fcade7b914b8d82",
-    "r": "0xfd0ff41e7e81387bc1ef00b8f90f7ddb9156f3198e1853fac6b248f1277b0815",
-    "recoveryParam": 1,
-    "s": "0x57d88300add983cba558817510a2ec27dafb499a2ed683bc7fcade7b914b8d82",
-    "v": 28,
-    "yParityAndS": "0xd7d88300add983cba558817510a2ec27dafb499a2ed683bc7fcade7b914b8d82"
+    "_vs": "0x7a815f23324cf2aba7f032650e5beaded60efa23ee0b3f2b5e8554d7d99e0354",
+    "compact": "0xe443d6e8d04a428786ed7a69509902266a7b7148cb95f4523c36c485ceeb27007a815f23324cf2aba7f032650e5beaded60efa23ee0b3f2b5e8554d7d99e0354",
+    "r": "0xe443d6e8d04a428786ed7a69509902266a7b7148cb95f4523c36c485ceeb2700",
+    "recoveryParam": 0,
+    "s": "0x7a815f23324cf2aba7f032650e5beaded60efa23ee0b3f2b5e8554d7d99e0354",
+    "v": 27,
+    "yParityAndS": "0x7a815f23324cf2aba7f032650e5beaded60efa23ee0b3f2b5e8554d7d99e0354"
   },
   "strategy": [
     {
       "borrower": "0x8DcF103b7e35872e896c85B33F1fC5140213a7a5",
+      "leaf": "0x51cd28c5dd1a4e49e8224dc421faa6c9f34f9a67394ac19ea08be0329500cabf",
+      "lien": {
+        "amount": { "hex": "0x0a", "type": "BigNumber" },
+        "duration": { "hex": "0x0a", "type": "BigNumber" },
+        "liquidationInitialAsk": { "hex": "0x01", "type": "BigNumber" },
+        "maxPotentialDebt": { "hex": "0x00", "type": "BigNumber" },
+        "rate": { "hex": "0x0a", "type": "BigNumber" }
+      },
+      "token": "0x0E2f0c3519A6C5F89E406e6D62fDb675Cc8bE7EC",
+      "tokenId": { "hex": "0x01", "type": "BigNumber" },
+      "type": "0"
+    },
+    {
+      "borrower": "0x8DcF103b7e35872e896c85B33F1fC5140213a7a5",
       "leaf": "0xa3d1fec38e16fb92d421788d08fa4be00f71cf5b6332f8c470804283a2cb6b04",
       "lien": {
-        "amount": {
-          "hex": "0x0a",
-          "type": "BigNumber"
-        },
-        "duration": {
-          "hex": "0x0a",
-          "type": "BigNumber"
-        },
-        "liquidationInitialAsk": {
-          "hex": "0x01",
-          "type": "BigNumber"
-        },
-        "maxPotentialDebt": {
-          "hex": "0x00",
-          "type": "BigNumber"
-        },
-        "rate": {
-          "hex": "0x0a",
-          "type": "BigNumber"
-        }
+        "amount": { "hex": "0x0a", "type": "BigNumber" },
+        "duration": { "hex": "0x0a", "type": "BigNumber" },
+        "liquidationInitialAsk": { "hex": "0x01", "type": "BigNumber" },
+        "maxPotentialDebt": { "hex": "0x00", "type": "BigNumber" },
+        "rate": { "hex": "0x0a", "type": "BigNumber" }
       },
       "token": "0x0E2f0c3519A6C5F89E406e6D62fDb675Cc8bE7EC",
       "type": "1"
+    },
+    {
+      "amount0Min": { "hex": "0x0a", "type": "BigNumber" },
+      "amount1Min": { "hex": "0x64", "type": "BigNumber" },
+      "borrower": "0x8DcF103b7e35872e896c85B33F1fC5140213a7a5",
+      "fee": { "hex": "0x0a", "type": "BigNumber" },
+      "leaf": "0x823819cd20050e400049e304a9e2ceaee6c78ddc6f739db43cd9d3f4ee23fba6",
+      "lien": {
+        "amount": { "hex": "0x0a", "type": "BigNumber" },
+        "duration": { "hex": "0x0a", "type": "BigNumber" },
+        "liquidationInitialAsk": { "hex": "0x01", "type": "BigNumber" },
+        "maxPotentialDebt": { "hex": "0x00", "type": "BigNumber" },
+        "rate": { "hex": "0x0a", "type": "BigNumber" }
+      },
+      "minLiquidity": { "hex": "0x64", "type": "BigNumber" },
+      "tickLower": { "hex": "-0x0a", "type": "BigNumber" },
+      "tickUpper": { "hex": "0x14", "type": "BigNumber" },
+      "token": "0x0E2f0c3519A6C5F89E406e6D62fDb675Cc8bE7EC",
+      "token0": "0xA6BB84d1734B7E465A10c10f2aeaf92CD80a39a2",
+      "token1": "0x883208887718070Cc25a2cB82169fCa8D4bA3217",
+      "type": "2"
     }
   ],
   "typedData": {
@@ -47,37 +67,19 @@
     "message": {
       "deadline": "0x0a",
       "nonce": "0x00",
-      "root": "0xa3d1fec38e16fb92d421788d08fa4be00f71cf5b6332f8c470804283a2cb6b04"
+      "root": "0x2af7e68665fb1a47132290290bd9299a2e866ad9f051e69e002b2b6200bf0c7c"
     },
     "primaryType": "StrategyDetails",
     "types": {
       "EIP712Domain": [
-        {
-          "name": "version",
-          "type": "string"
-        },
-        {
-          "name": "chainId",
-          "type": "uint256"
-        },
-        {
-          "name": "verifyingContract",
-          "type": "address"
-        }
+        { "name": "version", "type": "string" },
+        { "name": "chainId", "type": "uint256" },
+        { "name": "verifyingContract", "type": "address" }
       ],
       "StrategyDetails": [
-        {
-          "name": "nonce",
-          "type": "uint256"
-        },
-        {
-          "name": "deadline",
-          "type": "uint256"
-        },
-        {
-          "name": "root",
-          "type": "bytes32"
-        }
+        { "name": "nonce", "type": "uint256" },
+        { "name": "deadline", "type": "uint256" },
+        { "name": "root", "type": "bytes32" }
       ]
     }
   }
