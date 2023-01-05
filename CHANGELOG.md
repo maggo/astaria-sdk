@@ -1,3 +1,11 @@
+# [1.0.0-alpha.14](https://github.com/astariaxyz/astaria-sdk/compare/v1.0.0-alpha.13...v1.0.0-alpha.14) (2023-01-05)
+
+
+### Bug Fixes
+
+* vault implementation export ([f5d0d96](https://github.com/astariaxyz/astaria-sdk/commit/f5d0d96047e948da9265f74d2be542a981803fd8))
+* vault implementation export in factories index ([a08133e](https://github.com/astariaxyz/astaria-sdk/commit/a08133e773fb7047221d0650c4e26b86d8ce3caf))
+
 # [1.0.0-alpha.13](https://github.com/astariaxyz/astaria-sdk/compare/v1.0.0-alpha.12...v1.0.0-alpha.13) (2023-01-05)
 
 ### Bug Fixes
