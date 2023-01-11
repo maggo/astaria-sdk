@@ -8,12 +8,14 @@ import {
 import { Wallet, Signature } from 'ethers'
 import invariant from 'tiny-invariant'
 
+import { parse as parseCSV } from 'papaparse'
 import {
   Collateral,
   Collection,
   Strategy,
   StrategyLeafType,
-  StrategyRowSchema,
+  StrategyRow,
+  StrategySchema,
   IPFSStrategyPayloadSchema,
   IPFSStrategyPayload,
   TypedData,
@@ -134,18 +136,13 @@ export const hashCollection = (collection: Collection): string => {
   return keccak256(encode)
 }
 
-export const RE_STRATEGY_ROW =
-  /^(?<type>[^,]*)[,](?<token>[^,]*)[,]((?<tokenId>[^,]*)[,]){0,1}(?<borrower>[^,]*)[,]((?<token0>[^,]*)[,](?<token1>[^,]*)[,](?<fee>[^,]*)[,](?<tickLower>[^,]*)[,](?<tickUpper>[^,]*)[,](?<minLiquidity>[^,]*)[,](?<amount0Min>[^,]*)[,](?<amount1Min>[^,]*)[,]){0,1}(?<amount>[^,]*)[,](?<rate>[^,]*)[,](?<duration>[^,]*)[,](?<maxPotentialDebt>[^,]*)[,](?<liquidationInitialAsk>[^,]*)$/
-
-const trimAndSplitByLine = (strategy: string): string[] =>
-  strategy.replaceAll(' ', '').replaceAll('\r', '').split('\n')
-
 export const getStrategyFromCSV = (csv: string): Strategy => {
-  return trimAndSplitByLine(csv)
-    .filter((row) => row.length > 0)
-    .map((row: string) => {
-      const data: any = RE_STRATEGY_ROW.exec(row)?.groups
-      const temp = {
+  return StrategySchema.parse(
+    parseCSV(csv, {
+      header: true,
+      skipEmptyLines: true,
+    }).data.map((data: any) => {
+      return {
         ...data,
         lien: {
           amount: data?.amount,
@@ -155,14 +152,12 @@ export const getStrategyFromCSV = (csv: string): Strategy => {
           liquidationInitialAsk: data?.liquidationInitialAsk,
         },
       }
-      return StrategyRowSchema.parse(temp)
     })
+  )
 }
 // hashes the parameters of the terms and collateral to produce a single bytes32 value to act as the root
-export const prepareLeaves = (
-  strategy: Array<Collateral | Collection | UniV3Collateral>
-) => {
-  strategy.forEach((row: Collateral | Collection | UniV3Collateral) => {
+export const prepareLeaves = (strategy: Strategy): string[] => {
+  return strategy.map((row: StrategyRow) => {
     switch (row.type) {
       case StrategyLeafType.Collection: {
         row.leaf = hashCollection(row)
@@ -179,6 +174,7 @@ export const prepareLeaves = (
         break
       }
     }
+    return row.leaf
   })
 }
 
@@ -244,26 +240,23 @@ export const getTypedData = (
     },
     message: {
       nonce: strategy.nonce.toHexString(),
-      deadline: strategy.expiration.toHexString(),
+      deadline: strategy.expiration.toString(),
       root: root,
     },
   }
 }
 
-export const encodeIPFSStrategyPayload = (
+export function encodeIPFSStrategyPayload(
   typedData: TypedData,
   signature: Signature,
   strategy: Strategy
-): string => {
-  const payload: IPFSStrategyPayload = {
+): string {
+  return stringify({
     typedData: typedData,
     signature: signature,
     strategy: strategy,
-  }
-
-  return stringify(payload)
+  })
 }
-
 export const decodeIPFSStrategyPayload = (
   ipfsStrategyPayload: string
 ): IPFSStrategyPayload => {

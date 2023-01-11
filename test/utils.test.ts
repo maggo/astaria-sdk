@@ -76,7 +76,7 @@ describe('util.signRoot using remote', () => {
   })
   test('encoding and hashing for IPFS deterministically', async () => {
     const csv = await readFile(join(__dirname, '__mocks__/test.csv'), 'utf8')
-    const expected = 'QmSHPeq9gGJ1UQcBgKN5YCziSTRbaQCT2MgPb5w1JrKr68'
+    const expected = 'QmYLBCxovAacZd58rNxV6GcmqbJkVnTGePMYN9EYnLBDKy'
     const strategyTree = StrategyTree.fromCSV(csv)
 
     const root = strategyTree.getHexRoot()

@@ -21,7 +21,7 @@
       },
       "token": "0x0E2f0c3519A6C5F89E406e6D62fDb675Cc8bE7EC",
       "tokenId": { "hex": "0x01", "type": "BigNumber" },
-      "type": "0"
+      "type": "1"
     },
     {
       "borrower": "0x8DcF103b7e35872e896c85B33F1fC5140213a7a5",
@@ -34,7 +34,7 @@
         "rate": { "hex": "0x0a", "type": "BigNumber" }
       },
       "token": "0x0E2f0c3519A6C5F89E406e6D62fDb675Cc8bE7EC",
-      "type": "1"
+      "type": "2"
     },
     {
       "amount0Min": { "hex": "0x0a", "type": "BigNumber" },
@@ -55,7 +55,7 @@
       "token": "0x0E2f0c3519A6C5F89E406e6D62fDb675Cc8bE7EC",
       "token0": "0xA6BB84d1734B7E465A10c10f2aeaf92CD80a39a2",
       "token1": "0x883208887718070Cc25a2cB82169fCa8D4bA3217",
-      "type": "2"
+      "type": "3"
     }
   ],
   "typedData": {

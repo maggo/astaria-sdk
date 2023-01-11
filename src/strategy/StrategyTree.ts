@@ -8,20 +8,16 @@ export class StrategyTree extends MerkleTree {
   private strategy: Strategy
 
   constructor(strategy: Strategy) {
-    prepareLeaves(strategy)
-    const leaves = strategy.map((row) => row.leaf)
-    super(leaves, utils.keccak256, { sort: true })
-
+    invariant(
+      strategy.length > 0,
+      'StrategyTree: Provided strategy did not produce a valid StrategyTree value'
+    )
+    super(prepareLeaves(strategy), utils.keccak256, { sort: true })
     this.strategy = strategy
   }
 
   public static fromCSV(csv: string): StrategyTree {
-    const strategy = getStrategyFromCSV(csv)
-    invariant(
-      csv.length > 0,
-      'StrategyTree: Provided csv string did not produce a valid StrategyTree value'
-    )
-    return new StrategyTree(strategy)
+    return new StrategyTree(getStrategyFromCSV(csv))
   }
 
   get getStrategy(): Strategy {
