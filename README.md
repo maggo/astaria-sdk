@@ -32,13 +32,13 @@ This library aims to handle functions that are core to the Astaria architecture 
 To install and set up the library, run:
 
 ```sh
-$ yarn add @astariaxyz/sdk
+$ yarn add @astariaxyz/sdk@alpha
 ```
 
 Or if you prefer using npm:
 
 ```sh
-$ npm install --save @astariaxyz/sdk
+$ npm install --save @astariaxyz/sdk@alpha
 ```
 
 ## API
