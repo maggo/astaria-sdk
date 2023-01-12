@@ -5,6 +5,7 @@ import {
   splitSignature,
   joinSignature,
 } from 'ethers/lib/utils'
+import path from 'node:path'
 import {
   Wallet,
   Signature,
@@ -31,6 +32,7 @@ import {
   MerkleDataStruct,
   MerkleDataStructSchema,
   UniV3CollateralSchema,
+  CollateralSchema,
   CollectionSchema,
   ProofServiceResponseSchema,
 } from '../types'
@@ -342,17 +344,19 @@ export const convertProofServiceResponseToCommitment = (
   }
 }
 
-const STRATEGY_BASE_URL = 'https://api.astaria.xyz/strategy/'
+const STRATEGY_BASE_URL =
+  process.env.STRATEGY_BASE_URL ?? 'https://api.astaria.xyz/strategy/'
 
 export const getOffersByCollateral = async (
   token: string,
   id: string,
   borrower: string
 ): Promise<StrategyRow[]> => {
-  const OFFER_PATH = `offer/${token}/${id}/`
+  const OFFER_PATH = `offer/${token}/${id}`
+  console.log(STRATEGY_BASE_URL)
 
   const response = await axios.post(
-    STRATEGY_BASE_URL + OFFER_PATH,
+    path.join(STRATEGY_BASE_URL, OFFER_PATH),
     { borrower: borrower },
     {
       headers: {
@@ -361,9 +365,10 @@ export const getOffersByCollateral = async (
       },
     }
   )
-  return response?.data?.forEach((offer: any) => {
+  console.log(response.data)
+  return response?.data?.map((offer: any) => {
     if (offer.type === StrategyLeafType.Collateral) {
-      return CollectionSchema.parse(offer)
+      return CollateralSchema.parse(offer)
     } else if (offer.type === StrategyLeafType.Collection) {
       return CollectionSchema.parse(offer)
     }
@@ -375,10 +380,9 @@ export const getProofByCidAndLeaf = async (
   cid: string,
   leaf: string
 ): Promise<ProofServiceResponse> => {
-  const PROOF_PATH = `proof/`
-
+  const PROOF_PATH = `proof`
   const response = await axios.post(
-    STRATEGY_BASE_URL + PROOF_PATH,
+    path.join(STRATEGY_BASE_URL, PROOF_PATH),
     { cid: cid, leaf: leaf },
     {
       headers: {
@@ -395,12 +399,15 @@ export const getIsValidated = async (
   cid: string
 ): Promise<string> => {
   const VALIDATED_PATH = `${delegateAddress}/${cid}/validated`
-  const response = await axios.get(STRATEGY_BASE_URL + VALIDATED_PATH, {
-    headers: {
-      'Accept-Encoding': 'gzip,deflate,compress',
-      'Content-Type': 'application/json',
-    },
-  })
+  const response = await axios.get(
+    path.join(STRATEGY_BASE_URL, VALIDATED_PATH),
+    {
+      headers: {
+        'Accept-Encoding': 'gzip,deflate,compress',
+        'Content-Type': 'application/json',
+      },
+    }
+  )
   // valid, invalid, or pending
   return response?.data?.validated
 }

@@ -63,6 +63,8 @@ const BaseDetailsSchema = z.object({
   /** `Lien` - Lien data */
   lien: LienSchema,
 
+  cid: z.string().optional(),
+
   leaf: HexSchema.optional(),
 })
 
