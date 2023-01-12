@@ -5,7 +5,7 @@ module.exports = {
     },
     {
       name: 'develop',
-      channel: 'latest',
+      channel: 'alpha',
       prerelease: 'alpha',
     },
   ],
