@@ -1,3 +1,11 @@
+# [1.0.0-alpha.15](https://github.com/astariaxyz/astaria-sdk/compare/v1.0.0-alpha.14...v1.0.0-alpha.15) (2023-01-12)
+
+
+### Bug Fixes
+
+* implement API logic, and proof response to contract conversion ([#21](https://github.com/astariaxyz/astaria-sdk/issues/21)) ([f14fa8b](https://github.com/astariaxyz/astaria-sdk/commit/f14fa8b8f4bb108a4be5f2fc69279bbe92335b98))
+* moved strategy row invariant check to constructor, changed leaf type values, fixed csv parsing ([5d72878](https://github.com/astariaxyz/astaria-sdk/commit/5d728781a92d0650197cc0582e0f852e8f220438))
+
 # [1.0.0-alpha.14](https://github.com/astariaxyz/astaria-sdk/compare/v1.0.0-alpha.13...v1.0.0-alpha.14) (2023-01-05)
 
 
