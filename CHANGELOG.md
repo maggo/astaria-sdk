@@ -1,3 +1,10 @@
+# [1.0.0-alpha.16](https://github.com/astariaxyz/astaria-sdk/compare/v1.0.0-alpha.15...v1.0.0-alpha.16) (2023-01-12)
+
+
+### Features
+
+* update readme with alpha installation ([103d854](https://github.com/astariaxyz/astaria-sdk/commit/103d8548bbe2069b6fd2eb74a6607874010bffa2))
+
 # 1.0.0-alpha.1 (2023-01-12)
 
 
