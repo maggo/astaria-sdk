@@ -5,7 +5,6 @@ import {
   splitSignature,
   joinSignature,
 } from 'ethers/lib/utils'
-import path from 'node:path'
 import {
   Wallet,
   Signature,
@@ -356,7 +355,7 @@ export const getOffersByCollateral = async (
   console.log(STRATEGY_BASE_URL)
 
   const response = await axios.post(
-    path.join(STRATEGY_BASE_URL, OFFER_PATH),
+    [STRATEGY_BASE_URL, OFFER_PATH].join('/'),
     { borrower: borrower },
     {
       headers: {
@@ -382,7 +381,7 @@ export const getProofByCidAndLeaf = async (
 ): Promise<ProofServiceResponse> => {
   const PROOF_PATH = `proof`
   const response = await axios.post(
-    path.join(STRATEGY_BASE_URL, PROOF_PATH),
+    [STRATEGY_BASE_URL, PROOF_PATH].join('/'),
     { cid: cid, leaf: leaf },
     {
       headers: {
@@ -400,7 +399,7 @@ export const getIsValidated = async (
 ): Promise<string> => {
   const VALIDATED_PATH = `${delegateAddress}/${cid}/validated`
   const response = await axios.get(
-    path.join(STRATEGY_BASE_URL, VALIDATED_PATH),
+    [STRATEGY_BASE_URL, VALIDATED_PATH].join('/'),
     {
       headers: {
         'Accept-Encoding': 'gzip,deflate,compress',
