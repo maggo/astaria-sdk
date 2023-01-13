@@ -128,6 +128,10 @@ export const TypesSchema = z.object({
   StrategyDetails: z.array(TypeSchema),
 })
 
+export const EthersTypesSchema = z.object({
+  StrategyDetails: z.array(TypeSchema),
+})
+
 export const DomainSchema = z.object({
   version: z.string(),
   chainId: z.number(),
@@ -152,6 +156,13 @@ export const MessageSchema = z.object({
 
 export const TypedDataSchema = z.object({
   types: TypesSchema,
+  primaryType: z.string(),
+  domain: DomainSchema,
+  message: MessageSchema,
+})
+
+export const EthersTypedDataSchema = z.object({
+  types: EthersTypesSchema,
   primaryType: z.string(),
   domain: DomainSchema,
   message: MessageSchema,
@@ -189,6 +200,7 @@ export type Types = z.infer<typeof TypesSchema>
 export type domain = z.infer<typeof DomainSchema>
 export type message = z.infer<typeof MessageSchema>
 export type TypedData = z.infer<typeof TypedDataSchema>
+export type EthersTypedData = z.infer<typeof EthersTypedDataSchema>
 export type Signature = z.infer<typeof SignatureSchema>
 export type IPFSStrategyPayload = z.infer<typeof IPFSStrategyPayloadSchema>
 export type ProofServiceResponse = z.infer<typeof ProofServiceResponseSchema>

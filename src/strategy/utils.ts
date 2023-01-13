@@ -1,16 +1,12 @@
 import { JsonRpcProvider } from '@ethersproject/providers'
-import {
-  keccak256,
-  defaultAbiCoder,
-  splitSignature,
-  joinSignature,
-} from 'ethers/lib/utils'
+import { keccak256, defaultAbiCoder, splitSignature } from 'ethers/lib/utils'
 import {
   Wallet,
   Signature,
   Signer,
   ContractTransaction,
   BigNumber,
+  utils,
 } from 'ethers'
 import invariant from 'tiny-invariant'
 
@@ -28,18 +24,18 @@ import {
   StrategyDetails,
   UniV3Collateral,
   ProofServiceResponse,
-  MerkleDataStruct,
   MerkleDataStructSchema,
   UniV3CollateralSchema,
   CollateralSchema,
   CollectionSchema,
   ProofServiceResponseSchema,
+  EthersTypedData,
+  EthersTypedDataSchema,
 } from '../types'
 import { AstariaRouter__factory } from '../contracts/factories/AstariaRouter__factory'
 import { IAstariaRouter } from '../contracts/AstariaRouter'
 import { ILienToken } from '../contracts/LienToken'
 import axios from 'axios'
-const ethSigUtil = require('eth-sig-util')
 const stringify = require('json-stringify-deterministic')
 
 export const encodeCollateral = (collateral: Collateral): string => {
@@ -211,23 +207,29 @@ export const signRootRemote = async (
 }
 
 export const signRootLocal = async (typedData: TypedData, wallet: Wallet) => {
-  const privateKey = Uint8Array.from(
-    Buffer.from(wallet.privateKey.replace('0x', ''), 'hex')
-  )
-  const signature = ethSigUtil.signTypedData(privateKey, {
-    data: typedData,
-  })
+  const ethersTypedData: EthersTypedData =
+    EthersTypedDataSchema.parse(typedData)
 
-  return splitSignature(signature)
+  return splitSignature(
+    await wallet._signTypedData(
+      ethersTypedData.domain,
+      ethersTypedData.types,
+      ethersTypedData.message
+    )
+  )
 }
 
 export const verifySignature = (typedData: TypedData, signature: Signature) => {
-  const recovered = ethSigUtil.recoverTypedSignature({
-    sig: joinSignature(signature),
-    data: typedData,
-  })
-
-  return recovered
+  const ethersTypedData: EthersTypedData =
+    EthersTypedDataSchema.parse(typedData)
+  return utils
+    .verifyTypedData(
+      ethersTypedData.domain,
+      ethersTypedData.types,
+      ethersTypedData.message,
+      signature
+    )
+    .toLowerCase()
 }
 
 export const getTypedData = (
