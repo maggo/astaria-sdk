@@ -346,7 +346,7 @@ export const convertProofServiceResponseToCommitment = (
 }
 
 const STRATEGY_BASE_URL =
-  process.env.STRATEGY_BASE_URL ?? 'https://api.astaria.xyz/strategy/'
+  process.env.STRATEGY_BASE_URL ?? 'https://api.astaria.xyz/strategy'
 
 export const getOffersByCollateral = async (
   token: string,
@@ -363,6 +363,7 @@ export const getOffersByCollateral = async (
       headers: {
         'Accept-Encoding': 'gzip,deflate,compress',
         'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': 'https://api.astaria.xyz/strategy',
       },
     }
   )
