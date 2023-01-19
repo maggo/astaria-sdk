@@ -6,7 +6,9 @@ describe('Get response from proof service and execute on chain', () => {
     const [res] = await utils.getOffersByCollateral(
       '0xd6ef92fa2ef2cb702f0bfff54b111b076ac0237d',
       '209',
-      '0x286055c312AC3F939d1409619396ed6a88401D08'
+      '0x286055c312AC3F939d1409619396ed6a88401D08',
+      '25',
+      '0'
     )
     const cidRes = await utils.getProofByCidAndLeaf(
       res.cid ?? '',

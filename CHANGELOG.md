@@ -1,15 +1,13 @@
 # [1.0.0-alpha.17](https://github.com/astariaxyz/astaria-sdk/compare/v1.0.0-alpha.16...v1.0.0-alpha.17) (2023-01-16)
 
-
 ### Bug Fixes
 
-* remove eth-sig-util ([63de092](https://github.com/astariaxyz/astaria-sdk/commit/63de092ec17bc933164070558da7738970007d43))
-* removing slash ([3091e4b](https://github.com/astariaxyz/astaria-sdk/commit/3091e4bfec711d063d4d734a7b2d2cd05c63e792))
-
+- remove eth-sig-util ([63de092](https://github.com/astariaxyz/astaria-sdk/commit/63de092ec17bc933164070558da7738970007d43))
+- removing slash ([3091e4b](https://github.com/astariaxyz/astaria-sdk/commit/3091e4bfec711d063d4d734a7b2d2cd05c63e792))
 
 ### Features
 
-* remove path native module dependency ([fc946d5](https://github.com/astariaxyz/astaria-sdk/commit/fc946d50db195825f728427e2f131b4120cecfd6))
+- remove path native module dependency ([fc946d5](https://github.com/astariaxyz/astaria-sdk/commit/fc946d50db195825f728427e2f131b4120cecfd6))
 
 # [1.0.0-alpha.16](https://github.com/astariaxyz/astaria-sdk/compare/v1.0.0-alpha.15...v1.0.0-alpha.16) (2023-01-12)
 

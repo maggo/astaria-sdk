@@ -351,24 +351,26 @@ const STRATEGY_BASE_URL =
 export const getOffersByCollateral = async (
   token: string,
   id: string,
-  borrower: string
+  borrower: string,
+  limit: string,
+  skip: string
 ): Promise<StrategyRow[]> => {
-  const OFFER_PATH = `offer/${token}/${id}`
-  console.log(STRATEGY_BASE_URL)
+  const params = new URLSearchParams({
+    limit: limit,
+    skip: skip,
+  })
+  const OFFER_PATH = `offer/${token}/${id}?` + params.toString()
 
   const response = await axios.post(
     [STRATEGY_BASE_URL, OFFER_PATH].join('/'),
     { borrower: borrower },
     {
       headers: {
-        'Accept-Encoding': 'gzip,deflate,compress',
         'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': 'https://api.astaria.xyz/strategy',
       },
     }
   )
-  console.log(response.data)
-  return response?.data?.map((offer: any) => {
+  return response?.data?.results?.map((offer: any) => {
     if (offer.type === StrategyLeafType.Collateral) {
       return CollateralSchema.parse(offer)
     } else if (offer.type === StrategyLeafType.Collection) {
@@ -388,7 +390,7 @@ export const getProofByCidAndLeaf = async (
     { cid: cid, leaf: leaf },
     {
       headers: {
-        'Accept-Encoding': 'gzip,deflate,compress',
+        // 'Accept-Encoding': 'gzip,deflate,compress',
         'Content-Type': 'application/json',
       },
     }
