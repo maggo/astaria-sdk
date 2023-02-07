@@ -6,6 +6,8 @@ export const SignedHexSchema = z.string().regex(/^[-]{0,1}0x[a-fA-F0-9]*$/)
 export const HexSchema = z.string().regex(/^0x[a-fA-F0-9]*$/)
 export const AddressSchema = HexSchema.length(42)
 
+export const WAD = BigNumber.from('1000000000000000000')
+
 export const ObjectToBigNumberSchema = z
   .object({ hex: HexSchema, type: z.literal('BigNumber') })
   .transform((val, ctx) => {

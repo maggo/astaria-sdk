@@ -69,7 +69,7 @@ const BaseDetailsSchema = z.object({
 })
 
 export const CollateralSchema = BaseDetailsSchema.extend({
-  /** `uint8` - Type of leaf format (`Collateral = 0`) */
+  /** `uint8` - Type of leaf format (`Collateral = 1`) */
   type: z.literal(StrategyLeafType.Collateral),
 
   /** `uint256` - Token ID of ERC721 inside the collection */
@@ -77,12 +77,12 @@ export const CollateralSchema = BaseDetailsSchema.extend({
 })
 
 export const CollectionSchema = BaseDetailsSchema.extend({
-  /** `uint8` - Type of leaf format (`Collection = 1`) */
+  /** `uint8` - Type of leaf format (`Collection = 2`) */
   type: z.literal(StrategyLeafType.Collection),
 })
 
 export const UniV3CollateralSchema = BaseDetailsSchema.extend({
-  /** `uint8` - Type of leaf format (`UniV3Collateral = 2`) */
+  /** `uint8` - Type of leaf format (`UniV3Collateral = 3`) */
   type: z.literal(StrategyLeafType.UniV3Collateral),
 
   /** `address` - Token0*/
@@ -114,6 +114,65 @@ export const StrategyRowSchema = z.discriminatedUnion('type', [
   CollateralSchema,
   CollectionSchema,
   UniV3CollateralSchema,
+])
+
+export const DynamicVaultDetailSchema = z.object({
+  address: AddressSchema,
+  delegate: AddressSchema,
+  nonce: Uint256Schema,
+  balance: Uint256Schema,
+  isReadyState: z.boolean(),
+})
+
+export const BaseOfferSchema = BaseDetailsSchema.extend({
+  vault: AddressSchema,
+  underlyingTokenId: Uint256Schema.optional(),
+  offerHash: HexSchema,
+  balance: Uint256Schema.optional(),
+})
+
+export const CollateralOfferSchema = BaseOfferSchema.extend({
+  type: z.literal(StrategyLeafType.Collateral),
+  tokenId: Uint256Schema,
+})
+
+export const CollectionOfferSchema = BaseOfferSchema.extend({
+  type: z.literal(StrategyLeafType.Collection),
+})
+
+export const UniV3CollateralOfferSchema = BaseOfferSchema.extend({
+  /** `uint8` - Type of leaf format (`UniV3Collateral = 3`) */
+  type: z.literal(StrategyLeafType.UniV3Collateral),
+
+  /** `address` - Token0*/
+  token0: AddressSchema,
+
+  /** `address` - Token1*/
+  token1: AddressSchema,
+
+  /** `uint24` - Fee*/
+  fee: Uint24Schema,
+
+  /** `int24` - TickLower*/
+  tickLower: Int24Schema,
+
+  /** `int24` - TickUpper*/
+  tickUpper: Int24Schema,
+
+  /** `uint128` - MinLiquidity*/
+  minLiquidity: Uint128Schema,
+
+  /** `uint256` - Amount0Min*/
+  amount0Min: Uint256Schema,
+
+  /** `uint256` - Amount1Min*/
+  amount1Min: Uint256Schema,
+})
+
+export const UniqueOfferSchema = z.discriminatedUnion('type', [
+  CollateralOfferSchema,
+  CollectionOfferSchema,
+  // add UniV3OfferSchema once the service is ready
 ])
 
 export const StrategySchema = z.array(StrategyRowSchema)
@@ -205,3 +264,5 @@ export type Signature = z.infer<typeof SignatureSchema>
 export type IPFSStrategyPayload = z.infer<typeof IPFSStrategyPayloadSchema>
 export type ProofServiceResponse = z.infer<typeof ProofServiceResponseSchema>
 export type MerkleDataStruct = z.infer<typeof MerkleDataStructSchema>
+export type UniqueOffer = z.infer<typeof UniqueOfferSchema>
+export type DynamicVaultDetail = z.infer<typeof DynamicVaultDetailSchema>

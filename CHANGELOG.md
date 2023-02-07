@@ -1,9 +1,8 @@
 # [1.0.0-alpha.18](https://github.com/astariaxyz/astaria-sdk/compare/v1.0.0-alpha.17...v1.0.0-alpha.18) (2023-01-19)
 
-
 ### Bug Fixes
 
-* implemented changes for pagination and guerilla-frontend ([ad9486f](https://github.com/astariaxyz/astaria-sdk/commit/ad9486fb19fabedc2f1fc5642c71fd7f727fe140))
+- implemented changes for pagination and guerilla-frontend ([ad9486f](https://github.com/astariaxyz/astaria-sdk/commit/ad9486fb19fabedc2f1fc5642c71fd7f727fe140))
 
 # [1.0.0-alpha.17](https://github.com/astariaxyz/astaria-sdk/compare/v1.0.0-alpha.16...v1.0.0-alpha.17) (2023-01-16)
 

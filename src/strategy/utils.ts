@@ -7,6 +7,8 @@ import {
   ContractTransaction,
   BigNumber,
   utils,
+  providers,
+  Contract,
 } from 'ethers'
 import invariant from 'tiny-invariant'
 
@@ -31,11 +33,17 @@ import {
   ProofServiceResponseSchema,
   EthersTypedData,
   EthersTypedDataSchema,
+  DynamicVaultDetail,
+  UniqueOffer,
+  UniqueOfferSchema,
 } from '../types'
 import { AstariaRouter__factory } from '../contracts/factories/AstariaRouter__factory'
 import { IAstariaRouter } from '../contracts/AstariaRouter'
 import { ILienToken } from '../contracts/LienToken'
 import axios from 'axios'
+import { StrategyTree } from './StrategyTree'
+import { PublicVault__factory } from '../contracts'
+import { VirtualOffer } from '../router/VirtualOffer'
 const stringify = require('json-stringify-deterministic')
 
 export const encodeCollateral = (collateral: Collateral): string => {
@@ -288,11 +296,8 @@ export const commitToLiens = async (
   signer: Signer
 ): Promise<ContractTransaction> => {
   //get contract instance
-
   const contract = AstariaRouter__factory.connect(router, signer)
-  console.log('Henlo')
   const gasLimit = await contract.callStatic.commitToLiens(commitments)
-  console.log('Bark: ' + gasLimit)
   return await contract.commitToLiens(commitments)
 }
 
@@ -348,46 +353,13 @@ export const convertProofServiceResponseToCommitment = (
 const STRATEGY_BASE_URL =
   process.env.STRATEGY_BASE_URL ?? 'https://api.astaria.xyz/strategy'
 
-export const getOffersByCollateral = async (
-  token: string,
-  id: string,
-  borrower: string,
-  limit: string,
-  skip: string
-): Promise<StrategyRow[]> => {
-  const params = new URLSearchParams({
-    limit: limit,
-    skip: skip,
-  })
-  const OFFER_PATH = `offer/${token}/${id}?` + params.toString()
-
-  const response = await axios.post(
-    [STRATEGY_BASE_URL, OFFER_PATH].join('/'),
-    { borrower: borrower },
-    {
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    }
-  )
-  return response?.data?.results?.map((offer: any) => {
-    if (offer.type === StrategyLeafType.Collateral) {
-      return CollateralSchema.parse(offer)
-    } else if (offer.type === StrategyLeafType.Collection) {
-      return CollectionSchema.parse(offer)
-    }
-    return UniV3CollateralSchema.parse(offer)
-  })
-}
-
 export const getProofByCidAndLeaf = async (
   cid: string,
   leaf: string
 ): Promise<ProofServiceResponse> => {
   const PROOF_PATH = `proof`
-  const response = await axios.post(
-    [STRATEGY_BASE_URL, PROOF_PATH].join('/'),
-    { cid: cid, leaf: leaf },
+  const response = await axios.get(
+    [STRATEGY_BASE_URL, PROOF_PATH, cid, leaf].join('/'),
     {
       headers: {
         // 'Accept-Encoding': 'gzip,deflate,compress',
@@ -396,6 +368,45 @@ export const getProofByCidAndLeaf = async (
     }
   )
   return ProofServiceResponseSchema.parse(response?.data)
+}
+
+export const virtualOfferToCommitments = async (
+  virtualOffer: VirtualOffer
+): Promise<IAstariaRouter.CommitmentStruct[]> => {
+  return Promise.all(
+    virtualOffer.stack.reduce(
+      (
+        commitments: Array<Promise<IAstariaRouter.CommitmentStruct>>,
+        uniqueOffer: UniqueOffer
+      ) => {
+        if (!uniqueOffer.cid || !uniqueOffer.leaf)
+          throw new Error(
+            'virtualOfferToCommitments: provided UniqueOffer does not contain either a cid or leaf'
+          )
+
+        commitments.push(
+          getProofByCidAndLeaf(uniqueOffer.cid, uniqueOffer.leaf).then(
+            (proof: ProofServiceResponse) => {
+              if (!uniqueOffer.underlyingTokenId)
+                throw new Error('underlyingTokenId remains unset')
+              return convertProofServiceResponseToCommitment(
+                proof,
+                uniqueOffer,
+                uniqueOffer.underlyingTokenId,
+                VirtualOffer.getAmountOrBalance(uniqueOffer),
+                getStackByCollateral(
+                  uniqueOffer.token,
+                  uniqueOffer.underlyingTokenId
+                )
+              )
+            }
+          )
+        )
+        return commitments
+      },
+      [] as Array<Promise<IAstariaRouter.CommitmentStruct>>
+    )
+  )
 }
 
 export const getIsValidated = async (
@@ -414,4 +425,11 @@ export const getIsValidated = async (
   )
   // valid, invalid, or pending
   return response?.data?.validated
+}
+
+export const commitToLiensWithVirtualOffersByAmount = async (
+  amount: BigNumber,
+  virtualOffers: VirtualOffer[]
+) => {
+  // todo used to accept the the inputs from the borrow page
 }

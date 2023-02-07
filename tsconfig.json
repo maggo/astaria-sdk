@@ -2,6 +2,7 @@
   "include": ["src/**/*"],
   "compilerOptions": {
     "module": "esnext",
+    "resolveJsonModule": true,
     "lib": ["dom", "esnext"],
     "importHelpers": true,
     "declaration": true,

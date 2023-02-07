@@ -1,0 +1,55 @@
+{
+  "data": {
+    "results": [
+      {
+        "expiration": "1694242559",
+        "type": "2",
+        "offerHash": "0xbcf5a2909f9064a2c510ce8ce9d850faefb6f3392110f80f83e826468a8374c5",
+        "token": "0xd6ef92fa2ef2cb702f0bfff54b111b076ac0237d",
+        "lien": {
+          "amount": "28",
+          "rate": "10",
+          "duration": "10",
+          "maxPotentialDebt": "0",
+          "liquidationInitialAsk": "500"
+        },
+        "cid": "QmX3NTfpoaGeUDDNcvv47esiZZjFYaw2oHnqXGJLE655Gx",
+        "leaf": "0x2bd47051607b3247a3d6641c805b40f063ed1b1466b7b21b275823c2ff9c5812",
+        "createdAt": "2023-02-11T23:30:38.042Z"
+      }
+    ],
+    "count": 1
+  },
+  "status": 200,
+  "statusText": "OK",
+  "headers": {
+    "content-length": "470",
+    "content-type": "application/json; charset=utf-8",
+    "date": "Sun, 12 Feb 2023 16:22:20 GMT",
+    "etag": "W/\"1d6-KOhjbxLzcTCn2dBUS8tFDQqBEsE\"",
+    "vary": "Accept-Encoding",
+    "x-powered-by": "Express"
+  },
+  "config": {
+    "transitional": {
+      "silentJSONParsing": true,
+      "forcedJSONParsing": true,
+      "clarifyTimeoutError": false
+    },
+    "adapter": ["xhr", "http"],
+    "transformRequest": [null],
+    "transformResponse": [null],
+    "timeout": 0,
+    "xsrfCookieName": "XSRF-TOKEN",
+    "xsrfHeaderName": "X-XSRF-TOKEN",
+    "maxContentLength": -1,
+    "maxBodyLength": -1,
+    "env": {},
+    "headers": {
+      "Accept": "application/json, text/plain, */*"
+    },
+    "method": "get",
+    "url": "http://localhost:3000/strategy/offers/0xd6ef92fa2ef2cb702f0b…b23908Da9f727B5083052d5099e6aea?limit=100&skip=0&unique=true"
+  },
+  "request": {}
+}
