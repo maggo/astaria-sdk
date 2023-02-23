@@ -205,8 +205,8 @@ export interface VaultImplementationInterface extends utils.Interface {
     'STRATEGY_TYPEHASH()': FunctionFragment
     'VAULT_FEE()': FunctionFragment
     'asset()': FunctionFragment
-    'buyoutLien(((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint88,uint40,uint40,uint256))[],uint8,(address,uint256,((uint8,uint256,address),((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint88,uint40,uint40,uint256))[],bytes,(bytes32,bytes32[]),uint256,uint8,bytes32,bytes32)))': FunctionFragment
-    'commitToLien((address,uint256,((uint8,uint256,address),((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint88,uint40,uint40,uint256))[],bytes,(bytes32,bytes32[]),uint256,uint8,bytes32,bytes32)),address)': FunctionFragment
+    'buyoutLien(((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint256,uint40,uint40,uint256))[],uint8,(address,uint256,((uint8,uint256,address),((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint256,uint40,uint40,uint256))[],bytes,(bytes32,bytes32[]),uint256,uint8,bytes32,bytes32)))': FunctionFragment
+    'commitToLien((address,uint256,((uint8,uint256,address),((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint256,uint40,uint40,uint256))[],bytes,(bytes32,bytes32[]),uint256,uint8,bytes32,bytes32)))': FunctionFragment
     'disableAllowList()': FunctionFragment
     'domainSeparator()': FunctionFragment
     'enableAllowList()': FunctionFragment
@@ -215,6 +215,7 @@ export interface VaultImplementationInterface extends utils.Interface {
     'getStrategistNonce()': FunctionFragment
     'incrementNonce()': FunctionFragment
     'init((address,bool,address[],uint256))': FunctionFragment
+    'isDelegateOrOwner(address)': FunctionFragment
     'modifyAllowList(address,bool)': FunctionFragment
     'modifyDepositCap(uint256)': FunctionFragment
     'name()': FunctionFragment
@@ -247,6 +248,7 @@ export interface VaultImplementationInterface extends utils.Interface {
       | 'getStrategistNonce'
       | 'incrementNonce'
       | 'init'
+      | 'isDelegateOrOwner'
       | 'modifyAllowList'
       | 'modifyDepositCap'
       | 'name'
@@ -286,7 +288,7 @@ export interface VaultImplementationInterface extends utils.Interface {
   ): string
   encodeFunctionData(
     functionFragment: 'commitToLien',
-    values: [IAstariaRouter.CommitmentStruct, PromiseOrValue<string>]
+    values: [IAstariaRouter.CommitmentStruct]
   ): string
   encodeFunctionData(
     functionFragment: 'disableAllowList',
@@ -322,6 +324,10 @@ export interface VaultImplementationInterface extends utils.Interface {
   encodeFunctionData(
     functionFragment: 'init',
     values: [IVaultImplementation.InitParamsStruct]
+  ): string
+  encodeFunctionData(
+    functionFragment: 'isDelegateOrOwner',
+    values: [PromiseOrValue<string>]
   ): string
   encodeFunctionData(
     functionFragment: 'modifyAllowList',
@@ -402,6 +408,10 @@ export interface VaultImplementationInterface extends utils.Interface {
     data: BytesLike
   ): Result
   decodeFunctionResult(functionFragment: 'init', data: BytesLike): Result
+  decodeFunctionResult(
+    functionFragment: 'isDelegateOrOwner',
+    data: BytesLike
+  ): Result
   decodeFunctionResult(
     functionFragment: 'modifyAllowList',
     data: BytesLike
@@ -549,7 +559,6 @@ export interface VaultImplementation extends BaseContract {
 
     commitToLien(
       params: IAstariaRouter.CommitmentStruct,
-      receiver: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>
 
@@ -581,6 +590,11 @@ export interface VaultImplementation extends BaseContract {
       params: IVaultImplementation.InitParamsStruct,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>
+
+    isDelegateOrOwner(
+      addr: PromiseOrValue<string>,
+      overrides?: CallOverrides
+    ): Promise<[boolean]>
 
     modifyAllowList(
       depositor: PromiseOrValue<string>,
@@ -649,7 +663,6 @@ export interface VaultImplementation extends BaseContract {
 
   commitToLien(
     params: IAstariaRouter.CommitmentStruct,
-    receiver: PromiseOrValue<string>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>
 
@@ -681,6 +694,11 @@ export interface VaultImplementation extends BaseContract {
     params: IVaultImplementation.InitParamsStruct,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>
+
+  isDelegateOrOwner(
+    addr: PromiseOrValue<string>,
+    overrides?: CallOverrides
+  ): Promise<boolean>
 
   modifyAllowList(
     depositor: PromiseOrValue<string>,
@@ -745,17 +763,20 @@ export interface VaultImplementation extends BaseContract {
       position: PromiseOrValue<BigNumberish>,
       incomingTerms: IAstariaRouter.CommitmentStruct,
       overrides?: CallOverrides
-    ): Promise<[ILienToken.StackStructOutput[], ILienToken.StackStructOutput]>
+    ): Promise<
+      [ILienToken.StackStructOutput[], ILienToken.StackStructOutput] & {
+        stacks: ILienToken.StackStructOutput[]
+        newStack: ILienToken.StackStructOutput
+      }
+    >
 
     commitToLien(
       params: IAstariaRouter.CommitmentStruct,
-      receiver: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<
-      [BigNumber, ILienToken.StackStructOutput[], BigNumber] & {
+      [BigNumber, ILienToken.StackStructOutput[]] & {
         lienId: BigNumber
         stack: ILienToken.StackStructOutput[]
-        payout: BigNumber
       }
     >
 
@@ -781,6 +802,11 @@ export interface VaultImplementation extends BaseContract {
       params: IVaultImplementation.InitParamsStruct,
       overrides?: CallOverrides
     ): Promise<void>
+
+    isDelegateOrOwner(
+      addr: PromiseOrValue<string>,
+      overrides?: CallOverrides
+    ): Promise<boolean>
 
     modifyAllowList(
       depositor: PromiseOrValue<string>,
@@ -871,7 +897,6 @@ export interface VaultImplementation extends BaseContract {
 
     commitToLien(
       params: IAstariaRouter.CommitmentStruct,
-      receiver: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>
 
@@ -902,6 +927,11 @@ export interface VaultImplementation extends BaseContract {
     init(
       params: IVaultImplementation.InitParamsStruct,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<BigNumber>
+
+    isDelegateOrOwner(
+      addr: PromiseOrValue<string>,
+      overrides?: CallOverrides
     ): Promise<BigNumber>
 
     modifyAllowList(
@@ -972,7 +1002,6 @@ export interface VaultImplementation extends BaseContract {
 
     commitToLien(
       params: IAstariaRouter.CommitmentStruct,
-      receiver: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>
 
@@ -1003,6 +1032,11 @@ export interface VaultImplementation extends BaseContract {
     init(
       params: IVaultImplementation.InitParamsStruct,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<PopulatedTransaction>
+
+    isDelegateOrOwner(
+      addr: PromiseOrValue<string>,
+      overrides?: CallOverrides
     ): Promise<PopulatedTransaction>
 
     modifyAllowList(
