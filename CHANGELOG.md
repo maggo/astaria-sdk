@@ -1,9 +1,8 @@
 # [1.0.0-alpha.19](https://github.com/astariaxyz/astaria-sdk/compare/v1.0.0-alpha.18...v1.0.0-alpha.19) (2023-02-21)
 
-
 ### Features
 
-* implement OfferRouter ([fe9bd35](https://github.com/astariaxyz/astaria-sdk/commit/fe9bd3532e1167a5a078dc35b588b622fbe1629a))
+- implement OfferRouter ([fe9bd35](https://github.com/astariaxyz/astaria-sdk/commit/fe9bd3532e1167a5a078dc35b588b622fbe1629a))
 
 # [1.0.0-alpha.18](https://github.com/astariaxyz/astaria-sdk/compare/v1.0.0-alpha.17...v1.0.0-alpha.18) (2023-01-19)
 

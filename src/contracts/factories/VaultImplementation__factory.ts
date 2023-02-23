@@ -273,9 +273,9 @@ const _abi = [
           {
             components: [
               {
-                internalType: 'uint88',
+                internalType: 'uint256',
                 name: 'amount',
-                type: 'uint88',
+                type: 'uint256',
               },
               {
                 internalType: 'uint40',
@@ -412,9 +412,9 @@ const _abi = [
                   {
                     components: [
                       {
-                        internalType: 'uint88',
+                        internalType: 'uint256',
                         name: 'amount',
-                        type: 'uint88',
+                        type: 'uint256',
                       },
                       {
                         internalType: 'uint40',
@@ -565,9 +565,9 @@ const _abi = [
           {
             components: [
               {
-                internalType: 'uint88',
+                internalType: 'uint256',
                 name: 'amount',
-                type: 'uint88',
+                type: 'uint256',
               },
               {
                 internalType: 'uint40',
@@ -591,7 +591,7 @@ const _abi = [
           },
         ],
         internalType: 'struct ILienToken.Stack[]',
-        name: '',
+        name: 'stacks',
         type: 'tuple[]',
       },
       {
@@ -663,9 +663,9 @@ const _abi = [
           {
             components: [
               {
-                internalType: 'uint88',
+                internalType: 'uint256',
                 name: 'amount',
-                type: 'uint88',
+                type: 'uint256',
               },
               {
                 internalType: 'uint40',
@@ -689,7 +689,7 @@ const _abi = [
           },
         ],
         internalType: 'struct ILienToken.Stack',
-        name: '',
+        name: 'newStack',
         type: 'tuple',
       },
     ],
@@ -803,9 +803,9 @@ const _abi = [
                   {
                     components: [
                       {
-                        internalType: 'uint88',
+                        internalType: 'uint256',
                         name: 'amount',
-                        type: 'uint88',
+                        type: 'uint256',
                       },
                       {
                         internalType: 'uint40',
@@ -884,11 +884,6 @@ const _abi = [
         name: 'params',
         type: 'tuple',
       },
-      {
-        internalType: 'address',
-        name: 'receiver',
-        type: 'address',
-      },
     ],
     name: 'commitToLien',
     outputs: [
@@ -966,9 +961,9 @@ const _abi = [
           {
             components: [
               {
-                internalType: 'uint88',
+                internalType: 'uint256',
                 name: 'amount',
-                type: 'uint88',
+                type: 'uint256',
               },
               {
                 internalType: 'uint40',
@@ -994,11 +989,6 @@ const _abi = [
         internalType: 'struct ILienToken.Stack[]',
         name: 'stack',
         type: 'tuple[]',
-      },
-      {
-        internalType: 'uint256',
-        name: 'payout',
-        type: 'uint256',
       },
     ],
     stateMutability: 'nonpayable',
@@ -1138,6 +1128,25 @@ const _abi = [
     name: 'init',
     outputs: [],
     stateMutability: 'nonpayable',
+    type: 'function',
+  },
+  {
+    inputs: [
+      {
+        internalType: 'address',
+        name: 'addr',
+        type: 'address',
+      },
+    ],
+    name: 'isDelegateOrOwner',
+    outputs: [
+      {
+        internalType: 'bool',
+        name: '',
+        type: 'bool',
+      },
+    ],
+    stateMutability: 'view',
     type: 'function',
   },
   {

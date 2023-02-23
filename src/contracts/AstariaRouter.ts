@@ -283,8 +283,8 @@ export interface AstariaRouterInterface extends utils.Interface {
     '__emergencyUnpause()': FunctionFragment
     '__renounceGuardian()': FunctionFragment
     'authority()': FunctionFragment
-    'canLiquidate(((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint88,uint40,uint40,uint256)))': FunctionFragment
-    'commitToLiens((address,uint256,((uint8,uint256,address),((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint88,uint40,uint40,uint256))[],bytes,(bytes32,bytes32[]),uint256,uint8,bytes32,bytes32))[])': FunctionFragment
+    'canLiquidate(((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint256,uint40,uint40,uint256)))': FunctionFragment
+    'commitToLiens((address,uint256,((uint8,uint256,address),((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint256,uint40,uint40,uint256))[],bytes,(bytes32,bytes32[]),uint256,uint8,bytes32,bytes32))[])': FunctionFragment
     'deposit(address,address,uint256,uint256)': FunctionFragment
     'depositMax(address,address,uint256)': FunctionFragment
     'depositToVault(address,address,uint256,uint256)': FunctionFragment
@@ -292,15 +292,14 @@ export interface AstariaRouterInterface extends utils.Interface {
     'file((uint8,bytes))': FunctionFragment
     'fileBatch((uint8,bytes)[])': FunctionFragment
     'fileGuardian((uint8,bytes)[])': FunctionFragment
-    'getAuctionWindow(bool)': FunctionFragment
-    'getBuyoutFee(uint256)': FunctionFragment
+    'getAuctionWindow()': FunctionFragment
     'getImpl(uint8)': FunctionFragment
     'getLiquidatorFee(uint256)': FunctionFragment
     'getProtocolFee(uint256)': FunctionFragment
+    'getStrategyValidator(uint8)': FunctionFragment
     'initialize(address,address,address,address,address,address,address,address,address)': FunctionFragment
-    'isValidRefinance((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),uint8,((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint88,uint40,uint40,uint256))[])': FunctionFragment
     'isValidVault(address)': FunctionFragment
-    'liquidate(((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint88,uint40,uint40,uint256))[],uint8)': FunctionFragment
+    'liquidate(((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint256,uint40,uint40,uint256))[],uint8)': FunctionFragment
     'mint(address,address,uint256,uint256)': FunctionFragment
     'multicall(bytes[])': FunctionFragment
     'newPublicVault(uint256,address,address,uint256,bool,address[],uint256)': FunctionFragment
@@ -311,11 +310,11 @@ export interface AstariaRouterInterface extends utils.Interface {
     'redeem(address,address,uint256,uint256)': FunctionFragment
     'redeemFutureEpoch(address,uint256,address,uint64)': FunctionFragment
     'redeemMax(address,address,uint256)': FunctionFragment
-    'requestLienPosition((address,uint256,((uint8,uint256,address),((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint88,uint40,uint40,uint256))[],bytes,(bytes32,bytes32[]),uint256,uint8,bytes32,bytes32)),address)': FunctionFragment
+    'requestLienPosition((address,uint256,((uint8,uint256,address),((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint256,uint40,uint40,uint256))[],bytes,(bytes32,bytes32[]),uint256,uint8,bytes32,bytes32)),address)': FunctionFragment
     'setAuthority(address)': FunctionFragment
     'setNewGuardian(address)': FunctionFragment
     'transferOwnership(address)': FunctionFragment
-    'validateCommitment((address,uint256,((uint8,uint256,address),((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint88,uint40,uint40,uint256))[],bytes,(bytes32,bytes32[]),uint256,uint8,bytes32,bytes32)),uint256)': FunctionFragment
+    'validateCommitment((address,uint256,((uint8,uint256,address),((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint256,uint40,uint40,uint256))[],bytes,(bytes32,bytes32[]),uint256,uint8,bytes32,bytes32)),uint256)': FunctionFragment
     'withdraw(address,address,uint256,uint256)': FunctionFragment
   }
 
@@ -340,12 +339,11 @@ export interface AstariaRouterInterface extends utils.Interface {
       | 'fileBatch'
       | 'fileGuardian'
       | 'getAuctionWindow'
-      | 'getBuyoutFee'
       | 'getImpl'
       | 'getLiquidatorFee'
       | 'getProtocolFee'
+      | 'getStrategyValidator'
       | 'initialize'
-      | 'isValidRefinance'
       | 'isValidVault'
       | 'liquidate'
       | 'mint'
@@ -445,11 +443,7 @@ export interface AstariaRouterInterface extends utils.Interface {
   ): string
   encodeFunctionData(
     functionFragment: 'getAuctionWindow',
-    values: [PromiseOrValue<boolean>]
-  ): string
-  encodeFunctionData(
-    functionFragment: 'getBuyoutFee',
-    values: [PromiseOrValue<BigNumberish>]
+    values?: undefined
   ): string
   encodeFunctionData(
     functionFragment: 'getImpl',
@@ -464,6 +458,10 @@ export interface AstariaRouterInterface extends utils.Interface {
     values: [PromiseOrValue<BigNumberish>]
   ): string
   encodeFunctionData(
+    functionFragment: 'getStrategyValidator',
+    values: [PromiseOrValue<BigNumberish>]
+  ): string
+  encodeFunctionData(
     functionFragment: 'initialize',
     values: [
       PromiseOrValue<string>,
@@ -475,14 +473,6 @@ export interface AstariaRouterInterface extends utils.Interface {
       PromiseOrValue<string>,
       PromiseOrValue<string>,
       PromiseOrValue<string>
-    ]
-  ): string
-  encodeFunctionData(
-    functionFragment: 'isValidRefinance',
-    values: [
-      ILienToken.LienStruct,
-      PromiseOrValue<BigNumberish>,
-      ILienToken.StackStruct[]
     ]
   ): string
   encodeFunctionData(
@@ -643,10 +633,6 @@ export interface AstariaRouterInterface extends utils.Interface {
     functionFragment: 'getAuctionWindow',
     data: BytesLike
   ): Result
-  decodeFunctionResult(
-    functionFragment: 'getBuyoutFee',
-    data: BytesLike
-  ): Result
   decodeFunctionResult(functionFragment: 'getImpl', data: BytesLike): Result
   decodeFunctionResult(
     functionFragment: 'getLiquidatorFee',
@@ -656,11 +642,11 @@ export interface AstariaRouterInterface extends utils.Interface {
     functionFragment: 'getProtocolFee',
     data: BytesLike
   ): Result
-  decodeFunctionResult(functionFragment: 'initialize', data: BytesLike): Result
   decodeFunctionResult(
-    functionFragment: 'isValidRefinance',
+    functionFragment: 'getStrategyValidator',
     data: BytesLike
   ): Result
+  decodeFunctionResult(functionFragment: 'initialize', data: BytesLike): Result
   decodeFunctionResult(
     functionFragment: 'isValidVault',
     data: BytesLike
@@ -908,15 +894,7 @@ export interface AstariaRouter extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>
 
-    getAuctionWindow(
-      includeBuffer: PromiseOrValue<boolean>,
-      overrides?: CallOverrides
-    ): Promise<[BigNumber]>
-
-    getBuyoutFee(
-      remainingInterestIn: PromiseOrValue<BigNumberish>,
-      overrides?: CallOverrides
-    ): Promise<[BigNumber]>
+    getAuctionWindow(overrides?: CallOverrides): Promise<[BigNumber]>
 
     getImpl(
       implType: PromiseOrValue<BigNumberish>,
@@ -933,6 +911,11 @@ export interface AstariaRouter extends BaseContract {
       overrides?: CallOverrides
     ): Promise<[BigNumber]>
 
+    getStrategyValidator(
+      validator: PromiseOrValue<BigNumberish>,
+      overrides?: CallOverrides
+    ): Promise<[string]>
+
     initialize(
       _AUTHORITY: PromiseOrValue<string>,
       _COLLATERAL_TOKEN: PromiseOrValue<string>,
@@ -945,13 +928,6 @@ export interface AstariaRouter extends BaseContract {
       _CLEARING_HOUSE_IMPL: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>
-
-    isValidRefinance(
-      newLien: ILienToken.LienStruct,
-      position: PromiseOrValue<BigNumberish>,
-      stack: ILienToken.StackStruct[],
-      overrides?: CallOverrides
-    ): Promise<[boolean]>
 
     isValidVault(
       vault: PromiseOrValue<string>,
@@ -1142,15 +1118,7 @@ export interface AstariaRouter extends BaseContract {
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>
 
-  getAuctionWindow(
-    includeBuffer: PromiseOrValue<boolean>,
-    overrides?: CallOverrides
-  ): Promise<BigNumber>
-
-  getBuyoutFee(
-    remainingInterestIn: PromiseOrValue<BigNumberish>,
-    overrides?: CallOverrides
-  ): Promise<BigNumber>
+  getAuctionWindow(overrides?: CallOverrides): Promise<BigNumber>
 
   getImpl(
     implType: PromiseOrValue<BigNumberish>,
@@ -1167,6 +1135,11 @@ export interface AstariaRouter extends BaseContract {
     overrides?: CallOverrides
   ): Promise<BigNumber>
 
+  getStrategyValidator(
+    validator: PromiseOrValue<BigNumberish>,
+    overrides?: CallOverrides
+  ): Promise<string>
+
   initialize(
     _AUTHORITY: PromiseOrValue<string>,
     _COLLATERAL_TOKEN: PromiseOrValue<string>,
@@ -1179,13 +1152,6 @@ export interface AstariaRouter extends BaseContract {
     _CLEARING_HOUSE_IMPL: PromiseOrValue<string>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>
-
-  isValidRefinance(
-    newLien: ILienToken.LienStruct,
-    position: PromiseOrValue<BigNumberish>,
-    stack: ILienToken.StackStruct[],
-    overrides?: CallOverrides
-  ): Promise<boolean>
 
   isValidVault(
     vault: PromiseOrValue<string>,
@@ -1371,15 +1337,7 @@ export interface AstariaRouter extends BaseContract {
       overrides?: CallOverrides
     ): Promise<void>
 
-    getAuctionWindow(
-      includeBuffer: PromiseOrValue<boolean>,
-      overrides?: CallOverrides
-    ): Promise<BigNumber>
-
-    getBuyoutFee(
-      remainingInterestIn: PromiseOrValue<BigNumberish>,
-      overrides?: CallOverrides
-    ): Promise<BigNumber>
+    getAuctionWindow(overrides?: CallOverrides): Promise<BigNumber>
 
     getImpl(
       implType: PromiseOrValue<BigNumberish>,
@@ -1396,6 +1354,11 @@ export interface AstariaRouter extends BaseContract {
       overrides?: CallOverrides
     ): Promise<BigNumber>
 
+    getStrategyValidator(
+      validator: PromiseOrValue<BigNumberish>,
+      overrides?: CallOverrides
+    ): Promise<string>
+
     initialize(
       _AUTHORITY: PromiseOrValue<string>,
       _COLLATERAL_TOKEN: PromiseOrValue<string>,
@@ -1408,13 +1371,6 @@ export interface AstariaRouter extends BaseContract {
       _CLEARING_HOUSE_IMPL: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<void>
-
-    isValidRefinance(
-      newLien: ILienToken.LienStruct,
-      position: PromiseOrValue<BigNumberish>,
-      stack: ILienToken.StackStruct[],
-      overrides?: CallOverrides
-    ): Promise<boolean>
 
     isValidVault(
       vault: PromiseOrValue<string>,
@@ -1655,15 +1611,7 @@ export interface AstariaRouter extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>
 
-    getAuctionWindow(
-      includeBuffer: PromiseOrValue<boolean>,
-      overrides?: CallOverrides
-    ): Promise<BigNumber>
-
-    getBuyoutFee(
-      remainingInterestIn: PromiseOrValue<BigNumberish>,
-      overrides?: CallOverrides
-    ): Promise<BigNumber>
+    getAuctionWindow(overrides?: CallOverrides): Promise<BigNumber>
 
     getImpl(
       implType: PromiseOrValue<BigNumberish>,
@@ -1680,6 +1628,11 @@ export interface AstariaRouter extends BaseContract {
       overrides?: CallOverrides
     ): Promise<BigNumber>
 
+    getStrategyValidator(
+      validator: PromiseOrValue<BigNumberish>,
+      overrides?: CallOverrides
+    ): Promise<BigNumber>
+
     initialize(
       _AUTHORITY: PromiseOrValue<string>,
       _COLLATERAL_TOKEN: PromiseOrValue<string>,
@@ -1691,13 +1644,6 @@ export interface AstariaRouter extends BaseContract {
       _BEACON_PROXY_IMPL: PromiseOrValue<string>,
       _CLEARING_HOUSE_IMPL: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<BigNumber>
-
-    isValidRefinance(
-      newLien: ILienToken.LienStruct,
-      position: PromiseOrValue<BigNumberish>,
-      stack: ILienToken.StackStruct[],
-      overrides?: CallOverrides
     ): Promise<BigNumber>
 
     isValidVault(
@@ -1890,15 +1836,7 @@ export interface AstariaRouter extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>
 
-    getAuctionWindow(
-      includeBuffer: PromiseOrValue<boolean>,
-      overrides?: CallOverrides
-    ): Promise<PopulatedTransaction>
-
-    getBuyoutFee(
-      remainingInterestIn: PromiseOrValue<BigNumberish>,
-      overrides?: CallOverrides
-    ): Promise<PopulatedTransaction>
+    getAuctionWindow(overrides?: CallOverrides): Promise<PopulatedTransaction>
 
     getImpl(
       implType: PromiseOrValue<BigNumberish>,
@@ -1915,6 +1853,11 @@ export interface AstariaRouter extends BaseContract {
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>
 
+    getStrategyValidator(
+      validator: PromiseOrValue<BigNumberish>,
+      overrides?: CallOverrides
+    ): Promise<PopulatedTransaction>
+
     initialize(
       _AUTHORITY: PromiseOrValue<string>,
       _COLLATERAL_TOKEN: PromiseOrValue<string>,
@@ -1926,13 +1869,6 @@ export interface AstariaRouter extends BaseContract {
       _BEACON_PROXY_IMPL: PromiseOrValue<string>,
       _CLEARING_HOUSE_IMPL: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<PopulatedTransaction>
-
-    isValidRefinance(
-      newLien: ILienToken.LienStruct,
-      position: PromiseOrValue<BigNumberish>,
-      stack: ILienToken.StackStruct[],
-      overrides?: CallOverrides
     ): Promise<PopulatedTransaction>
 
     isValidVault(

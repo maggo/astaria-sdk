@@ -122,14 +122,30 @@ export declare namespace ILienToken {
   }
 
   export type LienActionBuyoutStruct = {
+    chargeable: PromiseOrValue<boolean>
     position: PromiseOrValue<BigNumberish>
     encumber: ILienToken.LienActionEncumberStruct
   }
 
   export type LienActionBuyoutStructOutput = [
+    boolean,
     number,
     ILienToken.LienActionEncumberStructOutput
-  ] & { position: number; encumber: ILienToken.LienActionEncumberStructOutput }
+  ] & {
+    chargeable: boolean
+    position: number
+    encumber: ILienToken.LienActionEncumberStructOutput
+  }
+
+  export type BuyoutLienParamsStruct = {
+    lienSlope: PromiseOrValue<BigNumberish>
+    lienEnd: PromiseOrValue<BigNumberish>
+  }
+
+  export type BuyoutLienParamsStructOutput = [BigNumber, BigNumber] & {
+    lienSlope: BigNumber
+    lienEnd: BigNumber
+  }
 
   export type FileStruct = {
     what: PromiseOrValue<BigNumberish>
@@ -140,7 +156,9 @@ export declare namespace ILienToken {
     what: number
     data: string
   }
+}
 
+export declare namespace ClearingHouse {
   export type AuctionStackStruct = {
     lienId: PromiseOrValue<BigNumberish>
     amountOwed: PromiseOrValue<BigNumberish>
@@ -159,7 +177,8 @@ export declare namespace ILienToken {
     startTime: PromiseOrValue<BigNumberish>
     endTime: PromiseOrValue<BigNumberish>
     liquidator: PromiseOrValue<string>
-    stack: ILienToken.AuctionStackStruct[]
+    token: PromiseOrValue<string>
+    stack: ClearingHouse.AuctionStackStruct[]
   }
 
   export type AuctionDataStructOutput = [
@@ -168,14 +187,16 @@ export declare namespace ILienToken {
     number,
     number,
     string,
-    ILienToken.AuctionStackStructOutput[]
+    string,
+    ClearingHouse.AuctionStackStructOutput[]
   ] & {
     startAmount: BigNumber
     endAmount: BigNumber
     startTime: number
     endTime: number
     liquidator: string
-    stack: ILienToken.AuctionStackStructOutput[]
+    token: string
+    stack: ClearingHouse.AuctionStackStructOutput[]
   }
 }
 
@@ -186,35 +207,37 @@ export interface LienTokenInterface extends utils.Interface {
     'approve(address,uint256)': FunctionFragment
     'authority()': FunctionFragment
     'balanceOf(address)': FunctionFragment
-    'buyoutLien((uint8,(uint256,address,(uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint88,uint40,uint40,uint256))[])))': FunctionFragment
-    'calculateSlope(((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint88,uint40,uint40,uint256)))': FunctionFragment
-    'createLien((uint256,address,(uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint88,uint40,uint40,uint256))[]))': FunctionFragment
+    'buyoutLien((bool,uint8,(uint256,address,(uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint256,uint40,uint40,uint256))[])))': FunctionFragment
+    'calculateSlope(((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint256,uint40,uint40,uint256)))': FunctionFragment
+    'createLien((uint256,address,(uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint256,uint40,uint40,uint256))[]))': FunctionFragment
     'file((uint8,bytes))': FunctionFragment
-    'getAmountOwingAtLiquidation(((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint88,uint40,uint40,uint256)))': FunctionFragment
+    'getAmountOwingAtLiquidation(((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint256,uint40,uint40,uint256)))': FunctionFragment
     'getApproved(uint256)': FunctionFragment
     'getAuctionData(uint256)': FunctionFragment
     'getAuctionLiquidator(uint256)': FunctionFragment
-    'getBuyout(((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint88,uint40,uint40,uint256)))': FunctionFragment
+    'getBuyout(((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint256,uint40,uint40,uint256)))': FunctionFragment
+    'getBuyoutFee(uint256,uint256,uint256)': FunctionFragment
     'getCollateralState(uint256)': FunctionFragment
-    'getInterest(((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint88,uint40,uint40,uint256)))': FunctionFragment
-    'getMaxPotentialDebtForCollateral(((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint88,uint40,uint40,uint256))[],uint256)': FunctionFragment
-    'getMaxPotentialDebtForCollateral(((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint88,uint40,uint40,uint256))[])': FunctionFragment
-    'getOwed(((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint88,uint40,uint40,uint256)))': FunctionFragment
-    'getOwed(((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint88,uint40,uint40,uint256)),uint256)': FunctionFragment
+    'getInterest(((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint256,uint40,uint40,uint256)))': FunctionFragment
+    'getMaxPotentialDebtForCollateral(((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint256,uint40,uint40,uint256))[],uint256)': FunctionFragment
+    'getMaxPotentialDebtForCollateral(((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint256,uint40,uint40,uint256))[])': FunctionFragment
+    'getOwed(((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint256,uint40,uint40,uint256)))': FunctionFragment
+    'getOwed(((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint256,uint40,uint40,uint256)),uint256)': FunctionFragment
     'getPayee(uint256)': FunctionFragment
     'initialize(address,address)': FunctionFragment
     'isApprovedForAll(address,address)': FunctionFragment
-    'makePayment(uint256,((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint88,uint40,uint40,uint256))[],uint256)': FunctionFragment
-    'makePayment(uint256,((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint88,uint40,uint40,uint256))[],uint8,uint256)': FunctionFragment
+    'isValidRefinance((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),uint8,((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint256,uint40,uint40,uint256))[],uint256,uint256,bool)': FunctionFragment
+    'makePayment(uint256,((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint256,uint40,uint40,uint256))[],uint256)': FunctionFragment
+    'makePayment(uint256,((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint256,uint40,uint40,uint256))[],uint8,uint256)': FunctionFragment
     'name()': FunctionFragment
     'owner()': FunctionFragment
     'ownerOf(uint256)': FunctionFragment
-    'payDebtViaClearingHouse(address,uint256,uint256,(uint256,uint88,uint40)[])': FunctionFragment
+    'payDebtViaClearingHouse(address,uint256,uint256,(uint256,uint256,uint40)[])': FunctionFragment
     'safeTransferFrom(address,address,uint256)': FunctionFragment
     'safeTransferFrom(address,address,uint256,bytes)': FunctionFragment
     'setApprovalForAll(address,bool)': FunctionFragment
     'setAuthority(address)': FunctionFragment
-    'stopLiens(uint256,uint256,((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint88,uint40,uint40,uint256))[],address)': FunctionFragment
+    'stopLiens(uint256,uint256,((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint256,uint40,uint40,uint256))[],address)': FunctionFragment
     'supportsInterface(bytes4)': FunctionFragment
     'symbol()': FunctionFragment
     'tokenURI(uint256)': FunctionFragment
@@ -239,17 +262,19 @@ export interface LienTokenInterface extends utils.Interface {
       | 'getAuctionData'
       | 'getAuctionLiquidator'
       | 'getBuyout'
+      | 'getBuyoutFee'
       | 'getCollateralState'
       | 'getInterest'
-      | 'getMaxPotentialDebtForCollateral(((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint88,uint40,uint40,uint256))[],uint256)'
-      | 'getMaxPotentialDebtForCollateral(((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint88,uint40,uint40,uint256))[])'
-      | 'getOwed(((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint88,uint40,uint40,uint256)))'
-      | 'getOwed(((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint88,uint40,uint40,uint256)),uint256)'
+      | 'getMaxPotentialDebtForCollateral(((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint256,uint40,uint40,uint256))[],uint256)'
+      | 'getMaxPotentialDebtForCollateral(((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint256,uint40,uint40,uint256))[])'
+      | 'getOwed(((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint256,uint40,uint40,uint256)))'
+      | 'getOwed(((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint256,uint40,uint40,uint256)),uint256)'
       | 'getPayee'
       | 'initialize'
       | 'isApprovedForAll'
-      | 'makePayment(uint256,((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint88,uint40,uint40,uint256))[],uint256)'
-      | 'makePayment(uint256,((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint88,uint40,uint40,uint256))[],uint8,uint256)'
+      | 'isValidRefinance'
+      | 'makePayment(uint256,((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint256,uint40,uint40,uint256))[],uint256)'
+      | 'makePayment(uint256,((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint256,uint40,uint40,uint256))[],uint8,uint256)'
       | 'name'
       | 'owner'
       | 'ownerOf'
@@ -321,6 +346,14 @@ export interface LienTokenInterface extends utils.Interface {
     values: [ILienToken.StackStruct]
   ): string
   encodeFunctionData(
+    functionFragment: 'getBuyoutFee',
+    values: [
+      PromiseOrValue<BigNumberish>,
+      PromiseOrValue<BigNumberish>,
+      PromiseOrValue<BigNumberish>
+    ]
+  ): string
+  encodeFunctionData(
     functionFragment: 'getCollateralState',
     values: [PromiseOrValue<BigNumberish>]
   ): string
@@ -329,19 +362,19 @@ export interface LienTokenInterface extends utils.Interface {
     values: [ILienToken.StackStruct]
   ): string
   encodeFunctionData(
-    functionFragment: 'getMaxPotentialDebtForCollateral(((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint88,uint40,uint40,uint256))[],uint256)',
+    functionFragment: 'getMaxPotentialDebtForCollateral(((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint256,uint40,uint40,uint256))[],uint256)',
     values: [ILienToken.StackStruct[], PromiseOrValue<BigNumberish>]
   ): string
   encodeFunctionData(
-    functionFragment: 'getMaxPotentialDebtForCollateral(((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint88,uint40,uint40,uint256))[])',
+    functionFragment: 'getMaxPotentialDebtForCollateral(((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint256,uint40,uint40,uint256))[])',
     values: [ILienToken.StackStruct[]]
   ): string
   encodeFunctionData(
-    functionFragment: 'getOwed(((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint88,uint40,uint40,uint256)))',
+    functionFragment: 'getOwed(((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint256,uint40,uint40,uint256)))',
     values: [ILienToken.StackStruct]
   ): string
   encodeFunctionData(
-    functionFragment: 'getOwed(((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint88,uint40,uint40,uint256)),uint256)',
+    functionFragment: 'getOwed(((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint256,uint40,uint40,uint256)),uint256)',
     values: [ILienToken.StackStruct, PromiseOrValue<BigNumberish>]
   ): string
   encodeFunctionData(
@@ -357,7 +390,18 @@ export interface LienTokenInterface extends utils.Interface {
     values: [PromiseOrValue<string>, PromiseOrValue<string>]
   ): string
   encodeFunctionData(
-    functionFragment: 'makePayment(uint256,((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint88,uint40,uint40,uint256))[],uint256)',
+    functionFragment: 'isValidRefinance',
+    values: [
+      ILienToken.LienStruct,
+      PromiseOrValue<BigNumberish>,
+      ILienToken.StackStruct[],
+      PromiseOrValue<BigNumberish>,
+      PromiseOrValue<BigNumberish>,
+      PromiseOrValue<boolean>
+    ]
+  ): string
+  encodeFunctionData(
+    functionFragment: 'makePayment(uint256,((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint256,uint40,uint40,uint256))[],uint256)',
     values: [
       PromiseOrValue<BigNumberish>,
       ILienToken.StackStruct[],
@@ -365,7 +409,7 @@ export interface LienTokenInterface extends utils.Interface {
     ]
   ): string
   encodeFunctionData(
-    functionFragment: 'makePayment(uint256,((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint88,uint40,uint40,uint256))[],uint8,uint256)',
+    functionFragment: 'makePayment(uint256,((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint256,uint40,uint40,uint256))[],uint8,uint256)',
     values: [
       PromiseOrValue<BigNumberish>,
       ILienToken.StackStruct[],
@@ -385,7 +429,7 @@ export interface LienTokenInterface extends utils.Interface {
       PromiseOrValue<string>,
       PromiseOrValue<BigNumberish>,
       PromiseOrValue<BigNumberish>,
-      ILienToken.AuctionStackStruct[]
+      ClearingHouse.AuctionStackStruct[]
     ]
   ): string
   encodeFunctionData(
@@ -481,24 +525,28 @@ export interface LienTokenInterface extends utils.Interface {
   ): Result
   decodeFunctionResult(functionFragment: 'getBuyout', data: BytesLike): Result
   decodeFunctionResult(
+    functionFragment: 'getBuyoutFee',
+    data: BytesLike
+  ): Result
+  decodeFunctionResult(
     functionFragment: 'getCollateralState',
     data: BytesLike
   ): Result
   decodeFunctionResult(functionFragment: 'getInterest', data: BytesLike): Result
   decodeFunctionResult(
-    functionFragment: 'getMaxPotentialDebtForCollateral(((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint88,uint40,uint40,uint256))[],uint256)',
+    functionFragment: 'getMaxPotentialDebtForCollateral(((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint256,uint40,uint40,uint256))[],uint256)',
     data: BytesLike
   ): Result
   decodeFunctionResult(
-    functionFragment: 'getMaxPotentialDebtForCollateral(((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint88,uint40,uint40,uint256))[])',
+    functionFragment: 'getMaxPotentialDebtForCollateral(((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint256,uint40,uint40,uint256))[])',
     data: BytesLike
   ): Result
   decodeFunctionResult(
-    functionFragment: 'getOwed(((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint88,uint40,uint40,uint256)))',
+    functionFragment: 'getOwed(((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint256,uint40,uint40,uint256)))',
     data: BytesLike
   ): Result
   decodeFunctionResult(
-    functionFragment: 'getOwed(((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint88,uint40,uint40,uint256)),uint256)',
+    functionFragment: 'getOwed(((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint256,uint40,uint40,uint256)),uint256)',
     data: BytesLike
   ): Result
   decodeFunctionResult(functionFragment: 'getPayee', data: BytesLike): Result
@@ -508,11 +556,15 @@ export interface LienTokenInterface extends utils.Interface {
     data: BytesLike
   ): Result
   decodeFunctionResult(
-    functionFragment: 'makePayment(uint256,((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint88,uint40,uint40,uint256))[],uint256)',
+    functionFragment: 'isValidRefinance',
     data: BytesLike
   ): Result
   decodeFunctionResult(
-    functionFragment: 'makePayment(uint256,((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint88,uint40,uint40,uint256))[],uint8,uint256)',
+    functionFragment: 'makePayment(uint256,((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint256,uint40,uint40,uint256))[],uint256)',
+    data: BytesLike
+  ): Result
+  decodeFunctionResult(
+    functionFragment: 'makePayment(uint256,((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint256,uint40,uint40,uint256))[],uint8,uint256)',
     data: BytesLike
   ): Result
   decodeFunctionResult(functionFragment: 'name', data: BytesLike): Result
@@ -559,17 +611,17 @@ export interface LienTokenInterface extends utils.Interface {
   ): Result
 
   events: {
-    'AddLien(uint256,uint8,uint256,tuple)': EventFragment
+    'AddLien(uint256,uint8,uint8,tuple)': EventFragment
     'Approval(address,address,uint256)': EventFragment
     'ApprovalForAll(address,address,bool)': EventFragment
     'AuthorityUpdated(address,address)': EventFragment
     'BuyoutLien(address,uint256,uint256)': EventFragment
     'FileUpdated(uint8,bytes)': EventFragment
     'Initialized(uint8)': EventFragment
-    'LienStackUpdated(uint256,uint8,uint8,uint8)': EventFragment
     'OwnershipTransferred(address,address)': EventFragment
     'PayeeChanged(uint256,address)': EventFragment
     'Payment(uint256,uint256)': EventFragment
+    'RemoveLien(uint256,uint8)': EventFragment
     'RemovedLiens(uint256)': EventFragment
     'Transfer(address,address,uint256)': EventFragment
   }
@@ -581,10 +633,10 @@ export interface LienTokenInterface extends utils.Interface {
   getEvent(nameOrSignatureOrTopic: 'BuyoutLien'): EventFragment
   getEvent(nameOrSignatureOrTopic: 'FileUpdated'): EventFragment
   getEvent(nameOrSignatureOrTopic: 'Initialized'): EventFragment
-  getEvent(nameOrSignatureOrTopic: 'LienStackUpdated'): EventFragment
   getEvent(nameOrSignatureOrTopic: 'OwnershipTransferred'): EventFragment
   getEvent(nameOrSignatureOrTopic: 'PayeeChanged'): EventFragment
   getEvent(nameOrSignatureOrTopic: 'Payment'): EventFragment
+  getEvent(nameOrSignatureOrTopic: 'RemoveLien'): EventFragment
   getEvent(nameOrSignatureOrTopic: 'RemovedLiens'): EventFragment
   getEvent(nameOrSignatureOrTopic: 'Transfer'): EventFragment
 }
@@ -592,11 +644,11 @@ export interface LienTokenInterface extends utils.Interface {
 export interface AddLienEventObject {
   collateralId: BigNumber
   position: number
-  lienId: BigNumber
+  stackLength: number
   stack: ILienToken.StackStructOutput
 }
 export type AddLienEvent = TypedEvent<
-  [BigNumber, number, BigNumber, ILienToken.StackStructOutput],
+  [BigNumber, number, number, ILienToken.StackStructOutput],
   AddLienEventObject
 >
 
@@ -668,20 +720,6 @@ export type InitializedEvent = TypedEvent<[number], InitializedEventObject>
 
 export type InitializedEventFilter = TypedEventFilter<InitializedEvent>
 
-export interface LienStackUpdatedEventObject {
-  collateralId: BigNumber
-  position: number
-  action: number
-  stackLength: number
-}
-export type LienStackUpdatedEvent = TypedEvent<
-  [BigNumber, number, number, number],
-  LienStackUpdatedEventObject
->
-
-export type LienStackUpdatedEventFilter =
-  TypedEventFilter<LienStackUpdatedEvent>
-
 export interface OwnershipTransferredEventObject {
   user: string
   newOwner: string
@@ -715,6 +753,17 @@ export type PaymentEvent = TypedEvent<
 >
 
 export type PaymentEventFilter = TypedEventFilter<PaymentEvent>
+
+export interface RemoveLienEventObject {
+  collateralId: BigNumber
+  position: number
+}
+export type RemoveLienEvent = TypedEvent<
+  [BigNumber, number],
+  RemoveLienEventObject
+>
+
+export type RemoveLienEventFilter = TypedEventFilter<RemoveLienEvent>
 
 export interface RemovedLiensEventObject {
   collateralId: BigNumber
@@ -812,7 +861,7 @@ export interface LienToken extends BaseContract {
     getAuctionData(
       collateralId: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
-    ): Promise<[ILienToken.AuctionDataStructOutput]>
+    ): Promise<[ClearingHouse.AuctionDataStructOutput]>
 
     getAuctionLiquidator(
       collateralId: PromiseOrValue<BigNumberish>,
@@ -824,6 +873,13 @@ export interface LienToken extends BaseContract {
       overrides?: CallOverrides
     ): Promise<[BigNumber, BigNumber] & { owed: BigNumber; buyout: BigNumber }>
 
+    getBuyoutFee(
+      remainingInterestIn: PromiseOrValue<BigNumberish>,
+      end: PromiseOrValue<BigNumberish>,
+      duration: PromiseOrValue<BigNumberish>,
+      overrides?: CallOverrides
+    ): Promise<[BigNumber] & { fee: BigNumber }>
+
     getCollateralState(
       collateralId: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
@@ -834,23 +890,23 @@ export interface LienToken extends BaseContract {
       overrides?: CallOverrides
     ): Promise<[BigNumber]>
 
-    'getMaxPotentialDebtForCollateral(((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint88,uint40,uint40,uint256))[],uint256)'(
+    'getMaxPotentialDebtForCollateral(((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint256,uint40,uint40,uint256))[],uint256)'(
       stack: ILienToken.StackStruct[],
       end: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<[BigNumber] & { maxPotentialDebt: BigNumber }>
 
-    'getMaxPotentialDebtForCollateral(((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint88,uint40,uint40,uint256))[])'(
+    'getMaxPotentialDebtForCollateral(((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint256,uint40,uint40,uint256))[])'(
       stack: ILienToken.StackStruct[],
       overrides?: CallOverrides
     ): Promise<[BigNumber] & { maxPotentialDebt: BigNumber }>
 
-    'getOwed(((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint88,uint40,uint40,uint256)))'(
+    'getOwed(((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint256,uint40,uint40,uint256)))'(
       stack: ILienToken.StackStruct,
       overrides?: CallOverrides
     ): Promise<[BigNumber]>
 
-    'getOwed(((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint88,uint40,uint40,uint256)),uint256)'(
+    'getOwed(((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint256,uint40,uint40,uint256)),uint256)'(
       stack: ILienToken.StackStruct,
       timestamp: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
@@ -873,14 +929,24 @@ export interface LienToken extends BaseContract {
       overrides?: CallOverrides
     ): Promise<[boolean]>
 
-    'makePayment(uint256,((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint88,uint40,uint40,uint256))[],uint256)'(
+    isValidRefinance(
+      newLien: ILienToken.LienStruct,
+      position: PromiseOrValue<BigNumberish>,
+      stack: ILienToken.StackStruct[],
+      owed: PromiseOrValue<BigNumberish>,
+      buyout: PromiseOrValue<BigNumberish>,
+      chargeable: PromiseOrValue<boolean>,
+      overrides?: CallOverrides
+    ): Promise<[boolean]>
+
+    'makePayment(uint256,((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint256,uint40,uint40,uint256))[],uint256)'(
       collateralId: PromiseOrValue<BigNumberish>,
       stack: ILienToken.StackStruct[],
       amount: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>
 
-    'makePayment(uint256,((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint88,uint40,uint40,uint256))[],uint8,uint256)'(
+    'makePayment(uint256,((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint256,uint40,uint40,uint256))[],uint8,uint256)'(
       collateralId: PromiseOrValue<BigNumberish>,
       stack: ILienToken.StackStruct[],
       position: PromiseOrValue<BigNumberish>,
@@ -901,7 +967,7 @@ export interface LienToken extends BaseContract {
       token: PromiseOrValue<string>,
       collateralId: PromiseOrValue<BigNumberish>,
       payment: PromiseOrValue<BigNumberish>,
-      auctionStack: ILienToken.AuctionStackStruct[],
+      auctionStack: ClearingHouse.AuctionStackStruct[],
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>
 
@@ -1019,7 +1085,7 @@ export interface LienToken extends BaseContract {
   getAuctionData(
     collateralId: PromiseOrValue<BigNumberish>,
     overrides?: CallOverrides
-  ): Promise<ILienToken.AuctionDataStructOutput>
+  ): Promise<ClearingHouse.AuctionDataStructOutput>
 
   getAuctionLiquidator(
     collateralId: PromiseOrValue<BigNumberish>,
@@ -1031,6 +1097,13 @@ export interface LienToken extends BaseContract {
     overrides?: CallOverrides
   ): Promise<[BigNumber, BigNumber] & { owed: BigNumber; buyout: BigNumber }>
 
+  getBuyoutFee(
+    remainingInterestIn: PromiseOrValue<BigNumberish>,
+    end: PromiseOrValue<BigNumberish>,
+    duration: PromiseOrValue<BigNumberish>,
+    overrides?: CallOverrides
+  ): Promise<BigNumber>
+
   getCollateralState(
     collateralId: PromiseOrValue<BigNumberish>,
     overrides?: CallOverrides
@@ -1041,23 +1114,23 @@ export interface LienToken extends BaseContract {
     overrides?: CallOverrides
   ): Promise<BigNumber>
 
-  'getMaxPotentialDebtForCollateral(((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint88,uint40,uint40,uint256))[],uint256)'(
+  'getMaxPotentialDebtForCollateral(((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint256,uint40,uint40,uint256))[],uint256)'(
     stack: ILienToken.StackStruct[],
     end: PromiseOrValue<BigNumberish>,
     overrides?: CallOverrides
   ): Promise<BigNumber>
 
-  'getMaxPotentialDebtForCollateral(((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint88,uint40,uint40,uint256))[])'(
+  'getMaxPotentialDebtForCollateral(((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint256,uint40,uint40,uint256))[])'(
     stack: ILienToken.StackStruct[],
     overrides?: CallOverrides
   ): Promise<BigNumber>
 
-  'getOwed(((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint88,uint40,uint40,uint256)))'(
+  'getOwed(((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint256,uint40,uint40,uint256)))'(
     stack: ILienToken.StackStruct,
     overrides?: CallOverrides
   ): Promise<BigNumber>
 
-  'getOwed(((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint88,uint40,uint40,uint256)),uint256)'(
+  'getOwed(((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint256,uint40,uint40,uint256)),uint256)'(
     stack: ILienToken.StackStruct,
     timestamp: PromiseOrValue<BigNumberish>,
     overrides?: CallOverrides
@@ -1080,14 +1153,24 @@ export interface LienToken extends BaseContract {
     overrides?: CallOverrides
   ): Promise<boolean>
 
-  'makePayment(uint256,((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint88,uint40,uint40,uint256))[],uint256)'(
+  isValidRefinance(
+    newLien: ILienToken.LienStruct,
+    position: PromiseOrValue<BigNumberish>,
+    stack: ILienToken.StackStruct[],
+    owed: PromiseOrValue<BigNumberish>,
+    buyout: PromiseOrValue<BigNumberish>,
+    chargeable: PromiseOrValue<boolean>,
+    overrides?: CallOverrides
+  ): Promise<boolean>
+
+  'makePayment(uint256,((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint256,uint40,uint40,uint256))[],uint256)'(
     collateralId: PromiseOrValue<BigNumberish>,
     stack: ILienToken.StackStruct[],
     amount: PromiseOrValue<BigNumberish>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>
 
-  'makePayment(uint256,((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint88,uint40,uint40,uint256))[],uint8,uint256)'(
+  'makePayment(uint256,((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint256,uint40,uint40,uint256))[],uint8,uint256)'(
     collateralId: PromiseOrValue<BigNumberish>,
     stack: ILienToken.StackStruct[],
     position: PromiseOrValue<BigNumberish>,
@@ -1108,7 +1191,7 @@ export interface LienToken extends BaseContract {
     token: PromiseOrValue<string>,
     collateralId: PromiseOrValue<BigNumberish>,
     payment: PromiseOrValue<BigNumberish>,
-    auctionStack: ILienToken.AuctionStackStruct[],
+    auctionStack: ClearingHouse.AuctionStackStruct[],
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>
 
@@ -1197,8 +1280,14 @@ export interface LienToken extends BaseContract {
       params: ILienToken.LienActionBuyoutStruct,
       overrides?: CallOverrides
     ): Promise<
-      [ILienToken.StackStructOutput[], ILienToken.StackStructOutput] & {
+      [
+        ILienToken.StackStructOutput[],
+        ILienToken.StackStructOutput,
+        ILienToken.BuyoutLienParamsStructOutput
+      ] & {
+        stacks: ILienToken.StackStructOutput[]
         newStack: ILienToken.StackStructOutput
+        buyoutParams: ILienToken.BuyoutLienParamsStructOutput
       }
     >
 
@@ -1236,7 +1325,7 @@ export interface LienToken extends BaseContract {
     getAuctionData(
       collateralId: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
-    ): Promise<ILienToken.AuctionDataStructOutput>
+    ): Promise<ClearingHouse.AuctionDataStructOutput>
 
     getAuctionLiquidator(
       collateralId: PromiseOrValue<BigNumberish>,
@@ -1248,6 +1337,13 @@ export interface LienToken extends BaseContract {
       overrides?: CallOverrides
     ): Promise<[BigNumber, BigNumber] & { owed: BigNumber; buyout: BigNumber }>
 
+    getBuyoutFee(
+      remainingInterestIn: PromiseOrValue<BigNumberish>,
+      end: PromiseOrValue<BigNumberish>,
+      duration: PromiseOrValue<BigNumberish>,
+      overrides?: CallOverrides
+    ): Promise<BigNumber>
+
     getCollateralState(
       collateralId: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
@@ -1258,23 +1354,23 @@ export interface LienToken extends BaseContract {
       overrides?: CallOverrides
     ): Promise<BigNumber>
 
-    'getMaxPotentialDebtForCollateral(((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint88,uint40,uint40,uint256))[],uint256)'(
+    'getMaxPotentialDebtForCollateral(((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint256,uint40,uint40,uint256))[],uint256)'(
       stack: ILienToken.StackStruct[],
       end: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<BigNumber>
 
-    'getMaxPotentialDebtForCollateral(((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint88,uint40,uint40,uint256))[])'(
+    'getMaxPotentialDebtForCollateral(((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint256,uint40,uint40,uint256))[])'(
       stack: ILienToken.StackStruct[],
       overrides?: CallOverrides
     ): Promise<BigNumber>
 
-    'getOwed(((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint88,uint40,uint40,uint256)))'(
+    'getOwed(((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint256,uint40,uint40,uint256)))'(
       stack: ILienToken.StackStruct,
       overrides?: CallOverrides
     ): Promise<BigNumber>
 
-    'getOwed(((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint88,uint40,uint40,uint256)),uint256)'(
+    'getOwed(((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint256,uint40,uint40,uint256)),uint256)'(
       stack: ILienToken.StackStruct,
       timestamp: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
@@ -1297,14 +1393,24 @@ export interface LienToken extends BaseContract {
       overrides?: CallOverrides
     ): Promise<boolean>
 
-    'makePayment(uint256,((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint88,uint40,uint40,uint256))[],uint256)'(
+    isValidRefinance(
+      newLien: ILienToken.LienStruct,
+      position: PromiseOrValue<BigNumberish>,
+      stack: ILienToken.StackStruct[],
+      owed: PromiseOrValue<BigNumberish>,
+      buyout: PromiseOrValue<BigNumberish>,
+      chargeable: PromiseOrValue<boolean>,
+      overrides?: CallOverrides
+    ): Promise<boolean>
+
+    'makePayment(uint256,((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint256,uint40,uint40,uint256))[],uint256)'(
       collateralId: PromiseOrValue<BigNumberish>,
       stack: ILienToken.StackStruct[],
       amount: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<ILienToken.StackStructOutput[]>
 
-    'makePayment(uint256,((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint88,uint40,uint40,uint256))[],uint8,uint256)'(
+    'makePayment(uint256,((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint256,uint40,uint40,uint256))[],uint8,uint256)'(
       collateralId: PromiseOrValue<BigNumberish>,
       stack: ILienToken.StackStruct[],
       position: PromiseOrValue<BigNumberish>,
@@ -1325,7 +1431,7 @@ export interface LienToken extends BaseContract {
       token: PromiseOrValue<string>,
       collateralId: PromiseOrValue<BigNumberish>,
       payment: PromiseOrValue<BigNumberish>,
-      auctionStack: ILienToken.AuctionStackStruct[],
+      auctionStack: ClearingHouse.AuctionStackStruct[],
       overrides?: CallOverrides
     ): Promise<void>
 
@@ -1394,16 +1500,16 @@ export interface LienToken extends BaseContract {
   }
 
   filters: {
-    'AddLien(uint256,uint8,uint256,tuple)'(
+    'AddLien(uint256,uint8,uint8,tuple)'(
       collateralId?: PromiseOrValue<BigNumberish> | null,
       position?: null,
-      lienId?: PromiseOrValue<BigNumberish> | null,
+      stackLength?: null,
       stack?: null
     ): AddLienEventFilter
     AddLien(
       collateralId?: PromiseOrValue<BigNumberish> | null,
       position?: null,
-      lienId?: PromiseOrValue<BigNumberish> | null,
+      stackLength?: null,
       stack?: null
     ): AddLienEventFilter
 
@@ -1455,19 +1561,6 @@ export interface LienToken extends BaseContract {
     'Initialized(uint8)'(version?: null): InitializedEventFilter
     Initialized(version?: null): InitializedEventFilter
 
-    'LienStackUpdated(uint256,uint8,uint8,uint8)'(
-      collateralId?: PromiseOrValue<BigNumberish> | null,
-      position?: null,
-      action?: null,
-      stackLength?: null
-    ): LienStackUpdatedEventFilter
-    LienStackUpdated(
-      collateralId?: PromiseOrValue<BigNumberish> | null,
-      position?: null,
-      action?: null,
-      stackLength?: null
-    ): LienStackUpdatedEventFilter
-
     'OwnershipTransferred(address,address)'(
       user?: PromiseOrValue<string> | null,
       newOwner?: PromiseOrValue<string> | null
@@ -1494,6 +1587,15 @@ export interface LienToken extends BaseContract {
       lienId?: PromiseOrValue<BigNumberish> | null,
       amount?: null
     ): PaymentEventFilter
+
+    'RemoveLien(uint256,uint8)'(
+      collateralId?: PromiseOrValue<BigNumberish> | null,
+      position?: null
+    ): RemoveLienEventFilter
+    RemoveLien(
+      collateralId?: PromiseOrValue<BigNumberish> | null,
+      position?: null
+    ): RemoveLienEventFilter
 
     'RemovedLiens(uint256)'(
       collateralId?: PromiseOrValue<BigNumberish> | null
@@ -1577,6 +1679,13 @@ export interface LienToken extends BaseContract {
       overrides?: CallOverrides
     ): Promise<BigNumber>
 
+    getBuyoutFee(
+      remainingInterestIn: PromiseOrValue<BigNumberish>,
+      end: PromiseOrValue<BigNumberish>,
+      duration: PromiseOrValue<BigNumberish>,
+      overrides?: CallOverrides
+    ): Promise<BigNumber>
+
     getCollateralState(
       collateralId: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
@@ -1587,23 +1696,23 @@ export interface LienToken extends BaseContract {
       overrides?: CallOverrides
     ): Promise<BigNumber>
 
-    'getMaxPotentialDebtForCollateral(((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint88,uint40,uint40,uint256))[],uint256)'(
+    'getMaxPotentialDebtForCollateral(((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint256,uint40,uint40,uint256))[],uint256)'(
       stack: ILienToken.StackStruct[],
       end: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<BigNumber>
 
-    'getMaxPotentialDebtForCollateral(((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint88,uint40,uint40,uint256))[])'(
+    'getMaxPotentialDebtForCollateral(((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint256,uint40,uint40,uint256))[])'(
       stack: ILienToken.StackStruct[],
       overrides?: CallOverrides
     ): Promise<BigNumber>
 
-    'getOwed(((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint88,uint40,uint40,uint256)))'(
+    'getOwed(((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint256,uint40,uint40,uint256)))'(
       stack: ILienToken.StackStruct,
       overrides?: CallOverrides
     ): Promise<BigNumber>
 
-    'getOwed(((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint88,uint40,uint40,uint256)),uint256)'(
+    'getOwed(((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint256,uint40,uint40,uint256)),uint256)'(
       stack: ILienToken.StackStruct,
       timestamp: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
@@ -1626,14 +1735,24 @@ export interface LienToken extends BaseContract {
       overrides?: CallOverrides
     ): Promise<BigNumber>
 
-    'makePayment(uint256,((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint88,uint40,uint40,uint256))[],uint256)'(
+    isValidRefinance(
+      newLien: ILienToken.LienStruct,
+      position: PromiseOrValue<BigNumberish>,
+      stack: ILienToken.StackStruct[],
+      owed: PromiseOrValue<BigNumberish>,
+      buyout: PromiseOrValue<BigNumberish>,
+      chargeable: PromiseOrValue<boolean>,
+      overrides?: CallOverrides
+    ): Promise<BigNumber>
+
+    'makePayment(uint256,((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint256,uint40,uint40,uint256))[],uint256)'(
       collateralId: PromiseOrValue<BigNumberish>,
       stack: ILienToken.StackStruct[],
       amount: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>
 
-    'makePayment(uint256,((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint88,uint40,uint40,uint256))[],uint8,uint256)'(
+    'makePayment(uint256,((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint256,uint40,uint40,uint256))[],uint8,uint256)'(
       collateralId: PromiseOrValue<BigNumberish>,
       stack: ILienToken.StackStruct[],
       position: PromiseOrValue<BigNumberish>,
@@ -1654,7 +1773,7 @@ export interface LienToken extends BaseContract {
       token: PromiseOrValue<string>,
       collateralId: PromiseOrValue<BigNumberish>,
       payment: PromiseOrValue<BigNumberish>,
-      auctionStack: ILienToken.AuctionStackStruct[],
+      auctionStack: ClearingHouse.AuctionStackStruct[],
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>
 
@@ -1785,6 +1904,13 @@ export interface LienToken extends BaseContract {
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>
 
+    getBuyoutFee(
+      remainingInterestIn: PromiseOrValue<BigNumberish>,
+      end: PromiseOrValue<BigNumberish>,
+      duration: PromiseOrValue<BigNumberish>,
+      overrides?: CallOverrides
+    ): Promise<PopulatedTransaction>
+
     getCollateralState(
       collateralId: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
@@ -1795,23 +1921,23 @@ export interface LienToken extends BaseContract {
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>
 
-    'getMaxPotentialDebtForCollateral(((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint88,uint40,uint40,uint256))[],uint256)'(
+    'getMaxPotentialDebtForCollateral(((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint256,uint40,uint40,uint256))[],uint256)'(
       stack: ILienToken.StackStruct[],
       end: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>
 
-    'getMaxPotentialDebtForCollateral(((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint88,uint40,uint40,uint256))[])'(
+    'getMaxPotentialDebtForCollateral(((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint256,uint40,uint40,uint256))[])'(
       stack: ILienToken.StackStruct[],
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>
 
-    'getOwed(((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint88,uint40,uint40,uint256)))'(
+    'getOwed(((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint256,uint40,uint40,uint256)))'(
       stack: ILienToken.StackStruct,
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>
 
-    'getOwed(((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint88,uint40,uint40,uint256)),uint256)'(
+    'getOwed(((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint256,uint40,uint40,uint256)),uint256)'(
       stack: ILienToken.StackStruct,
       timestamp: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
@@ -1834,14 +1960,24 @@ export interface LienToken extends BaseContract {
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>
 
-    'makePayment(uint256,((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint88,uint40,uint40,uint256))[],uint256)'(
+    isValidRefinance(
+      newLien: ILienToken.LienStruct,
+      position: PromiseOrValue<BigNumberish>,
+      stack: ILienToken.StackStruct[],
+      owed: PromiseOrValue<BigNumberish>,
+      buyout: PromiseOrValue<BigNumberish>,
+      chargeable: PromiseOrValue<boolean>,
+      overrides?: CallOverrides
+    ): Promise<PopulatedTransaction>
+
+    'makePayment(uint256,((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint256,uint40,uint40,uint256))[],uint256)'(
       collateralId: PromiseOrValue<BigNumberish>,
       stack: ILienToken.StackStruct[],
       amount: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>
 
-    'makePayment(uint256,((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint88,uint40,uint40,uint256))[],uint8,uint256)'(
+    'makePayment(uint256,((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint256,uint40,uint40,uint256))[],uint8,uint256)'(
       collateralId: PromiseOrValue<BigNumberish>,
       stack: ILienToken.StackStruct[],
       position: PromiseOrValue<BigNumberish>,
@@ -1862,7 +1998,7 @@ export interface LienToken extends BaseContract {
       token: PromiseOrValue<string>,
       collateralId: PromiseOrValue<BigNumberish>,
       payment: PromiseOrValue<BigNumberish>,
-      auctionStack: ILienToken.AuctionStackStruct[],
+      auctionStack: ClearingHouse.AuctionStackStruct[],
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>
 
