@@ -1,3 +1,15 @@
+# [1.0.0-alpha.21](https://github.com/astariaxyz/astaria-sdk/compare/v1.0.0-alpha.20...v1.0.0-alpha.21) (2023-03-03)
+
+
+### Bug Fixes
+
+* update abi ([cafb6b7](https://github.com/astariaxyz/astaria-sdk/commit/cafb6b7764a63f6426cf62f6671e49fc3e26e36e))
+
+
+### Features
+
+* bump abi version ([e94dcdc](https://github.com/astariaxyz/astaria-sdk/commit/e94dcdc6d4fd61057065311770a08411b81f207b))
+
 # [1.0.0-alpha.20](https://github.com/astariaxyz/astaria-sdk/compare/v1.0.0-alpha.19...v1.0.0-alpha.20) (2023-02-23)
 
 
