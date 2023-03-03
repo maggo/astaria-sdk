@@ -46,6 +46,7 @@ export interface WithdrawProxyInterface extends utils.Interface {
     'drain(uint256,address)': FunctionFragment
     'getExpected()': FunctionFragment
     'getFinalAuctionEnd()': FunctionFragment
+    'getState()': FunctionFragment
     'getWithdrawRatio()': FunctionFragment
     'handleNewLiquidation(uint256,uint256)': FunctionFragment
     'increaseWithdrawReserveReceived(uint256)': FunctionFragment
@@ -91,6 +92,7 @@ export interface WithdrawProxyInterface extends utils.Interface {
       | 'drain'
       | 'getExpected'
       | 'getFinalAuctionEnd'
+      | 'getState'
       | 'getWithdrawRatio'
       | 'handleNewLiquidation'
       | 'increaseWithdrawReserveReceived'
@@ -167,6 +169,7 @@ export interface WithdrawProxyInterface extends utils.Interface {
     functionFragment: 'getFinalAuctionEnd',
     values?: undefined
   ): string
+  encodeFunctionData(functionFragment: 'getState', values?: undefined): string
   encodeFunctionData(
     functionFragment: 'getWithdrawRatio',
     values?: undefined
@@ -310,6 +313,7 @@ export interface WithdrawProxyInterface extends utils.Interface {
     functionFragment: 'getFinalAuctionEnd',
     data: BytesLike
   ): Result
+  decodeFunctionResult(functionFragment: 'getState', data: BytesLike): Result
   decodeFunctionResult(
     functionFragment: 'getWithdrawRatio',
     data: BytesLike
@@ -532,6 +536,15 @@ export interface WithdrawProxy extends BaseContract {
 
     getFinalAuctionEnd(overrides?: CallOverrides): Promise<[BigNumber]>
 
+    getState(overrides?: CallOverrides): Promise<
+      [BigNumber, BigNumber, number, BigNumber] & {
+        withdrawRatio: BigNumber
+        expected: BigNumber
+        finalAuctionEnd: number
+        withdrawReserveReceived: BigNumber
+      }
+    >
+
     getWithdrawRatio(overrides?: CallOverrides): Promise<[BigNumber]>
 
     handleNewLiquidation(
@@ -711,6 +724,15 @@ export interface WithdrawProxy extends BaseContract {
 
   getFinalAuctionEnd(overrides?: CallOverrides): Promise<BigNumber>
 
+  getState(overrides?: CallOverrides): Promise<
+    [BigNumber, BigNumber, number, BigNumber] & {
+      withdrawRatio: BigNumber
+      expected: BigNumber
+      finalAuctionEnd: number
+      withdrawReserveReceived: BigNumber
+    }
+  >
+
   getWithdrawRatio(overrides?: CallOverrides): Promise<BigNumber>
 
   handleNewLiquidation(
@@ -887,6 +909,15 @@ export interface WithdrawProxy extends BaseContract {
     getExpected(overrides?: CallOverrides): Promise<BigNumber>
 
     getFinalAuctionEnd(overrides?: CallOverrides): Promise<BigNumber>
+
+    getState(overrides?: CallOverrides): Promise<
+      [BigNumber, BigNumber, number, BigNumber] & {
+        withdrawRatio: BigNumber
+        expected: BigNumber
+        finalAuctionEnd: number
+        withdrawReserveReceived: BigNumber
+      }
+    >
 
     getWithdrawRatio(overrides?: CallOverrides): Promise<BigNumber>
 
@@ -1133,6 +1164,8 @@ export interface WithdrawProxy extends BaseContract {
 
     getFinalAuctionEnd(overrides?: CallOverrides): Promise<BigNumber>
 
+    getState(overrides?: CallOverrides): Promise<BigNumber>
+
     getWithdrawRatio(overrides?: CallOverrides): Promise<BigNumber>
 
     handleNewLiquidation(
@@ -1312,6 +1345,8 @@ export interface WithdrawProxy extends BaseContract {
     getExpected(overrides?: CallOverrides): Promise<PopulatedTransaction>
 
     getFinalAuctionEnd(overrides?: CallOverrides): Promise<PopulatedTransaction>
+
+    getState(overrides?: CallOverrides): Promise<PopulatedTransaction>
 
     getWithdrawRatio(overrides?: CallOverrides): Promise<PopulatedTransaction>
 

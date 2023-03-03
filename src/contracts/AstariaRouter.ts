@@ -296,7 +296,6 @@ export interface AstariaRouterInterface extends utils.Interface {
     'getImpl(uint8)': FunctionFragment
     'getLiquidatorFee(uint256)': FunctionFragment
     'getProtocolFee(uint256)': FunctionFragment
-    'getStrategyValidator(uint8)': FunctionFragment
     'initialize(address,address,address,address,address,address,address,address,address)': FunctionFragment
     'isValidVault(address)': FunctionFragment
     'liquidate(((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint256,uint40,uint40,uint256))[],uint8)': FunctionFragment
@@ -342,7 +341,6 @@ export interface AstariaRouterInterface extends utils.Interface {
       | 'getImpl'
       | 'getLiquidatorFee'
       | 'getProtocolFee'
-      | 'getStrategyValidator'
       | 'initialize'
       | 'isValidVault'
       | 'liquidate'
@@ -455,10 +453,6 @@ export interface AstariaRouterInterface extends utils.Interface {
   ): string
   encodeFunctionData(
     functionFragment: 'getProtocolFee',
-    values: [PromiseOrValue<BigNumberish>]
-  ): string
-  encodeFunctionData(
-    functionFragment: 'getStrategyValidator',
     values: [PromiseOrValue<BigNumberish>]
   ): string
   encodeFunctionData(
@@ -640,10 +634,6 @@ export interface AstariaRouterInterface extends utils.Interface {
   ): Result
   decodeFunctionResult(
     functionFragment: 'getProtocolFee',
-    data: BytesLike
-  ): Result
-  decodeFunctionResult(
-    functionFragment: 'getStrategyValidator',
     data: BytesLike
   ): Result
   decodeFunctionResult(functionFragment: 'initialize', data: BytesLike): Result
@@ -911,11 +901,6 @@ export interface AstariaRouter extends BaseContract {
       overrides?: CallOverrides
     ): Promise<[BigNumber]>
 
-    getStrategyValidator(
-      validator: PromiseOrValue<BigNumberish>,
-      overrides?: CallOverrides
-    ): Promise<[string]>
-
     initialize(
       _AUTHORITY: PromiseOrValue<string>,
       _COLLATERAL_TOKEN: PromiseOrValue<string>,
@@ -1135,11 +1120,6 @@ export interface AstariaRouter extends BaseContract {
     overrides?: CallOverrides
   ): Promise<BigNumber>
 
-  getStrategyValidator(
-    validator: PromiseOrValue<BigNumberish>,
-    overrides?: CallOverrides
-  ): Promise<string>
-
   initialize(
     _AUTHORITY: PromiseOrValue<string>,
     _COLLATERAL_TOKEN: PromiseOrValue<string>,
@@ -1353,11 +1333,6 @@ export interface AstariaRouter extends BaseContract {
       amountIn: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<BigNumber>
-
-    getStrategyValidator(
-      validator: PromiseOrValue<BigNumberish>,
-      overrides?: CallOverrides
-    ): Promise<string>
 
     initialize(
       _AUTHORITY: PromiseOrValue<string>,
@@ -1628,11 +1603,6 @@ export interface AstariaRouter extends BaseContract {
       overrides?: CallOverrides
     ): Promise<BigNumber>
 
-    getStrategyValidator(
-      validator: PromiseOrValue<BigNumberish>,
-      overrides?: CallOverrides
-    ): Promise<BigNumber>
-
     initialize(
       _AUTHORITY: PromiseOrValue<string>,
       _COLLATERAL_TOKEN: PromiseOrValue<string>,
@@ -1850,11 +1820,6 @@ export interface AstariaRouter extends BaseContract {
 
     getProtocolFee(
       amountIn: PromiseOrValue<BigNumberish>,
-      overrides?: CallOverrides
-    ): Promise<PopulatedTransaction>
-
-    getStrategyValidator(
-      validator: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>
 

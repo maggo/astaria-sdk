@@ -270,12 +270,16 @@ export interface PublicVaultInterface extends utils.Interface {
     'domainSeparator()': FunctionFragment
     'enableAllowList()': FunctionFragment
     'encodeStrategyData((uint8,uint256,address),bytes32)': FunctionFragment
+    'getAllowList(address)': FunctionFragment
     'getCurrentEpoch()': FunctionFragment
+    'getEpochData(uint64)': FunctionFragment
     'getEpochEnd(uint256)': FunctionFragment
     'getLienEpoch(uint64)': FunctionFragment
     'getLiquidationWithdrawRatio()': FunctionFragment
+    'getPublicVaultState()': FunctionFragment
     'getShutdown()': FunctionFragment
     'getSlope()': FunctionFragment
+    'getState()': FunctionFragment
     'getStrategistNonce()': FunctionFragment
     'getWithdrawProxy(uint64)': FunctionFragment
     'getWithdrawReserve()': FunctionFragment
@@ -284,7 +288,6 @@ export interface PublicVaultInterface extends utils.Interface {
     'increaseYIntercept(uint256)': FunctionFragment
     'incrementNonce()': FunctionFragment
     'init((address,bool,address[],uint256))': FunctionFragment
-    'isDelegateOrOwner(address)': FunctionFragment
     'maxDeposit(address)': FunctionFragment
     'maxMint(address)': FunctionFragment
     'maxRedeem(address)': FunctionFragment
@@ -353,12 +356,16 @@ export interface PublicVaultInterface extends utils.Interface {
       | 'domainSeparator'
       | 'enableAllowList'
       | 'encodeStrategyData'
+      | 'getAllowList'
       | 'getCurrentEpoch'
+      | 'getEpochData'
       | 'getEpochEnd'
       | 'getLienEpoch'
       | 'getLiquidationWithdrawRatio'
+      | 'getPublicVaultState'
       | 'getShutdown'
       | 'getSlope'
+      | 'getState'
       | 'getStrategistNonce'
       | 'getWithdrawProxy'
       | 'getWithdrawReserve'
@@ -367,7 +374,6 @@ export interface PublicVaultInterface extends utils.Interface {
       | 'increaseYIntercept'
       | 'incrementNonce'
       | 'init'
-      | 'isDelegateOrOwner'
       | 'maxDeposit'
       | 'maxMint'
       | 'maxRedeem'
@@ -502,8 +508,16 @@ export interface PublicVaultInterface extends utils.Interface {
     ]
   ): string
   encodeFunctionData(
+    functionFragment: 'getAllowList',
+    values: [PromiseOrValue<string>]
+  ): string
+  encodeFunctionData(
     functionFragment: 'getCurrentEpoch',
     values?: undefined
+  ): string
+  encodeFunctionData(
+    functionFragment: 'getEpochData',
+    values: [PromiseOrValue<BigNumberish>]
   ): string
   encodeFunctionData(
     functionFragment: 'getEpochEnd',
@@ -518,10 +532,15 @@ export interface PublicVaultInterface extends utils.Interface {
     values?: undefined
   ): string
   encodeFunctionData(
+    functionFragment: 'getPublicVaultState',
+    values?: undefined
+  ): string
+  encodeFunctionData(
     functionFragment: 'getShutdown',
     values?: undefined
   ): string
   encodeFunctionData(functionFragment: 'getSlope', values?: undefined): string
+  encodeFunctionData(functionFragment: 'getState', values?: undefined): string
   encodeFunctionData(
     functionFragment: 'getStrategistNonce',
     values?: undefined
@@ -553,10 +572,6 @@ export interface PublicVaultInterface extends utils.Interface {
   encodeFunctionData(
     functionFragment: 'init',
     values: [IVaultImplementation.InitParamsStruct]
-  ): string
-  encodeFunctionData(
-    functionFragment: 'isDelegateOrOwner',
-    values: [PromiseOrValue<string>]
   ): string
   encodeFunctionData(
     functionFragment: 'maxDeposit',
@@ -792,7 +807,15 @@ export interface PublicVaultInterface extends utils.Interface {
     data: BytesLike
   ): Result
   decodeFunctionResult(
+    functionFragment: 'getAllowList',
+    data: BytesLike
+  ): Result
+  decodeFunctionResult(
     functionFragment: 'getCurrentEpoch',
+    data: BytesLike
+  ): Result
+  decodeFunctionResult(
+    functionFragment: 'getEpochData',
     data: BytesLike
   ): Result
   decodeFunctionResult(functionFragment: 'getEpochEnd', data: BytesLike): Result
@@ -804,8 +827,13 @@ export interface PublicVaultInterface extends utils.Interface {
     functionFragment: 'getLiquidationWithdrawRatio',
     data: BytesLike
   ): Result
+  decodeFunctionResult(
+    functionFragment: 'getPublicVaultState',
+    data: BytesLike
+  ): Result
   decodeFunctionResult(functionFragment: 'getShutdown', data: BytesLike): Result
   decodeFunctionResult(functionFragment: 'getSlope', data: BytesLike): Result
+  decodeFunctionResult(functionFragment: 'getState', data: BytesLike): Result
   decodeFunctionResult(
     functionFragment: 'getStrategistNonce',
     data: BytesLike
@@ -835,10 +863,6 @@ export interface PublicVaultInterface extends utils.Interface {
     data: BytesLike
   ): Result
   decodeFunctionResult(functionFragment: 'init', data: BytesLike): Result
-  decodeFunctionResult(
-    functionFragment: 'isDelegateOrOwner',
-    data: BytesLike
-  ): Result
   decodeFunctionResult(functionFragment: 'maxDeposit', data: BytesLike): Result
   decodeFunctionResult(functionFragment: 'maxMint', data: BytesLike): Result
   decodeFunctionResult(functionFragment: 'maxRedeem', data: BytesLike): Result
@@ -1269,7 +1293,17 @@ export interface PublicVault extends BaseContract {
       overrides?: CallOverrides
     ): Promise<[string]>
 
+    getAllowList(
+      depositor: PromiseOrValue<string>,
+      overrides?: CallOverrides
+    ): Promise<[boolean]>
+
     getCurrentEpoch(overrides?: CallOverrides): Promise<[BigNumber]>
+
+    getEpochData(
+      epoch: PromiseOrValue<BigNumberish>,
+      overrides?: CallOverrides
+    ): Promise<[BigNumber, string]>
 
     getEpochEnd(
       epoch: PromiseOrValue<BigNumberish>,
@@ -1283,9 +1317,19 @@ export interface PublicVault extends BaseContract {
 
     getLiquidationWithdrawRatio(overrides?: CallOverrides): Promise<[BigNumber]>
 
+    getPublicVaultState(
+      overrides?: CallOverrides
+    ): Promise<
+      [BigNumber, BigNumber, number, BigNumber, BigNumber, BigNumber, BigNumber]
+    >
+
     getShutdown(overrides?: CallOverrides): Promise<[boolean]>
 
     getSlope(overrides?: CallOverrides): Promise<[BigNumber]>
+
+    getState(
+      overrides?: CallOverrides
+    ): Promise<[BigNumber, string, boolean, boolean, BigNumber]>
 
     getStrategistNonce(overrides?: CallOverrides): Promise<[BigNumber]>
 
@@ -1317,11 +1361,6 @@ export interface PublicVault extends BaseContract {
       params: IVaultImplementation.InitParamsStruct,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>
-
-    isDelegateOrOwner(
-      addr: PromiseOrValue<string>,
-      overrides?: CallOverrides
-    ): Promise<[boolean]>
 
     maxDeposit(
       arg0: PromiseOrValue<string>,
@@ -1602,7 +1641,17 @@ export interface PublicVault extends BaseContract {
     overrides?: CallOverrides
   ): Promise<string>
 
+  getAllowList(
+    depositor: PromiseOrValue<string>,
+    overrides?: CallOverrides
+  ): Promise<boolean>
+
   getCurrentEpoch(overrides?: CallOverrides): Promise<BigNumber>
+
+  getEpochData(
+    epoch: PromiseOrValue<BigNumberish>,
+    overrides?: CallOverrides
+  ): Promise<[BigNumber, string]>
 
   getEpochEnd(
     epoch: PromiseOrValue<BigNumberish>,
@@ -1616,9 +1665,19 @@ export interface PublicVault extends BaseContract {
 
   getLiquidationWithdrawRatio(overrides?: CallOverrides): Promise<BigNumber>
 
+  getPublicVaultState(
+    overrides?: CallOverrides
+  ): Promise<
+    [BigNumber, BigNumber, number, BigNumber, BigNumber, BigNumber, BigNumber]
+  >
+
   getShutdown(overrides?: CallOverrides): Promise<boolean>
 
   getSlope(overrides?: CallOverrides): Promise<BigNumber>
+
+  getState(
+    overrides?: CallOverrides
+  ): Promise<[BigNumber, string, boolean, boolean, BigNumber]>
 
   getStrategistNonce(overrides?: CallOverrides): Promise<BigNumber>
 
@@ -1650,11 +1709,6 @@ export interface PublicVault extends BaseContract {
     params: IVaultImplementation.InitParamsStruct,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>
-
-  isDelegateOrOwner(
-    addr: PromiseOrValue<string>,
-    overrides?: CallOverrides
-  ): Promise<boolean>
 
   maxDeposit(
     arg0: PromiseOrValue<string>,
@@ -1937,7 +1991,17 @@ export interface PublicVault extends BaseContract {
       overrides?: CallOverrides
     ): Promise<string>
 
+    getAllowList(
+      depositor: PromiseOrValue<string>,
+      overrides?: CallOverrides
+    ): Promise<boolean>
+
     getCurrentEpoch(overrides?: CallOverrides): Promise<BigNumber>
+
+    getEpochData(
+      epoch: PromiseOrValue<BigNumberish>,
+      overrides?: CallOverrides
+    ): Promise<[BigNumber, string]>
 
     getEpochEnd(
       epoch: PromiseOrValue<BigNumberish>,
@@ -1951,9 +2015,19 @@ export interface PublicVault extends BaseContract {
 
     getLiquidationWithdrawRatio(overrides?: CallOverrides): Promise<BigNumber>
 
+    getPublicVaultState(
+      overrides?: CallOverrides
+    ): Promise<
+      [BigNumber, BigNumber, number, BigNumber, BigNumber, BigNumber, BigNumber]
+    >
+
     getShutdown(overrides?: CallOverrides): Promise<boolean>
 
     getSlope(overrides?: CallOverrides): Promise<BigNumber>
+
+    getState(
+      overrides?: CallOverrides
+    ): Promise<[BigNumber, string, boolean, boolean, BigNumber]>
 
     getStrategistNonce(overrides?: CallOverrides): Promise<BigNumber>
 
@@ -1983,11 +2057,6 @@ export interface PublicVault extends BaseContract {
       params: IVaultImplementation.InitParamsStruct,
       overrides?: CallOverrides
     ): Promise<void>
-
-    isDelegateOrOwner(
-      addr: PromiseOrValue<string>,
-      overrides?: CallOverrides
-    ): Promise<boolean>
 
     maxDeposit(
       arg0: PromiseOrValue<string>,
@@ -2369,7 +2438,17 @@ export interface PublicVault extends BaseContract {
       overrides?: CallOverrides
     ): Promise<BigNumber>
 
+    getAllowList(
+      depositor: PromiseOrValue<string>,
+      overrides?: CallOverrides
+    ): Promise<BigNumber>
+
     getCurrentEpoch(overrides?: CallOverrides): Promise<BigNumber>
+
+    getEpochData(
+      epoch: PromiseOrValue<BigNumberish>,
+      overrides?: CallOverrides
+    ): Promise<BigNumber>
 
     getEpochEnd(
       epoch: PromiseOrValue<BigNumberish>,
@@ -2383,9 +2462,13 @@ export interface PublicVault extends BaseContract {
 
     getLiquidationWithdrawRatio(overrides?: CallOverrides): Promise<BigNumber>
 
+    getPublicVaultState(overrides?: CallOverrides): Promise<BigNumber>
+
     getShutdown(overrides?: CallOverrides): Promise<BigNumber>
 
     getSlope(overrides?: CallOverrides): Promise<BigNumber>
+
+    getState(overrides?: CallOverrides): Promise<BigNumber>
 
     getStrategistNonce(overrides?: CallOverrides): Promise<BigNumber>
 
@@ -2416,11 +2499,6 @@ export interface PublicVault extends BaseContract {
     init(
       params: IVaultImplementation.InitParamsStruct,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<BigNumber>
-
-    isDelegateOrOwner(
-      addr: PromiseOrValue<string>,
-      overrides?: CallOverrides
     ): Promise<BigNumber>
 
     maxDeposit(
@@ -2703,7 +2781,17 @@ export interface PublicVault extends BaseContract {
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>
 
+    getAllowList(
+      depositor: PromiseOrValue<string>,
+      overrides?: CallOverrides
+    ): Promise<PopulatedTransaction>
+
     getCurrentEpoch(overrides?: CallOverrides): Promise<PopulatedTransaction>
+
+    getEpochData(
+      epoch: PromiseOrValue<BigNumberish>,
+      overrides?: CallOverrides
+    ): Promise<PopulatedTransaction>
 
     getEpochEnd(
       epoch: PromiseOrValue<BigNumberish>,
@@ -2719,9 +2807,15 @@ export interface PublicVault extends BaseContract {
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>
 
+    getPublicVaultState(
+      overrides?: CallOverrides
+    ): Promise<PopulatedTransaction>
+
     getShutdown(overrides?: CallOverrides): Promise<PopulatedTransaction>
 
     getSlope(overrides?: CallOverrides): Promise<PopulatedTransaction>
+
+    getState(overrides?: CallOverrides): Promise<PopulatedTransaction>
 
     getStrategistNonce(overrides?: CallOverrides): Promise<PopulatedTransaction>
 
@@ -2752,11 +2846,6 @@ export interface PublicVault extends BaseContract {
     init(
       params: IVaultImplementation.InitParamsStruct,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<PopulatedTransaction>
-
-    isDelegateOrOwner(
-      addr: PromiseOrValue<string>,
-      overrides?: CallOverrides
     ): Promise<PopulatedTransaction>
 
     maxDeposit(

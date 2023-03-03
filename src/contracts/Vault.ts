@@ -27,91 +27,22 @@ import type {
   PromiseOrValue,
 } from './common'
 
-export declare namespace ILienToken {
-  export type DetailsStruct = {
-    maxAmount: PromiseOrValue<BigNumberish>
-    rate: PromiseOrValue<BigNumberish>
-    duration: PromiseOrValue<BigNumberish>
-    maxPotentialDebt: PromiseOrValue<BigNumberish>
-    liquidationInitialAsk: PromiseOrValue<BigNumberish>
-  }
-
-  export type DetailsStructOutput = [
-    BigNumber,
-    BigNumber,
-    BigNumber,
-    BigNumber,
-    BigNumber
-  ] & {
-    maxAmount: BigNumber
-    rate: BigNumber
-    duration: BigNumber
-    maxPotentialDebt: BigNumber
-    liquidationInitialAsk: BigNumber
-  }
-
-  export type LienStruct = {
-    collateralType: PromiseOrValue<BigNumberish>
-    token: PromiseOrValue<string>
-    vault: PromiseOrValue<string>
-    strategyRoot: PromiseOrValue<BytesLike>
-    collateralId: PromiseOrValue<BigNumberish>
-    details: ILienToken.DetailsStruct
-  }
-
-  export type LienStructOutput = [
-    number,
-    string,
-    string,
-    string,
-    BigNumber,
-    ILienToken.DetailsStructOutput
-  ] & {
-    collateralType: number
-    token: string
-    vault: string
-    strategyRoot: string
-    collateralId: BigNumber
-    details: ILienToken.DetailsStructOutput
-  }
-
-  export type PointStruct = {
-    amount: PromiseOrValue<BigNumberish>
-    last: PromiseOrValue<BigNumberish>
-    end: PromiseOrValue<BigNumberish>
-    lienId: PromiseOrValue<BigNumberish>
-  }
-
-  export type PointStructOutput = [BigNumber, number, number, BigNumber] & {
-    amount: BigNumber
-    last: number
-    end: number
-    lienId: BigNumber
-  }
-
-  export type StackStruct = {
-    lien: ILienToken.LienStruct
-    point: ILienToken.PointStruct
-  }
-
-  export type StackStructOutput = [
-    ILienToken.LienStructOutput,
-    ILienToken.PointStructOutput
-  ] & {
-    lien: ILienToken.LienStructOutput
-    point: ILienToken.PointStructOutput
-  }
-}
-
 export declare namespace IAstariaRouter {
-  export type StrategyDetailsParamStruct = {
+  export type StrategyDetailsStruct = {
     version: PromiseOrValue<BigNumberish>
+    strategist: PromiseOrValue<string>
     deadline: PromiseOrValue<BigNumberish>
     vault: PromiseOrValue<string>
   }
 
-  export type StrategyDetailsParamStructOutput = [number, BigNumber, string] & {
+  export type StrategyDetailsStructOutput = [
+    number,
+    string,
+    BigNumber,
+    string
+  ] & {
     version: number
+    strategist: string
     deadline: BigNumber
     vault: string
   }
@@ -127,8 +58,8 @@ export declare namespace IAstariaRouter {
   }
 
   export type NewLienRequestStruct = {
-    strategy: IAstariaRouter.StrategyDetailsParamStruct
-    stack: ILienToken.StackStruct[]
+    strategy: IAstariaRouter.StrategyDetailsStruct
+    nlrType: PromiseOrValue<BigNumberish>
     nlrDetails: PromiseOrValue<BytesLike>
     merkle: IAstariaRouter.MerkleDataStruct
     amount: PromiseOrValue<BigNumberish>
@@ -138,8 +69,8 @@ export declare namespace IAstariaRouter {
   }
 
   export type NewLienRequestStructOutput = [
-    IAstariaRouter.StrategyDetailsParamStructOutput,
-    ILienToken.StackStructOutput[],
+    IAstariaRouter.StrategyDetailsStructOutput,
+    number,
     string,
     IAstariaRouter.MerkleDataStructOutput,
     BigNumber,
@@ -147,8 +78,8 @@ export declare namespace IAstariaRouter {
     string,
     string
   ] & {
-    strategy: IAstariaRouter.StrategyDetailsParamStructOutput
-    stack: ILienToken.StackStructOutput[]
+    strategy: IAstariaRouter.StrategyDetailsStructOutput
+    nlrType: number
     nlrDetails: string
     merkle: IAstariaRouter.MerkleDataStructOutput
     amount: BigNumber
@@ -174,97 +105,70 @@ export declare namespace IAstariaRouter {
   }
 }
 
-export declare namespace IVaultImplementation {
-  export type InitParamsStruct = {
-    delegate: PromiseOrValue<string>
-    allowListEnabled: PromiseOrValue<boolean>
-    allowList: PromiseOrValue<string>[]
-    depositCap: PromiseOrValue<BigNumberish>
-  }
+export declare namespace VaultImplementation {
+  export type InitParamsStruct = { delegate: PromiseOrValue<string> }
 
-  export type InitParamsStructOutput = [
-    string,
-    boolean,
-    string[],
-    BigNumber
-  ] & {
-    delegate: string
-    allowListEnabled: boolean
-    allowList: string[]
-    depositCap: BigNumber
-  }
+  export type InitParamsStructOutput = [string] & { delegate: string }
 }
 
 export interface VaultInterface extends utils.Interface {
   functions: {
+    'AUCTION_HOUSE()': FunctionFragment
     'COLLATERAL_TOKEN()': FunctionFragment
     'EPOCH_LENGTH()': FunctionFragment
-    'IMPL_TYPE()': FunctionFragment
     'ROUTER()': FunctionFragment
     'START()': FunctionFragment
-    'STRATEGY_TYPEHASH()': FunctionFragment
     'VAULT_FEE()': FunctionFragment
-    'asset()': FunctionFragment
-    'buyoutLien(((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint256,uint40,uint40,uint256))[],uint8,(address,uint256,((uint8,uint256,address),((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint256,uint40,uint40,uint256))[],bytes,(bytes32,bytes32[]),uint256,uint8,bytes32,bytes32)))': FunctionFragment
-    'commitToLien((address,uint256,((uint8,uint256,address),((uint8,address,address,bytes32,uint256,(uint256,uint256,uint256,uint256,uint256)),(uint256,uint40,uint40,uint256))[],bytes,(bytes32,bytes32[]),uint256,uint8,bytes32,bytes32)))': FunctionFragment
+    'VAULT_TYPE()': FunctionFragment
+    'buyoutLien(uint256,uint256,(address,uint256,((uint8,address,uint256,address),uint8,bytes,(bytes32,bytes32[]),uint256,uint8,bytes32,bytes32)))': FunctionFragment
+    'canLiquidate(uint256,uint256)': FunctionFragment
+    'commitToLien((address,uint256,((uint8,address,uint256,address),uint8,bytes,(bytes32,bytes32[]),uint256,uint8,bytes32,bytes32)),address)': FunctionFragment
+    'delegate()': FunctionFragment
     'deposit(uint256,address)': FunctionFragment
-    'disableAllowList()': FunctionFragment
     'domainSeparator()': FunctionFragment
-    'enableAllowList()': FunctionFragment
-    'encodeStrategyData((uint8,uint256,address),bytes32)': FunctionFragment
-    'getShutdown()': FunctionFragment
-    'getStrategistNonce()': FunctionFragment
-    'incrementNonce()': FunctionFragment
-    'init((address,bool,address[],uint256))': FunctionFragment
-    'isDelegateOrOwner(address)': FunctionFragment
-    'modifyAllowList(address,bool)': FunctionFragment
-    'modifyDepositCap(uint256)': FunctionFragment
+    'encodeStrategyData((uint8,address,uint256,address),bytes32)': FunctionFragment
+    'init((address))': FunctionFragment
     'name()': FunctionFragment
     'onERC721Received(address,address,uint256,bytes)': FunctionFragment
     'owner()': FunctionFragment
     'recipient()': FunctionFragment
     'setDelegate(address)': FunctionFragment
-    'shutdown()': FunctionFragment
-    'supportsInterface(bytes4)': FunctionFragment
     'symbol()': FunctionFragment
+    'underlying()': FunctionFragment
     'withdraw(uint256)': FunctionFragment
   }
 
   getFunction(
     nameOrSignatureOrTopic:
+      | 'AUCTION_HOUSE'
       | 'COLLATERAL_TOKEN'
       | 'EPOCH_LENGTH'
-      | 'IMPL_TYPE'
       | 'ROUTER'
       | 'START'
-      | 'STRATEGY_TYPEHASH'
       | 'VAULT_FEE'
-      | 'asset'
+      | 'VAULT_TYPE'
       | 'buyoutLien'
+      | 'canLiquidate'
       | 'commitToLien'
+      | 'delegate'
       | 'deposit'
-      | 'disableAllowList'
       | 'domainSeparator'
-      | 'enableAllowList'
       | 'encodeStrategyData'
-      | 'getShutdown'
-      | 'getStrategistNonce'
-      | 'incrementNonce'
       | 'init'
-      | 'isDelegateOrOwner'
-      | 'modifyAllowList'
-      | 'modifyDepositCap'
       | 'name'
       | 'onERC721Received'
       | 'owner'
       | 'recipient'
       | 'setDelegate'
-      | 'shutdown'
-      | 'supportsInterface'
       | 'symbol'
+      | 'underlying'
       | 'withdraw'
   ): FunctionFragment
 
+  encodeFunctionData(
+    functionFragment: 'AUCTION_HOUSE',
+    values?: undefined
+  ): string
   encodeFunctionData(
     functionFragment: 'COLLATERAL_TOKEN',
     values?: undefined
@@ -273,77 +177,42 @@ export interface VaultInterface extends utils.Interface {
     functionFragment: 'EPOCH_LENGTH',
     values?: undefined
   ): string
-  encodeFunctionData(functionFragment: 'IMPL_TYPE', values?: undefined): string
   encodeFunctionData(functionFragment: 'ROUTER', values?: undefined): string
   encodeFunctionData(functionFragment: 'START', values?: undefined): string
-  encodeFunctionData(
-    functionFragment: 'STRATEGY_TYPEHASH',
-    values?: undefined
-  ): string
   encodeFunctionData(functionFragment: 'VAULT_FEE', values?: undefined): string
-  encodeFunctionData(functionFragment: 'asset', values?: undefined): string
+  encodeFunctionData(functionFragment: 'VAULT_TYPE', values?: undefined): string
   encodeFunctionData(
     functionFragment: 'buyoutLien',
     values: [
-      ILienToken.StackStruct[],
+      PromiseOrValue<BigNumberish>,
       PromiseOrValue<BigNumberish>,
       IAstariaRouter.CommitmentStruct
     ]
   ): string
   encodeFunctionData(
-    functionFragment: 'commitToLien',
-    values: [IAstariaRouter.CommitmentStruct]
+    functionFragment: 'canLiquidate',
+    values: [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>]
   ): string
+  encodeFunctionData(
+    functionFragment: 'commitToLien',
+    values: [IAstariaRouter.CommitmentStruct, PromiseOrValue<string>]
+  ): string
+  encodeFunctionData(functionFragment: 'delegate', values?: undefined): string
   encodeFunctionData(
     functionFragment: 'deposit',
     values: [PromiseOrValue<BigNumberish>, PromiseOrValue<string>]
-  ): string
-  encodeFunctionData(
-    functionFragment: 'disableAllowList',
-    values?: undefined
   ): string
   encodeFunctionData(
     functionFragment: 'domainSeparator',
     values?: undefined
   ): string
   encodeFunctionData(
-    functionFragment: 'enableAllowList',
-    values?: undefined
-  ): string
-  encodeFunctionData(
     functionFragment: 'encodeStrategyData',
-    values: [
-      IAstariaRouter.StrategyDetailsParamStruct,
-      PromiseOrValue<BytesLike>
-    ]
-  ): string
-  encodeFunctionData(
-    functionFragment: 'getShutdown',
-    values?: undefined
-  ): string
-  encodeFunctionData(
-    functionFragment: 'getStrategistNonce',
-    values?: undefined
-  ): string
-  encodeFunctionData(
-    functionFragment: 'incrementNonce',
-    values?: undefined
+    values: [IAstariaRouter.StrategyDetailsStruct, PromiseOrValue<BytesLike>]
   ): string
   encodeFunctionData(
     functionFragment: 'init',
-    values: [IVaultImplementation.InitParamsStruct]
-  ): string
-  encodeFunctionData(
-    functionFragment: 'isDelegateOrOwner',
-    values: [PromiseOrValue<string>]
-  ): string
-  encodeFunctionData(
-    functionFragment: 'modifyAllowList',
-    values: [PromiseOrValue<string>, PromiseOrValue<boolean>]
-  ): string
-  encodeFunctionData(
-    functionFragment: 'modifyDepositCap',
-    values: [PromiseOrValue<BigNumberish>]
+    values: [VaultImplementation.InitParamsStruct]
   ): string
   encodeFunctionData(functionFragment: 'name', values?: undefined): string
   encodeFunctionData(
@@ -361,17 +230,17 @@ export interface VaultInterface extends utils.Interface {
     functionFragment: 'setDelegate',
     values: [PromiseOrValue<string>]
   ): string
-  encodeFunctionData(functionFragment: 'shutdown', values?: undefined): string
-  encodeFunctionData(
-    functionFragment: 'supportsInterface',
-    values: [PromiseOrValue<BytesLike>]
-  ): string
   encodeFunctionData(functionFragment: 'symbol', values?: undefined): string
+  encodeFunctionData(functionFragment: 'underlying', values?: undefined): string
   encodeFunctionData(
     functionFragment: 'withdraw',
     values: [PromiseOrValue<BigNumberish>]
   ): string
 
+  decodeFunctionResult(
+    functionFragment: 'AUCTION_HOUSE',
+    data: BytesLike
+  ): Result
   decodeFunctionResult(
     functionFragment: 'COLLATERAL_TOKEN',
     data: BytesLike
@@ -380,59 +249,30 @@ export interface VaultInterface extends utils.Interface {
     functionFragment: 'EPOCH_LENGTH',
     data: BytesLike
   ): Result
-  decodeFunctionResult(functionFragment: 'IMPL_TYPE', data: BytesLike): Result
   decodeFunctionResult(functionFragment: 'ROUTER', data: BytesLike): Result
   decodeFunctionResult(functionFragment: 'START', data: BytesLike): Result
+  decodeFunctionResult(functionFragment: 'VAULT_FEE', data: BytesLike): Result
+  decodeFunctionResult(functionFragment: 'VAULT_TYPE', data: BytesLike): Result
+  decodeFunctionResult(functionFragment: 'buyoutLien', data: BytesLike): Result
   decodeFunctionResult(
-    functionFragment: 'STRATEGY_TYPEHASH',
+    functionFragment: 'canLiquidate',
     data: BytesLike
   ): Result
-  decodeFunctionResult(functionFragment: 'VAULT_FEE', data: BytesLike): Result
-  decodeFunctionResult(functionFragment: 'asset', data: BytesLike): Result
-  decodeFunctionResult(functionFragment: 'buyoutLien', data: BytesLike): Result
   decodeFunctionResult(
     functionFragment: 'commitToLien',
     data: BytesLike
   ): Result
+  decodeFunctionResult(functionFragment: 'delegate', data: BytesLike): Result
   decodeFunctionResult(functionFragment: 'deposit', data: BytesLike): Result
   decodeFunctionResult(
-    functionFragment: 'disableAllowList',
-    data: BytesLike
-  ): Result
-  decodeFunctionResult(
     functionFragment: 'domainSeparator',
-    data: BytesLike
-  ): Result
-  decodeFunctionResult(
-    functionFragment: 'enableAllowList',
     data: BytesLike
   ): Result
   decodeFunctionResult(
     functionFragment: 'encodeStrategyData',
     data: BytesLike
   ): Result
-  decodeFunctionResult(functionFragment: 'getShutdown', data: BytesLike): Result
-  decodeFunctionResult(
-    functionFragment: 'getStrategistNonce',
-    data: BytesLike
-  ): Result
-  decodeFunctionResult(
-    functionFragment: 'incrementNonce',
-    data: BytesLike
-  ): Result
   decodeFunctionResult(functionFragment: 'init', data: BytesLike): Result
-  decodeFunctionResult(
-    functionFragment: 'isDelegateOrOwner',
-    data: BytesLike
-  ): Result
-  decodeFunctionResult(
-    functionFragment: 'modifyAllowList',
-    data: BytesLike
-  ): Result
-  decodeFunctionResult(
-    functionFragment: 'modifyDepositCap',
-    data: BytesLike
-  ): Result
   decodeFunctionResult(functionFragment: 'name', data: BytesLike): Result
   decodeFunctionResult(
     functionFragment: 'onERC721Received',
@@ -441,85 +281,39 @@ export interface VaultInterface extends utils.Interface {
   decodeFunctionResult(functionFragment: 'owner', data: BytesLike): Result
   decodeFunctionResult(functionFragment: 'recipient', data: BytesLike): Result
   decodeFunctionResult(functionFragment: 'setDelegate', data: BytesLike): Result
-  decodeFunctionResult(functionFragment: 'shutdown', data: BytesLike): Result
-  decodeFunctionResult(
-    functionFragment: 'supportsInterface',
-    data: BytesLike
-  ): Result
   decodeFunctionResult(functionFragment: 'symbol', data: BytesLike): Result
+  decodeFunctionResult(functionFragment: 'underlying', data: BytesLike): Result
   decodeFunctionResult(functionFragment: 'withdraw', data: BytesLike): Result
 
   events: {
-    'AllowListEnabled(bool)': EventFragment
-    'AllowListUpdated(address,bool)': EventFragment
-    'DelegateUpdated(address)': EventFragment
-    'IncrementNonce(uint256)': EventFragment
-    'NonceUpdated(uint256)': EventFragment
-    'VaultShutdown()': EventFragment
+    'NewLien(bytes32,address,uint256,uint256)': EventFragment
+    'NewVault(address,address)': EventFragment
   }
 
-  getEvent(nameOrSignatureOrTopic: 'AllowListEnabled'): EventFragment
-  getEvent(nameOrSignatureOrTopic: 'AllowListUpdated'): EventFragment
-  getEvent(nameOrSignatureOrTopic: 'DelegateUpdated'): EventFragment
-  getEvent(nameOrSignatureOrTopic: 'IncrementNonce'): EventFragment
-  getEvent(nameOrSignatureOrTopic: 'NonceUpdated'): EventFragment
-  getEvent(nameOrSignatureOrTopic: 'VaultShutdown'): EventFragment
+  getEvent(nameOrSignatureOrTopic: 'NewLien'): EventFragment
+  getEvent(nameOrSignatureOrTopic: 'NewVault'): EventFragment
 }
 
-export interface AllowListEnabledEventObject {
-  arg0: boolean
+export interface NewLienEventObject {
+  strategyRoot: string
+  tokenContract: string
+  tokenId: BigNumber
+  amount: BigNumber
 }
-export type AllowListEnabledEvent = TypedEvent<
-  [boolean],
-  AllowListEnabledEventObject
+export type NewLienEvent = TypedEvent<
+  [string, string, BigNumber, BigNumber],
+  NewLienEventObject
 >
 
-export type AllowListEnabledEventFilter =
-  TypedEventFilter<AllowListEnabledEvent>
+export type NewLienEventFilter = TypedEventFilter<NewLienEvent>
 
-export interface AllowListUpdatedEventObject {
-  arg0: string
-  arg1: boolean
+export interface NewVaultEventObject {
+  appraiser: string
+  vault: string
 }
-export type AllowListUpdatedEvent = TypedEvent<
-  [string, boolean],
-  AllowListUpdatedEventObject
->
+export type NewVaultEvent = TypedEvent<[string, string], NewVaultEventObject>
 
-export type AllowListUpdatedEventFilter =
-  TypedEventFilter<AllowListUpdatedEvent>
-
-export interface DelegateUpdatedEventObject {
-  arg0: string
-}
-export type DelegateUpdatedEvent = TypedEvent<
-  [string],
-  DelegateUpdatedEventObject
->
-
-export type DelegateUpdatedEventFilter = TypedEventFilter<DelegateUpdatedEvent>
-
-export interface IncrementNonceEventObject {
-  nonce: BigNumber
-}
-export type IncrementNonceEvent = TypedEvent<
-  [BigNumber],
-  IncrementNonceEventObject
->
-
-export type IncrementNonceEventFilter = TypedEventFilter<IncrementNonceEvent>
-
-export interface NonceUpdatedEventObject {
-  nonce: BigNumber
-}
-export type NonceUpdatedEvent = TypedEvent<[BigNumber], NonceUpdatedEventObject>
-
-export type NonceUpdatedEventFilter = TypedEventFilter<NonceUpdatedEvent>
-
-export interface VaultShutdownEventObject {}
-export type VaultShutdownEvent = TypedEvent<[], VaultShutdownEventObject>
-
-export type VaultShutdownEventFilter = TypedEventFilter<VaultShutdownEvent>
+export type NewVaultEventFilter = TypedEventFilter<NewVaultEvent>
 
 export interface Vault extends BaseContract {
   connect(signerOrProvider: Signer | Provider | string): this
@@ -548,88 +342,67 @@ export interface Vault extends BaseContract {
   removeListener: OnEvent<this>
 
   functions: {
+    AUCTION_HOUSE(overrides?: CallOverrides): Promise<[string]>
+
     COLLATERAL_TOKEN(overrides?: CallOverrides): Promise<[string]>
 
     EPOCH_LENGTH(overrides?: CallOverrides): Promise<[BigNumber]>
-
-    IMPL_TYPE(overrides?: CallOverrides): Promise<[number]>
 
     ROUTER(overrides?: CallOverrides): Promise<[string]>
 
     START(overrides?: CallOverrides): Promise<[BigNumber]>
 
-    STRATEGY_TYPEHASH(overrides?: CallOverrides): Promise<[string]>
-
     VAULT_FEE(overrides?: CallOverrides): Promise<[BigNumber]>
 
-    asset(overrides?: CallOverrides): Promise<[string]>
+    VAULT_TYPE(overrides?: CallOverrides): Promise<[number]>
 
     buyoutLien(
-      stack: ILienToken.StackStruct[],
+      collateralId: PromiseOrValue<BigNumberish>,
       position: PromiseOrValue<BigNumberish>,
       incomingTerms: IAstariaRouter.CommitmentStruct,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>
 
+    canLiquidate(
+      collateralId: PromiseOrValue<BigNumberish>,
+      position: PromiseOrValue<BigNumberish>,
+      overrides?: CallOverrides
+    ): Promise<[boolean]>
+
     commitToLien(
       params: IAstariaRouter.CommitmentStruct,
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<ContractTransaction>
-
-    deposit(
-      amount: PromiseOrValue<BigNumberish>,
       receiver: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>
 
-    disableAllowList(overrides?: CallOverrides): Promise<[void]>
+    delegate(overrides?: CallOverrides): Promise<[string]>
+
+    deposit(
+      amount: PromiseOrValue<BigNumberish>,
+      arg1: PromiseOrValue<string>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<ContractTransaction>
 
     domainSeparator(overrides?: CallOverrides): Promise<[string]>
 
-    enableAllowList(overrides?: CallOverrides): Promise<[void]>
-
     encodeStrategyData(
-      strategy: IAstariaRouter.StrategyDetailsParamStruct,
+      strategy: IAstariaRouter.StrategyDetailsStruct,
       root: PromiseOrValue<BytesLike>,
       overrides?: CallOverrides
     ): Promise<[string]>
 
-    getShutdown(overrides?: CallOverrides): Promise<[boolean]>
-
-    getStrategistNonce(overrides?: CallOverrides): Promise<[BigNumber]>
-
-    incrementNonce(
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<ContractTransaction>
-
     init(
-      params: IVaultImplementation.InitParamsStruct,
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<ContractTransaction>
-
-    isDelegateOrOwner(
-      addr: PromiseOrValue<string>,
-      overrides?: CallOverrides
-    ): Promise<[boolean]>
-
-    modifyAllowList(
-      arg0: PromiseOrValue<string>,
-      arg1: PromiseOrValue<boolean>,
-      overrides?: CallOverrides
-    ): Promise<[void]>
-
-    modifyDepositCap(
-      newCap: PromiseOrValue<BigNumberish>,
+      params: VaultImplementation.InitParamsStruct,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>
 
     name(overrides?: CallOverrides): Promise<[string]>
 
     onERC721Received(
-      arg0: PromiseOrValue<string>,
-      arg1: PromiseOrValue<string>,
-      arg2: PromiseOrValue<BigNumberish>,
-      arg3: PromiseOrValue<BytesLike>,
+      operator_: PromiseOrValue<string>,
+      from_: PromiseOrValue<string>,
+      tokenId_: PromiseOrValue<BigNumberish>,
+      data_: PromiseOrValue<BytesLike>,
       overrides?: CallOverrides
     ): Promise<[string]>
 
@@ -642,16 +415,9 @@ export interface Vault extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>
 
-    shutdown(
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<ContractTransaction>
-
-    supportsInterface(
-      arg0: PromiseOrValue<BytesLike>,
-      overrides?: CallOverrides
-    ): Promise<[boolean]>
-
     symbol(overrides?: CallOverrides): Promise<[string]>
+
+    underlying(overrides?: CallOverrides): Promise<[string]>
 
     withdraw(
       amount: PromiseOrValue<BigNumberish>,
@@ -659,88 +425,67 @@ export interface Vault extends BaseContract {
     ): Promise<ContractTransaction>
   }
 
+  AUCTION_HOUSE(overrides?: CallOverrides): Promise<string>
+
   COLLATERAL_TOKEN(overrides?: CallOverrides): Promise<string>
 
   EPOCH_LENGTH(overrides?: CallOverrides): Promise<BigNumber>
-
-  IMPL_TYPE(overrides?: CallOverrides): Promise<number>
 
   ROUTER(overrides?: CallOverrides): Promise<string>
 
   START(overrides?: CallOverrides): Promise<BigNumber>
 
-  STRATEGY_TYPEHASH(overrides?: CallOverrides): Promise<string>
-
   VAULT_FEE(overrides?: CallOverrides): Promise<BigNumber>
 
-  asset(overrides?: CallOverrides): Promise<string>
+  VAULT_TYPE(overrides?: CallOverrides): Promise<number>
 
   buyoutLien(
-    stack: ILienToken.StackStruct[],
+    collateralId: PromiseOrValue<BigNumberish>,
     position: PromiseOrValue<BigNumberish>,
     incomingTerms: IAstariaRouter.CommitmentStruct,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>
 
+  canLiquidate(
+    collateralId: PromiseOrValue<BigNumberish>,
+    position: PromiseOrValue<BigNumberish>,
+    overrides?: CallOverrides
+  ): Promise<boolean>
+
   commitToLien(
     params: IAstariaRouter.CommitmentStruct,
-    overrides?: Overrides & { from?: PromiseOrValue<string> }
-  ): Promise<ContractTransaction>
-
-  deposit(
-    amount: PromiseOrValue<BigNumberish>,
     receiver: PromiseOrValue<string>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>
 
-  disableAllowList(overrides?: CallOverrides): Promise<void>
+  delegate(overrides?: CallOverrides): Promise<string>
+
+  deposit(
+    amount: PromiseOrValue<BigNumberish>,
+    arg1: PromiseOrValue<string>,
+    overrides?: Overrides & { from?: PromiseOrValue<string> }
+  ): Promise<ContractTransaction>
 
   domainSeparator(overrides?: CallOverrides): Promise<string>
 
-  enableAllowList(overrides?: CallOverrides): Promise<void>
-
   encodeStrategyData(
-    strategy: IAstariaRouter.StrategyDetailsParamStruct,
+    strategy: IAstariaRouter.StrategyDetailsStruct,
     root: PromiseOrValue<BytesLike>,
     overrides?: CallOverrides
   ): Promise<string>
 
-  getShutdown(overrides?: CallOverrides): Promise<boolean>
-
-  getStrategistNonce(overrides?: CallOverrides): Promise<BigNumber>
-
-  incrementNonce(
-    overrides?: Overrides & { from?: PromiseOrValue<string> }
-  ): Promise<ContractTransaction>
-
   init(
-    params: IVaultImplementation.InitParamsStruct,
-    overrides?: Overrides & { from?: PromiseOrValue<string> }
-  ): Promise<ContractTransaction>
-
-  isDelegateOrOwner(
-    addr: PromiseOrValue<string>,
-    overrides?: CallOverrides
-  ): Promise<boolean>
-
-  modifyAllowList(
-    arg0: PromiseOrValue<string>,
-    arg1: PromiseOrValue<boolean>,
-    overrides?: CallOverrides
-  ): Promise<void>
-
-  modifyDepositCap(
-    newCap: PromiseOrValue<BigNumberish>,
+    params: VaultImplementation.InitParamsStruct,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>
 
   name(overrides?: CallOverrides): Promise<string>
 
   onERC721Received(
-    arg0: PromiseOrValue<string>,
-    arg1: PromiseOrValue<string>,
-    arg2: PromiseOrValue<BigNumberish>,
-    arg3: PromiseOrValue<BytesLike>,
+    operator_: PromiseOrValue<string>,
+    from_: PromiseOrValue<string>,
+    tokenId_: PromiseOrValue<BigNumberish>,
+    data_: PromiseOrValue<BytesLike>,
     overrides?: CallOverrides
   ): Promise<string>
 
@@ -753,16 +498,9 @@ export interface Vault extends BaseContract {
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>
 
-  shutdown(
-    overrides?: Overrides & { from?: PromiseOrValue<string> }
-  ): Promise<ContractTransaction>
-
-  supportsInterface(
-    arg0: PromiseOrValue<BytesLike>,
-    overrides?: CallOverrides
-  ): Promise<boolean>
-
   symbol(overrides?: CallOverrides): Promise<string>
+
+  underlying(overrides?: CallOverrides): Promise<string>
 
   withdraw(
     amount: PromiseOrValue<BigNumberish>,
@@ -770,96 +508,67 @@ export interface Vault extends BaseContract {
   ): Promise<ContractTransaction>
 
   callStatic: {
+    AUCTION_HOUSE(overrides?: CallOverrides): Promise<string>
+
     COLLATERAL_TOKEN(overrides?: CallOverrides): Promise<string>
 
     EPOCH_LENGTH(overrides?: CallOverrides): Promise<BigNumber>
-
-    IMPL_TYPE(overrides?: CallOverrides): Promise<number>
 
     ROUTER(overrides?: CallOverrides): Promise<string>
 
     START(overrides?: CallOverrides): Promise<BigNumber>
 
-    STRATEGY_TYPEHASH(overrides?: CallOverrides): Promise<string>
-
     VAULT_FEE(overrides?: CallOverrides): Promise<BigNumber>
 
-    asset(overrides?: CallOverrides): Promise<string>
+    VAULT_TYPE(overrides?: CallOverrides): Promise<number>
 
     buyoutLien(
-      stack: ILienToken.StackStruct[],
+      collateralId: PromiseOrValue<BigNumberish>,
       position: PromiseOrValue<BigNumberish>,
       incomingTerms: IAstariaRouter.CommitmentStruct,
       overrides?: CallOverrides
-    ): Promise<
-      [ILienToken.StackStructOutput[], ILienToken.StackStructOutput] & {
-        stacks: ILienToken.StackStructOutput[]
-        newStack: ILienToken.StackStructOutput
-      }
-    >
+    ): Promise<void>
+
+    canLiquidate(
+      collateralId: PromiseOrValue<BigNumberish>,
+      position: PromiseOrValue<BigNumberish>,
+      overrides?: CallOverrides
+    ): Promise<boolean>
 
     commitToLien(
       params: IAstariaRouter.CommitmentStruct,
-      overrides?: CallOverrides
-    ): Promise<
-      [BigNumber, ILienToken.StackStructOutput[]] & {
-        lienId: BigNumber
-        stack: ILienToken.StackStructOutput[]
-      }
-    >
-
-    deposit(
-      amount: PromiseOrValue<BigNumberish>,
       receiver: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<BigNumber>
 
-    disableAllowList(overrides?: CallOverrides): Promise<void>
+    delegate(overrides?: CallOverrides): Promise<string>
+
+    deposit(
+      amount: PromiseOrValue<BigNumberish>,
+      arg1: PromiseOrValue<string>,
+      overrides?: CallOverrides
+    ): Promise<BigNumber>
 
     domainSeparator(overrides?: CallOverrides): Promise<string>
 
-    enableAllowList(overrides?: CallOverrides): Promise<void>
-
     encodeStrategyData(
-      strategy: IAstariaRouter.StrategyDetailsParamStruct,
+      strategy: IAstariaRouter.StrategyDetailsStruct,
       root: PromiseOrValue<BytesLike>,
       overrides?: CallOverrides
     ): Promise<string>
 
-    getShutdown(overrides?: CallOverrides): Promise<boolean>
-
-    getStrategistNonce(overrides?: CallOverrides): Promise<BigNumber>
-
-    incrementNonce(overrides?: CallOverrides): Promise<void>
-
     init(
-      params: IVaultImplementation.InitParamsStruct,
-      overrides?: CallOverrides
-    ): Promise<void>
-
-    isDelegateOrOwner(
-      addr: PromiseOrValue<string>,
-      overrides?: CallOverrides
-    ): Promise<boolean>
-
-    modifyAllowList(
-      arg0: PromiseOrValue<string>,
-      arg1: PromiseOrValue<boolean>,
-      overrides?: CallOverrides
-    ): Promise<void>
-
-    modifyDepositCap(
-      newCap: PromiseOrValue<BigNumberish>,
+      params: VaultImplementation.InitParamsStruct,
       overrides?: CallOverrides
     ): Promise<void>
 
     name(overrides?: CallOverrides): Promise<string>
 
     onERC721Received(
-      arg0: PromiseOrValue<string>,
-      arg1: PromiseOrValue<string>,
-      arg2: PromiseOrValue<BigNumberish>,
-      arg3: PromiseOrValue<BytesLike>,
+      operator_: PromiseOrValue<string>,
+      from_: PromiseOrValue<string>,
+      tokenId_: PromiseOrValue<BigNumberish>,
+      data_: PromiseOrValue<BytesLike>,
       overrides?: CallOverrides
     ): Promise<string>
 
@@ -872,14 +581,9 @@ export interface Vault extends BaseContract {
       overrides?: CallOverrides
     ): Promise<void>
 
-    shutdown(overrides?: CallOverrides): Promise<void>
-
-    supportsInterface(
-      arg0: PromiseOrValue<BytesLike>,
-      overrides?: CallOverrides
-    ): Promise<boolean>
-
     symbol(overrides?: CallOverrides): Promise<string>
+
+    underlying(overrides?: CallOverrides): Promise<string>
 
     withdraw(
       amount: PromiseOrValue<BigNumberish>,
@@ -888,111 +592,88 @@ export interface Vault extends BaseContract {
   }
 
   filters: {
-    'AllowListEnabled(bool)'(arg0?: null): AllowListEnabledEventFilter
-    AllowListEnabled(arg0?: null): AllowListEnabledEventFilter
+    'NewLien(bytes32,address,uint256,uint256)'(
+      strategyRoot?: null,
+      tokenContract?: null,
+      tokenId?: null,
+      amount?: null
+    ): NewLienEventFilter
+    NewLien(
+      strategyRoot?: null,
+      tokenContract?: null,
+      tokenId?: null,
+      amount?: null
+    ): NewLienEventFilter
 
-    'AllowListUpdated(address,bool)'(
-      arg0?: null,
-      arg1?: null
-    ): AllowListUpdatedEventFilter
-    AllowListUpdated(arg0?: null, arg1?: null): AllowListUpdatedEventFilter
-
-    'DelegateUpdated(address)'(arg0?: null): DelegateUpdatedEventFilter
-    DelegateUpdated(arg0?: null): DelegateUpdatedEventFilter
-
-    'IncrementNonce(uint256)'(nonce?: null): IncrementNonceEventFilter
-    IncrementNonce(nonce?: null): IncrementNonceEventFilter
-
-    'NonceUpdated(uint256)'(nonce?: null): NonceUpdatedEventFilter
-    NonceUpdated(nonce?: null): NonceUpdatedEventFilter
-
-    'VaultShutdown()'(): VaultShutdownEventFilter
-    VaultShutdown(): VaultShutdownEventFilter
+    'NewVault(address,address)'(
+      appraiser?: null,
+      vault?: null
+    ): NewVaultEventFilter
+    NewVault(appraiser?: null, vault?: null): NewVaultEventFilter
   }
 
   estimateGas: {
+    AUCTION_HOUSE(overrides?: CallOverrides): Promise<BigNumber>
+
     COLLATERAL_TOKEN(overrides?: CallOverrides): Promise<BigNumber>
 
     EPOCH_LENGTH(overrides?: CallOverrides): Promise<BigNumber>
-
-    IMPL_TYPE(overrides?: CallOverrides): Promise<BigNumber>
 
     ROUTER(overrides?: CallOverrides): Promise<BigNumber>
 
     START(overrides?: CallOverrides): Promise<BigNumber>
 
-    STRATEGY_TYPEHASH(overrides?: CallOverrides): Promise<BigNumber>
-
     VAULT_FEE(overrides?: CallOverrides): Promise<BigNumber>
 
-    asset(overrides?: CallOverrides): Promise<BigNumber>
+    VAULT_TYPE(overrides?: CallOverrides): Promise<BigNumber>
 
     buyoutLien(
-      stack: ILienToken.StackStruct[],
+      collateralId: PromiseOrValue<BigNumberish>,
       position: PromiseOrValue<BigNumberish>,
       incomingTerms: IAstariaRouter.CommitmentStruct,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>
 
-    commitToLien(
-      params: IAstariaRouter.CommitmentStruct,
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    canLiquidate(
+      collateralId: PromiseOrValue<BigNumberish>,
+      position: PromiseOrValue<BigNumberish>,
+      overrides?: CallOverrides
     ): Promise<BigNumber>
 
-    deposit(
-      amount: PromiseOrValue<BigNumberish>,
+    commitToLien(
+      params: IAstariaRouter.CommitmentStruct,
       receiver: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>
 
-    disableAllowList(overrides?: CallOverrides): Promise<BigNumber>
+    delegate(overrides?: CallOverrides): Promise<BigNumber>
+
+    deposit(
+      amount: PromiseOrValue<BigNumberish>,
+      arg1: PromiseOrValue<string>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<BigNumber>
 
     domainSeparator(overrides?: CallOverrides): Promise<BigNumber>
 
-    enableAllowList(overrides?: CallOverrides): Promise<BigNumber>
-
     encodeStrategyData(
-      strategy: IAstariaRouter.StrategyDetailsParamStruct,
+      strategy: IAstariaRouter.StrategyDetailsStruct,
       root: PromiseOrValue<BytesLike>,
       overrides?: CallOverrides
     ): Promise<BigNumber>
 
-    getShutdown(overrides?: CallOverrides): Promise<BigNumber>
-
-    getStrategistNonce(overrides?: CallOverrides): Promise<BigNumber>
-
-    incrementNonce(
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<BigNumber>
-
     init(
-      params: IVaultImplementation.InitParamsStruct,
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<BigNumber>
-
-    isDelegateOrOwner(
-      addr: PromiseOrValue<string>,
-      overrides?: CallOverrides
-    ): Promise<BigNumber>
-
-    modifyAllowList(
-      arg0: PromiseOrValue<string>,
-      arg1: PromiseOrValue<boolean>,
-      overrides?: CallOverrides
-    ): Promise<BigNumber>
-
-    modifyDepositCap(
-      newCap: PromiseOrValue<BigNumberish>,
+      params: VaultImplementation.InitParamsStruct,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>
 
     name(overrides?: CallOverrides): Promise<BigNumber>
 
     onERC721Received(
-      arg0: PromiseOrValue<string>,
-      arg1: PromiseOrValue<string>,
-      arg2: PromiseOrValue<BigNumberish>,
-      arg3: PromiseOrValue<BytesLike>,
+      operator_: PromiseOrValue<string>,
+      from_: PromiseOrValue<string>,
+      tokenId_: PromiseOrValue<BigNumberish>,
+      data_: PromiseOrValue<BytesLike>,
       overrides?: CallOverrides
     ): Promise<BigNumber>
 
@@ -1005,16 +686,9 @@ export interface Vault extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>
 
-    shutdown(
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<BigNumber>
-
-    supportsInterface(
-      arg0: PromiseOrValue<BytesLike>,
-      overrides?: CallOverrides
-    ): Promise<BigNumber>
-
     symbol(overrides?: CallOverrides): Promise<BigNumber>
+
+    underlying(overrides?: CallOverrides): Promise<BigNumber>
 
     withdraw(
       amount: PromiseOrValue<BigNumberish>,
@@ -1023,88 +697,67 @@ export interface Vault extends BaseContract {
   }
 
   populateTransaction: {
+    AUCTION_HOUSE(overrides?: CallOverrides): Promise<PopulatedTransaction>
+
     COLLATERAL_TOKEN(overrides?: CallOverrides): Promise<PopulatedTransaction>
 
     EPOCH_LENGTH(overrides?: CallOverrides): Promise<PopulatedTransaction>
-
-    IMPL_TYPE(overrides?: CallOverrides): Promise<PopulatedTransaction>
 
     ROUTER(overrides?: CallOverrides): Promise<PopulatedTransaction>
 
     START(overrides?: CallOverrides): Promise<PopulatedTransaction>
 
-    STRATEGY_TYPEHASH(overrides?: CallOverrides): Promise<PopulatedTransaction>
-
     VAULT_FEE(overrides?: CallOverrides): Promise<PopulatedTransaction>
 
-    asset(overrides?: CallOverrides): Promise<PopulatedTransaction>
+    VAULT_TYPE(overrides?: CallOverrides): Promise<PopulatedTransaction>
 
     buyoutLien(
-      stack: ILienToken.StackStruct[],
+      collateralId: PromiseOrValue<BigNumberish>,
       position: PromiseOrValue<BigNumberish>,
       incomingTerms: IAstariaRouter.CommitmentStruct,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>
 
-    commitToLien(
-      params: IAstariaRouter.CommitmentStruct,
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    canLiquidate(
+      collateralId: PromiseOrValue<BigNumberish>,
+      position: PromiseOrValue<BigNumberish>,
+      overrides?: CallOverrides
     ): Promise<PopulatedTransaction>
 
-    deposit(
-      amount: PromiseOrValue<BigNumberish>,
+    commitToLien(
+      params: IAstariaRouter.CommitmentStruct,
       receiver: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>
 
-    disableAllowList(overrides?: CallOverrides): Promise<PopulatedTransaction>
+    delegate(overrides?: CallOverrides): Promise<PopulatedTransaction>
+
+    deposit(
+      amount: PromiseOrValue<BigNumberish>,
+      arg1: PromiseOrValue<string>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<PopulatedTransaction>
 
     domainSeparator(overrides?: CallOverrides): Promise<PopulatedTransaction>
 
-    enableAllowList(overrides?: CallOverrides): Promise<PopulatedTransaction>
-
     encodeStrategyData(
-      strategy: IAstariaRouter.StrategyDetailsParamStruct,
+      strategy: IAstariaRouter.StrategyDetailsStruct,
       root: PromiseOrValue<BytesLike>,
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>
 
-    getShutdown(overrides?: CallOverrides): Promise<PopulatedTransaction>
-
-    getStrategistNonce(overrides?: CallOverrides): Promise<PopulatedTransaction>
-
-    incrementNonce(
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<PopulatedTransaction>
-
     init(
-      params: IVaultImplementation.InitParamsStruct,
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<PopulatedTransaction>
-
-    isDelegateOrOwner(
-      addr: PromiseOrValue<string>,
-      overrides?: CallOverrides
-    ): Promise<PopulatedTransaction>
-
-    modifyAllowList(
-      arg0: PromiseOrValue<string>,
-      arg1: PromiseOrValue<boolean>,
-      overrides?: CallOverrides
-    ): Promise<PopulatedTransaction>
-
-    modifyDepositCap(
-      newCap: PromiseOrValue<BigNumberish>,
+      params: VaultImplementation.InitParamsStruct,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>
 
     name(overrides?: CallOverrides): Promise<PopulatedTransaction>
 
     onERC721Received(
-      arg0: PromiseOrValue<string>,
-      arg1: PromiseOrValue<string>,
-      arg2: PromiseOrValue<BigNumberish>,
-      arg3: PromiseOrValue<BytesLike>,
+      operator_: PromiseOrValue<string>,
+      from_: PromiseOrValue<string>,
+      tokenId_: PromiseOrValue<BigNumberish>,
+      data_: PromiseOrValue<BytesLike>,
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>
 
@@ -1117,16 +770,9 @@ export interface Vault extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>
 
-    shutdown(
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<PopulatedTransaction>
-
-    supportsInterface(
-      arg0: PromiseOrValue<BytesLike>,
-      overrides?: CallOverrides
-    ): Promise<PopulatedTransaction>
-
     symbol(overrides?: CallOverrides): Promise<PopulatedTransaction>
+
+    underlying(overrides?: CallOverrides): Promise<PopulatedTransaction>
 
     withdraw(
       amount: PromiseOrValue<BigNumberish>,

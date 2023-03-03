@@ -211,11 +211,12 @@ export interface VaultImplementationInterface extends utils.Interface {
     'domainSeparator()': FunctionFragment
     'enableAllowList()': FunctionFragment
     'encodeStrategyData((uint8,uint256,address),bytes32)': FunctionFragment
+    'getAllowList(address)': FunctionFragment
     'getShutdown()': FunctionFragment
+    'getState()': FunctionFragment
     'getStrategistNonce()': FunctionFragment
     'incrementNonce()': FunctionFragment
     'init((address,bool,address[],uint256))': FunctionFragment
-    'isDelegateOrOwner(address)': FunctionFragment
     'modifyAllowList(address,bool)': FunctionFragment
     'modifyDepositCap(uint256)': FunctionFragment
     'name()': FunctionFragment
@@ -244,11 +245,12 @@ export interface VaultImplementationInterface extends utils.Interface {
       | 'domainSeparator'
       | 'enableAllowList'
       | 'encodeStrategyData'
+      | 'getAllowList'
       | 'getShutdown'
+      | 'getState'
       | 'getStrategistNonce'
       | 'incrementNonce'
       | 'init'
-      | 'isDelegateOrOwner'
       | 'modifyAllowList'
       | 'modifyDepositCap'
       | 'name'
@@ -310,9 +312,14 @@ export interface VaultImplementationInterface extends utils.Interface {
     ]
   ): string
   encodeFunctionData(
+    functionFragment: 'getAllowList',
+    values: [PromiseOrValue<string>]
+  ): string
+  encodeFunctionData(
     functionFragment: 'getShutdown',
     values?: undefined
   ): string
+  encodeFunctionData(functionFragment: 'getState', values?: undefined): string
   encodeFunctionData(
     functionFragment: 'getStrategistNonce',
     values?: undefined
@@ -324,10 +331,6 @@ export interface VaultImplementationInterface extends utils.Interface {
   encodeFunctionData(
     functionFragment: 'init',
     values: [IVaultImplementation.InitParamsStruct]
-  ): string
-  encodeFunctionData(
-    functionFragment: 'isDelegateOrOwner',
-    values: [PromiseOrValue<string>]
   ): string
   encodeFunctionData(
     functionFragment: 'modifyAllowList',
@@ -398,7 +401,12 @@ export interface VaultImplementationInterface extends utils.Interface {
     functionFragment: 'encodeStrategyData',
     data: BytesLike
   ): Result
+  decodeFunctionResult(
+    functionFragment: 'getAllowList',
+    data: BytesLike
+  ): Result
   decodeFunctionResult(functionFragment: 'getShutdown', data: BytesLike): Result
+  decodeFunctionResult(functionFragment: 'getState', data: BytesLike): Result
   decodeFunctionResult(
     functionFragment: 'getStrategistNonce',
     data: BytesLike
@@ -408,10 +416,6 @@ export interface VaultImplementationInterface extends utils.Interface {
     data: BytesLike
   ): Result
   decodeFunctionResult(functionFragment: 'init', data: BytesLike): Result
-  decodeFunctionResult(
-    functionFragment: 'isDelegateOrOwner',
-    data: BytesLike
-  ): Result
   decodeFunctionResult(
     functionFragment: 'modifyAllowList',
     data: BytesLike
@@ -578,7 +582,16 @@ export interface VaultImplementation extends BaseContract {
       overrides?: CallOverrides
     ): Promise<[string]>
 
+    getAllowList(
+      depositor: PromiseOrValue<string>,
+      overrides?: CallOverrides
+    ): Promise<[boolean]>
+
     getShutdown(overrides?: CallOverrides): Promise<[boolean]>
+
+    getState(
+      overrides?: CallOverrides
+    ): Promise<[BigNumber, string, boolean, boolean, BigNumber]>
 
     getStrategistNonce(overrides?: CallOverrides): Promise<[BigNumber]>
 
@@ -590,11 +603,6 @@ export interface VaultImplementation extends BaseContract {
       params: IVaultImplementation.InitParamsStruct,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>
-
-    isDelegateOrOwner(
-      addr: PromiseOrValue<string>,
-      overrides?: CallOverrides
-    ): Promise<[boolean]>
 
     modifyAllowList(
       depositor: PromiseOrValue<string>,
@@ -682,7 +690,16 @@ export interface VaultImplementation extends BaseContract {
     overrides?: CallOverrides
   ): Promise<string>
 
+  getAllowList(
+    depositor: PromiseOrValue<string>,
+    overrides?: CallOverrides
+  ): Promise<boolean>
+
   getShutdown(overrides?: CallOverrides): Promise<boolean>
+
+  getState(
+    overrides?: CallOverrides
+  ): Promise<[BigNumber, string, boolean, boolean, BigNumber]>
 
   getStrategistNonce(overrides?: CallOverrides): Promise<BigNumber>
 
@@ -694,11 +711,6 @@ export interface VaultImplementation extends BaseContract {
     params: IVaultImplementation.InitParamsStruct,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>
-
-  isDelegateOrOwner(
-    addr: PromiseOrValue<string>,
-    overrides?: CallOverrides
-  ): Promise<boolean>
 
   modifyAllowList(
     depositor: PromiseOrValue<string>,
@@ -792,7 +804,16 @@ export interface VaultImplementation extends BaseContract {
       overrides?: CallOverrides
     ): Promise<string>
 
+    getAllowList(
+      depositor: PromiseOrValue<string>,
+      overrides?: CallOverrides
+    ): Promise<boolean>
+
     getShutdown(overrides?: CallOverrides): Promise<boolean>
+
+    getState(
+      overrides?: CallOverrides
+    ): Promise<[BigNumber, string, boolean, boolean, BigNumber]>
 
     getStrategistNonce(overrides?: CallOverrides): Promise<BigNumber>
 
@@ -802,11 +823,6 @@ export interface VaultImplementation extends BaseContract {
       params: IVaultImplementation.InitParamsStruct,
       overrides?: CallOverrides
     ): Promise<void>
-
-    isDelegateOrOwner(
-      addr: PromiseOrValue<string>,
-      overrides?: CallOverrides
-    ): Promise<boolean>
 
     modifyAllowList(
       depositor: PromiseOrValue<string>,
@@ -916,7 +932,14 @@ export interface VaultImplementation extends BaseContract {
       overrides?: CallOverrides
     ): Promise<BigNumber>
 
+    getAllowList(
+      depositor: PromiseOrValue<string>,
+      overrides?: CallOverrides
+    ): Promise<BigNumber>
+
     getShutdown(overrides?: CallOverrides): Promise<BigNumber>
+
+    getState(overrides?: CallOverrides): Promise<BigNumber>
 
     getStrategistNonce(overrides?: CallOverrides): Promise<BigNumber>
 
@@ -927,11 +950,6 @@ export interface VaultImplementation extends BaseContract {
     init(
       params: IVaultImplementation.InitParamsStruct,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<BigNumber>
-
-    isDelegateOrOwner(
-      addr: PromiseOrValue<string>,
-      overrides?: CallOverrides
     ): Promise<BigNumber>
 
     modifyAllowList(
@@ -1021,7 +1039,14 @@ export interface VaultImplementation extends BaseContract {
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>
 
+    getAllowList(
+      depositor: PromiseOrValue<string>,
+      overrides?: CallOverrides
+    ): Promise<PopulatedTransaction>
+
     getShutdown(overrides?: CallOverrides): Promise<PopulatedTransaction>
+
+    getState(overrides?: CallOverrides): Promise<PopulatedTransaction>
 
     getStrategistNonce(overrides?: CallOverrides): Promise<PopulatedTransaction>
 
@@ -1032,11 +1057,6 @@ export interface VaultImplementation extends BaseContract {
     init(
       params: IVaultImplementation.InitParamsStruct,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<PopulatedTransaction>
-
-    isDelegateOrOwner(
-      addr: PromiseOrValue<string>,
-      overrides?: CallOverrides
     ): Promise<PopulatedTransaction>
 
     modifyAllowList(
