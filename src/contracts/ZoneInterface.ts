@@ -7,8 +7,6 @@ import type {
   BigNumberish,
   BytesLike,
   CallOverrides,
-  ContractTransaction,
-  Overrides,
   PopulatedTransaction,
   Signer,
   utils,
@@ -23,116 +21,173 @@ import type {
   PromiseOrValue,
 } from './common'
 
-export declare namespace ZoneInterface {
-  export type SchemaStruct = {
-    id: PromiseOrValue<BigNumberish>
-    metadata: PromiseOrValue<BytesLike>
-  }
+export type OfferItemStruct = {
+  itemType: PromiseOrValue<BigNumberish>
+  token: PromiseOrValue<string>
+  identifierOrCriteria: PromiseOrValue<BigNumberish>
+  startAmount: PromiseOrValue<BigNumberish>
+  endAmount: PromiseOrValue<BigNumberish>
+}
 
-  export type SchemaStructOutput = [BigNumber, string] & {
-    id: BigNumber
-    metadata: string
-  }
+export type OfferItemStructOutput = [
+  number,
+  string,
+  BigNumber,
+  BigNumber,
+  BigNumber
+] & {
+  itemType: number
+  token: string
+  identifierOrCriteria: BigNumber
+  startAmount: BigNumber
+  endAmount: BigNumber
+}
 
-  export type SpentItemStruct = {
-    itemType: PromiseOrValue<BigNumberish>
-    token: PromiseOrValue<string>
-    identifier: PromiseOrValue<BigNumberish>
-    amount: PromiseOrValue<BigNumberish>
-  }
+export type ConsiderationItemStruct = {
+  itemType: PromiseOrValue<BigNumberish>
+  token: PromiseOrValue<string>
+  identifierOrCriteria: PromiseOrValue<BigNumberish>
+  startAmount: PromiseOrValue<BigNumberish>
+  endAmount: PromiseOrValue<BigNumberish>
+  recipient: PromiseOrValue<string>
+}
 
-  export type SpentItemStructOutput = [number, string, BigNumber, BigNumber] & {
-    itemType: number
-    token: string
-    identifier: BigNumber
-    amount: BigNumber
-  }
+export type ConsiderationItemStructOutput = [
+  number,
+  string,
+  BigNumber,
+  BigNumber,
+  BigNumber,
+  string
+] & {
+  itemType: number
+  token: string
+  identifierOrCriteria: BigNumber
+  startAmount: BigNumber
+  endAmount: BigNumber
+  recipient: string
+}
 
-  export type ReceivedItemStruct = {
-    itemType: PromiseOrValue<BigNumberish>
-    token: PromiseOrValue<string>
-    identifier: PromiseOrValue<BigNumberish>
-    amount: PromiseOrValue<BigNumberish>
-    recipient: PromiseOrValue<string>
-  }
+export type OrderParametersStruct = {
+  offerer: PromiseOrValue<string>
+  zone: PromiseOrValue<string>
+  offer: OfferItemStruct[]
+  consideration: ConsiderationItemStruct[]
+  orderType: PromiseOrValue<BigNumberish>
+  startTime: PromiseOrValue<BigNumberish>
+  endTime: PromiseOrValue<BigNumberish>
+  zoneHash: PromiseOrValue<BytesLike>
+  salt: PromiseOrValue<BigNumberish>
+  conduitKey: PromiseOrValue<BytesLike>
+  totalOriginalConsiderationItems: PromiseOrValue<BigNumberish>
+}
 
-  export type ReceivedItemStructOutput = [
-    number,
-    string,
-    BigNumber,
-    BigNumber,
-    string
-  ] & {
-    itemType: number
-    token: string
-    identifier: BigNumber
-    amount: BigNumber
-    recipient: string
-  }
+export type OrderParametersStructOutput = [
+  string,
+  string,
+  OfferItemStructOutput[],
+  ConsiderationItemStructOutput[],
+  number,
+  BigNumber,
+  BigNumber,
+  string,
+  BigNumber,
+  string,
+  BigNumber
+] & {
+  offerer: string
+  zone: string
+  offer: OfferItemStructOutput[]
+  consideration: ConsiderationItemStructOutput[]
+  orderType: number
+  startTime: BigNumber
+  endTime: BigNumber
+  zoneHash: string
+  salt: BigNumber
+  conduitKey: string
+  totalOriginalConsiderationItems: BigNumber
+}
 
-  export type ZoneParametersStruct = {
-    orderHash: PromiseOrValue<BytesLike>
-    fulfiller: PromiseOrValue<string>
-    offerer: PromiseOrValue<string>
-    offer: ZoneInterface.SpentItemStruct[]
-    consideration: ZoneInterface.ReceivedItemStruct[]
-    extraData: PromiseOrValue<BytesLike>
-    orderHashes: PromiseOrValue<BytesLike>[]
-    startTime: PromiseOrValue<BigNumberish>
-    endTime: PromiseOrValue<BigNumberish>
-    zoneHash: PromiseOrValue<BytesLike>
-  }
+export type AdvancedOrderStruct = {
+  parameters: OrderParametersStruct
+  numerator: PromiseOrValue<BigNumberish>
+  denominator: PromiseOrValue<BigNumberish>
+  signature: PromiseOrValue<BytesLike>
+  extraData: PromiseOrValue<BytesLike>
+}
 
-  export type ZoneParametersStructOutput = [
-    string,
-    string,
-    string,
-    ZoneInterface.SpentItemStructOutput[],
-    ZoneInterface.ReceivedItemStructOutput[],
-    string,
-    string[],
-    BigNumber,
-    BigNumber,
-    string
-  ] & {
-    orderHash: string
-    fulfiller: string
-    offerer: string
-    offer: ZoneInterface.SpentItemStructOutput[]
-    consideration: ZoneInterface.ReceivedItemStructOutput[]
-    extraData: string
-    orderHashes: string[]
-    startTime: BigNumber
-    endTime: BigNumber
-    zoneHash: string
-  }
+export type AdvancedOrderStructOutput = [
+  OrderParametersStructOutput,
+  BigNumber,
+  BigNumber,
+  string,
+  string
+] & {
+  parameters: OrderParametersStructOutput
+  numerator: BigNumber
+  denominator: BigNumber
+  signature: string
+  extraData: string
+}
+
+export type CriteriaResolverStruct = {
+  orderIndex: PromiseOrValue<BigNumberish>
+  side: PromiseOrValue<BigNumberish>
+  index: PromiseOrValue<BigNumberish>
+  identifier: PromiseOrValue<BigNumberish>
+  criteriaProof: PromiseOrValue<BytesLike>[]
+}
+
+export type CriteriaResolverStructOutput = [
+  BigNumber,
+  number,
+  BigNumber,
+  BigNumber,
+  string[]
+] & {
+  orderIndex: BigNumber
+  side: number
+  index: BigNumber
+  identifier: BigNumber
+  criteriaProof: string[]
 }
 
 export interface ZoneInterfaceInterface extends utils.Interface {
   functions: {
-    'getSeaportMetadata()': FunctionFragment
-    'validateOrder((bytes32,address,address,(uint8,address,uint256,uint256)[],(uint8,address,uint256,uint256,address)[],bytes,bytes32[],uint256,uint256,bytes32))': FunctionFragment
+    'isValidOrder(bytes32,address,address,bytes32)': FunctionFragment
+    'isValidOrderIncludingExtraData(bytes32,address,((address,address,(uint8,address,uint256,uint256,uint256)[],(uint8,address,uint256,uint256,uint256,address)[],uint8,uint256,uint256,bytes32,uint256,bytes32,uint256),uint120,uint120,bytes,bytes),bytes32[],(uint256,uint8,uint256,uint256,bytes32[])[])': FunctionFragment
   }
 
   getFunction(
-    nameOrSignatureOrTopic: 'getSeaportMetadata' | 'validateOrder'
+    nameOrSignatureOrTopic: 'isValidOrder' | 'isValidOrderIncludingExtraData'
   ): FunctionFragment
 
   encodeFunctionData(
-    functionFragment: 'getSeaportMetadata',
-    values?: undefined
+    functionFragment: 'isValidOrder',
+    values: [
+      PromiseOrValue<BytesLike>,
+      PromiseOrValue<string>,
+      PromiseOrValue<string>,
+      PromiseOrValue<BytesLike>
+    ]
   ): string
   encodeFunctionData(
-    functionFragment: 'validateOrder',
-    values: [ZoneInterface.ZoneParametersStruct]
+    functionFragment: 'isValidOrderIncludingExtraData',
+    values: [
+      PromiseOrValue<BytesLike>,
+      PromiseOrValue<string>,
+      AdvancedOrderStruct,
+      PromiseOrValue<BytesLike>[],
+      CriteriaResolverStruct[]
+    ]
   ): string
 
   decodeFunctionResult(
-    functionFragment: 'getSeaportMetadata',
+    functionFragment: 'isValidOrder',
     data: BytesLike
   ): Result
   decodeFunctionResult(
-    functionFragment: 'validateOrder',
+    functionFragment: 'isValidOrderIncludingExtraData',
     data: BytesLike
   ): Result
 
@@ -166,41 +221,56 @@ export interface ZoneInterface extends BaseContract {
   removeListener: OnEvent<this>
 
   functions: {
-    getSeaportMetadata(overrides?: CallOverrides): Promise<
-      [string, ZoneInterface.SchemaStructOutput[]] & {
-        name: string
-        schemas: ZoneInterface.SchemaStructOutput[]
-      }
-    >
+    isValidOrder(
+      orderHash: PromiseOrValue<BytesLike>,
+      caller: PromiseOrValue<string>,
+      offerer: PromiseOrValue<string>,
+      zoneHash: PromiseOrValue<BytesLike>,
+      overrides?: CallOverrides
+    ): Promise<[string] & { validOrderMagicValue: string }>
 
-    validateOrder(
-      zoneParameters: ZoneInterface.ZoneParametersStruct,
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
-    ): Promise<ContractTransaction>
+    isValidOrderIncludingExtraData(
+      orderHash: PromiseOrValue<BytesLike>,
+      caller: PromiseOrValue<string>,
+      order: AdvancedOrderStruct,
+      priorOrderHashes: PromiseOrValue<BytesLike>[],
+      criteriaResolvers: CriteriaResolverStruct[],
+      overrides?: CallOverrides
+    ): Promise<[string] & { validOrderMagicValue: string }>
   }
 
-  getSeaportMetadata(overrides?: CallOverrides): Promise<
-    [string, ZoneInterface.SchemaStructOutput[]] & {
-      name: string
-      schemas: ZoneInterface.SchemaStructOutput[]
-    }
-  >
+  isValidOrder(
+    orderHash: PromiseOrValue<BytesLike>,
+    caller: PromiseOrValue<string>,
+    offerer: PromiseOrValue<string>,
+    zoneHash: PromiseOrValue<BytesLike>,
+    overrides?: CallOverrides
+  ): Promise<string>
 
-  validateOrder(
-    zoneParameters: ZoneInterface.ZoneParametersStruct,
-    overrides?: Overrides & { from?: PromiseOrValue<string> }
-  ): Promise<ContractTransaction>
+  isValidOrderIncludingExtraData(
+    orderHash: PromiseOrValue<BytesLike>,
+    caller: PromiseOrValue<string>,
+    order: AdvancedOrderStruct,
+    priorOrderHashes: PromiseOrValue<BytesLike>[],
+    criteriaResolvers: CriteriaResolverStruct[],
+    overrides?: CallOverrides
+  ): Promise<string>
 
   callStatic: {
-    getSeaportMetadata(overrides?: CallOverrides): Promise<
-      [string, ZoneInterface.SchemaStructOutput[]] & {
-        name: string
-        schemas: ZoneInterface.SchemaStructOutput[]
-      }
-    >
+    isValidOrder(
+      orderHash: PromiseOrValue<BytesLike>,
+      caller: PromiseOrValue<string>,
+      offerer: PromiseOrValue<string>,
+      zoneHash: PromiseOrValue<BytesLike>,
+      overrides?: CallOverrides
+    ): Promise<string>
 
-    validateOrder(
-      zoneParameters: ZoneInterface.ZoneParametersStruct,
+    isValidOrderIncludingExtraData(
+      orderHash: PromiseOrValue<BytesLike>,
+      caller: PromiseOrValue<string>,
+      order: AdvancedOrderStruct,
+      priorOrderHashes: PromiseOrValue<BytesLike>[],
+      criteriaResolvers: CriteriaResolverStruct[],
       overrides?: CallOverrides
     ): Promise<string>
   }
@@ -208,20 +278,40 @@ export interface ZoneInterface extends BaseContract {
   filters: {}
 
   estimateGas: {
-    getSeaportMetadata(overrides?: CallOverrides): Promise<BigNumber>
+    isValidOrder(
+      orderHash: PromiseOrValue<BytesLike>,
+      caller: PromiseOrValue<string>,
+      offerer: PromiseOrValue<string>,
+      zoneHash: PromiseOrValue<BytesLike>,
+      overrides?: CallOverrides
+    ): Promise<BigNumber>
 
-    validateOrder(
-      zoneParameters: ZoneInterface.ZoneParametersStruct,
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    isValidOrderIncludingExtraData(
+      orderHash: PromiseOrValue<BytesLike>,
+      caller: PromiseOrValue<string>,
+      order: AdvancedOrderStruct,
+      priorOrderHashes: PromiseOrValue<BytesLike>[],
+      criteriaResolvers: CriteriaResolverStruct[],
+      overrides?: CallOverrides
     ): Promise<BigNumber>
   }
 
   populateTransaction: {
-    getSeaportMetadata(overrides?: CallOverrides): Promise<PopulatedTransaction>
+    isValidOrder(
+      orderHash: PromiseOrValue<BytesLike>,
+      caller: PromiseOrValue<string>,
+      offerer: PromiseOrValue<string>,
+      zoneHash: PromiseOrValue<BytesLike>,
+      overrides?: CallOverrides
+    ): Promise<PopulatedTransaction>
 
-    validateOrder(
-      zoneParameters: ZoneInterface.ZoneParametersStruct,
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    isValidOrderIncludingExtraData(
+      orderHash: PromiseOrValue<BytesLike>,
+      caller: PromiseOrValue<string>,
+      order: AdvancedOrderStruct,
+      priorOrderHashes: PromiseOrValue<BytesLike>[],
+      criteriaResolvers: CriteriaResolverStruct[],
+      overrides?: CallOverrides
     ): Promise<PopulatedTransaction>
   }
 }

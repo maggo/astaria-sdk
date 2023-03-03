@@ -8,30 +8,34 @@ import type { ZoneInterface, ZoneInterfaceInterface } from '../ZoneInterface'
 
 const _abi = [
   {
-    inputs: [],
-    name: 'getSeaportMetadata',
-    outputs: [
+    inputs: [
       {
-        internalType: 'string',
-        name: 'name',
-        type: 'string',
+        internalType: 'bytes32',
+        name: 'orderHash',
+        type: 'bytes32',
       },
       {
-        components: [
-          {
-            internalType: 'uint256',
-            name: 'id',
-            type: 'uint256',
-          },
-          {
-            internalType: 'bytes',
-            name: 'metadata',
-            type: 'bytes',
-          },
-        ],
-        internalType: 'struct ZoneInterface.Schema[]',
-        name: 'schemas',
-        type: 'tuple[]',
+        internalType: 'address',
+        name: 'caller',
+        type: 'address',
+      },
+      {
+        internalType: 'address',
+        name: 'offerer',
+        type: 'address',
+      },
+      {
+        internalType: 'bytes32',
+        name: 'zoneHash',
+        type: 'bytes32',
+      },
+    ],
+    name: 'isValidOrder',
+    outputs: [
+      {
+        internalType: 'bytes4',
+        name: 'validOrderMagicValue',
+        type: 'bytes4',
       },
     ],
     stateMutability: 'view',
@@ -40,113 +44,202 @@ const _abi = [
   {
     inputs: [
       {
+        internalType: 'bytes32',
+        name: 'orderHash',
+        type: 'bytes32',
+      },
+      {
+        internalType: 'address',
+        name: 'caller',
+        type: 'address',
+      },
+      {
         components: [
           {
-            internalType: 'bytes32',
-            name: 'orderHash',
-            type: 'bytes32',
-          },
-          {
-            internalType: 'address',
-            name: 'fulfiller',
-            type: 'address',
-          },
-          {
-            internalType: 'address',
-            name: 'offerer',
-            type: 'address',
-          },
-          {
             components: [
               {
-                internalType: 'enum ItemType',
-                name: 'itemType',
-                type: 'uint8',
+                internalType: 'address',
+                name: 'offerer',
+                type: 'address',
               },
               {
                 internalType: 'address',
-                name: 'token',
+                name: 'zone',
                 type: 'address',
               },
               {
-                internalType: 'uint256',
-                name: 'identifier',
-                type: 'uint256',
+                components: [
+                  {
+                    internalType: 'enum ItemType',
+                    name: 'itemType',
+                    type: 'uint8',
+                  },
+                  {
+                    internalType: 'address',
+                    name: 'token',
+                    type: 'address',
+                  },
+                  {
+                    internalType: 'uint256',
+                    name: 'identifierOrCriteria',
+                    type: 'uint256',
+                  },
+                  {
+                    internalType: 'uint256',
+                    name: 'startAmount',
+                    type: 'uint256',
+                  },
+                  {
+                    internalType: 'uint256',
+                    name: 'endAmount',
+                    type: 'uint256',
+                  },
+                ],
+                internalType: 'struct OfferItem[]',
+                name: 'offer',
+                type: 'tuple[]',
               },
               {
-                internalType: 'uint256',
-                name: 'amount',
-                type: 'uint256',
+                components: [
+                  {
+                    internalType: 'enum ItemType',
+                    name: 'itemType',
+                    type: 'uint8',
+                  },
+                  {
+                    internalType: 'address',
+                    name: 'token',
+                    type: 'address',
+                  },
+                  {
+                    internalType: 'uint256',
+                    name: 'identifierOrCriteria',
+                    type: 'uint256',
+                  },
+                  {
+                    internalType: 'uint256',
+                    name: 'startAmount',
+                    type: 'uint256',
+                  },
+                  {
+                    internalType: 'uint256',
+                    name: 'endAmount',
+                    type: 'uint256',
+                  },
+                  {
+                    internalType: 'address payable',
+                    name: 'recipient',
+                    type: 'address',
+                  },
+                ],
+                internalType: 'struct ConsiderationItem[]',
+                name: 'consideration',
+                type: 'tuple[]',
               },
-            ],
-            internalType: 'struct ZoneInterface.SpentItem[]',
-            name: 'offer',
-            type: 'tuple[]',
-          },
-          {
-            components: [
               {
-                internalType: 'enum ItemType',
-                name: 'itemType',
+                internalType: 'enum OrderType',
+                name: 'orderType',
                 type: 'uint8',
               },
               {
-                internalType: 'address',
-                name: 'token',
-                type: 'address',
-              },
-              {
                 internalType: 'uint256',
-                name: 'identifier',
+                name: 'startTime',
                 type: 'uint256',
               },
               {
                 internalType: 'uint256',
-                name: 'amount',
+                name: 'endTime',
                 type: 'uint256',
               },
               {
-                internalType: 'address payable',
-                name: 'recipient',
-                type: 'address',
+                internalType: 'bytes32',
+                name: 'zoneHash',
+                type: 'bytes32',
+              },
+              {
+                internalType: 'uint256',
+                name: 'salt',
+                type: 'uint256',
+              },
+              {
+                internalType: 'bytes32',
+                name: 'conduitKey',
+                type: 'bytes32',
+              },
+              {
+                internalType: 'uint256',
+                name: 'totalOriginalConsiderationItems',
+                type: 'uint256',
               },
             ],
-            internalType: 'struct ZoneInterface.ReceivedItem[]',
-            name: 'consideration',
-            type: 'tuple[]',
+            internalType: 'struct OrderParameters',
+            name: 'parameters',
+            type: 'tuple',
+          },
+          {
+            internalType: 'uint120',
+            name: 'numerator',
+            type: 'uint120',
+          },
+          {
+            internalType: 'uint120',
+            name: 'denominator',
+            type: 'uint120',
+          },
+          {
+            internalType: 'bytes',
+            name: 'signature',
+            type: 'bytes',
           },
           {
             internalType: 'bytes',
             name: 'extraData',
             type: 'bytes',
           },
-          {
-            internalType: 'bytes32[]',
-            name: 'orderHashes',
-            type: 'bytes32[]',
-          },
-          {
-            internalType: 'uint256',
-            name: 'startTime',
-            type: 'uint256',
-          },
-          {
-            internalType: 'uint256',
-            name: 'endTime',
-            type: 'uint256',
-          },
-          {
-            internalType: 'bytes32',
-            name: 'zoneHash',
-            type: 'bytes32',
-          },
         ],
-        internalType: 'struct ZoneInterface.ZoneParameters',
-        name: 'zoneParameters',
+        internalType: 'struct AdvancedOrder',
+        name: 'order',
         type: 'tuple',
       },
+      {
+        internalType: 'bytes32[]',
+        name: 'priorOrderHashes',
+        type: 'bytes32[]',
+      },
+      {
+        components: [
+          {
+            internalType: 'uint256',
+            name: 'orderIndex',
+            type: 'uint256',
+          },
+          {
+            internalType: 'enum Side',
+            name: 'side',
+            type: 'uint8',
+          },
+          {
+            internalType: 'uint256',
+            name: 'index',
+            type: 'uint256',
+          },
+          {
+            internalType: 'uint256',
+            name: 'identifier',
+            type: 'uint256',
+          },
+          {
+            internalType: 'bytes32[]',
+            name: 'criteriaProof',
+            type: 'bytes32[]',
+          },
+        ],
+        internalType: 'struct CriteriaResolver[]',
+        name: 'criteriaResolvers',
+        type: 'tuple[]',
+      },
     ],
-    name: 'validateOrder',
+    name: 'isValidOrderIncludingExtraData',
     outputs: [
       {
         internalType: 'bytes4',
@@ -154,7 +247,7 @@ const _abi = [
         type: 'bytes4',
       },
     ],
-    stateMutability: 'nonpayable',
+    stateMutability: 'view',
     type: 'function',
   },
 ] as const
