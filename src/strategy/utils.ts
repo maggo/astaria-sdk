@@ -7,12 +7,19 @@ import {
   ContractTransaction,
   BigNumber,
   utils,
-  providers,
-  Contract,
 } from 'ethers'
+import axios from 'axios'
+import { parse as parseCSV } from 'papaparse'
 import invariant from 'tiny-invariant'
 
-import { parse as parseCSV } from 'papaparse'
+import { getConfig } from '../config'
+
+import { IAstariaRouter } from '../contracts/AstariaRouter'
+import { AstariaRouter__factory } from '../contracts/factories/AstariaRouter__factory'
+import { ILienToken } from '../contracts/LienToken'
+
+import { VirtualOffer } from '../router/VirtualOffer'
+
 import {
   Collateral,
   Collection,
@@ -27,23 +34,12 @@ import {
   UniV3Collateral,
   ProofServiceResponse,
   MerkleDataStructSchema,
-  UniV3CollateralSchema,
-  CollateralSchema,
-  CollectionSchema,
   ProofServiceResponseSchema,
   EthersTypedData,
   EthersTypedDataSchema,
-  DynamicVaultDetail,
   UniqueOffer,
-  UniqueOfferSchema,
 } from '../types'
-import { AstariaRouter__factory } from '../contracts/factories/AstariaRouter__factory'
-import { IAstariaRouter } from '../contracts/AstariaRouter'
-import { ILienToken } from '../contracts/LienToken'
-import axios from 'axios'
-import { StrategyTree } from './StrategyTree'
-import { PublicVault__factory } from '../contracts'
-import { VirtualOffer } from '../router/VirtualOffer'
+
 const stringify = require('json-stringify-deterministic')
 
 export const encodeCollateral = (collateral: Collateral): string => {
@@ -356,9 +352,7 @@ export const getProofByCidAndLeaf = async (
   cid: string,
   leaf: string
 ): Promise<ProofServiceResponse> => {
-  const API_BASE_URL = await import('../index').then(
-    ({ config }) => config.apiBaseURL
-  )
+  const { apiBaseURL: API_BASE_URL } = getConfig()
   const PROOF_PATH = 'strategy/proof'
   const response = await axios.get(
     [API_BASE_URL, PROOF_PATH, cid, leaf].join('/'),
@@ -415,9 +409,7 @@ export const getIsValidated = async (
   delegateAddress: string,
   cid: string
 ): Promise<string> => {
-  const API_BASE_URL = await import('../index').then(
-    ({ config }) => config.apiBaseURL
-  )
+  const { apiBaseURL: API_BASE_URL } = getConfig()
   const VALIDATED_PATH = `${delegateAddress}/${cid}/validated`
 
   const response = await axios.get([API_BASE_URL, VALIDATED_PATH].join('/'), {

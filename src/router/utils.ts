@@ -1,6 +1,7 @@
 import axios from 'axios'
 import { BigNumber, Contract, providers } from 'ethers'
 
+import { getConfig } from '../config'
 import { PublicVault__factory } from '../contracts'
 import { DynamicVaultDetail, UniqueOffer, UniqueOfferSchema } from '../types'
 
@@ -58,9 +59,8 @@ export const getUniqueOffersByCollateral = async (
   limit: number,
   skip: number
 ): Promise<{ count: number; uniqueOffers: UniqueOffer[] }> => {
-  const API_BASE_URL = await import('../index').then(
-    ({ config }) => config.apiBaseURL
-  )
+  const { apiBaseURL: API_BASE_URL } = getConfig()
+
   const UNIQUE_OFFER_PATH = `strategy/offers/${token}/${id.toString()}/${borrower}?${new URLSearchParams(
     {
       limit: `${limit}`,
