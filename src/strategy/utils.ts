@@ -318,6 +318,7 @@ export const convertProofServiceResponseToCommitment = (
   stack: ILienToken.StackStruct[]
 ): IAstariaRouter.CommitmentStruct => {
   let nlrDetails: string
+
   if (collateral.type === StrategyLeafType.Collateral) {
     nlrDetails = encodeCollateral(collateral)
   } else if (collateral.type === StrategyLeafType.Collection) {
@@ -330,6 +331,7 @@ export const convertProofServiceResponseToCommitment = (
     root: proofServiceResponse.typedData.message.root,
     proof: proofServiceResponse.proof,
   })
+
   return {
     tokenContract: collateral.token,
     tokenId: tokenId,
@@ -350,23 +352,23 @@ export const convertProofServiceResponseToCommitment = (
   }
 }
 
-const STRATEGY_BASE_URL =
-  process.env.STRATEGY_BASE_URL ?? 'https://api.astaria.xyz/strategy'
-
 export const getProofByCidAndLeaf = async (
   cid: string,
   leaf: string
 ): Promise<ProofServiceResponse> => {
-  const PROOF_PATH = `proof`
+  const API_BASE_URL = await import('../index').then(
+    ({ config }) => config.apiBaseURL
+  )
+  const PROOF_PATH = 'strategy/proof'
   const response = await axios.get(
-    [STRATEGY_BASE_URL, PROOF_PATH, cid, leaf].join('/'),
+    [API_BASE_URL, PROOF_PATH, cid, leaf].join('/'),
     {
       headers: {
-        // 'Accept-Encoding': 'gzip,deflate,compress',
         'Content-Type': 'application/json',
       },
     }
   )
+
   return ProofServiceResponseSchema.parse(response?.data)
 }
 
@@ -413,17 +415,18 @@ export const getIsValidated = async (
   delegateAddress: string,
   cid: string
 ): Promise<string> => {
-  const VALIDATED_PATH = `${delegateAddress}/${cid}/validated`
-  const response = await axios.get(
-    [STRATEGY_BASE_URL, VALIDATED_PATH].join('/'),
-    {
-      headers: {
-        'Accept-Encoding': 'gzip,deflate,compress',
-        'Content-Type': 'application/json',
-      },
-    }
+  const API_BASE_URL = await import('../index').then(
+    ({ config }) => config.apiBaseURL
   )
-  // valid, invalid, or pending
+  const VALIDATED_PATH = `${delegateAddress}/${cid}/validated`
+
+  const response = await axios.get([API_BASE_URL, VALIDATED_PATH].join('/'), {
+    headers: {
+      'Accept-Encoding': 'gzip,deflate,compress',
+      'Content-Type': 'application/json',
+    },
+  })
+
   return response?.data?.validated
 }
 
