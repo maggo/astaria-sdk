@@ -7,12 +7,19 @@ import {
   ContractTransaction,
   BigNumber,
   utils,
-  providers,
-  Contract,
 } from 'ethers'
+import axios from 'axios'
+import { parse as parseCSV } from 'papaparse'
 import invariant from 'tiny-invariant'
 
-import { parse as parseCSV } from 'papaparse'
+import { getConfig } from '../config'
+
+import { IAstariaRouter } from '../contracts/AstariaRouter'
+import { AstariaRouter__factory } from '../contracts/factories/AstariaRouter__factory'
+import { ILienToken } from '../contracts/LienToken'
+
+import { VirtualOffer } from '../router/VirtualOffer'
+
 import {
   Collateral,
   Collection,
@@ -27,23 +34,12 @@ import {
   UniV3Collateral,
   ProofServiceResponse,
   MerkleDataStructSchema,
-  UniV3CollateralSchema,
-  CollateralSchema,
-  CollectionSchema,
   ProofServiceResponseSchema,
   EthersTypedData,
   EthersTypedDataSchema,
-  DynamicVaultDetail,
   UniqueOffer,
-  UniqueOfferSchema,
 } from '../types'
-import { AstariaRouter__factory } from '../contracts/factories/AstariaRouter__factory'
-import { IAstariaRouter } from '../contracts/AstariaRouter'
-import { ILienToken } from '../contracts/LienToken'
-import axios from 'axios'
-import { StrategyTree } from './StrategyTree'
-import { PublicVault__factory } from '../contracts'
-import { VirtualOffer } from '../router/VirtualOffer'
+
 const stringify = require('json-stringify-deterministic')
 
 export const encodeCollateral = (collateral: Collateral): string => {
@@ -318,6 +314,7 @@ export const convertProofServiceResponseToCommitment = (
   stack: ILienToken.StackStruct[]
 ): IAstariaRouter.CommitmentStruct => {
   let nlrDetails: string
+
   if (collateral.type === StrategyLeafType.Collateral) {
     nlrDetails = encodeCollateral(collateral)
   } else if (collateral.type === StrategyLeafType.Collection) {
@@ -330,6 +327,7 @@ export const convertProofServiceResponseToCommitment = (
     root: proofServiceResponse.typedData.message.root,
     proof: proofServiceResponse.proof,
   })
+
   return {
     tokenContract: collateral.token,
     tokenId: tokenId,
@@ -350,23 +348,21 @@ export const convertProofServiceResponseToCommitment = (
   }
 }
 
-const STRATEGY_BASE_URL =
-  process.env.STRATEGY_BASE_URL ?? 'https://api.astaria.xyz/strategy'
-
 export const getProofByCidAndLeaf = async (
   cid: string,
   leaf: string
 ): Promise<ProofServiceResponse> => {
-  const PROOF_PATH = `proof`
+  const { apiBaseURL: API_BASE_URL } = getConfig()
+  const PROOF_PATH = 'strategy/proof'
   const response = await axios.get(
-    [STRATEGY_BASE_URL, PROOF_PATH, cid, leaf].join('/'),
+    [API_BASE_URL, PROOF_PATH, cid, leaf].join('/'),
     {
       headers: {
-        // 'Accept-Encoding': 'gzip,deflate,compress',
         'Content-Type': 'application/json',
       },
     }
   )
+
   return ProofServiceResponseSchema.parse(response?.data)
 }
 
@@ -413,17 +409,16 @@ export const getIsValidated = async (
   delegateAddress: string,
   cid: string
 ): Promise<string> => {
+  const { apiBaseURL: API_BASE_URL } = getConfig()
   const VALIDATED_PATH = `${delegateAddress}/${cid}/validated`
-  const response = await axios.get(
-    [STRATEGY_BASE_URL, VALIDATED_PATH].join('/'),
-    {
-      headers: {
-        'Accept-Encoding': 'gzip,deflate,compress',
-        'Content-Type': 'application/json',
-      },
-    }
-  )
-  // valid, invalid, or pending
+
+  const response = await axios.get([API_BASE_URL, VALIDATED_PATH].join('/'), {
+    headers: {
+      'Accept-Encoding': 'gzip,deflate,compress',
+      'Content-Type': 'application/json',
+    },
+  })
+
   return response?.data?.validated
 }
 
