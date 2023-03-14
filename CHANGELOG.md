@@ -1,3 +1,11 @@
+# [1.0.0-alpha.22](https://github.com/astariaxyz/astaria-sdk/compare/v1.0.0-alpha.21...v1.0.0-alpha.22) (2023-03-14)
+
+
+### Features
+
+* config module, resolve circular dependency ([aa8e3bb](https://github.com/astariaxyz/astaria-sdk/commit/aa8e3bbf749b76cfec16ab7c64283cbc0a8e1d92))
+* dynamic runtime configuration ([781755e](https://github.com/astariaxyz/astaria-sdk/commit/781755e6eec11f002a2871475bc35f69598fdea5))
+
 # [1.0.0-alpha.21](https://github.com/astariaxyz/astaria-sdk/compare/v1.0.0-alpha.20...v1.0.0-alpha.21) (2023-03-03)
 
 
