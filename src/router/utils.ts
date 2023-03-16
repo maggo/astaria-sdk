@@ -61,13 +61,14 @@ export const getUniqueOffersByCollateral = async (
 ): Promise<{ count: number; uniqueOffers: UniqueOffer[] }> => {
   const { apiBaseURL: API_BASE_URL } = getConfig()
 
-  const UNIQUE_OFFER_PATH = `strategy/offers/${token}/${id.toString()}/${borrower}?${new URLSearchParams(
-    {
-      limit: `${limit}`,
-      skip: `${skip}`,
-      unique: 'true',
-    }
-  ).toString()}`
+  const params = new URLSearchParams({
+    limit: '' + limit,
+    skip: '' + skip,
+    unique: 'true',
+  })
+  const UNIQUE_OFFER_PATH =
+    `offers/${token.toLowerCase()}/${id.toString()}/${borrower}?` +
+    params.toString()
 
   const response = await axios.get(
     [API_BASE_URL, UNIQUE_OFFER_PATH].join('/'),
