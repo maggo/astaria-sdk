@@ -27,7 +27,7 @@ const localRoot =
   '0x276a20acb0e3b40e3e98b20030585add5dd1c6c6f53b99b3bc0645809dd3eef0'
 
 describe('util.signRoot using remote', () => {
-  jest.setTimeout(30 * 1000)
+  jest.setTimeout(90 * 1000)
 
   test('signs merkle tree root', async () => {
     const provider = new MockProvider({
