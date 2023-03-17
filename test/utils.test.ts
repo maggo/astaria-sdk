@@ -101,7 +101,7 @@ describe('util.signRoot using remote', () => {
       strategyTree.getStrategy
     )
     const actual = await Hash.of(strategyPayload)
-    const expected = 'QmYLBCxovAacZd58rNxV6GcmqbJkVnTGePMYN9EYnLBDKy'
+    const expected = 'QmcmhWBwtLnhDjbJPcAtKeaV6EmaANedbdYLUdGf9hXF36'
 
     expect(actual).toEqual(expected)
   })
