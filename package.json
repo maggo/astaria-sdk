@@ -36,7 +36,7 @@
     "@types/jest": "^29.2.4",
     "@types/node": "^18.11.17",
     "@types/papaparse": "^5.3.7",
-    "ganache": "^7.7.2",
+    "ethereum-waffle": "^4.0.10",
     "husky": "^8.0.2",
     "semantic-release": "^19.0.5",
     "size-limit": "^8.1.0",
