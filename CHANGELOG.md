@@ -1,3 +1,20 @@
+# [1.0.0-alpha.23](https://github.com/astariaxyz/astaria-sdk/compare/v1.0.0-alpha.22...v1.0.0-alpha.23) (2023-03-17)
+
+
+### Bug Fixes
+
+* replace ganache with ethereum-waffle ([f7b4a06](https://github.com/astariaxyz/astaria-sdk/commit/f7b4a06e0759699bf18583743b1c30e02057e569))
+* replace ganache with ethereum-waffle ([aa568a7](https://github.com/astariaxyz/astaria-sdk/commit/aa568a71f248d0f1ed74c34fe72062409466089b))
+* unique offer path ([bda90b9](https://github.com/astariaxyz/astaria-sdk/commit/bda90b9a1eb42b7730b99a92c88c11e67c81558f))
+
+
+### Features
+
+* implement changes for a queueing system ([bac7324](https://github.com/astariaxyz/astaria-sdk/commit/bac73248ff5c26d250653864168fceb28dc3d451))
+* increase test timeout ([c9f8fec](https://github.com/astariaxyz/astaria-sdk/commit/c9f8fec38f9352a8c2b509978333430ece6a0171))
+* increase timeouts ([7c84ac4](https://github.com/astariaxyz/astaria-sdk/commit/7c84ac4d6ee138b9f4cd17bf3bfe67a5f9042bfd))
+* lift timeout into describe block ([e018d96](https://github.com/astariaxyz/astaria-sdk/commit/e018d965c7eddf5f0cd2c5754e8e3c2f71d0a864))
+
 # [1.0.0-alpha.22](https://github.com/astariaxyz/astaria-sdk/compare/v1.0.0-alpha.21...v1.0.0-alpha.22) (2023-03-14)
 
 
