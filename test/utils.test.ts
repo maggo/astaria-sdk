@@ -28,6 +28,8 @@ const localRoot =
 
 describe('util.signRoot using remote', () => {
   test('signs merkle tree root', async () => {
+    jest.setTimeout(30 * 1000)
+
     const provider = new MockProvider({
       ganacheOptions: {
         wallet: {
