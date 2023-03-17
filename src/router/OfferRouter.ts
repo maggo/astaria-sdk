@@ -4,6 +4,7 @@ import { DynamicVaultDetail, UniqueOffer } from '../types'
 import { CollateralManager } from './CollateralManager'
 import { VirtualOffer } from './VirtualOffer'
 import { WAD } from '../types/helpers'
+import { Queue } from './Queue'
 
 export interface NFT {
   token: string
@@ -113,6 +114,7 @@ export class OfferRouter {
   private provider: providers.BaseProvider
   private isReady: boolean
   private cacheIsValid: boolean
+  private queue: Queue
 
   // add unsubscribe
   constructor(
@@ -144,6 +146,7 @@ export class OfferRouter {
     this.borrower = borrower
 
     this.collateralManagers = []
+    this.queue = new Queue(this.executeUpdate.bind(this))
     this.addNewCollaterals(assets)
   }
 
@@ -179,7 +182,9 @@ export class OfferRouter {
     return uniqueOffers.filter((uniqueOffer: UniqueOffer) => {
       let dynamicVaultDetail = dynamicVaultDetails.get(uniqueOffer.vault)
       if (!dynamicVaultDetail)
-        throw new Error('DynamicVault detail not available for specified vault')
+        throw new Error(
+          'DynamicVault detail not available for vault ' + uniqueOffer.vault
+        )
       if (!dynamicVaultDetail.isReadyState) return false
       return true
     })
@@ -199,28 +204,7 @@ export class OfferRouter {
     )
   }
 
-  public async onNewUniqueOffers(uniqueOffers: UniqueOffer[]) {
-    let promises: Promise<DynamicVaultDetail>[] = []
-    uniqueOffers.map((uniqueOffer: UniqueOffer) => {
-      const provider: providers.Provider = this.provider
-
-      let dynamicVaultDetail: DynamicVaultDetail | undefined =
-        this.dynamicVaultDetails.get(uniqueOffer.vault)
-      if (!dynamicVaultDetail)
-        promises.push(getDynamicVaultDetail(uniqueOffer.vault, provider))
-    })
-    await Promise.all(promises).then(
-      (dynamicVaultDetails: DynamicVaultDetail[]) => {
-        dynamicVaultDetails.forEach(
-          (dynamicVaultDetail: DynamicVaultDetail) => {
-            this.dynamicVaultDetails.set(
-              dynamicVaultDetail.address,
-              dynamicVaultDetail
-            )
-          }
-        )
-      }
-    )
+  public executeUpdate() {
     let allUniqueOffers: UniqueOffer[] = this.getAllValidUniqueOffers()
     let virtualOffers: VirtualOffer[]
     ;({
@@ -247,6 +231,29 @@ export class OfferRouter {
       console.log(
         'Input parameters and assets has resulted in no virtualOffers'
       )
+  }
+
+  public async onNewUniqueOffers(uniqueOffers: UniqueOffer[]) {
+    uniqueOffers.map((uniqueOffer: UniqueOffer) => {
+      const provider: providers.Provider = this.provider
+
+      let dynamicVaultDetail: DynamicVaultDetail | undefined =
+        this.dynamicVaultDetails.get(uniqueOffer.vault)
+      if (!dynamicVaultDetail)
+        this.queue.push(uniqueOffer.vault, () =>
+          getDynamicVaultDetail(uniqueOffer.vault, provider).then(
+            (dynamicVaultDetail: DynamicVaultDetail) => {
+              this.dynamicVaultDetails.set(
+                dynamicVaultDetail.address,
+                dynamicVaultDetail
+              )
+            }
+          )
+        )
+    })
+
+    // for the case where the dynamicVaultDetail is already available
+    if (!this.queue.isRunning) this.executeUpdate()
   }
 
   public setParamsForOfferView(offerParams: OfferParams): void {

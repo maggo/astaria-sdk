@@ -31,7 +31,7 @@ export class CollateralManager {
     provider: providers.BaseProvider
   ) {
     this.token = AddressSchema.parse(token)
-    this.id = Uint256Schema.parse(id)
+    this.id = Uint256Schema.parse(id.toString())
 
     this.borrower = AddressSchema.parse(borrower)
     this.timeout = timeout
