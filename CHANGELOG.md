@@ -1,3 +1,10 @@
+# [1.0.0-alpha.24](https://github.com/astariaxyz/astaria-sdk/compare/v1.0.0-alpha.23...v1.0.0-alpha.24) (2023-03-17)
+
+
+### Bug Fixes
+
+* unchecksum all addresses ([d4ca57c](https://github.com/astariaxyz/astaria-sdk/commit/d4ca57c1d550c6bdc918a714ed50266c55234a10))
+
 # [1.0.0-alpha.23](https://github.com/astariaxyz/astaria-sdk/compare/v1.0.0-alpha.22...v1.0.0-alpha.23) (2023-03-17)
 
 ### Bug Fixes
