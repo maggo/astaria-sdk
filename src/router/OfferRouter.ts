@@ -5,6 +5,7 @@ import { CollateralManager } from './CollateralManager'
 import { VirtualOffer } from './VirtualOffer'
 import { WAD } from '../types/helpers'
 import { Queue } from './Queue'
+import { keccak256, solidityKeccak256 } from 'ethers/lib/utils'
 
 export interface NFT {
   token: string
@@ -394,7 +395,9 @@ export class OfferRouter {
   }
 
   public static generateCollateralId(token: string, id: BigNumber) {
-    return utils.defaultAbiCoder.encode(['address', 'uint256'], [token, id])
+    return BigNumber.from(
+      solidityKeccak256(['address', 'uint256'], [token, id])
+    ).toString()
   }
 
   // uniqueOffer must be sorted before using this method
@@ -482,9 +485,5 @@ export class OfferRouter {
         getDynamicVaultDetail(address, provider)
       )
     )
-  }
-
-  public static calculateCollateralId(token: string, id: BigNumber) {
-    return utils.defaultAbiCoder.encode(['address', 'uint256'], [token, id])
   }
 }

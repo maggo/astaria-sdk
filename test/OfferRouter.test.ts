@@ -27,6 +27,7 @@ import _nfts from './__mocks__/nfts.json'
 import _dynamicVaultDetails from './__mocks__/dynamic_vault_details_map.json'
 import _uniqueOffers from './__mocks__/unique_offers_map.json'
 import { SECONDS_IN_A_DAY } from '../src/router/helpers'
+import { defaultAbiCoder } from 'ethers/lib/utils'
 
 const nfts: NFT[] = convertJsonToNfts(_nfts)
 const dynamicVaultDetails: Map<string, DynamicVaultDetail> =
@@ -34,6 +35,9 @@ const dynamicVaultDetails: Map<string, DynamicVaultDetail> =
 const uniqueOffersMap: Map<string, UniqueOffer[]> =
   convertJsonToUniqueOffersMap(_uniqueOffers)
 
+const calculateCollateralId = (token: string, id: BigNumber) => {
+  return defaultAbiCoder.encode(['address', 'uint256'], [token, id])
+}
 // mock getDynamicVaultDetail so that methods do not access chain data
 jest.mock('../src/router/utils', () => {
   return {
@@ -58,7 +62,7 @@ jest.mock('../src/router/utils', () => {
           limit: number,
           skip: number
         ): Promise<{ count: number; uniqueOffers: UniqueOffer[] }> => {
-          const collateralId = OfferRouter.generateCollateralId(token, id)
+          const collateralId = calculateCollateralId(token, id)
           const uniqueOffers = uniqueOffersMap.get(collateralId)
           if (!uniqueOffers)
             throw new Error('UniqueOffers not set for specificied CollateralId')
