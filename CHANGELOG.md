@@ -7,11 +7,10 @@
 
 # [1.0.0-alpha.26](https://github.com/astariaxyz/astaria-sdk/compare/v1.0.0-alpha.25...v1.0.0-alpha.26) (2023-04-17)
 
-
 ### Bug Fixes
 
-* changes to collateralId calculation ([bce6d93](https://github.com/astariaxyz/astaria-sdk/commit/bce6d939e57b4a3188542eba9ba1e2f4a8b4ec7c))
-* Updates collateralId generation ([cdc60e3](https://github.com/astariaxyz/astaria-sdk/commit/cdc60e3ca77d7f32eb58a3ecb8102ecdf90965dc))
+- changes to collateralId calculation ([bce6d93](https://github.com/astariaxyz/astaria-sdk/commit/bce6d939e57b4a3188542eba9ba1e2f4a8b4ec7c))
+- Updates collateralId generation ([cdc60e3](https://github.com/astariaxyz/astaria-sdk/commit/cdc60e3ca77d7f32eb58a3ecb8102ecdf90965dc))
 
 # [1.0.0-alpha.25](https://github.com/astariaxyz/astaria-sdk/compare/v1.0.0-alpha.24...v1.0.0-alpha.25) (2023-03-27)
 
