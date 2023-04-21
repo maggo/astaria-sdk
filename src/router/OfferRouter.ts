@@ -176,7 +176,7 @@ export class OfferRouter {
     return this.isOfferRouterReady()
   }
 
-  private static validateUniqueOffer(
+  public static validateUniqueOffer(
     uniqueOffers: UniqueOffer[],
     dynamicVaultDetails: Map<string, DynamicVaultDetail>
   ): UniqueOffer[] {
