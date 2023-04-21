@@ -289,7 +289,7 @@ export class OfferRouter {
     )
   }
 
-  private static generateStateForOfferView(
+  public static generateStateForOfferView(
     offerBounds: OfferBounds | undefined,
     offerParams: OfferParams | undefined,
     dynamicVaultDetails: Map<string, DynamicVaultDetail>,
