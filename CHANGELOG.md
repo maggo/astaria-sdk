@@ -1,3 +1,10 @@
+# [1.0.0-alpha.28](https://github.com/astariaxyz/astaria-sdk/compare/v1.0.0-alpha.27...v1.0.0-alpha.28) (2023-04-21)
+
+
+### Bug Fixes
+
+* expose method for filtering dynamicVaultDetails ([9e61293](https://github.com/astariaxyz/astaria-sdk/commit/9e612935fb01b1b50eac0c3ba159ba7a3c56be29))
+
 # [1.0.0-alpha.27](https://github.com/astariaxyz/astaria-sdk/compare/v1.0.0-alpha.26...v1.0.0-alpha.27) (2023-04-21)
 
 
