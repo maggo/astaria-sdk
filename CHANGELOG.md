@@ -1,3 +1,10 @@
+# [1.0.0-alpha.27](https://github.com/astariaxyz/astaria-sdk/compare/v1.0.0-alpha.26...v1.0.0-alpha.27) (2023-04-21)
+
+
+### Bug Fixes
+
+* convert OfferRouter to hook etc ([0f0dd96](https://github.com/astariaxyz/astaria-sdk/commit/0f0dd96d3074c5e778cb5e0c031a3f9bce5d133e))
+
 # [1.0.0-alpha.26](https://github.com/astariaxyz/astaria-sdk/compare/v1.0.0-alpha.25...v1.0.0-alpha.26) (2023-04-17)
 
 
