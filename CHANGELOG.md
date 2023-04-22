@@ -1,3 +1,10 @@
+# [1.0.0-alpha.29](https://github.com/astariaxyz/astaria-sdk/compare/v1.0.0-alpha.28...v1.0.0-alpha.29) (2023-04-22)
+
+
+### Bug Fixes
+
+* remove offerrouter ([a68fc0e](https://github.com/astariaxyz/astaria-sdk/commit/a68fc0e241d7ae843736ab94679a4fe0ce7e14b3))
+
 # [1.0.0-alpha.28](https://github.com/astariaxyz/astaria-sdk/compare/v1.0.0-alpha.27...v1.0.0-alpha.28) (2023-04-21)
 
 
