@@ -18,8 +18,6 @@ import { IAstariaRouter } from '../contracts/AstariaRouter'
 import { AstariaRouter__factory } from '../contracts/factories/AstariaRouter__factory'
 import { ILienToken } from '../contracts/LienToken'
 
-import { VirtualOffer } from '../router/VirtualOffer'
-
 import {
   Collateral,
   Collection,
@@ -37,7 +35,6 @@ import {
   ProofServiceResponseSchema,
   EthersTypedData,
   EthersTypedDataSchema,
-  UniqueOffer,
 } from '../types'
 
 const stringify = require('json-stringify-deterministic')
@@ -366,45 +363,6 @@ export const getProofByCidAndLeaf = async (
   return ProofServiceResponseSchema.parse(response?.data)
 }
 
-export const virtualOfferToCommitments = async (
-  virtualOffer: VirtualOffer
-): Promise<IAstariaRouter.CommitmentStruct[]> => {
-  return Promise.all(
-    virtualOffer.stack.reduce(
-      (
-        commitments: Array<Promise<IAstariaRouter.CommitmentStruct>>,
-        uniqueOffer: UniqueOffer
-      ) => {
-        if (!uniqueOffer.cid || !uniqueOffer.leaf)
-          throw new Error(
-            'virtualOfferToCommitments: provided UniqueOffer does not contain either a cid or leaf'
-          )
-
-        commitments.push(
-          getProofByCidAndLeaf(uniqueOffer.cid, uniqueOffer.leaf).then(
-            (proof: ProofServiceResponse) => {
-              if (!uniqueOffer.underlyingTokenId)
-                throw new Error('underlyingTokenId remains unset')
-              return convertProofServiceResponseToCommitment(
-                proof,
-                uniqueOffer,
-                uniqueOffer.underlyingTokenId,
-                VirtualOffer.getAmountOrBalance(uniqueOffer),
-                getStackByCollateral(
-                  uniqueOffer.token,
-                  uniqueOffer.underlyingTokenId
-                )
-              )
-            }
-          )
-        )
-        return commitments
-      },
-      [] as Array<Promise<IAstariaRouter.CommitmentStruct>>
-    )
-  )
-}
-
 export const getIsValidated = async (
   delegateAddress: string,
   cid: string
@@ -420,11 +378,4 @@ export const getIsValidated = async (
   })
 
   return response?.data?.validated
-}
-
-export const commitToLiensWithVirtualOffersByAmount = async (
-  amount: BigNumber,
-  virtualOffers: VirtualOffer[]
-) => {
-  // todo used to accept the the inputs from the borrow page
 }
