@@ -1,4 +1,4 @@
-import * as z from 'zod'
+import { z } from 'zod'
 import { BigNumber } from 'ethers'
 
 export const SignedHexSchema = z.string().regex(/^[-]{0,1}0x[a-fA-F0-9]*$/)
