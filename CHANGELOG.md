@@ -1,3 +1,10 @@
+# [1.0.0-alpha.31](https://github.com/astariaxyz/astaria-sdk/compare/v1.0.0-alpha.30...v1.0.0-alpha.31) (2023-05-07)
+
+
+### Features
+
+* use destructured import for zod ([db1e897](https://github.com/astariaxyz/astaria-sdk/commit/db1e897d786f4653116062fc11f8fde77ea6f770))
+
 # [1.0.0-alpha.30](https://github.com/astariaxyz/astaria-sdk/compare/v1.0.0-alpha.29...v1.0.0-alpha.30) (2023-05-07)
 
 
