@@ -1,3 +1,10 @@
+# [1.0.0-alpha.30](https://github.com/astariaxyz/astaria-sdk/compare/v1.0.0-alpha.29...v1.0.0-alpha.30) (2023-05-07)
+
+
+### Bug Fixes
+
+* use namespace import for zod ([cf34c10](https://github.com/astariaxyz/astaria-sdk/commit/cf34c107c654433e8a6d709ef9f239c0f0e30a03))
+
 # [1.0.0-alpha.29](https://github.com/astariaxyz/astaria-sdk/compare/v1.0.0-alpha.28...v1.0.0-alpha.29) (2023-04-22)
 
 
