@@ -14,6 +14,7 @@ import {
   getTypedData,
 } from '../src/strategy/utils'
 import { StrategyDetails } from '../src/types'
+import { HexSchema } from '../src/types/helpers'
 
 const Hash = require('ipfs-only-hash')
 
@@ -84,7 +85,7 @@ describe('util.signRoot using remote', () => {
     const csv = await readFile(join(__dirname, '__mocks__/test.csv'), 'utf8')
     const strategyTree = StrategyTree.fromCSV(csv)
 
-    const root = strategyTree.getHexRoot()
+    const root = HexSchema.parse(strategyTree.getHexRoot())
     const wallet = Wallet.fromMnemonic(sharedMnemonic)
     const verifyingContract = AddressZero
     const strategy: StrategyDetails = {
