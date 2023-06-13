@@ -12,7 +12,7 @@ export const HexSchema = z.custom<`0x${string}`>(
 export const AddressSchema = HexSchema.refine(
   (val) => val.length === 42,
   'Invalid address length'
-).transform((val) => val.toLowerCase())
+).transform((val) => val.toLowerCase() as `0x${string}`)
 
 export const WAD = BigNumber.from('1000000000000000000')
 

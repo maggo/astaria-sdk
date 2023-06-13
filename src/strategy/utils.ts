@@ -37,7 +37,7 @@ import {
   EthersTypedData,
   EthersTypedDataSchema,
 } from '../types'
-import { HexSchema } from '../types/helpers'
+import { AddressSchema, HexSchema } from '../types/helpers'
 
 const stringify = require('json-stringify-deterministic')
 
@@ -238,7 +238,7 @@ export const verifySignature = (typedData: TypedData, signature: Signature) => {
 export const getTypedData = (
   strategy: StrategyDetails,
   root: z.infer<typeof HexSchema>,
-  verifyingContract: string,
+  verifyingContract: z.infer<typeof AddressSchema>,
   chainId: number
 ): TypedData => {
   return {
