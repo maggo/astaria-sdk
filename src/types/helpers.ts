@@ -85,22 +85,12 @@ export const IntBigNumberSchema = z.union([
   IntStringToBigNumberSchema,
 ])
 
-const UINT8MAX = 2 ** 8 - 1
 const UINT24MAX = BigNumber.from(2).pow(24).sub(1)
 const UINT128MAX = BigNumber.from(2).pow(128).sub(1)
 const UINT256MAX = BigNumber.from(2).pow(256).sub(1)
 
 const INT24MIN = BigNumber.from(0).sub(UINT24MAX.div(2)).sub(1)
 const INT24MAX = BigNumber.from(0).add(UINT24MAX.div(2))
-
-export const Uint8Schema = z
-  .union([z.string(), z.number()])
-  .transform((val) => (typeof val === 'number' ? val : Number.parseFloat(val)))
-  .refine(
-    (val) => Number.isInteger(val) && val >= 0,
-    'Must be a positive integer'
-  )
-  .refine((val) => val <= UINT8MAX, 'Cannot exceed (2^8) - 1')
 
 export const Uint24Schema = UintBigNumberSchema.refine((val) => {
   return val instanceof BigNumber ? val.lte(UINT24MAX) : false
