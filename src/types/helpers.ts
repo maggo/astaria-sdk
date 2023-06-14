@@ -1,10 +1,18 @@
 import { z } from 'zod'
 import { BigNumber } from 'ethers'
 
-export const SignedHexSchema = z.string().regex(/^[-]{0,1}0x[a-fA-F0-9]*$/)
+export const SignedHexSchema = z.custom<`${'-' | ''}0x${string}`>(
+  (val) => typeof val === 'string' && /^[-]{0,1}0x[a-fA-F0-9]*$/.test(val)
+)
 
-export const HexSchema = z.string().regex(/^0x[a-fA-F0-9]*$/)
-export const AddressSchema = HexSchema.toLowerCase().length(42)
+export const HexSchema = z.custom<`0x${string}`>(
+  (val) => typeof val === 'string' && /^0x[a-fA-F0-9]*$/.test(val)
+)
+
+export const AddressSchema = HexSchema.refine(
+  (val) => val.length === 42,
+  'Invalid address length'
+).transform((val) => val.toLowerCase() as `0x${string}`)
 
 export const WAD = BigNumber.from('1000000000000000000')
 

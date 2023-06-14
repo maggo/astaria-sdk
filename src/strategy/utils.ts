@@ -11,6 +11,7 @@ import {
 import axios from 'axios'
 import { parse as parseCSV } from 'papaparse'
 import invariant from 'tiny-invariant'
+import { z } from 'zod'
 
 import { getConfig } from '../config'
 
@@ -36,6 +37,7 @@ import {
   EthersTypedData,
   EthersTypedDataSchema,
 } from '../types'
+import { AddressSchema, HexSchema } from '../types/helpers'
 
 const stringify = require('json-stringify-deterministic')
 
@@ -174,17 +176,17 @@ export const prepareLeaves = (strategy: Strategy): string[] => {
   return strategy.map((row: StrategyRow) => {
     switch (row.type) {
       case StrategyLeafType.Collection: {
-        row.leaf = keccak256(encodeCollection(row))
+        row.leaf = HexSchema.parse(keccak256(encodeCollection(row)))
         break
       }
 
       case StrategyLeafType.Collateral: {
-        row.leaf = keccak256(encodeCollateral(row))
+        row.leaf = HexSchema.parse(keccak256(encodeCollateral(row)))
         break
       }
 
       case StrategyLeafType.UniV3Collateral: {
-        row.leaf = keccak256(encodeUniV3Collateral(row))
+        row.leaf = HexSchema.parse(keccak256(encodeUniV3Collateral(row)))
         break
       }
     }
@@ -235,8 +237,8 @@ export const verifySignature = (typedData: TypedData, signature: Signature) => {
 
 export const getTypedData = (
   strategy: StrategyDetails,
-  root: string,
-  verifyingContract: string,
+  root: z.infer<typeof HexSchema>,
+  verifyingContract: z.infer<typeof AddressSchema>,
   chainId: number
 ): TypedData => {
   return {
