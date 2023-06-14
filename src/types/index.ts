@@ -169,7 +169,10 @@ export const UniV3CollateralOfferSchema = BaseOfferSchema.extend({
   amount1Min: Uint256Schema,
 })
 
-export const UniqueOfferSchema = z.discriminatedUnion('type', [
+export const UniqueOfferSchema = z.discriminatedUnion<
+  'type',
+  [typeof CollateralOfferSchema, typeof CollectionOfferSchema]
+>('type', [
   CollateralOfferSchema,
   CollectionOfferSchema,
   // add UniV3OfferSchema once the service is ready
