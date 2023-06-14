@@ -1,3 +1,17 @@
+# [1.0.0-alpha.32](https://github.com/astariaxyz/astaria-sdk/compare/v1.0.0-alpha.31...v1.0.0-alpha.32) (2023-06-14)
+
+
+### Bug Fixes
+
+* cast proper type for transformed AddressSchema ([5ec99fb](https://github.com/astariaxyz/astaria-sdk/commit/5ec99fbf6acdd57a4d3f155576db191ead82ca8d))
+* explicit type for UniqueOfferSchema to pass through field types ([72c3864](https://github.com/astariaxyz/astaria-sdk/commit/72c386463b79f53ab6028ead87a5732503e757e5))
+
+
+### Features
+
+* add Uint8Schema ([9991228](https://github.com/astariaxyz/astaria-sdk/commit/999122839082d4fca37539551633293c646e617f))
+* more refined types for HexSchema and AddressSchema ([f7a806c](https://github.com/astariaxyz/astaria-sdk/commit/f7a806c46d1bc35c888d00a7170f93a8b2422e5a))
+
 # [1.0.0-alpha.31](https://github.com/astariaxyz/astaria-sdk/compare/v1.0.0-alpha.30...v1.0.0-alpha.31) (2023-05-07)
 
 
