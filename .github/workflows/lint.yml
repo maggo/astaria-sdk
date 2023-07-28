@@ -1,0 +1,40 @@
+name: Lint
+
+on:
+  pull_request:
+    branches:
+      - '**'
+
+permissions:
+  checks: write
+  contents: write
+
+jobs:
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'yarn'
+
+      - name: Install dependencies
+        run: yarn install --immutable --frozen-lockfile --no-progress --prefer-offline
+
+      - name: Run linters
+        uses: wearerequired/lint-action@v2
+        with:
+          auto_fix: true
+          commit_message: 'style: code style issues with ${linter}'
+          git_email: 'delivertojustin@gmail.com'
+          git_name: 'Bram Bot'
+          eslint: true
+          eslint_extensions: js,ts,tsx
+          prettier: true
+          tsc: true
