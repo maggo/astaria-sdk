@@ -9,5 +9,7 @@ node_modules
 out
 public
 yarn.lock
+CHANGELOG.md
 abi
 src/abi
+test/__mocks__
