@@ -89,12 +89,5 @@
       "path": "dist/sdk.esm.js",
       "limit": "10 KB"
     }
-  ],
-  "lint-staged": {
-    "*.{ts,tsx}": [
-      "tsdx lint",
-      "eslint --cache --fix",
-      "yarn format"
-    ]
-  }
+  ]
 }
