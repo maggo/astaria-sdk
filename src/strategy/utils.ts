@@ -1,44 +1,40 @@
 import axios from 'axios'
+import stringify from 'json-stringify-deterministic'
 import { parse as parseCSV } from 'papaparse'
 import invariant from 'tiny-invariant'
+import {
+  type Account,
+  type Address,
+  type Hex,
+  type WalletClient,
+  encodeAbiParameters,
+  hexToSignature,
+  keccak256,
+  parseAbiParameters,
+  verifyTypedData,
+} from 'viem'
 import { z } from 'zod'
 
 import { getConfig } from '../config'
-
 import {
-  encodeAbiParameters,
-  parseAbiParameters,
-  keccak256,
-  type Address,
-  WalletClient,
-  Account,
-  hexToSignature,
-  verifyTypedData,
-  Hex,
-} from 'viem'
-
-import {
-  Collateral,
-  Collection,
-  Strategy,
-  StrategyLeafType,
-  StrategyRow,
-  StrategySchema,
+  type Collateral,
+  type Collection,
+  type Erc20Collateral,
+  type IPFSStrategyPayload,
   IPFSStrategyPayloadSchema,
-  IPFSStrategyPayload,
-  TypedData,
-  StrategyDetails,
-  UniV3Collateral,
-  ProofServiceResponse,
   MerkleDataStructSchema,
+  type ProofServiceResponse,
   ProofServiceResponseSchema,
-  Signature,
-  Erc20Collateral,
+  type Signature,
+  type Strategy,
+  type StrategyDetails,
+  StrategyLeafType,
+  type StrategyRow,
+  StrategySchema,
+  type TypedData,
+  type UniV3Collateral,
 } from '../types'
-
 import { AddressSchema, HexSchema } from '../types/helpers'
-
-const stringify = require('json-stringify-deterministic')
 
 export const encodeCollateral = (collateral: Collateral) => {
   invariant(collateral, 'hashCollateral: collateral must be defined')
@@ -65,7 +61,7 @@ export const encodeCollateral = (collateral: Collateral) => {
 export const encodeUniV3Collateral = (collateral: UniV3Collateral) => {
   invariant(collateral, 'hashUniV3Collateral: collateral must be defined')
 
-  let encode = encodeAbiParameters(
+  const encode = encodeAbiParameters(
     parseAbiParameters(
       'uint8,address,address,address,address,uint24,int24,int24,uint128,uint256,uint256,uint256,uint256,uint256,uint256,uint256'
     ),
@@ -141,32 +137,29 @@ export const encodeErc20Collateral = (collateral: Erc20Collateral) => {
   return encode
 }
 
-export const getStrategyFromCSV = (csv: string): Strategy => {
-  return StrategySchema.parse(
+export const getStrategyFromCSV = (csv: string): Strategy =>
+  StrategySchema.parse(
     parseCSV(csv, {
       header: true,
       skipEmptyLines: true,
-    }).data.map((data: any) => {
-      return {
-        ...data,
-        lien: {
-          amount: data?.amount,
-          rate: data?.rate,
-          duration: data?.duration,
-          maxPotentialDebt: data?.maxPotentialDebt,
-          liquidationInitialAsk: data?.liquidationInitialAsk,
-        },
-      }
-    })
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    }).data.map((data: any) => ({
+      ...data,
+      lien: {
+        amount: data?.amount,
+        rate: data?.rate,
+        duration: data?.duration,
+        maxPotentialDebt: data?.maxPotentialDebt,
+        liquidationInitialAsk: data?.liquidationInitialAsk,
+      },
+    }))
   )
-}
 // hashes the parameters of the terms and collateral to produce a single bytes32 value to act as the root
-export const prepareLeaves = (strategy: Strategy): string[] => {
-  return strategy.map((row: StrategyRow) => {
+export const prepareLeaves = (strategy: Strategy): string[] =>
+  strategy.map((row: StrategyRow) => {
     row.leaf = keccak256(encodeNlrDetails(row))
     return row.leaf
   })
-}
 
 export const encodeNlrDetails = (row: StrategyRow): Hex => {
   switch (row.type) {
@@ -192,76 +185,72 @@ export const signRoot = async (
   typedData: TypedData,
   client: WalletClient,
   account: Account | Address
-): Promise<Signature> => {
-  return client.signTypedData({
+): Promise<Signature> =>
+  client.signTypedData({
     account,
     ...typedData,
     primaryType: 'StrategyDetails',
   })
-}
 
 export const verifySignature = async (
   typedData: TypedData,
   signature: Signature,
   address: Address
-): Promise<boolean> => {
-  return verifyTypedData({
-    address: address,
+): Promise<boolean> =>
+  verifyTypedData({
+    address,
     ...typedData,
     primaryType: 'StrategyDetails',
-    signature: signature,
+    signature,
   })
-}
 
 export const getTypedData = (
   strategy: StrategyDetails,
   root: z.infer<typeof HexSchema>,
   verifyingContract: z.infer<typeof AddressSchema>,
   chainId: number
-): TypedData => {
-  return {
-    types: {
-      StrategyDetails: [
-        { name: 'nonce', type: 'uint256' },
-        { name: 'deadline', type: 'uint256' },
-        { name: 'root', type: 'bytes32' },
-      ],
-    },
-    primaryType: 'StrategyDetails',
-    domain: {
-      version: String(strategy.version),
-      chainId: chainId,
-      verifyingContract: verifyingContract,
-    },
-    message: {
-      nonce: strategy.nonce.toString(),
-      deadline: strategy.expiration.toString(),
-      root: root,
-    },
-  }
-}
+): TypedData => ({
+  types: {
+    StrategyDetails: [
+      { name: 'nonce', type: 'uint256' },
+      { name: 'deadline', type: 'uint256' },
+      { name: 'root', type: 'bytes32' },
+    ],
+  },
+  primaryType: 'StrategyDetails',
+  domain: {
+    version: String(strategy.version),
+    chainId,
+    verifyingContract,
+  },
+  message: {
+    nonce: strategy.nonce.toString(),
+    deadline: strategy.expiration.toString(),
+    root,
+  },
+})
 
 export function encodeIPFSStrategyPayload(
   typedData: TypedData,
   signature: Signature,
   strategy: Strategy
 ): string {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   ;(BigInt.prototype as any).toJSON = function () {
     return this.toString()
   }
 
   return stringify({
-    typedData: typedData,
-    signature: signature,
-    strategy: strategy,
+    typedData,
+    signature,
+    strategy,
   })
 }
 
 export const decodeIPFSStrategyPayload = (
   ipfsStrategyPayload: string
-): IPFSStrategyPayload => {
-  return IPFSStrategyPayloadSchema.parse(JSON.parse(ipfsStrategyPayload))
-}
+): IPFSStrategyPayload =>
+  IPFSStrategyPayloadSchema.parse(JSON.parse(ipfsStrategyPayload))
 
 export const convertProofServiceResponseToCommitment = (
   proofServiceResponse: ProofServiceResponse,
@@ -269,7 +258,7 @@ export const convertProofServiceResponseToCommitment = (
   tokenId: bigint,
   amount: bigint
 ) => {
-  let nlrDetails = encodeNlrDetails(collateral)
+  const nlrDetails = encodeNlrDetails(collateral)
 
   const { root, proof } = MerkleDataStructSchema.parse({
     root: proofServiceResponse.typedData.message.root,
@@ -279,7 +268,7 @@ export const convertProofServiceResponseToCommitment = (
   const { v, r, s } = hexToSignature(proofServiceResponse.signature)
   return {
     tokenContract: collateral.token,
-    tokenId: tokenId,
+    tokenId,
     lienRequest: {
       strategy: {
         version: parseInt(proofServiceResponse.typedData.domain.version),

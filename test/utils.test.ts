@@ -1,33 +1,25 @@
-import { join } from 'path'
 import { readFile } from 'fs/promises'
-import { MockProvider } from 'ethereum-waffle'
+import { join } from 'path'
+import { createWalletClient, http } from 'viem'
+import { mnemonicToAccount } from 'viem/accounts'
+import { mainnet } from 'viem/chains'
+
 import { StrategyTree } from '../src/strategy/StrategyTree'
 import {
-  signRoot,
-  encodeIPFSStrategyPayload,
   decodeIPFSStrategyPayload,
-  verifySignature,
+  encodeIPFSStrategyPayload,
   getTypedData,
+  signRoot,
+  verifySignature,
 } from '../src/strategy/utils'
-import { AddressZero, StrategyDetails } from '../src/types'
+import { AddressZero, type StrategyDetails } from '../src/types'
 import { HexSchema } from '../src/types/helpers'
-import {
-  createWalletClient,
-  http,
-  signatureToHex,
-  hexToSignature,
-  Address,
-} from 'viem'
-import { mainnet } from 'viem/chains'
-import { mnemonicToAccount } from 'viem/accounts'
 
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const Hash = require('ipfs-only-hash')
 
 const sharedMnemonic =
   'junk junk junk junk junk junk junk junk junk junk junk test'
-
-const remoteRoot =
-  '0x40c9e8c33c4cf5ff06180afea2e6a3bab45b6bfb4fafca7ec401e4201fded1a9'
 
 const localRoot =
   '0x276a20acb0e3b40e3e98b20030585add5dd1c6c6f53b99b3bc0645809dd3eef0'

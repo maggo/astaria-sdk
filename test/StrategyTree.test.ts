@@ -1,5 +1,6 @@
-import { join } from 'path'
 import { readFile } from 'fs/promises'
+import { join } from 'path'
+
 import { StrategyTree } from '../src/strategy/StrategyTree'
 
 describe('StrategyTree', () => {
