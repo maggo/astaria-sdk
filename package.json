@@ -13,17 +13,23 @@
     "size": "size-limit",
     "analyze": "size-limit --why",
     "format": "prettier --write !src/contracts/**/* !src/test/__mocks__/**/* !abi !dist .",
-    "typechain:compile": "typechain --target ethers-v5 --out-dir './src/contracts' './abi/*.json'",
     "semantic-release": "semantic-release"
   },
   "dependencies": {
+    "@babel/core": "^7.12.3",
+    "@typescript-eslint/eslint-plugin": "^5.47.0",
+    "@typescript-eslint/parser": "^5.47.0",
     "axios": "^1.2.2",
-    "ethers": "^5.7.2",
+    "caniuse-lite": "^1.0.30001519",
     "ipfs-only-hash": "^4.0.0",
     "json-stringify-deterministic": "^1.0.8",
     "merkletreejs": "^0.3.9",
     "papaparse": "^5.3.2",
+    "prettier": "^2.8.1",
     "tiny-invariant": "^1.2.0",
+    "ts-jest": "^29.0.3",
+    "typescript": "^4.9.4",
+    "viem": "^1.5.4",
     "zod": "^3.21.4"
   },
   "devDependencies": {
@@ -32,17 +38,17 @@
     "@semantic-release/git": "^10.0.1",
     "@semantic-release/github": "^8.0.7",
     "@size-limit/preset-small-lib": "^8.1.0",
-    "@typechain/ethers-v5": "^10.2.0",
     "@types/jest": "^29.2.4",
     "@types/node": "^18.11.17",
+    "jest": "^29.3.1",
     "@types/papaparse": "^5.3.7",
     "ethereum-waffle": "^4.0.10",
     "husky": "^8.0.2",
     "semantic-release": "^19.0.5",
     "size-limit": "^8.1.0",
+    "abitype": "^0.9.6",
     "tsdx": "^0.14.1",
-    "tslib": "^2.4.1",
-    "typechain": "^8.1.1"
+    "tslib": "^2.4.1"
   },
   "resolutions": {
     "@typescript-eslint/eslint-plugin": "^5.47.0",

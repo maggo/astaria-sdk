@@ -1,51 +1,44 @@
 # [1.0.0-alpha.32](https://github.com/astariaxyz/astaria-sdk/compare/v1.0.0-alpha.31...v1.0.0-alpha.32) (2023-06-14)
 
-
 ### Bug Fixes
 
-* cast proper type for transformed AddressSchema ([5ec99fb](https://github.com/astariaxyz/astaria-sdk/commit/5ec99fbf6acdd57a4d3f155576db191ead82ca8d))
-* explicit type for UniqueOfferSchema to pass through field types ([72c3864](https://github.com/astariaxyz/astaria-sdk/commit/72c386463b79f53ab6028ead87a5732503e757e5))
-
+- cast proper type for transformed AddressSchema ([5ec99fb](https://github.com/astariaxyz/astaria-sdk/commit/5ec99fbf6acdd57a4d3f155576db191ead82ca8d))
+- explicit type for UniqueOfferSchema to pass through field types ([72c3864](https://github.com/astariaxyz/astaria-sdk/commit/72c386463b79f53ab6028ead87a5732503e757e5))
 
 ### Features
 
-* add Uint8Schema ([9991228](https://github.com/astariaxyz/astaria-sdk/commit/999122839082d4fca37539551633293c646e617f))
-* more refined types for HexSchema and AddressSchema ([f7a806c](https://github.com/astariaxyz/astaria-sdk/commit/f7a806c46d1bc35c888d00a7170f93a8b2422e5a))
+- add Uint8Schema ([9991228](https://github.com/astariaxyz/astaria-sdk/commit/999122839082d4fca37539551633293c646e617f))
+- more refined types for HexSchema and AddressSchema ([f7a806c](https://github.com/astariaxyz/astaria-sdk/commit/f7a806c46d1bc35c888d00a7170f93a8b2422e5a))
 
 # [1.0.0-alpha.31](https://github.com/astariaxyz/astaria-sdk/compare/v1.0.0-alpha.30...v1.0.0-alpha.31) (2023-05-07)
 
-
 ### Features
 
-* use destructured import for zod ([db1e897](https://github.com/astariaxyz/astaria-sdk/commit/db1e897d786f4653116062fc11f8fde77ea6f770))
+- use destructured import for zod ([db1e897](https://github.com/astariaxyz/astaria-sdk/commit/db1e897d786f4653116062fc11f8fde77ea6f770))
 
 # [1.0.0-alpha.30](https://github.com/astariaxyz/astaria-sdk/compare/v1.0.0-alpha.29...v1.0.0-alpha.30) (2023-05-07)
 
-
 ### Bug Fixes
 
-* use namespace import for zod ([cf34c10](https://github.com/astariaxyz/astaria-sdk/commit/cf34c107c654433e8a6d709ef9f239c0f0e30a03))
+- use namespace import for zod ([cf34c10](https://github.com/astariaxyz/astaria-sdk/commit/cf34c107c654433e8a6d709ef9f239c0f0e30a03))
 
 # [1.0.0-alpha.29](https://github.com/astariaxyz/astaria-sdk/compare/v1.0.0-alpha.28...v1.0.0-alpha.29) (2023-04-22)
 
-
 ### Bug Fixes
 
-* remove offerrouter ([a68fc0e](https://github.com/astariaxyz/astaria-sdk/commit/a68fc0e241d7ae843736ab94679a4fe0ce7e14b3))
+- remove offerrouter ([a68fc0e](https://github.com/astariaxyz/astaria-sdk/commit/a68fc0e241d7ae843736ab94679a4fe0ce7e14b3))
 
 # [1.0.0-alpha.28](https://github.com/astariaxyz/astaria-sdk/compare/v1.0.0-alpha.27...v1.0.0-alpha.28) (2023-04-21)
 
-
 ### Bug Fixes
 
-* expose method for filtering dynamicVaultDetails ([9e61293](https://github.com/astariaxyz/astaria-sdk/commit/9e612935fb01b1b50eac0c3ba159ba7a3c56be29))
+- expose method for filtering dynamicVaultDetails ([9e61293](https://github.com/astariaxyz/astaria-sdk/commit/9e612935fb01b1b50eac0c3ba159ba7a3c56be29))
 
 # [1.0.0-alpha.27](https://github.com/astariaxyz/astaria-sdk/compare/v1.0.0-alpha.26...v1.0.0-alpha.27) (2023-04-21)
 
-
 ### Bug Fixes
 
-* convert OfferRouter to hook etc ([0f0dd96](https://github.com/astariaxyz/astaria-sdk/commit/0f0dd96d3074c5e778cb5e0c031a3f9bce5d133e))
+- convert OfferRouter to hook etc ([0f0dd96](https://github.com/astariaxyz/astaria-sdk/commit/0f0dd96d3074c5e778cb5e0c031a3f9bce5d133e))
 
 # [1.0.0-alpha.26](https://github.com/astariaxyz/astaria-sdk/compare/v1.0.0-alpha.25...v1.0.0-alpha.26) (2023-04-17)
 

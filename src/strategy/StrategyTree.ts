@@ -1,4 +1,4 @@
-import { utils } from 'ethers'
+import { keccak256 } from 'viem'
 import MerkleTree from 'merkletreejs'
 import invariant from 'tiny-invariant'
 import { Strategy } from '../types/index'
@@ -12,7 +12,7 @@ export class StrategyTree extends MerkleTree {
       strategy.length > 0,
       'StrategyTree: Provided strategy did not produce a valid StrategyTree value'
     )
-    super(prepareLeaves(strategy), utils.keccak256, { sort: true })
+    super(prepareLeaves(strategy), keccak256, { sort: true })
     this.strategy = strategy
   }
 

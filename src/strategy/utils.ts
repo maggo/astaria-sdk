@@ -1,13 +1,3 @@
-import { JsonRpcProvider } from '@ethersproject/providers'
-import { keccak256, defaultAbiCoder, splitSignature } from 'ethers/lib/utils'
-import {
-  Wallet,
-  Signature,
-  Signer,
-  ContractTransaction,
-  BigNumber,
-  utils,
-} from 'ethers'
 import axios from 'axios'
 import { parse as parseCSV } from 'papaparse'
 import invariant from 'tiny-invariant'
@@ -15,9 +5,17 @@ import { z } from 'zod'
 
 import { getConfig } from '../config'
 
-import { IAstariaRouter } from '../contracts/AstariaRouter'
-import { AstariaRouter__factory } from '../contracts/factories/AstariaRouter__factory'
-import { ILienToken } from '../contracts/LienToken'
+import {
+  encodeAbiParameters,
+  parseAbiParameters,
+  keccak256,
+  type Address,
+  WalletClient,
+  Account,
+  hexToSignature,
+  verifyTypedData,
+  Hex,
+} from 'viem'
 
 import {
   Collateral,
@@ -34,30 +32,21 @@ import {
   ProofServiceResponse,
   MerkleDataStructSchema,
   ProofServiceResponseSchema,
-  EthersTypedData,
-  EthersTypedDataSchema,
+  Signature,
 } from '../types'
+
 import { AddressSchema, HexSchema } from '../types/helpers'
 
 const stringify = require('json-stringify-deterministic')
 
-export const encodeCollateral = (collateral: Collateral): string => {
+export const encodeCollateral = (collateral: Collateral) => {
   invariant(collateral, 'hashCollateral: collateral must be defined')
-
-  let encode = defaultAbiCoder.encode(
+  const encode = encodeAbiParameters(
+    parseAbiParameters(
+      'uint8,address,uint256,address,uint256,uint256,uint256,uint256,uint256'
+    ),
     [
-      'uint8',
-      'address',
-      'uint256',
-      'address',
-      'uint256',
-      'uint256',
-      'uint256',
-      'uint256',
-      'uint256',
-    ],
-    [
-      collateral.type,
+      parseInt(collateral.type),
       collateral.token,
       collateral.tokenId,
       collateral.borrower,
@@ -72,40 +61,24 @@ export const encodeCollateral = (collateral: Collateral): string => {
   return encode
 }
 
-export const encodeUniV3Collateral = (collateral: UniV3Collateral): string => {
+export const encodeUniV3Collateral = (collateral: UniV3Collateral) => {
   invariant(collateral, 'hashUniV3Collateral: collateral must be defined')
 
-  let encode = defaultAbiCoder.encode(
-    [
-      'uint8',
-      'address',
-      'address',
+  let encode = encodeAbiParameters(
+    parseAbiParameters(
+      'uint8,address,address,address,address,uint24,int24,int24,uint128,uint256,uint256,uint256,uint256,uint256,uint256,uint256'
+    ),
 
-      'address',
-      'address',
-      'uint24',
-      'int24',
-      'int24',
-      'uint128',
-      'uint256',
-      'uint256',
-
-      'uint256',
-      'uint256',
-      'uint256',
-      'uint256',
-      'uint256',
-    ],
     [
-      collateral.type,
+      parseInt(collateral.type),
       collateral.token,
       collateral.borrower,
 
       collateral.token0,
       collateral.token1,
-      collateral.fee,
-      collateral.tickLower,
-      collateral.tickUpper,
+      Number(collateral.fee),
+      Number(collateral.tickLower),
+      Number(collateral.tickUpper),
       collateral.minLiquidity,
       collateral.amount0Min,
       collateral.amount1Min,
@@ -121,26 +94,17 @@ export const encodeUniV3Collateral = (collateral: UniV3Collateral): string => {
   return encode
 }
 
-export const encodeCollection = (collection: Collection): string => {
+export const encodeCollection = (collection: Collection) => {
   invariant(collection, 'hashCollection: collection must be defined')
 
-  const encode = defaultAbiCoder.encode(
+  const encode = encodeAbiParameters(
+    parseAbiParameters(
+      'uint8,address,address,uint256,uint256,uint256,uint256,uint256'
+    ),
     [
-      'uint8',
-      'address',
-      'address',
-
-      'uint256',
-      'uint256',
-      'uint256',
-      'uint256',
-      'uint256',
-    ],
-    [
-      collection.type,
+      parseInt(collection.type),
       collection.token,
       collection.borrower,
-
       collection.lien.amount,
       collection.lien.rate,
       collection.lien.duration,
@@ -194,45 +158,29 @@ export const prepareLeaves = (strategy: Strategy): string[] => {
   })
 }
 
-export const signRootRemote = async (
+export const signRoot = async (
   typedData: TypedData,
-  provider: JsonRpcProvider
-) => {
-  const signer = provider.getSigner()
-  const account = await signer.getAddress()
-
-  const signature = await signer.provider.send('eth_signTypedData_v4', [
+  client: WalletClient,
+  account: Account | Address
+): Promise<Signature> => {
+  return client.signTypedData({
     account,
-    typedData,
-  ])
-
-  return splitSignature(signature)
+    ...typedData,
+    primaryType: 'StrategyDetails',
+  })
 }
 
-export const signRootLocal = async (typedData: TypedData, wallet: Wallet) => {
-  const ethersTypedData: EthersTypedData =
-    EthersTypedDataSchema.parse(typedData)
-
-  return splitSignature(
-    await wallet._signTypedData(
-      ethersTypedData.domain,
-      ethersTypedData.types,
-      ethersTypedData.message
-    )
-  )
-}
-
-export const verifySignature = (typedData: TypedData, signature: Signature) => {
-  const ethersTypedData: EthersTypedData =
-    EthersTypedDataSchema.parse(typedData)
-  return utils
-    .verifyTypedData(
-      ethersTypedData.domain,
-      ethersTypedData.types,
-      ethersTypedData.message,
-      signature
-    )
-    .toLowerCase()
+export const verifySignature = async (
+  typedData: TypedData,
+  signature: Signature,
+  address: Address
+): Promise<boolean> => {
+  return verifyTypedData({
+    address: address,
+    ...typedData,
+    primaryType: 'StrategyDetails',
+    signature: signature,
+  })
 }
 
 export const getTypedData = (
@@ -243,25 +191,20 @@ export const getTypedData = (
 ): TypedData => {
   return {
     types: {
-      EIP712Domain: [
-        { name: 'version', type: 'string' },
-        { name: 'chainId', type: 'uint256' },
-        { name: 'verifyingContract', type: 'address' },
-      ],
       StrategyDetails: [
         { name: 'nonce', type: 'uint256' },
         { name: 'deadline', type: 'uint256' },
         { name: 'root', type: 'bytes32' },
       ],
     },
-    primaryType: 'StrategyDetails' as const,
+    primaryType: 'StrategyDetails',
     domain: {
       version: String(strategy.version),
       chainId: chainId,
       verifyingContract: verifyingContract,
     },
     message: {
-      nonce: strategy.nonce.toHexString(),
+      nonce: strategy.nonce.toString(16),
       deadline: strategy.expiration.toString(),
       root: root,
     },
@@ -273,46 +216,30 @@ export function encodeIPFSStrategyPayload(
   signature: Signature,
   strategy: Strategy
 ): string {
+  ;(BigInt.prototype as any).toJSON = function () {
+    return this.toString()
+  }
+
   return stringify({
     typedData: typedData,
     signature: signature,
     strategy: strategy,
   })
 }
+
 export const decodeIPFSStrategyPayload = (
   ipfsStrategyPayload: string
 ): IPFSStrategyPayload => {
   return IPFSStrategyPayloadSchema.parse(JSON.parse(ipfsStrategyPayload))
 }
 
-export const commitToLiens = async (
-  router: string,
-  commitments: Array<IAstariaRouter.CommitmentStruct>,
-  signer: Signer
-): Promise<ContractTransaction> => {
-  //get contract instance
-  const contract = AstariaRouter__factory.connect(router, signer)
-  const gasLimit = await contract.callStatic.commitToLiens(commitments)
-  return await contract.commitToLiens(commitments)
-}
-
-export const getStackByCollateral = (
-  token: string,
-  id: BigNumber
-): ILienToken.StackStruct[] => {
-  // call to the subgraph to get the stack
-  const stack: ILienToken.StackStruct[] = []
-  return stack
-}
-
 export const convertProofServiceResponseToCommitment = (
   proofServiceResponse: ProofServiceResponse,
   collateral: StrategyRow,
-  tokenId: BigNumber,
-  amount: BigNumber,
-  stack: ILienToken.StackStruct[]
-): IAstariaRouter.CommitmentStruct => {
-  let nlrDetails: string
+  tokenId: bigint,
+  amount: bigint
+) => {
+  let nlrDetails: Hex
 
   if (collateral.type === StrategyLeafType.Collateral) {
     nlrDetails = encodeCollateral(collateral)
@@ -322,27 +249,28 @@ export const convertProofServiceResponseToCommitment = (
     nlrDetails = encodeUniV3Collateral(collateral)
   }
 
-  const merkle = MerkleDataStructSchema.parse({
+  const { root, proof } = MerkleDataStructSchema.parse({
     root: proofServiceResponse.typedData.message.root,
     proof: proofServiceResponse.proof,
   })
 
+  const { v, r, s } = hexToSignature(proofServiceResponse.signature)
   return {
     tokenContract: collateral.token,
     tokenId: tokenId,
     lienRequest: {
       strategy: {
-        version: proofServiceResponse.typedData.domain.version,
-        deadline: proofServiceResponse.typedData.message.deadline,
+        version: parseInt(proofServiceResponse.typedData.domain.version),
+        deadline: BigInt(proofServiceResponse.typedData.message.deadline),
         vault: proofServiceResponse.typedData.domain.verifyingContract,
       },
-      stack: stack,
-      nlrDetails: nlrDetails,
-      merkle: merkle,
-      amount: amount,
-      v: proofServiceResponse.signature.v,
-      r: proofServiceResponse.signature.r,
-      s: proofServiceResponse.signature.s,
+      nlrDetails,
+      root,
+      proof,
+      amount,
+      v: Number(v),
+      r,
+      s,
     },
   }
 }

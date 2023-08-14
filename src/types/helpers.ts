@@ -1,5 +1,4 @@
 import { z } from 'zod'
-import { BigNumber } from 'ethers'
 
 export const SignedHexSchema = z.custom<`${'-' | ''}0x${string}`>(
   (val) => typeof val === 'string' && /^[-]{0,1}0x[a-fA-F0-9]*$/.test(val)
@@ -14,101 +13,99 @@ export const AddressSchema = HexSchema.refine(
   'Invalid address length'
 ).transform((val) => val.toLowerCase() as `0x${string}`)
 
-export const WAD = BigNumber.from('1000000000000000000')
+export const WAD = BigInt('1000000000000000000')
 
-export const ObjectToBigNumberSchema = z
-  .object({ hex: HexSchema, type: z.literal('BigNumber') })
+export const ObjectToBigIntSchema = z
+  .object({ hex: HexSchema, type: z.literal('BigInt') })
   .transform((val, ctx) => {
     try {
-      return BigNumber.from(val.hex)
+      return BigInt(val.hex)
     } catch (_) {
       ctx.addIssue({
         code: z.ZodIssueCode.custom,
-        message: 'Could not parse as BigNumber',
+        message: 'Could not parse as BigInt',
       })
       return z.NEVER
     }
   })
-export const ObjectToSignedBigNumberSchema = z
-  .object({ hex: SignedHexSchema, type: z.literal('BigNumber') })
+export const ObjectToSignedBigIntSchema = z
+  .object({ hex: SignedHexSchema, type: z.literal('BigInt') })
   .transform((val, ctx) => {
     try {
-      return BigNumber.from(val.hex)
+      return BigInt(val.hex)
     } catch (_) {
       ctx.addIssue({
         code: z.ZodIssueCode.custom,
-        message: 'Could not parse as BigNumber',
+        message: 'Could not parse as BigInt',
       })
       return z.NEVER
     }
   })
 
-export const UintStringToBigNumberSchema = z
+export const UintStringToBigIntSchema = z
   .string()
   .regex(/d*/)
   .transform((val, ctx) => {
     try {
-      return BigNumber.from(val)
+      return BigInt(val)
     } catch (_) {
       ctx.addIssue({
         code: z.ZodIssueCode.custom,
-        message: 'Could not parse as BigNumber',
+        message: 'Could not parse as BigInt',
       })
       return z.NEVER
     }
   })
 
-export const IntStringToBigNumberSchema = z
+export const IntStringToBigIntSchema = z
   .string()
   .regex(/^[-]{0,1}\d+$/)
   .transform((val, ctx) => {
     try {
-      return BigNumber.from(val)
+      return BigInt(val)
     } catch (_) {
       ctx.addIssue({
         code: z.ZodIssueCode.custom,
-        message: 'Could not parse as BigNumber',
+        message: 'Could not parse as BigInt',
       })
       return z.NEVER
     }
   })
 
-export const UintBigNumberSchema = z.union([
-  z.instanceof(BigNumber),
-  ObjectToBigNumberSchema,
-  UintStringToBigNumberSchema,
+export const UintBigIntSchema = z.union([
+  z.bigint(),
+  ObjectToBigIntSchema,
+  UintStringToBigIntSchema,
 ])
 
-export const IntBigNumberSchema = z.union([
-  z.instanceof(BigNumber),
-  ObjectToSignedBigNumberSchema,
-  IntStringToBigNumberSchema,
+export const IntBigIntSchema = z.union([
+  z.bigint(),
+  ObjectToSignedBigIntSchema,
+  IntStringToBigIntSchema,
 ])
 
-const UINT24MAX = BigNumber.from(2).pow(24).sub(1)
-const UINT128MAX = BigNumber.from(2).pow(128).sub(1)
-const UINT256MAX = BigNumber.from(2).pow(256).sub(1)
+const UINT24MAX = 2n ** 24n - 1n
+const UINT128MAX = 2n ** 128n - 1n
+const UINT256MAX = 2n ** 256n - 1n
 
-const INT24MIN = BigNumber.from(0).sub(UINT24MAX.div(2)).sub(1)
-const INT24MAX = BigNumber.from(0).add(UINT24MAX.div(2))
+const INT24MIN = (UINT24MAX / 2n - 1n) * -1n
+const INT24MAX = UINT24MAX / 2n
 
-export const Uint24Schema = UintBigNumberSchema.refine((val) => {
-  return val instanceof BigNumber ? val.lte(UINT24MAX) : false
+export const Uint24Schema = UintBigIntSchema.refine((val) => {
+  return val <= UINT24MAX
 }, 'Cannot exceed (2^24) - 1')
 
-export const Uint128Schema = UintBigNumberSchema.refine((val) => {
-  return val instanceof BigNumber ? val.lte(UINT128MAX) : false
+export const Uint128Schema = UintBigIntSchema.refine((val) => {
+  return val <= UINT128MAX
 }, 'Cannot exceed (2^128) - 1')
 
-export const Uint256Schema = UintBigNumberSchema.refine((val) => {
-  return val instanceof BigNumber ? val.lte(UINT256MAX) : false
+export const Uint256Schema = UintBigIntSchema.refine((val) => {
+  return val <= UINT256MAX
 }, 'Cannot exceed (2^256) - 1')
 export const Uint256NonZeroSchema = Uint256Schema.refine((val) => {
-  return val instanceof BigNumber ? val.gt(0) : false
+  return val > 0n
 }, 'Cannot be zero')
 
-export const Int24Schema = IntBigNumberSchema.refine((val) => {
-  return val instanceof BigNumber
-    ? val.gte(INT24MIN) && val.lte(INT24MAX)
-    : false
+export const Int24Schema = IntBigIntSchema.refine((val) => {
+  return val >= INT24MIN && val <= INT24MAX
 }, 'Invalid Int24 value')

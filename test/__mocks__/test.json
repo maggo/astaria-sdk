@@ -1,85 +1,108 @@
 {
-  "signature": {
-    "_vs": "0x7a815f23324cf2aba7f032650e5beaded60efa23ee0b3f2b5e8554d7d99e0354",
-    "compact": "0xe443d6e8d04a428786ed7a69509902266a7b7148cb95f4523c36c485ceeb27007a815f23324cf2aba7f032650e5beaded60efa23ee0b3f2b5e8554d7d99e0354",
-    "r": "0xe443d6e8d04a428786ed7a69509902266a7b7148cb95f4523c36c485ceeb2700",
-    "recoveryParam": 0,
-    "s": "0x7a815f23324cf2aba7f032650e5beaded60efa23ee0b3f2b5e8554d7d99e0354",
-    "v": 27,
-    "yParityAndS": "0x7a815f23324cf2aba7f032650e5beaded60efa23ee0b3f2b5e8554d7d99e0354"
-  },
+  "signature": "0xb4201cf9cb3b389dddf6deeb5e2de385d80ae200edac423cb6bd5f5c3a71f74b44ebef2f669ee9b636bab9fb2f20bae6133d5454dc30fdd8b822c2bfb839fc151b",
   "strategy": [
     {
-      "borrower": "0x8DcF103b7e35872e896c85B33F1fC5140213a7a5",
-      "leaf": "0x51cd28c5dd1a4e49e8224dc421faa6c9f34f9a67394ac19ea08be0329500cabf",
+      "borrower": "0x92d0ed79627528140f2c40d7ecfe7a6ceb80f1b4",
+      "leaf": "0xd56fb3f7a3b4a2770498b563d66f0b03d47396a3ba6153a323be32b36251f453",
       "lien": {
-        "amount": { "hex": "0x0a", "type": "BigNumber" },
-        "duration": { "hex": "0x0a", "type": "BigNumber" },
-        "liquidationInitialAsk": { "hex": "0x01", "type": "BigNumber" },
-        "maxPotentialDebt": { "hex": "0x00", "type": "BigNumber" },
-        "rate": { "hex": "0x0a", "type": "BigNumber" }
+        "amount": "1000000000000000000",
+        "duration": "2592000",
+        "liquidationInitialAsk": "42069420000000000000000",
+        "maxPotentialDebt": "5000000000000000000",
+        "rate": "1000000000000000000"
       },
-      "token": "0x0E2f0c3519A6C5F89E406e6D62fDb675Cc8bE7EC",
-      "tokenId": { "hex": "0x01", "type": "BigNumber" },
+      "token": "0x5a25189594b185fce2f140fa0ad982262d41f635",
+      "tokenId": "2345",
       "type": "1"
     },
     {
-      "borrower": "0x8DcF103b7e35872e896c85B33F1fC5140213a7a5",
-      "leaf": "0xa3d1fec38e16fb92d421788d08fa4be00f71cf5b6332f8c470804283a2cb6b04",
+      "borrower": "0x92d0ed79627528140f2c40d7ecfe7a6ceb80f1b4",
+      "leaf": "0xce65969a3a2559aac1654e963e7cae7a8095be64eb1bd7ee9ad3bf5c87b04e20",
       "lien": {
-        "amount": { "hex": "0x0a", "type": "BigNumber" },
-        "duration": { "hex": "0x0a", "type": "BigNumber" },
-        "liquidationInitialAsk": { "hex": "0x01", "type": "BigNumber" },
-        "maxPotentialDebt": { "hex": "0x00", "type": "BigNumber" },
-        "rate": { "hex": "0x0a", "type": "BigNumber" }
+        "amount": "1000000000000000000",
+        "duration": "2592000",
+        "liquidationInitialAsk": "42069420000000000000000",
+        "maxPotentialDebt": "5000000000000000000",
+        "rate": "1000000000000000000"
       },
-      "token": "0x0E2f0c3519A6C5F89E406e6D62fDb675Cc8bE7EC",
+      "token": "0x5a25189594b185fce2f140fa0ad982262d41f635",
+      "tokenId": "1313",
+      "type": "1"
+    },
+    {
+      "borrower": "0x8f99b0b48b23908da9f727b5083052d5099e6aea",
+      "leaf": "0x9d6c20d0fac4b8c8312ef1f7414a92acaa3aabba144d67944c881f903ee186af",
+      "lien": {
+        "amount": "69420000000000000000",
+        "duration": "1663545600",
+        "liquidationInitialAsk": "42069420000000000000000",
+        "maxPotentialDebt": "0",
+        "rate": "0"
+      },
+      "token": "0xef1a89cbfabe59397ffda11fc5df293e9bc5db90",
       "type": "2"
     },
     {
-      "amount0Min": { "hex": "0x0a", "type": "BigNumber" },
-      "amount1Min": { "hex": "0x64", "type": "BigNumber" },
-      "borrower": "0x8DcF103b7e35872e896c85B33F1fC5140213a7a5",
-      "fee": { "hex": "0x0a", "type": "BigNumber" },
-      "leaf": "0x823819cd20050e400049e304a9e2ceaee6c78ddc6f739db43cd9d3f4ee23fba6",
+      "borrower": "0x0000000000000000000000000000000000000000",
+      "leaf": "0x9236eacb2e1ba987e1d38a71eaf059d0b2f4867e71ca6116cccddc3ad6c34692",
       "lien": {
-        "amount": { "hex": "0x0a", "type": "BigNumber" },
-        "duration": { "hex": "0x0a", "type": "BigNumber" },
-        "liquidationInitialAsk": { "hex": "0x01", "type": "BigNumber" },
-        "maxPotentialDebt": { "hex": "0x00", "type": "BigNumber" },
-        "rate": { "hex": "0x0a", "type": "BigNumber" }
+        "amount": "69420000000000000000",
+        "duration": "1663545600",
+        "liquidationInitialAsk": "42069420000000000000000",
+        "maxPotentialDebt": "0",
+        "rate": "0"
       },
-      "minLiquidity": { "hex": "0x64", "type": "BigNumber" },
-      "tickLower": { "hex": "-0x0a", "type": "BigNumber" },
-      "tickUpper": { "hex": "0x14", "type": "BigNumber" },
-      "token": "0x0E2f0c3519A6C5F89E406e6D62fDb675Cc8bE7EC",
-      "token0": "0xA6BB84d1734B7E465A10c10f2aeaf92CD80a39a2",
-      "token1": "0x883208887718070Cc25a2cB82169fCa8D4bA3217",
+      "token": "0xef1a89cbfabe59397ffda11fc5df293e9bc5db90",
+      "type": "2"
+    },
+    {
+      "amount0Min": "0",
+      "amount1Min": "0",
+      "borrower": "0xef1a89cbfabe59397ffda11fc5df293e9bc5db90",
+      "fee": "5",
+      "leaf": "0x10c1d8dffab5d0360281e1178599fb33f38d16d70f9a969e9a152332411e052b",
+      "lien": {
+        "amount": "1000000000000000000",
+        "duration": "2592000",
+        "liquidationInitialAsk": "42069420000000000000000",
+        "maxPotentialDebt": "5000000000000000000",
+        "rate": "1000000000000000000"
+      },
+      "minLiquidity": "1",
+      "tickLower": "5",
+      "tickUpper": "5",
+      "token": "0xef1a89cbfabe59397ffda11fc5df293e9bc5db90",
+      "token0": "0xef1a89cbfabe59397ffda11fc5df293e9bc5db90",
+      "token1": "0xef1a89cbfabe59397ffda11fc5df293e9bc5db90",
       "type": "3"
     }
   ],
   "typedData": {
     "domain": {
-      "chainId": 5,
-      "verifyingContract": "0xEc06316AC14f94c00483dC1C6F01276B68e25fE6",
+      "chainId": 0,
+      "verifyingContract": "0x0000000000000000000000000000000000000000",
       "version": "0"
     },
     "message": {
-      "deadline": "0x0a",
-      "nonce": "0x00",
-      "root": "0x2af7e68665fb1a47132290290bd9299a2e866ad9f051e69e002b2b6200bf0c7c"
+      "deadline": "0",
+      "nonce": "0",
+      "root": "0x3d676ddad6c1e106c587d8aa92be4ee6a4f1a805e4fedbeb28b27af9fe8d8593"
     },
     "primaryType": "StrategyDetails",
     "types": {
-      "EIP712Domain": [
-        { "name": "version", "type": "string" },
-        { "name": "chainId", "type": "uint256" },
-        { "name": "verifyingContract", "type": "address" }
-      ],
       "StrategyDetails": [
-        { "name": "nonce", "type": "uint256" },
-        { "name": "deadline", "type": "uint256" },
-        { "name": "root", "type": "bytes32" }
+        {
+          "name": "nonce",
+          "type": "uint256"
+        },
+        {
+          "name": "deadline",
+          "type": "uint256"
+        },
+        {
+          "name": "root",
+          "type": "bytes32"
+        }
       ]
     }
   }

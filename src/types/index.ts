@@ -8,8 +8,8 @@ import {
   Uint256Schema,
   Uint256NonZeroSchema,
 } from './helpers'
-import { AddressZero } from '@ethersproject/constants'
 
+export const AddressZero = '0x0000000000000000000000000000000000000000'
 export enum StrategyLeafType {
   Collateral = '1',
   Collection = '2',
@@ -186,7 +186,6 @@ export const TypeSchema = z.object({
 })
 
 export const TypesSchema = z.object({
-  EIP712Domain: z.array(TypeSchema),
   StrategyDetails: z.array(TypeSchema),
 })
 
@@ -198,16 +197,6 @@ export const DomainSchema = z.object({
   version: z.string(),
   chainId: z.number(),
   verifyingContract: AddressSchema,
-})
-
-export const SignatureSchema = z.object({
-  r: z.string(),
-  s: z.string(),
-  _vs: z.string(),
-  recoveryParam: z.number(),
-  v: z.number(),
-  yParityAndS: z.string(),
-  compact: z.string(),
 })
 
 export const MessageSchema = z.object({
@@ -232,22 +221,20 @@ export const EthersTypedDataSchema = z.object({
 
 export const IPFSStrategyPayloadSchema = z.object({
   typedData: TypedDataSchema,
-  signature: SignatureSchema,
+  signature: HexSchema,
   strategy: StrategySchema,
 })
 
-export const ProofSchema = z.array(z.string())
-
 export const MerkleDataStructSchema = z.object({
-  root: z.string(),
-  proof: ProofSchema,
+  root: HexSchema,
+  proof: HexSchema.array(),
 })
 
 export const ProofServiceResponseSchema = z.object({
-  proof: ProofSchema,
+  proof: HexSchema.array(),
   cid: z.string(),
   typedData: TypedDataSchema,
-  signature: SignatureSchema,
+  signature: HexSchema,
 })
 
 export type Lien = z.infer<typeof LienSchema>
@@ -263,7 +250,7 @@ export type domain = z.infer<typeof DomainSchema>
 export type message = z.infer<typeof MessageSchema>
 export type TypedData = z.infer<typeof TypedDataSchema>
 export type EthersTypedData = z.infer<typeof EthersTypedDataSchema>
-export type Signature = z.infer<typeof SignatureSchema>
+export type Signature = z.infer<typeof HexSchema>
 export type IPFSStrategyPayload = z.infer<typeof IPFSStrategyPayloadSchema>
 export type ProofServiceResponse = z.infer<typeof ProofServiceResponseSchema>
 export type MerkleDataStruct = z.infer<typeof MerkleDataStructSchema>
