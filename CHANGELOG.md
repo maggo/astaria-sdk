@@ -1,3 +1,10 @@
+# [1.0.0-alpha.33](https://github.com/astariaxyz/astaria-sdk/compare/v1.0.0-alpha.32...v1.0.0-alpha.33) (2023-08-15)
+
+
+### Features
+
+* add erc20 support ([#49](https://github.com/astariaxyz/astaria-sdk/issues/49)) ([c33b507](https://github.com/astariaxyz/astaria-sdk/commit/c33b507b0c2675ae9ecb03d631619443a79bd184))
+
 # [1.0.0-alpha.32](https://github.com/astariaxyz/astaria-sdk/compare/v1.0.0-alpha.31...v1.0.0-alpha.32) (2023-06-14)
 
 ### Bug Fixes
