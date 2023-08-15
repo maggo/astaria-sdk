@@ -33,6 +33,7 @@ import {
   MerkleDataStructSchema,
   ProofServiceResponseSchema,
   Signature,
+  Erc20Collateral,
 } from '../types'
 
 import { AddressSchema, HexSchema } from '../types/helpers'
@@ -116,6 +117,30 @@ export const encodeCollection = (collection: Collection) => {
   return encode
 }
 
+export const encodeErc20Collateral = (collateral: Erc20Collateral) => {
+  invariant(collateral, 'hashCollection: collection must be defined')
+
+  const encode = encodeAbiParameters(
+    parseAbiParameters(
+      'uint8,address,address,uint256,uint256,uint256,uint256,uint256,uint256,uint256'
+    ),
+    [
+      parseInt(collateral.type),
+      collateral.token,
+      collateral.borrower,
+      collateral.minAmount,
+      collateral.ratioToUnderlying,
+      collateral.lien.amount,
+      collateral.lien.rate,
+      collateral.lien.duration,
+      collateral.lien.maxPotentialDebt,
+      collateral.lien.liquidationInitialAsk,
+    ]
+  )
+
+  return encode
+}
+
 export const getStrategyFromCSV = (csv: string): Strategy => {
   return StrategySchema.parse(
     parseCSV(csv, {
@@ -138,24 +163,29 @@ export const getStrategyFromCSV = (csv: string): Strategy => {
 // hashes the parameters of the terms and collateral to produce a single bytes32 value to act as the root
 export const prepareLeaves = (strategy: Strategy): string[] => {
   return strategy.map((row: StrategyRow) => {
-    switch (row.type) {
-      case StrategyLeafType.Collection: {
-        row.leaf = HexSchema.parse(keccak256(encodeCollection(row)))
-        break
-      }
-
-      case StrategyLeafType.Collateral: {
-        row.leaf = HexSchema.parse(keccak256(encodeCollateral(row)))
-        break
-      }
-
-      case StrategyLeafType.UniV3Collateral: {
-        row.leaf = HexSchema.parse(keccak256(encodeUniV3Collateral(row)))
-        break
-      }
-    }
+    row.leaf = keccak256(encodeNlrDetails(row))
     return row.leaf
   })
+}
+
+export const encodeNlrDetails = (row: StrategyRow): Hex => {
+  switch (row.type) {
+    case StrategyLeafType.Collection: {
+      return encodeCollection(row)
+    }
+
+    case StrategyLeafType.Collateral: {
+      return encodeCollateral(row)
+    }
+
+    case StrategyLeafType.UniV3Collateral: {
+      return encodeUniV3Collateral(row)
+    }
+
+    case StrategyLeafType.ERC20: {
+      return encodeErc20Collateral(row)
+    }
+  }
 }
 
 export const signRoot = async (
@@ -239,15 +269,7 @@ export const convertProofServiceResponseToCommitment = (
   tokenId: bigint,
   amount: bigint
 ) => {
-  let nlrDetails: Hex
-
-  if (collateral.type === StrategyLeafType.Collateral) {
-    nlrDetails = encodeCollateral(collateral)
-  } else if (collateral.type === StrategyLeafType.Collection) {
-    nlrDetails = encodeCollection(collateral)
-  } else {
-    nlrDetails = encodeUniV3Collateral(collateral)
-  }
+  let nlrDetails = encodeNlrDetails(collateral)
 
   const { root, proof } = MerkleDataStructSchema.parse({
     root: proofServiceResponse.typedData.message.root,

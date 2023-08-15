@@ -8,7 +8,7 @@ describe('StrategyTree', () => {
 
     const strategyTree = StrategyTree.fromCSV(csv)
     const actual = strategyTree.getStrategy.length
-    const expected = 5
+    const expected = 6
     expect(actual).toEqual(expected)
   })
   test('convert Strategy to StrategyTree', async () => {
@@ -23,7 +23,7 @@ describe('StrategyTree', () => {
     const strategyTree = StrategyTree.fromCSV(csv)
 
     expect(
-      '0x3d676ddad6c1e106c587d8aa92be4ee6a4f1a805e4fedbeb28b27af9fe8d8593'
+      '0x790223d0b436e1c7f804b4aedd8372a68fcb5630cd0061aabd957bb350fa0ed2'
     ).toEqual(strategyTree.getHexRoot())
   })
 })

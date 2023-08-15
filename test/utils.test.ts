@@ -82,7 +82,7 @@ describe('util.signRoot using remote', () => {
     )
 
     const actual = await Hash.of(strategyPayload)
-    const expected = 'QmPWJrULFsZ1MMKoGD7cACqVfSsrmxqUUL4UdR2mGiXGUz'
+    const expected = 'QmT4aeBqpMTJhMB8y6wyvV4cYdax6nub91JqWaEia2BHuF'
 
     expect(actual).toEqual(expected)
   })

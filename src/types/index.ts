@@ -14,6 +14,7 @@ export enum StrategyLeafType {
   Collateral = '1',
   Collection = '2',
   UniV3Collateral = '3',
+  ERC20 = '4',
 }
 
 /**
@@ -110,10 +111,22 @@ export const UniV3CollateralSchema = BaseDetailsSchema.extend({
   amount1Min: Uint256Schema,
 })
 
+export const ERC20CollateralSchema = BaseDetailsSchema.extend({
+  /** `uint8` - Type of leaf format (`Collateral = 1`) */
+  type: z.literal(StrategyLeafType.ERC20),
+
+  /** `uint256` - minimum amount of the depost token */
+  minAmount: Uint256Schema,
+
+  /** `uint256` - ratio of the deposit token to underlying tokens */
+  ratioToUnderlying: Uint256Schema,
+})
+
 export const StrategyRowSchema = z.discriminatedUnion('type', [
   CollateralSchema,
   CollectionSchema,
   UniV3CollateralSchema,
+  ERC20CollateralSchema,
 ])
 
 export const DynamicVaultDetailSchema = z.object({
@@ -241,6 +254,7 @@ export type Lien = z.infer<typeof LienSchema>
 export type Collection = z.infer<typeof CollectionSchema>
 export type Collateral = z.infer<typeof CollateralSchema>
 export type UniV3Collateral = z.infer<typeof UniV3CollateralSchema>
+export type Erc20Collateral = z.infer<typeof ERC20CollateralSchema>
 export type StrategyDetails = z.infer<typeof StrategyDetailsSchema>
 export type StrategyRow = z.infer<typeof StrategyRowSchema>
 export type Strategy = z.infer<typeof StrategySchema>
