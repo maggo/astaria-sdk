@@ -1,3 +1,10 @@
+# [1.0.0-alpha.34](https://github.com/astariaxyz/astaria-sdk/compare/v1.0.0-alpha.33...v1.0.0-alpha.34) (2023-08-21)
+
+
+### Bug Fixes
+
+* nonce hashing incorrectly ([#50](https://github.com/astariaxyz/astaria-sdk/issues/50)) ([b6aff3e](https://github.com/astariaxyz/astaria-sdk/commit/b6aff3e85f95b99c755c9217ae35b44cadbfb745))
+
 # [1.0.0-alpha.33](https://github.com/astariaxyz/astaria-sdk/compare/v1.0.0-alpha.32...v1.0.0-alpha.33) (2023-08-15)
 
 
