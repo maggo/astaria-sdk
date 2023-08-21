@@ -80,7 +80,6 @@ describe('util.signRoot using remote', () => {
       signature,
       strategyTree.getStrategy
     )
-
     const actual = await Hash.of(strategyPayload)
     const expected = 'QmT4aeBqpMTJhMB8y6wyvV4cYdax6nub91JqWaEia2BHuF'
 
@@ -103,7 +102,8 @@ describe('util.signRoot using remote', () => {
     const strategy: StrategyDetails = {
       version: 0,
       expiration: 0n,
-      nonce: 0n,
+      nonce:
+        98190270410479772072107704611241589087239492256558954232107346489527117021184n,
       vault: AddressZero,
     }
     const typedData = getTypedData(strategy, root, verifyingContract, 0)

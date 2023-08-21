@@ -234,7 +234,7 @@ export const getTypedData = (
       verifyingContract: verifyingContract,
     },
     message: {
-      nonce: strategy.nonce.toString(16),
+      nonce: strategy.nonce.toString(),
       deadline: strategy.expiration.toString(),
       root: root,
     },
