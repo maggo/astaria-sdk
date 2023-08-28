@@ -182,12 +182,28 @@ export const UniV3CollateralOfferSchema = BaseOfferSchema.extend({
   amount1Min: Uint256Schema,
 })
 
+export const ERC20OfferSchema = BaseOfferSchema.extend({
+  /** `uint8` - Type of leaf format (`Collateral = 1`) */
+  type: z.literal(StrategyLeafType.ERC20),
+
+  /** `uint256` - minimum amount of the depost token */
+  minAmount: Uint256Schema,
+
+  /** `uint256` - ratio of the deposit token to underlying tokens */
+  ratioToUnderlying: Uint256Schema,
+})
+
 export const UniqueOfferSchema = z.discriminatedUnion<
   'type',
-  [typeof CollateralOfferSchema, typeof CollectionOfferSchema]
+  [
+    typeof CollateralOfferSchema,
+    typeof CollectionOfferSchema,
+    typeof ERC20OfferSchema
+  ]
 >('type', [
   CollateralOfferSchema,
   CollectionOfferSchema,
+  ERC20OfferSchema,
   // add UniV3OfferSchema once the service is ready
 ])
 
