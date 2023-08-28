@@ -1,3 +1,10 @@
+# [1.0.0-alpha.35](https://github.com/astariaxyz/astaria-sdk/compare/v1.0.0-alpha.34...v1.0.0-alpha.35) (2023-08-28)
+
+
+### Features
+
+* add erc20 to the offer schema for decoding within the front end ([#51](https://github.com/astariaxyz/astaria-sdk/issues/51)) ([e8c3de1](https://github.com/astariaxyz/astaria-sdk/commit/e8c3de1c294793b8a3084ca1d558b974c9f3ae4b))
+
 # [1.0.0-alpha.34](https://github.com/astariaxyz/astaria-sdk/compare/v1.0.0-alpha.33...v1.0.0-alpha.34) (2023-08-21)
 
 
