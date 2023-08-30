@@ -4,7 +4,7 @@ import { createWalletClient, http } from 'viem';
 import { mainnet } from 'viem/chains';
 
 import { AstariaRouterABI } from '../src/abi/AstariaRouterABI';
-import { convertProofServiceResponseToCommitment } from '../src/strategy/utils';
+import { convertProofServiceResponseToCommitment } from '../src/strategy/utils/convertProofServiceResponseToCommitment';
 import { CollectionSchema, ProofServiceResponseSchema } from '../src/types';
 
 describe('Get response from proof service and execute on chain', () => {

@@ -4,17 +4,15 @@ import { createWalletClient, http } from 'viem';
 import { mnemonicToAccount } from 'viem/accounts';
 import { mainnet } from 'viem/chains';
 
-import { AddressZero } from '../constants';
-import { type StrategyDetails } from '../types';
-import { HexSchema } from '../types/helpers';
-import { StrategyTree } from './StrategyTree';
-import {
-  decodeIPFSStrategyPayload,
-  encodeIPFSStrategyPayload,
-  getTypedData,
-  signRoot,
-  verifySignature,
-} from './utils';
+import { AddressZero } from '../../constants';
+import { type StrategyDetails } from '../../types';
+import { HexSchema } from '../../types/helpers';
+import { StrategyTree } from '../StrategyTree';
+import { decodeIPFSStrategyPayload } from './decodeIPFSStrategyPayload';
+import { encodeIPFSStrategyPayload } from './encodeIPFSStrategyPayload';
+import { getTypedData } from './getTypedData';
+import { signRoot } from './signRoot';
+import { verifySignature } from './verifySignature';
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const Hash = require('ipfs-only-hash');
@@ -50,7 +48,7 @@ describe('util.signRoot using remote', () => {
 
   test('encoding and hashing for IPFS deterministically', async () => {
     const csv = await readFile(
-      join(__dirname, '../../test/__mocks__/test.csv'),
+      join(__dirname, '../../../test/__mocks__/test.csv'),
       'utf8'
     );
     const strategyTree = StrategyTree.fromCSV(csv);
@@ -85,7 +83,7 @@ describe('util.signRoot using remote', () => {
   // ensure that the encoded and decoded are identical
   test('encoding and hashing for IPFS round trip', async () => {
     const csv = await readFile(
-      join(__dirname, '../../test/__mocks__/test.csv'),
+      join(__dirname, '../../../test/__mocks__/test.csv'),
       'utf8'
     );
     const strategyTree = StrategyTree.fromCSV(csv);
