@@ -3,8 +3,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "start": "tsdx watch",
-    "build": "tsdx build",
+    "build": "tsc",
     "test": "tsdx test",
     "test:watch": "tsdx test --watchAll",
     "test:coverage": "tsdx test --coverage",
