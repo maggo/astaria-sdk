@@ -171,7 +171,7 @@ export const UniqueOfferSchema = z.discriminatedUnion<
   [
     typeof CollateralOfferSchema,
     typeof CollectionOfferSchema,
-    typeof ERC20OfferSchema
+    typeof ERC20OfferSchema,
   ]
 >('type', [
   CollateralOfferSchema,
