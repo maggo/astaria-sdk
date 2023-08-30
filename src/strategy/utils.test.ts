@@ -4,16 +4,17 @@ import { createWalletClient, http } from 'viem'
 import { mnemonicToAccount } from 'viem/accounts'
 import { mainnet } from 'viem/chains'
 
-import { StrategyTree } from '../src/strategy/StrategyTree'
+import { AddressZero } from '../constants'
+import { type StrategyDetails } from '../types'
+import { HexSchema } from '../types/helpers'
+import { StrategyTree } from './StrategyTree'
 import {
   decodeIPFSStrategyPayload,
   encodeIPFSStrategyPayload,
   getTypedData,
   signRoot,
   verifySignature,
-} from '../src/strategy/utils'
-import { AddressZero, type StrategyDetails } from '../src/types'
-import { HexSchema } from '../src/types/helpers'
+} from './utils'
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const Hash = require('ipfs-only-hash')

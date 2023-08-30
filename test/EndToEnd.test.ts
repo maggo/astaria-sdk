@@ -3,8 +3,8 @@ import { join } from 'path'
 import { createWalletClient, http } from 'viem'
 import { mainnet } from 'viem/chains'
 
-import * as utils from '../src/strategy/utils'
 import { AstariaRouterABI } from '../src/abi/AstariaRouterABI'
+import { convertProofServiceResponseToCommitment } from '../src/strategy/utils'
 import { CollectionSchema, ProofServiceResponseSchema } from '../src/types'
 
 // test file name is changed to prevent running in the CI
@@ -43,7 +43,7 @@ describe('Get response from proof service and execute on chain', () => {
 
     const collateral = CollectionSchema.parse(responseOffers[1])
 
-    const commitment = utils.convertProofServiceResponseToCommitment(
+    const commitment = convertProofServiceResponseToCommitment(
       proofServiceResponse,
       collateral,
       id,
@@ -51,10 +51,10 @@ describe('Get response from proof service and execute on chain', () => {
     )
 
     client.writeContract({
-      address: router,
       abi: AstariaRouterABI,
-      functionName: 'commitToLien',
+      address: router,
       args: [commitment],
+      functionName: 'commitToLien',
     })
   })
 })
