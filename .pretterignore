@@ -1,5 +1,0 @@
-src/contracts/**/*
-src/test/__mocks__/**/*
-abi
-dist
-CHANGELOG.md
