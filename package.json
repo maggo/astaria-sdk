@@ -3,7 +3,10 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "build": "tsc",
+    "build": "concurrently \"yarn build:cjs\" \"yarn build:esm\"",
+    "build:clean": "rimraf dist && yarn build",
+    "build:cjs": "tsc -p tsconfig.cjs.json && node postbuild-cjs.mjs",
+    "build:esm": "tsc -p tsconfig.esm.json && node postbuild-esm.mjs",
     "test": "jest -c jest.config.js --silent --maxWorkers=50%",
     "test:ci": "yarn test --ci --coverage --maxWorkers=2",
     "test:watch": "tsdx test --watchAll",
@@ -30,9 +33,6 @@
     "tiny-invariant": "^1.2.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.22.11",
-    "@babel/preset-env": "^7.22.14",
-    "@babel/preset-typescript": "^7.22.11",
     "@commitlint/config-conventional": "^17.3.0",
     "@semantic-release/changelog": "^6.0.2",
     "@semantic-release/git": "^10.0.1",
@@ -45,6 +45,7 @@
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^6.0.0",
     "abitype": "^0.9.6",
+    "concurrently": "^8.2.1",
     "eslint": "^8.44.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-import-resolver-typescript": "^3.5.5",
@@ -57,6 +58,7 @@
     "prettier": "^2.8.1",
     "semantic-release": "^19.0.5",
     "size-limit": "^8.1.0",
+    "ts-jest": "^29.1.1",
     "tsdx": "^0.14.1",
     "typescript": "^5.2.2",
     "viem": "^1.5.4",
@@ -77,12 +79,25 @@
     "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
-  "main": "dist/index.js",
-  "typings": "dist/index.d.ts",
-  "module": "dist/sdk.esm.js",
+  "type": "commonjs",
+  "main": "./dist/cjs/index.js",
+  "typings": "./dist/cjs/index.d.ts",
+  "types": "./dist/cjs/index.d.ts",
+  "module": "./dist/esm/index.js",
   "files": [
-    "dist"
+    "dist/cjs",
+    "dist/esm",
+    "!dist/**/*.tsbuildinfo",
+    "!**/*.json",
+    "CHANGELOG.md",
+    "LICENSE.md",
+    "README.md"
   ],
+  "sideEffects": false,
+  "exports": {
+    "import": "./dist/esm/index.js",
+    "require": "./dist/cjs/index.js"
+  },
   "engines": {
     "node": ">=16"
   },
