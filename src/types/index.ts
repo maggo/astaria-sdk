@@ -1,6 +1,6 @@
-import { z } from 'zod'
+import { z } from 'zod';
 
-import { AddressZero } from '../constants'
+import { AddressZero } from '../constants';
 import {
   AddressSchema,
   HexSchema,
@@ -9,7 +9,7 @@ import {
   Uint128Schema,
   Uint256NonZeroSchema,
   Uint256Schema,
-} from './helpers'
+} from './helpers';
 
 export enum StrategyLeafType {
   Collateral = '1',
@@ -33,7 +33,7 @@ export const StrategyDetailsSchema = z.object({
 
   /** `address` - Contract address of the vault, if the vault address is ZeroHex then this is the first merkle tree opening the vault */
   vault: AddressSchema,
-})
+});
 
 /**
  * Lien
@@ -53,7 +53,7 @@ export const LienSchema = z.object({
 
   /** `uint256` - the value used as the starting price in the event of a liquidation dutch auction */
   liquidationInitialAsk: Uint256NonZeroSchema,
-})
+});
 
 const BaseDetailsSchema = z.object({
   /** `address` - Address of the underlying NFT Contract*/
@@ -68,7 +68,7 @@ const BaseDetailsSchema = z.object({
   cid: z.string().optional(),
 
   leaf: HexSchema.optional(),
-})
+});
 
 export const CollateralSchema = BaseDetailsSchema.extend({
   /** `uint8` - Type of leaf format (`Collateral = 1`) */
@@ -76,12 +76,12 @@ export const CollateralSchema = BaseDetailsSchema.extend({
 
   /** `uint256` - Token ID of ERC721 inside the collection */
   tokenId: Uint256Schema,
-})
+});
 
 export const CollectionSchema = BaseDetailsSchema.extend({
   /** `uint8` - Type of leaf format (`Collection = 2`) */
   type: z.literal(StrategyLeafType.Collection),
-})
+});
 
 export const UniV3CollateralSchema = BaseDetailsSchema.extend({
   /** `uint8` - Type of leaf format (`UniV3Collateral = 3`) */
@@ -110,7 +110,7 @@ export const UniV3CollateralSchema = BaseDetailsSchema.extend({
 
   /** `uint256` - Amount1Min*/
   amount1Min: Uint256Schema,
-})
+});
 
 export const ERC20CollateralSchema = BaseDetailsSchema.extend({
   /** `uint8` - Type of leaf format (`Collateral = 1`) */
@@ -121,14 +121,14 @@ export const ERC20CollateralSchema = BaseDetailsSchema.extend({
 
   /** `uint256` - ratio of the deposit token to underlying tokens */
   ratioToUnderlying: Uint256Schema,
-})
+});
 
 export const StrategyRowSchema = z.discriminatedUnion('type', [
   CollateralSchema,
   CollectionSchema,
   UniV3CollateralSchema,
   ERC20CollateralSchema,
-])
+]);
 
 export const DynamicVaultDetailSchema = z.object({
   address: AddressSchema,
@@ -136,23 +136,23 @@ export const DynamicVaultDetailSchema = z.object({
   nonce: Uint256Schema,
   balance: Uint256Schema,
   isReadyState: z.boolean(),
-})
+});
 
 export const BaseOfferSchema = BaseDetailsSchema.extend({
   vault: AddressSchema,
   underlyingTokenId: Uint256Schema.optional(),
   offerHash: HexSchema,
   balance: Uint256Schema.optional(),
-})
+});
 
 export const CollateralOfferSchema = BaseOfferSchema.extend({
   type: z.literal(StrategyLeafType.Collateral),
   tokenId: Uint256Schema,
-})
+});
 
 export const CollectionOfferSchema = BaseOfferSchema.extend({
   type: z.literal(StrategyLeafType.Collection),
-})
+});
 
 export const UniV3CollateralOfferSchema = BaseOfferSchema.extend({
   /** `uint8` - Type of leaf format (`UniV3Collateral = 3`) */
@@ -181,7 +181,7 @@ export const UniV3CollateralOfferSchema = BaseOfferSchema.extend({
 
   /** `uint256` - Amount1Min*/
   amount1Min: Uint256Schema,
-})
+});
 
 export const ERC20OfferSchema = BaseOfferSchema.extend({
   /** `uint8` - Type of leaf format (`Collateral = 1`) */
@@ -192,7 +192,7 @@ export const ERC20OfferSchema = BaseOfferSchema.extend({
 
   /** `uint256` - ratio of the deposit token to underlying tokens */
   ratioToUnderlying: Uint256Schema,
-})
+});
 
 export const UniqueOfferSchema = z.discriminatedUnion<
   'type',
@@ -206,84 +206,84 @@ export const UniqueOfferSchema = z.discriminatedUnion<
   CollectionOfferSchema,
   ERC20OfferSchema,
   // add UniV3OfferSchema once the service is ready
-])
+]);
 
-export const StrategySchema = z.array(StrategyRowSchema)
+export const StrategySchema = z.array(StrategyRowSchema);
 
 export const TypeSchema = z.object({
   name: z.string(),
   type: z.string(),
-})
+});
 
 export const TypesSchema = z.object({
   StrategyDetails: z.array(TypeSchema),
-})
+});
 
 export const EthersTypesSchema = z.object({
   StrategyDetails: z.array(TypeSchema),
-})
+});
 
 export const DomainSchema = z.object({
   version: z.string(),
   chainId: z.number(),
   verifyingContract: AddressSchema,
-})
+});
 
 export const MessageSchema = z.object({
   nonce: z.string(),
   deadline: z.string(),
   root: HexSchema,
-})
+});
 
 export const TypedDataSchema = z.object({
   types: TypesSchema,
   primaryType: z.string(),
   domain: DomainSchema,
   message: MessageSchema,
-})
+});
 
 export const EthersTypedDataSchema = z.object({
   types: EthersTypesSchema,
   primaryType: z.string(),
   domain: DomainSchema,
   message: MessageSchema,
-})
+});
 
 export const IPFSStrategyPayloadSchema = z.object({
   typedData: TypedDataSchema,
   signature: HexSchema,
   strategy: StrategySchema,
-})
+});
 
 export const MerkleDataStructSchema = z.object({
   root: HexSchema,
   proof: HexSchema.array(),
-})
+});
 
 export const ProofServiceResponseSchema = z.object({
   proof: HexSchema.array(),
   cid: z.string(),
   typedData: TypedDataSchema,
   signature: HexSchema,
-})
+});
 
-export type Lien = z.infer<typeof LienSchema>
-export type Collection = z.infer<typeof CollectionSchema>
-export type Collateral = z.infer<typeof CollateralSchema>
-export type UniV3Collateral = z.infer<typeof UniV3CollateralSchema>
-export type Erc20Collateral = z.infer<typeof ERC20CollateralSchema>
-export type StrategyDetails = z.infer<typeof StrategyDetailsSchema>
-export type StrategyRow = z.infer<typeof StrategyRowSchema>
-export type Strategy = z.infer<typeof StrategySchema>
-export type Type = z.infer<typeof TypeSchema>
-export type Types = z.infer<typeof TypesSchema>
-export type domain = z.infer<typeof DomainSchema>
-export type message = z.infer<typeof MessageSchema>
-export type TypedData = z.infer<typeof TypedDataSchema>
-export type EthersTypedData = z.infer<typeof EthersTypedDataSchema>
-export type Signature = z.infer<typeof HexSchema>
-export type IPFSStrategyPayload = z.infer<typeof IPFSStrategyPayloadSchema>
-export type ProofServiceResponse = z.infer<typeof ProofServiceResponseSchema>
-export type MerkleDataStruct = z.infer<typeof MerkleDataStructSchema>
-export type UniqueOffer = z.infer<typeof UniqueOfferSchema>
-export type DynamicVaultDetail = z.infer<typeof DynamicVaultDetailSchema>
+export type Lien = z.infer<typeof LienSchema>;
+export type Collection = z.infer<typeof CollectionSchema>;
+export type Collateral = z.infer<typeof CollateralSchema>;
+export type UniV3Collateral = z.infer<typeof UniV3CollateralSchema>;
+export type Erc20Collateral = z.infer<typeof ERC20CollateralSchema>;
+export type StrategyDetails = z.infer<typeof StrategyDetailsSchema>;
+export type StrategyRow = z.infer<typeof StrategyRowSchema>;
+export type Strategy = z.infer<typeof StrategySchema>;
+export type Type = z.infer<typeof TypeSchema>;
+export type Types = z.infer<typeof TypesSchema>;
+export type domain = z.infer<typeof DomainSchema>;
+export type message = z.infer<typeof MessageSchema>;
+export type TypedData = z.infer<typeof TypedDataSchema>;
+export type EthersTypedData = z.infer<typeof EthersTypedDataSchema>;
+export type Signature = z.infer<typeof HexSchema>;
+export type IPFSStrategyPayload = z.infer<typeof IPFSStrategyPayloadSchema>;
+export type ProofServiceResponse = z.infer<typeof ProofServiceResponseSchema>;
+export type MerkleDataStruct = z.infer<typeof MerkleDataStructSchema>;
+export type UniqueOffer = z.infer<typeof UniqueOfferSchema>;
+export type DynamicVaultDetail = z.infer<typeof DynamicVaultDetailSchema>;

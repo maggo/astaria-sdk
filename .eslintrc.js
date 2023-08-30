@@ -1,4 +1,4 @@
-const MINIMUM_VARIABLE_LENGTH = 2
+const MINIMUM_VARIABLE_LENGTH = 2;
 
 module.exports = {
   env: {
@@ -35,7 +35,7 @@ module.exports = {
     'import/first': 'error',
     'import/no-unresolved': 'error',
     'no-console': 'error',
-    // 'no-magic-numbers': ['error', { ignore: [-1, 0, 1, '0n', '1n'] }], TODO: turn back on. It's off to avoid too many conflicts currently
+    'no-magic-numbers': ['error', { ignore: [-1, 0, 1, '0n', '1n'] }],
     'no-nested-ternary': 'error',
     'no-restricted-exports': [
       'error',
@@ -65,4 +65,4 @@ module.exports = {
       },
     },
   },
-}
+};

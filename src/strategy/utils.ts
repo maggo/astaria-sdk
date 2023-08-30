@@ -1,7 +1,7 @@
-import axios from 'axios'
-import stringify from 'json-stringify-deterministic'
-import { parse as parseCSV } from 'papaparse'
-import invariant from 'tiny-invariant'
+import axios from 'axios';
+import stringify from 'json-stringify-deterministic';
+import { parse as parseCSV } from 'papaparse';
+import invariant from 'tiny-invariant';
 import {
   type Account,
   type Address,
@@ -12,10 +12,10 @@ import {
   keccak256,
   parseAbiParameters,
   verifyTypedData,
-} from 'viem'
-import { z } from 'zod'
+} from 'viem';
+import { z } from 'zod';
 
-import { getConfig } from '../config'
+import { getConfig } from '../config';
 import {
   type Collateral,
   type Collection,
@@ -33,11 +33,11 @@ import {
   StrategySchema,
   type TypedData,
   type UniV3Collateral,
-} from '../types'
-import { AddressSchema, HexSchema } from '../types/helpers'
+} from '../types';
+import { AddressSchema, HexSchema } from '../types/helpers';
 
 export const encodeCollateral = (collateral: Collateral) => {
-  invariant(collateral, 'hashCollateral: collateral must be defined')
+  invariant(collateral, 'hashCollateral: collateral must be defined');
   const encode = encodeAbiParameters(
     parseAbiParameters(
       'uint8,address,uint256,address,uint256,uint256,uint256,uint256,uint256'
@@ -53,13 +53,13 @@ export const encodeCollateral = (collateral: Collateral) => {
       collateral.lien.maxPotentialDebt,
       collateral.lien.liquidationInitialAsk,
     ]
-  )
+  );
 
-  return encode
-}
+  return encode;
+};
 
 export const encodeUniV3Collateral = (collateral: UniV3Collateral) => {
-  invariant(collateral, 'hashUniV3Collateral: collateral must be defined')
+  invariant(collateral, 'hashUniV3Collateral: collateral must be defined');
 
   const encode = encodeAbiParameters(
     parseAbiParameters(
@@ -86,13 +86,13 @@ export const encodeUniV3Collateral = (collateral: UniV3Collateral) => {
       collateral.lien.maxPotentialDebt,
       collateral.lien.liquidationInitialAsk,
     ]
-  )
+  );
 
-  return encode
-}
+  return encode;
+};
 
 export const encodeCollection = (collection: Collection) => {
-  invariant(collection, 'hashCollection: collection must be defined')
+  invariant(collection, 'hashCollection: collection must be defined');
 
   const encode = encodeAbiParameters(
     parseAbiParameters(
@@ -108,13 +108,13 @@ export const encodeCollection = (collection: Collection) => {
       collection.lien.maxPotentialDebt,
       collection.lien.liquidationInitialAsk,
     ]
-  )
+  );
 
-  return encode
-}
+  return encode;
+};
 
 export const encodeErc20Collateral = (collateral: Erc20Collateral) => {
-  invariant(collateral, 'hashCollection: collection must be defined')
+  invariant(collateral, 'hashCollection: collection must be defined');
 
   const encode = encodeAbiParameters(
     parseAbiParameters(
@@ -132,10 +132,10 @@ export const encodeErc20Collateral = (collateral: Erc20Collateral) => {
       collateral.lien.maxPotentialDebt,
       collateral.lien.liquidationInitialAsk,
     ]
-  )
+  );
 
-  return encode
-}
+  return encode;
+};
 
 export const getStrategyFromCSV = (csv: string): Strategy =>
   StrategySchema.parse(
@@ -153,33 +153,33 @@ export const getStrategyFromCSV = (csv: string): Strategy =>
         liquidationInitialAsk: data?.liquidationInitialAsk,
       },
     }))
-  )
+  );
 // hashes the parameters of the terms and collateral to produce a single bytes32 value to act as the root
 export const prepareLeaves = (strategy: Strategy): string[] =>
   strategy.map((row: StrategyRow) => {
-    row.leaf = keccak256(encodeNlrDetails(row))
-    return row.leaf
-  })
+    row.leaf = keccak256(encodeNlrDetails(row));
+    return row.leaf;
+  });
 
 export const encodeNlrDetails = (row: StrategyRow): Hex => {
   switch (row.type) {
     case StrategyLeafType.Collection: {
-      return encodeCollection(row)
+      return encodeCollection(row);
     }
 
     case StrategyLeafType.Collateral: {
-      return encodeCollateral(row)
+      return encodeCollateral(row);
     }
 
     case StrategyLeafType.UniV3Collateral: {
-      return encodeUniV3Collateral(row)
+      return encodeUniV3Collateral(row);
     }
 
     case StrategyLeafType.ERC20: {
-      return encodeErc20Collateral(row)
+      return encodeErc20Collateral(row);
     }
   }
-}
+};
 
 export const signRoot = async (
   typedData: TypedData,
@@ -190,7 +190,7 @@ export const signRoot = async (
     account,
     ...typedData,
     primaryType: 'StrategyDetails',
-  })
+  });
 
 export const verifySignature = async (
   typedData: TypedData,
@@ -202,7 +202,7 @@ export const verifySignature = async (
     ...typedData,
     primaryType: 'StrategyDetails',
     signature,
-  })
+  });
 
 export const getTypedData = (
   strategy: StrategyDetails,
@@ -228,7 +228,7 @@ export const getTypedData = (
     deadline: strategy.expiration.toString(),
     root,
   },
-})
+});
 
 export function encodeIPFSStrategyPayload(
   typedData: TypedData,
@@ -236,21 +236,21 @@ export function encodeIPFSStrategyPayload(
   strategy: Strategy
 ): string {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  ;(BigInt.prototype as any).toJSON = function () {
-    return this.toString()
-  }
+  (BigInt.prototype as any).toJSON = function () {
+    return this.toString();
+  };
 
   return stringify({
     typedData,
     signature,
     strategy,
-  })
+  });
 }
 
 export const decodeIPFSStrategyPayload = (
   ipfsStrategyPayload: string
 ): IPFSStrategyPayload =>
-  IPFSStrategyPayloadSchema.parse(JSON.parse(ipfsStrategyPayload))
+  IPFSStrategyPayloadSchema.parse(JSON.parse(ipfsStrategyPayload));
 
 export const convertProofServiceResponseToCommitment = (
   proofServiceResponse: ProofServiceResponse,
@@ -258,14 +258,14 @@ export const convertProofServiceResponseToCommitment = (
   tokenId: bigint,
   amount: bigint
 ) => {
-  const nlrDetails = encodeNlrDetails(collateral)
+  const nlrDetails = encodeNlrDetails(collateral);
 
   const { root, proof } = MerkleDataStructSchema.parse({
     root: proofServiceResponse.typedData.message.root,
     proof: proofServiceResponse.proof,
-  })
+  });
 
-  const { v, r, s } = hexToSignature(proofServiceResponse.signature)
+  const { v, r, s } = hexToSignature(proofServiceResponse.signature);
   return {
     tokenContract: collateral.token,
     tokenId,
@@ -283,15 +283,15 @@ export const convertProofServiceResponseToCommitment = (
       r,
       s,
     },
-  }
-}
+  };
+};
 
 export const getProofByCidAndLeaf = async (
   cid: string,
   leaf: string
 ): Promise<ProofServiceResponse> => {
-  const { apiBaseURL: API_BASE_URL } = getConfig()
-  const PROOF_PATH = 'strategy/proof'
+  const { apiBaseURL: API_BASE_URL } = getConfig();
+  const PROOF_PATH = 'strategy/proof';
   const response = await axios.get(
     [API_BASE_URL, PROOF_PATH, cid, leaf].join('/'),
     {
@@ -299,24 +299,24 @@ export const getProofByCidAndLeaf = async (
         'Content-Type': 'application/json',
       },
     }
-  )
+  );
 
-  return ProofServiceResponseSchema.parse(response?.data)
-}
+  return ProofServiceResponseSchema.parse(response?.data);
+};
 
 export const getIsValidated = async (
   delegateAddress: string,
   cid: string
 ): Promise<string> => {
-  const { apiBaseURL: API_BASE_URL } = getConfig()
-  const VALIDATED_PATH = `${delegateAddress}/${cid}/validated`
+  const { apiBaseURL: API_BASE_URL } = getConfig();
+  const VALIDATED_PATH = `${delegateAddress}/${cid}/validated`;
 
   const response = await axios.get([API_BASE_URL, VALIDATED_PATH].join('/'), {
     headers: {
       'Accept-Encoding': 'gzip,deflate,compress',
       'Content-Type': 'application/json',
     },
-  })
+  });
 
-  return response?.data?.validated
-}
+  return response?.data?.validated;
+};
