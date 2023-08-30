@@ -34,10 +34,10 @@ describe('util.signRoot using remote', () => {
     const account = mnemonicToAccount(sharedMnemonic);
     const verifyingContract = AddressZero;
     const strategy: StrategyDetails = {
-      version: 0,
       expiration: 0n,
       nonce: 0n,
       vault: AddressZero,
+      version: 0,
     };
     const typedData = getTypedData(strategy, localRoot, verifyingContract, 1);
     const actual = await signRoot(typedData, client, account);
@@ -64,10 +64,10 @@ describe('util.signRoot using remote', () => {
 
     const verifyingContract = AddressZero;
     const strategy: StrategyDetails = {
-      version: 0,
       expiration: 0n,
       nonce: 0n,
       vault: AddressZero,
+      version: 0,
     };
     const typedData = getTypedData(strategy, root, verifyingContract, 0);
     const signature = await signRoot(typedData, client, account);
@@ -99,11 +99,11 @@ describe('util.signRoot using remote', () => {
 
     const verifyingContract = AddressZero;
     const strategy: StrategyDetails = {
-      version: 0,
       expiration: 0n,
       nonce:
         98190270410479772072107704611241589087239492256558954232107346489527117021184n,
       vault: AddressZero,
+      version: 0,
     };
     const typedData = getTypedData(strategy, root, verifyingContract, 0);
     const signature = await signRoot(typedData, client, account);
@@ -135,10 +135,10 @@ describe('util.signRoot using remote', () => {
 
     const verifyingContract = AddressZero;
     const strategy: StrategyDetails = {
-      version: 0,
       expiration: 0n,
       nonce: 0n,
       vault: AddressZero,
+      version: 0,
     };
     const typedData = getTypedData(strategy, localRoot, verifyingContract, 0);
     const signature = await signRoot(typedData, client, account);
@@ -154,7 +154,7 @@ describe('util.signRoot using remote', () => {
       join(__dirname, '/test/__mocks__/test.json'),
       'utf8'
     );
-    const { strategy, signature, typedData } = decodeIPFSStrategyPayload(json);
+    const { signature, strategy, typedData } = decodeIPFSStrategyPayload(json);
 
     expect(strategy).toBeDefined();
 

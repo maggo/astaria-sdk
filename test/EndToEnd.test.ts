@@ -26,8 +26,8 @@ describe('Get response from proof service and execute on chain', () => {
       '0x95067b810f517769c5074b9b7977252154ec273cef5e79f65a7544b69a136836';
 
     const client = createWalletClient({
-      chain: mainnet,
       account: privateKey,
+      chain: mainnet,
 
       transport: http(),
     });

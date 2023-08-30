@@ -4,6 +4,7 @@ module.exports = {
   env: {
     browser: true,
     es6: true,
+    'jest/globals': true,
     node: true,
   },
   extends: [
@@ -13,12 +14,22 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
     'prettier',
   ],
+  overrides: [
+    {
+      extends: ['plugin:jest/recommended', 'plugin:jest/style'],
+      files: ['**/*.test.tsx'],
+    },
+  ],
   parser: '@typescript-eslint/parser',
   plugins: [
     '@typescript-eslint',
     'import',
+    'jest',
     'no-relative-import-paths',
     'security',
+    'sort-destructure-keys',
+    'sort-keys-fix',
+    'typescript-sort-keys',
   ],
   root: true,
   rules: {
@@ -53,6 +64,20 @@ module.exports = {
     'prefer-template': 'error',
     'security/detect-object-injection': 'off',
     'security/detect-possible-timing-attacks': 'off',
+    'sort-destructure-keys/sort-destructure-keys': [
+      'error',
+      { caseSensitive: false },
+    ],
+    'sort-keys-fix/sort-keys-fix': [
+      'error',
+      'asc',
+      {
+        caseSensitive: false,
+        natural: true,
+      },
+    ],
+    'typescript-sort-keys/interface': 'error',
+    'typescript-sort-keys/string-enum': 'error',
   },
   settings: {
     'import/parsers': {

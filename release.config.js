@@ -4,8 +4,8 @@ module.exports = {
       name: 'master',
     },
     {
-      name: 'develop',
       channel: 'alpha',
+      name: 'develop',
       prerelease: 'alpha',
     },
   ],

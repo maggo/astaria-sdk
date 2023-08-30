@@ -147,10 +147,10 @@ export const getStrategyFromCSV = (csv: string): Strategy =>
       ...data,
       lien: {
         amount: data?.amount,
-        rate: data?.rate,
         duration: data?.duration,
-        maxPotentialDebt: data?.maxPotentialDebt,
         liquidationInitialAsk: data?.liquidationInitialAsk,
+        maxPotentialDebt: data?.maxPotentialDebt,
+        rate: data?.rate,
       },
     }))
   );
@@ -210,23 +210,23 @@ export const getTypedData = (
   verifyingContract: z.infer<typeof AddressSchema>,
   chainId: number
 ): TypedData => ({
+  domain: {
+    chainId,
+    verifyingContract,
+    version: String(strategy.version),
+  },
+  message: {
+    deadline: strategy.expiration.toString(),
+    nonce: strategy.nonce.toString(),
+    root,
+  },
+  primaryType: 'StrategyDetails',
   types: {
     StrategyDetails: [
       { name: 'nonce', type: 'uint256' },
       { name: 'deadline', type: 'uint256' },
       { name: 'root', type: 'bytes32' },
     ],
-  },
-  primaryType: 'StrategyDetails',
-  domain: {
-    version: String(strategy.version),
-    chainId,
-    verifyingContract,
-  },
-  message: {
-    nonce: strategy.nonce.toString(),
-    deadline: strategy.expiration.toString(),
-    root,
   },
 });
 
@@ -241,9 +241,9 @@ export function encodeIPFSStrategyPayload(
   };
 
   return stringify({
-    typedData,
     signature,
     strategy,
+    typedData,
   });
 }
 
@@ -260,29 +260,29 @@ export const convertProofServiceResponseToCommitment = (
 ) => {
   const nlrDetails = encodeNlrDetails(collateral);
 
-  const { root, proof } = MerkleDataStructSchema.parse({
-    root: proofServiceResponse.typedData.message.root,
+  const { proof, root } = MerkleDataStructSchema.parse({
     proof: proofServiceResponse.proof,
+    root: proofServiceResponse.typedData.message.root,
   });
 
-  const { v, r, s } = hexToSignature(proofServiceResponse.signature);
+  const { r, s, v } = hexToSignature(proofServiceResponse.signature);
   return {
-    tokenContract: collateral.token,
-    tokenId,
     lienRequest: {
+      amount,
+      nlrDetails,
+      proof,
+      r,
+      root,
+      s,
       strategy: {
-        version: parseInt(proofServiceResponse.typedData.domain.version),
         deadline: BigInt(proofServiceResponse.typedData.message.deadline),
         vault: proofServiceResponse.typedData.domain.verifyingContract,
+        version: parseInt(proofServiceResponse.typedData.domain.version),
       },
-      nlrDetails,
-      root,
-      proof,
-      amount,
       v: Number(v),
-      r,
-      s,
     },
+    tokenContract: collateral.token,
+    tokenId,
   };
 };
 
