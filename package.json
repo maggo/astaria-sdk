@@ -9,8 +9,6 @@
     "build:esm": "tsc -p tsconfig.esm.json && node postbuild-esm.mjs",
     "test": "jest -c jest.config.js --silent --maxWorkers=50%",
     "test:ci": "yarn test --ci --coverage --maxWorkers=2",
-    "test:watch": "tsdx test --watchAll",
-    "test:coverage": "tsdx test --coverage",
     "format:fix": "prettier --write .",
     "format": "prettier --check .",
     "lint:fix": "yarn format:fix && yarn lint:ts:fix && yarn type-check",
@@ -59,7 +57,6 @@
     "semantic-release": "^19.0.5",
     "size-limit": "^8.1.0",
     "ts-jest": "^29.1.1",
-    "tsdx": "^0.14.1",
     "typescript": "^5.2.2",
     "viem": "^1.5.4",
     "zod": "^3.21.4"
