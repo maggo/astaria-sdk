@@ -1,8 +1,9 @@
 module.exports = {
-  testEnvironment: 'node',
+  modulePathIgnorePatterns: ['<rootDir>/dist/'],
   moduleNameMapper: {
+    '^abi/(.*)': '<rootDir>/src/abi/$1',
     '^strategy/(.*)': '<rootDir>/src/strategy/$1',
-    '^contracts/(.*)': '<rootDir>/src/contracts/$1',
     '^types/(.*)': '<rootDir>/src/types/$1',
   },
+  testEnvironment: 'node',
 }

@@ -7,7 +7,6 @@ import { AstariaRouterABI } from '../src/abi/AstariaRouterABI'
 import { convertProofServiceResponseToCommitment } from '../src/strategy/utils'
 import { CollectionSchema, ProofServiceResponseSchema } from '../src/types'
 
-// test file name is changed to prevent running in the CI
 describe('Get response from proof service and execute on chain', () => {
   test.skip('signs merkle tree root using local', async () => {
     const jsonOffers = await readFile(

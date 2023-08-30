@@ -49,7 +49,10 @@ describe('util.signRoot using remote', () => {
   })
 
   test('encoding and hashing for IPFS deterministically', async () => {
-    const csv = await readFile(join(__dirname, '__mocks__/test.csv'), 'utf8')
+    const csv = await readFile(
+      join(__dirname, '../../test/__mocks__/test.csv'),
+      'utf8'
+    )
     const strategyTree = StrategyTree.fromCSV(csv)
 
     const root = HexSchema.parse(strategyTree.getHexRoot())
@@ -81,7 +84,10 @@ describe('util.signRoot using remote', () => {
 
   // ensure that the encoded and decoded are identical
   test('encoding and hashing for IPFS round trip', async () => {
-    const csv = await readFile(join(__dirname, '__mocks__/test.csv'), 'utf8')
+    const csv = await readFile(
+      join(__dirname, '../../test/__mocks__/test.csv'),
+      'utf8'
+    )
     const strategyTree = StrategyTree.fromCSV(csv)
 
     const root = HexSchema.parse(strategyTree.getHexRoot())
@@ -144,7 +150,10 @@ describe('util.signRoot using remote', () => {
   })
 
   test.skip('test decode', async () => {
-    const json = await readFile(join(__dirname, '__mocks__/test.json'), 'utf8')
+    const json = await readFile(
+      join(__dirname, '/test/__mocks__/test.json'),
+      'utf8'
+    )
     const { strategy, signature, typedData } = decodeIPFSStrategyPayload(json)
 
     expect(strategy).toBeDefined()
