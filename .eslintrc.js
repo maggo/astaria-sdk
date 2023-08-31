@@ -1,9 +1,10 @@
-const MINIMUM_VARIABLE_LENGTH = 2
+const MINIMUM_VARIABLE_LENGTH = 2;
 
 module.exports = {
   env: {
     browser: true,
     es6: true,
+    'jest/globals': true,
     node: true,
   },
   extends: [
@@ -13,12 +14,22 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
     'prettier',
   ],
+  overrides: [
+    {
+      extends: ['plugin:jest/recommended', 'plugin:jest/style'],
+      files: ['**/*.test.tsx'],
+    },
+  ],
   parser: '@typescript-eslint/parser',
   plugins: [
     '@typescript-eslint',
     'import',
+    'jest',
     'no-relative-import-paths',
     'security',
+    'sort-destructure-keys',
+    'sort-keys-fix',
+    'typescript-sort-keys',
   ],
   root: true,
   rules: {
@@ -35,7 +46,7 @@ module.exports = {
     'import/first': 'error',
     'import/no-unresolved': 'error',
     'no-console': 'error',
-    // 'no-magic-numbers': ['error', { ignore: [-1, 0, 1, '0n', '1n'] }], TODO: turn back on. It's off to avoid too many conflicts currently
+    'no-magic-numbers': ['error', { ignore: [-1, 0, 1, '0n', '1n'] }],
     'no-nested-ternary': 'error',
     'no-restricted-exports': [
       'error',
@@ -53,6 +64,20 @@ module.exports = {
     'prefer-template': 'error',
     'security/detect-object-injection': 'off',
     'security/detect-possible-timing-attacks': 'off',
+    'sort-destructure-keys/sort-destructure-keys': [
+      'error',
+      { caseSensitive: false },
+    ],
+    'sort-keys-fix/sort-keys-fix': [
+      'error',
+      'asc',
+      {
+        caseSensitive: false,
+        natural: true,
+      },
+    ],
+    'typescript-sort-keys/interface': 'error',
+    'typescript-sort-keys/string-enum': 'error',
   },
   settings: {
     'import/parsers': {
@@ -65,4 +90,4 @@ module.exports = {
       },
     },
   },
-}
+};

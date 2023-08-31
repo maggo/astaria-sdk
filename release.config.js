@@ -4,8 +4,8 @@ module.exports = {
       name: 'master',
     },
     {
-      name: 'develop',
       channel: 'alpha',
+      name: 'develop',
       prerelease: 'alpha',
     },
   ],
@@ -34,4 +34,4 @@ module.exports = {
       },
     ],
   ],
-}
+};

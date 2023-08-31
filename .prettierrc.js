@@ -7,8 +7,8 @@ module.exports = {
   plugins: [require('@trivago/prettier-plugin-sort-imports')],
   printWidth: 80,
   requirePragma: false,
-  semi: false, // TODO: turn back to true. It's off to avoid too many conflicts currently
+  semi: true,
   singleQuote: true,
   trailingComma: 'es5',
   useTabs: false,
-}
+};
