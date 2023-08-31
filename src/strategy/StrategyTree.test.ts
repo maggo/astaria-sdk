@@ -1,10 +1,14 @@
-import { join } from 'path'
 import { readFile } from 'fs/promises'
-import { StrategyTree } from '../src/strategy/StrategyTree'
+import { join } from 'path'
+
+import { StrategyTree } from './StrategyTree'
 
 describe('StrategyTree', () => {
   test('test that all leaves are marshalled into StrategyTree', async () => {
-    const csv = await readFile(join(__dirname, '__mocks__/test.csv'), 'utf8')
+    const csv = await readFile(
+      join(__dirname, '../../test/__mocks__/test.csv'),
+      'utf8'
+    )
 
     const strategyTree = StrategyTree.fromCSV(csv)
     const actual = strategyTree.getStrategy.length
@@ -12,14 +16,20 @@ describe('StrategyTree', () => {
     expect(actual).toEqual(expected)
   })
   test('convert Strategy to StrategyTree', async () => {
-    const csv = await readFile(join(__dirname, '__mocks__/test.csv'), 'utf8')
+    const csv = await readFile(
+      join(__dirname, '../../test/__mocks__/test.csv'),
+      'utf8'
+    )
     const tempStrategyTree = StrategyTree.fromCSV(csv)
     const strategyTree = new StrategyTree(tempStrategyTree.getStrategy)
     expect(strategyTree.getHexRoot()).toEqual(tempStrategyTree.getHexRoot())
     expect(strategyTree.getStrategy).toEqual(tempStrategyTree.getStrategy)
   })
   test('parses CSV into StrategyTree', async () => {
-    const csv = await readFile(join(__dirname, '__mocks__/test.csv'), 'utf8')
+    const csv = await readFile(
+      join(__dirname, '../../test/__mocks__/test.csv'),
+      'utf8'
+    )
     const strategyTree = StrategyTree.fromCSV(csv)
 
     expect(

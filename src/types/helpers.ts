@@ -20,7 +20,7 @@ export const ObjectToBigIntSchema = z
   .transform((val, ctx) => {
     try {
       return BigInt(val.hex)
-    } catch (_) {
+    } catch (error) {
       ctx.addIssue({
         code: z.ZodIssueCode.custom,
         message: 'Could not parse as BigInt',
@@ -33,7 +33,7 @@ export const ObjectToSignedBigIntSchema = z
   .transform((val, ctx) => {
     try {
       return BigInt(val.hex)
-    } catch (_) {
+    } catch (error) {
       ctx.addIssue({
         code: z.ZodIssueCode.custom,
         message: 'Could not parse as BigInt',
@@ -48,7 +48,7 @@ export const UintStringToBigIntSchema = z
   .transform((val, ctx) => {
     try {
       return BigInt(val)
-    } catch (_) {
+    } catch (error) {
       ctx.addIssue({
         code: z.ZodIssueCode.custom,
         message: 'Could not parse as BigInt',
@@ -63,7 +63,7 @@ export const IntStringToBigIntSchema = z
   .transform((val, ctx) => {
     try {
       return BigInt(val)
-    } catch (_) {
+    } catch (error) {
       ctx.addIssue({
         code: z.ZodIssueCode.custom,
         message: 'Could not parse as BigInt',
@@ -91,21 +91,26 @@ const UINT256MAX = 2n ** 256n - 1n
 const INT24MIN = (UINT24MAX / 2n - 1n) * -1n
 const INT24MAX = UINT24MAX / 2n
 
-export const Uint24Schema = UintBigIntSchema.refine((val) => {
-  return val <= UINT24MAX
-}, 'Cannot exceed (2^24) - 1')
+export const Uint24Schema = UintBigIntSchema.refine(
+  (val) => val <= UINT24MAX,
+  'Cannot exceed (2^24) - 1'
+)
 
-export const Uint128Schema = UintBigIntSchema.refine((val) => {
-  return val <= UINT128MAX
-}, 'Cannot exceed (2^128) - 1')
+export const Uint128Schema = UintBigIntSchema.refine(
+  (val) => val <= UINT128MAX,
+  'Cannot exceed (2^128) - 1'
+)
 
-export const Uint256Schema = UintBigIntSchema.refine((val) => {
-  return val <= UINT256MAX
-}, 'Cannot exceed (2^256) - 1')
-export const Uint256NonZeroSchema = Uint256Schema.refine((val) => {
-  return val > 0n
-}, 'Cannot be zero')
+export const Uint256Schema = UintBigIntSchema.refine(
+  (val) => val <= UINT256MAX,
+  'Cannot exceed (2^256) - 1'
+)
+export const Uint256NonZeroSchema = Uint256Schema.refine(
+  (val) => val > 0n,
+  'Cannot be zero'
+)
 
-export const Int24Schema = IntBigIntSchema.refine((val) => {
-  return val >= INT24MIN && val <= INT24MAX
-}, 'Invalid Int24 value')
+export const Int24Schema = IntBigIntSchema.refine(
+  (val) => val >= INT24MIN && val <= INT24MAX,
+  'Invalid Int24 value'
+)

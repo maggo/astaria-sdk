@@ -1,7 +1,8 @@
-import { keccak256 } from 'viem'
 import MerkleTree from 'merkletreejs'
 import invariant from 'tiny-invariant'
-import { Strategy } from '../types/index'
+import { keccak256 } from 'viem'
+
+import { type Strategy } from '../types'
 import { getStrategyFromCSV, prepareLeaves } from './utils'
 
 export class StrategyTree extends MerkleTree {

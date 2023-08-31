@@ -1,33 +1,26 @@
-import { join } from 'path'
 import { readFile } from 'fs/promises'
-import { MockProvider } from 'ethereum-waffle'
-import { StrategyTree } from '../src/strategy/StrategyTree'
-import {
-  signRoot,
-  encodeIPFSStrategyPayload,
-  decodeIPFSStrategyPayload,
-  verifySignature,
-  getTypedData,
-} from '../src/strategy/utils'
-import { AddressZero, StrategyDetails } from '../src/types'
-import { HexSchema } from '../src/types/helpers'
-import {
-  createWalletClient,
-  http,
-  signatureToHex,
-  hexToSignature,
-  Address,
-} from 'viem'
-import { mainnet } from 'viem/chains'
+import { join } from 'path'
+import { createWalletClient, http } from 'viem'
 import { mnemonicToAccount } from 'viem/accounts'
+import { mainnet } from 'viem/chains'
 
+import { AddressZero } from '../constants'
+import { type StrategyDetails } from '../types'
+import { HexSchema } from '../types/helpers'
+import { StrategyTree } from './StrategyTree'
+import {
+  decodeIPFSStrategyPayload,
+  encodeIPFSStrategyPayload,
+  getTypedData,
+  signRoot,
+  verifySignature,
+} from './utils'
+
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const Hash = require('ipfs-only-hash')
 
 const sharedMnemonic =
   'junk junk junk junk junk junk junk junk junk junk junk test'
-
-const remoteRoot =
-  '0x40c9e8c33c4cf5ff06180afea2e6a3bab45b6bfb4fafca7ec401e4201fded1a9'
 
 const localRoot =
   '0x276a20acb0e3b40e3e98b20030585add5dd1c6c6f53b99b3bc0645809dd3eef0'
@@ -56,7 +49,10 @@ describe('util.signRoot using remote', () => {
   })
 
   test('encoding and hashing for IPFS deterministically', async () => {
-    const csv = await readFile(join(__dirname, '__mocks__/test.csv'), 'utf8')
+    const csv = await readFile(
+      join(__dirname, '../../test/__mocks__/test.csv'),
+      'utf8'
+    )
     const strategyTree = StrategyTree.fromCSV(csv)
 
     const root = HexSchema.parse(strategyTree.getHexRoot())
@@ -88,7 +84,10 @@ describe('util.signRoot using remote', () => {
 
   // ensure that the encoded and decoded are identical
   test('encoding and hashing for IPFS round trip', async () => {
-    const csv = await readFile(join(__dirname, '__mocks__/test.csv'), 'utf8')
+    const csv = await readFile(
+      join(__dirname, '../../test/__mocks__/test.csv'),
+      'utf8'
+    )
     const strategyTree = StrategyTree.fromCSV(csv)
 
     const root = HexSchema.parse(strategyTree.getHexRoot())
@@ -151,7 +150,10 @@ describe('util.signRoot using remote', () => {
   })
 
   test.skip('test decode', async () => {
-    const json = await readFile(join(__dirname, '__mocks__/test.json'), 'utf8')
+    const json = await readFile(
+      join(__dirname, '/test/__mocks__/test.json'),
+      'utf8'
+    )
     const { strategy, signature, typedData } = decodeIPFSStrategyPayload(json)
 
     expect(strategy).toBeDefined()

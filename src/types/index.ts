@@ -1,15 +1,16 @@
 import { z } from 'zod'
+
+import { AddressZero } from '../constants'
 import {
-  Int24Schema,
-  HexSchema,
   AddressSchema,
+  HexSchema,
+  Int24Schema,
   Uint24Schema,
   Uint128Schema,
-  Uint256Schema,
   Uint256NonZeroSchema,
+  Uint256Schema,
 } from './helpers'
 
-export const AddressZero = '0x0000000000000000000000000000000000000000'
 export enum StrategyLeafType {
   Collateral = '1',
   Collection = '2',
