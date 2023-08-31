@@ -84,7 +84,6 @@
     "dist/cjs",
     "dist/esm",
     "!dist/**/*.tsbuildinfo",
-    "!**/*.json",
     "CHANGELOG.md",
     "LICENSE.md",
     "README.md"
