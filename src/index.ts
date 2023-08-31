@@ -1,9 +1,9 @@
-export * from './config';
+export * from './config.js';
 
-export * from './strategy/StrategyTree';
-export * from './strategy/utils';
+export * from './strategy/StrategyTree.js';
+export * from './strategy/utils/index.js';
 
-export * from './abi';
+export * from './abi/index.js';
 
-export * from './types/helpers';
-export * from './types/index';
+export * from './types/helpers.js';
+export * from './types/index.js';

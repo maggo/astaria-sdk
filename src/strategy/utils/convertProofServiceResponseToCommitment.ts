@@ -4,8 +4,8 @@ import {
   MerkleDataStructSchema,
   ProofServiceResponse,
   StrategyRow,
-} from '../../types';
-import { encodeNlrDetails } from './encodeNlrDetails';
+} from '../../types/index.js';
+import { encodeNlrDetails } from './encodeNlrDetails.js';
 
 export const convertProofServiceResponseToCommitment = (
   proofServiceResponse: ProofServiceResponse,

@@ -1,7 +1,7 @@
 import invariant from 'tiny-invariant';
 import { encodeAbiParameters, parseAbiParameters } from 'viem';
 
-import { Collection } from '../../types';
+import { Collection } from '../../types/index.js';
 
 export const encodeCollection = (collection: Collection) => {
   invariant(collection, 'hashCollection: collection must be defined');

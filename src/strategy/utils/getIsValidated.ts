@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { getConfig } from '../../config';
+import { getConfig } from '../../config.js';
 
 export const getIsValidated = async (
   delegateAddress: string,

@@ -1,7 +1,7 @@
 import { z } from 'zod';
 
-import { StrategyDetails, TypedData } from '../../types';
-import { AddressSchema, HexSchema } from '../../types/helpers';
+import { AddressSchema, HexSchema } from '../../types/helpers.js';
+import { StrategyDetails, TypedData } from '../../types/index.js';
 
 export const getTypedData = (
   strategy: StrategyDetails,

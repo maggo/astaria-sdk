@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-import { AddressZero } from '../constants';
+import { AddressZero } from '../constants.js';
 import {
   AddressSchema,
   HexSchema,
@@ -9,7 +9,7 @@ import {
   Uint128Schema,
   Uint256NonZeroSchema,
   Uint256Schema,
-} from './helpers';
+} from './helpers.js';
 
 export enum StrategyLeafType {
   Collateral = '1',

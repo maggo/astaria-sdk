@@ -1,7 +1,7 @@
 import invariant from 'tiny-invariant';
 import { encodeAbiParameters, parseAbiParameters } from 'viem';
 
-import { UniV3Collateral } from '../../types';
+import { UniV3Collateral } from '../../types/index.js';
 
 export const encodeUniV3Collateral = (collateral: UniV3Collateral) => {
   invariant(collateral, 'hashUniV3Collateral: collateral must be defined');

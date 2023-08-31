@@ -4,15 +4,15 @@ import { createWalletClient, http } from 'viem';
 import { mnemonicToAccount } from 'viem/accounts';
 import { mainnet } from 'viem/chains';
 
-import { AddressZero } from '../../constants';
-import { type StrategyDetails } from '../../types';
-import { HexSchema } from '../../types/helpers';
-import { StrategyTree } from '../StrategyTree';
-import { decodeIPFSStrategyPayload } from './decodeIPFSStrategyPayload';
-import { encodeIPFSStrategyPayload } from './encodeIPFSStrategyPayload';
-import { getTypedData } from './getTypedData';
-import { signRoot } from './signRoot';
-import { verifySignature } from './verifySignature';
+import { AddressZero } from '../../constants.js';
+import { HexSchema } from '../../types/helpers.js';
+import { type StrategyDetails } from '../../types/index.js';
+import { StrategyTree } from '../StrategyTree.js';
+import { decodeIPFSStrategyPayload } from './decodeIPFSStrategyPayload.js';
+import { encodeIPFSStrategyPayload } from './encodeIPFSStrategyPayload.js';
+import { getTypedData } from './getTypedData.js';
+import { signRoot } from './signRoot.js';
+import { verifySignature } from './verifySignature.js';
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const Hash = require('ipfs-only-hash');

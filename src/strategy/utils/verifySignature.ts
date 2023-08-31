@@ -1,6 +1,6 @@
 import { Address, verifyTypedData } from 'viem';
 
-import { Signature, TypedData } from '../../types';
+import { Signature, TypedData } from '../../types/index.js';
 
 export const verifySignature = async (
   typedData: TypedData,

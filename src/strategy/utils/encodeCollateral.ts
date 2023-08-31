@@ -1,7 +1,7 @@
 import invariant from 'tiny-invariant';
 import { encodeAbiParameters, parseAbiParameters } from 'viem';
 
-import { Collateral } from '../../types';
+import { Collateral } from '../../types/index.js';
 
 export const encodeCollateral = (collateral: Collateral) => {
   invariant(collateral, 'hashCollateral: collateral must be defined');

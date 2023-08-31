@@ -1,6 +1,6 @@
 import { parse as parseCSV } from 'papaparse';
 
-import { Strategy, StrategySchema } from '../../types';
+import { Strategy, StrategySchema } from '../../types/index.js';
 
 export const getStrategyFromCSV = (csv: string): Strategy =>
   StrategySchema.parse(

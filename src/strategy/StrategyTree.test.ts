@@ -1,7 +1,7 @@
 import { readFile } from 'fs/promises';
 import { join } from 'path';
 
-import { StrategyTree } from './StrategyTree';
+import { StrategyTree } from './StrategyTree.js';
 
 describe('StrategyTree', () => {
   test('test that all leaves are marshalled into StrategyTree', async () => {

@@ -1,6 +1,6 @@
 import { Account, Address, WalletClient } from 'viem';
 
-import { Signature, TypedData } from '../../types';
+import { Signature, TypedData } from '../../types/index.js';
 
 export const signRoot = async (
   typedData: TypedData,

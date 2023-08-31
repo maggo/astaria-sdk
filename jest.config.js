@@ -1,6 +1,7 @@
 /** @type {import('ts-jest').JestConfigWithTsJest} */
 module.exports = {
   moduleNameMapper: {
+    '^(\\.\\.?\\/.+)\\.jsx?$': '$1',
     '^abi/(.*)': '<rootDir>/src/abi/$1',
     '^strategy/(.*)': '<rootDir>/src/strategy/$1',
     '^types/(.*)': '<rootDir>/src/types/$1',

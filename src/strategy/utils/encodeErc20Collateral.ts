@@ -1,7 +1,7 @@
 import invariant from 'tiny-invariant';
 import { encodeAbiParameters, parseAbiParameters } from 'viem';
 
-import { Erc20Collateral } from '../../types';
+import { Erc20Collateral } from '../../types/index.js';
 
 export const encodeErc20Collateral = (collateral: Erc20Collateral) => {
   invariant(collateral, 'hashCollection: collection must be defined');

@@ -1,6 +1,6 @@
 import stringify from 'json-stringify-deterministic';
 
-import { Signature, Strategy, TypedData } from '../../types';
+import { Signature, Strategy, TypedData } from '../../types/index.js';
 
 export const encodeIPFSStrategyPayload = (
   typedData: TypedData,

@@ -1,7 +1,7 @@
 import { keccak256 } from 'viem';
 
-import { Strategy, StrategyRow } from '../../types';
-import { encodeNlrDetails } from './encodeNlrDetails';
+import { Strategy, StrategyRow } from '../../types/index.js';
+import { encodeNlrDetails } from './encodeNlrDetails.js';
 
 // hashes the parameters of the terms and collateral to produce a single bytes32 value to act as the root
 export const prepareLeaves = (strategy: Strategy): string[] =>

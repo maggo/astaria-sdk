@@ -1,4 +1,7 @@
-import { IPFSStrategyPayload, IPFSStrategyPayloadSchema } from '../../types';
+import {
+  IPFSStrategyPayload,
+  IPFSStrategyPayloadSchema,
+} from '../../types/index.js';
 
 export const decodeIPFSStrategyPayload = (
   ipfsStrategyPayload: string

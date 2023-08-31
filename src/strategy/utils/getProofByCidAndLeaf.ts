@@ -1,7 +1,10 @@
 import axios from 'axios';
 
-import { getConfig } from '../../config';
-import { ProofServiceResponse, ProofServiceResponseSchema } from '../../types';
+import { getConfig } from '../../config.js';
+import {
+  ProofServiceResponse,
+  ProofServiceResponseSchema,
+} from '../../types/index.js';
 
 export const getProofByCidAndLeaf = async (
   cid: string,

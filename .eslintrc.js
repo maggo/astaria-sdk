@@ -9,6 +9,7 @@ module.exports = {
   },
   extends: [
     'eslint:recommended',
+    'plugin:require-extensions/recommended',
     'plugin:security/recommended',
     'plugin:@typescript-eslint/eslint-recommended',
     'plugin:@typescript-eslint/recommended',
@@ -26,6 +27,7 @@ module.exports = {
     'import',
     'jest',
     'no-relative-import-paths',
+    'require-extensions',
     'security',
     'sort-destructure-keys',
     'sort-keys-fix',

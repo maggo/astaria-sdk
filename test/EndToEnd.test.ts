@@ -3,9 +3,12 @@ import { join } from 'path';
 import { createWalletClient, http } from 'viem';
 import { mainnet } from 'viem/chains';
 
-import { AstariaRouterABI } from '../src/abi/AstariaRouterABI';
-import { convertProofServiceResponseToCommitment } from '../src/strategy/utils/convertProofServiceResponseToCommitment';
-import { CollectionSchema, ProofServiceResponseSchema } from '../src/types';
+import { AstariaRouterABI } from '../src/abi/AstariaRouterABI.js';
+import { convertProofServiceResponseToCommitment } from '../src/strategy/utils/convertProofServiceResponseToCommitment.js';
+import {
+  CollectionSchema,
+  ProofServiceResponseSchema,
+} from '../src/types/index.js';
 
 describe('Get response from proof service and execute on chain', () => {
   test.skip('signs merkle tree root using local', async () => {

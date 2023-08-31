@@ -1,10 +1,10 @@
 import { Hex } from 'viem';
 
-import { StrategyLeafType, StrategyRow } from '../../types';
-import { encodeCollateral } from './encodeCollateral';
-import { encodeCollection } from './encodeCollection';
-import { encodeErc20Collateral } from './encodeErc20Collateral';
-import { encodeUniV3Collateral } from './encodeUniV3Collateral';
+import { StrategyLeafType, StrategyRow } from '../../types/index.js';
+import { encodeCollateral } from './encodeCollateral.js';
+import { encodeCollection } from './encodeCollection.js';
+import { encodeErc20Collateral } from './encodeErc20Collateral.js';
+import { encodeUniV3Collateral } from './encodeUniV3Collateral.js';
 
 export const encodeNlrDetails = (row: StrategyRow): Hex => {
   switch (row.type) {

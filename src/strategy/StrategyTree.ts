@@ -2,9 +2,9 @@ import MerkleTree from 'merkletreejs';
 import invariant from 'tiny-invariant';
 import { keccak256 } from 'viem';
 
-import { type Strategy } from '../types';
-import { getStrategyFromCSV } from './utils/getStrategyFromCSV';
-import { prepareLeaves } from './utils/prepareLeaves';
+import { type Strategy } from '../types/index.js';
+import { getStrategyFromCSV } from './utils/getStrategyFromCSV.js';
+import { prepareLeaves } from './utils/prepareLeaves.js';
 
 export class StrategyTree extends MerkleTree {
   private strategy: Strategy;
