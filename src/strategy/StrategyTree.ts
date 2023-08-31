@@ -3,7 +3,8 @@ import invariant from 'tiny-invariant';
 import { keccak256 } from 'viem';
 
 import { type Strategy } from '../types';
-import { getStrategyFromCSV, prepareLeaves } from './utils';
+import { getStrategyFromCSV } from './utils/getStrategyFromCSV';
+import { prepareLeaves } from './utils/prepareLeaves';
 
 export class StrategyTree extends MerkleTree {
   private strategy: Strategy;
