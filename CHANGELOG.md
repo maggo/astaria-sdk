@@ -1,3 +1,15 @@
+# [1.0.0-alpha.36](https://github.com/astariaxyz/astaria-sdk/compare/v1.0.0-alpha.35...v1.0.0-alpha.36) (2023-08-31)
+
+
+### Bug Fixes
+
+* add missing types export ([768a254](https://github.com/astariaxyz/astaria-sdk/commit/768a254f10644752dc2aa4bb130b38a8c68d2fdb))
+
+
+### Features
+
+* upgrade dependencies ([3774ceb](https://github.com/astariaxyz/astaria-sdk/commit/3774ceb20f2c74913e0d3bbff2bd50e6b3627d8d))
+
 # [1.0.0-alpha.35](https://github.com/astariaxyz/astaria-sdk/compare/v1.0.0-alpha.34...v1.0.0-alpha.35) (2023-08-28)
 
 
