@@ -1,3 +1,10 @@
+# [1.0.0-alpha.37](https://github.com/astariaxyz/astaria-sdk/compare/v1.0.0-alpha.36...v1.0.0-alpha.37) (2023-08-31)
+
+
+### Features
+
+* export package.json files to npm ([cdf6b2b](https://github.com/astariaxyz/astaria-sdk/commit/cdf6b2ba4a076ac6aa5f9374dad6f4354ed3240d))
+
 # [1.0.0-alpha.36](https://github.com/astariaxyz/astaria-sdk/compare/v1.0.0-alpha.35...v1.0.0-alpha.36) (2023-08-31)
 
 
